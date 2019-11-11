@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE network SYSTEM "erikconfiguration.dtd">
+
+    <network>
+    ...
+    </network>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT distance (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT destination (address|routerId)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT source (address|routerId)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT connection (distance|destination|source)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT managementAgent (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT managementDomain (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT metric (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT addressElement (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT address (addressElement)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT interface (metric|address)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT messagingAgent (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT messagingDomain (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT managementKey (managementAgent|managementDomain|messagingAgent|messagingDomain)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT listenerPort (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT httpPort (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT httpPassword (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT httpUser (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT managementPort (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT host (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT administration (managementKey|listenerPort|httpPort|httpPassword|httpUser|managementPort|host)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT routerId (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT router (interface|administration|routerId)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT network (connection|router)*>

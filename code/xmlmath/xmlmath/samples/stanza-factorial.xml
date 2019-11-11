@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Illustrates the use of a stanza.
+
+This example defines a stanza that takes the value of variable x and computes
+its factorial. This stanza is used in the for-loop that computes the factorial
+of 1 to 10 and puts these values in a list.
+
+Remember that an <inline> tag is substituted with the stanza's body, so it's
+ok for the stanza to work with variables (or declarations) that do not exist
+in the stanza's own scope.
+-->
+
+<toString xmlns="http://prutser.cx/xmlmath/schemas">
+
+	<stanza name="factorial">
+		<listProduct datatype="long">
+			<for iterator="i">
+				<long value="0"/>
+				<linkLong name="x"/>
+				<add datatype="long">
+					<linkLong name="i"/>
+					<long value="1"/>
+				</add>
+			</for>
+		</listProduct>
+	</stanza>
+
+	<for iterator="i">
+		<long value="1"/>
+		<long value="11"/>
+		<toString>
+			<declare name="x">
+				<linkLong name="i"/>
+			</declare>
+			<inline name="factorial"/>
+		</toString>
+	</for>
+</toString>

@@ -1,0 +1,188 @@
+03.07.99
+
+Added logging.
+By default monop server now logs everything that goes to stdout to a logfile
+(currently hardcoded ~/monop.log). Next will come a "/log set 1" and "/log
+set 0" command, that can be issued on the not-yet-so-fancy console and by
+the root player.
+There will also come somekind of "-deamon" commandline argument that lets
+monop server fork to the background and stop giving stdout. Then your
+console is gone, so you'll have to do your configuring via the root player.
+
+Some bugs fixed and tested on stability. I was unable to crash monop server
+and I could not find any memory leaks after hours of running at full speed
+with the shell scripts as "AI" players
+
+
+02.07.99
+
+Reading stdin. No fancy console yet, but you are now superuser at the
+console and you can use "/shutdown" now.
+Note that the "root" player (the player that connected first) is also root
+and can also do this remotely.
+
+Added a very simple shell script that simulates a computer player. It
+automatically connects to the monop server at localhost:2525, logs in and
+will roll the dice and give away it's turn again.
+usage: ./client nickname |telnet
+
+
+23.06.99
+
+Fixed an error in the network routines which caused a TIME_WAIT when killing
+the server with active clients. TIME_WAIT is not discarded, just correctly
+used now :)
+Added signal handling. Ctrl-c is being caught.
+
+
+21.06.99
+
+The default chance and community cards have been hardcoded (wanna be able to
+play without specific rule files). For now the dutch cards have been
+implemented, I don't have a US version.
+
+Property cards have been implemented and initialised. I hardcoded th default
+US prices.
+
+Leon updated the kmonop client.. Now draws something which might start to
+look like a game board.. Still can't roll any dice in his client however..
+testing should still be done with telnet.. :/
+
+Implemented the start of buying property. "/PROPERTY BUY" lets you buy the
+street you're on (if not already taken).
+
+Salary implemented. Passing Start now collects $200.
+If "doubleIncomeOnStart" has been set in the config file, you will get $400
+when you end up on Start. (delete the config file before running snapshot)
+
+/POS implemented. "/POS GET NICK" returns a player's location on the board.
+
+
+16.06.99
+
+I've been held up by the chance and community card system. They are a real
+pest. Our intention was to create the game so that each client could run
+it's own national version, while the server only passed through the number
+of the chance cards. The clients would display the local translation. This
+is ofcourse only possible if all national versions have the same actions on
+the cards. And this is where the pest begins. This is not. The US version
+turned out to have actions on cards that the Dutch version never even heard
+of. I don't have other versions, but I can imagine that many different cards
+and actions evolved over the years.
+So the only way to make national versions possible, is to have the server
+know all the rules of the national versions, and make sure every client
+plays with the same national rules.
+Therefor I need to write a system that reads rule config files and creates
+the cards with all bizarre, desired rules. Then it will even be possible to
+create your own chance cards.
+
+For synchronisation between the clients, the server will broadcast come
+command to every player, saying the ruleset. Eventually, we even want to
+implement an "upload" function that makes clients able to upload a ruleset
+from the server which they don't have. This however will come much later. I
+will include it in the API sooner however.
+
+I am now implementing the rule parser and already have two card stacks which
+are being shaken.
+
+
+12.06.99
+
+BSD compiles and runs monop correctly and out of the box.
+HP-UX also compiled monop without any warning and runs perfectly without
+modifications.
+
+
+11.06.99
+
+Also compiles and runs on IRIX systems (5.3 tested).
+Other systems problably too, but I don't have access to things as Solaris,
+BSD, AIX etc.. Please report.
+
+
+10.06.99
+
+Added /dice
+Once a game as started (everyone did "/ready set 1"), the first user (order
+of "/names get") can roll the dice: "/dice roll". When he throws doubles, he
+must roll again. When you're done and want to pass the dice to the next
+player, type "/ready set 1", now the next player can party.
+
+Note that only walking across the board is currently possible. Next I'll
+probably be implementing chance and comminuty chest cards or something.
+Buying etc to come l8er.
+
+Enjoy so far...
+
+
+08.06.99
+
+School and real work demand their toll.. not very productive days..
+Added /ready
+Before a game can actually start, all players must set their client to
+"ready" status. Once all players have done that, the game automatically
+starts. Game routines soon to come I hope..
+
+
+04.06.99
+
+Added /budget
+Now you can ask how much money every player has. You can however also hide
+your own amount of money to other players. See API for syntax details.
+
+
+03.06.99
+
+Config file done. Settings can be changed editing here. The "/save" command
+and a complete console will come later. Now I'll start focussing on the game
+routines and the board-modell.
+
+I see many many downloads a day, but hardly any respons or bug reports.. is
+it that most of you just see it's not done yet and then gently shift it over
+to /dev/null? I code as much as school allows and have little time for
+extensive bugtracking. If you find a segfault or anything, feel free to mail
+(erik@prutser.cx)
+
+
+01.06.99
+
+Some huge fixes in the ByteStuffing. The conversion of most static arrays to
+dynamic ones brought a lot of realloc() in the code. In bytestuffing I
+forgot to grab the new pointer, wich caused pointers to old pieces of
+memory. The result was that corrupted strings were being send to clients.
+Fixed some other buffer overflows as well.. I should really learn to code
+more accurately :/
+
+Started the config file parser. Config file will be ~/.monoprc
+
+
+31.05.99
+
+Added chatting.
+/CHAT <string> dumps your chat text to all players;
+/MSG nickname <private_string> sends your string only to a specific player.
+(like private chat on IRC).
+
+Added multiple command support.
+Now several command can be given in one string. They'll be executed
+concurrently.
+
+Added bytestuffing.
+The '/' (slash) is a special char, indicating the start of a new command. To
+be able to use the slash in words, lines and basically everything that goes
+over the network, I added a low level routine (just above write()) that
+turns every slash into a double slash before sending it out. Except the
+leading slash. The opposite is being done with incoming data before it's
+being processed.
+This makes things possible like:
+	/NICK SET +//-		(your nick will be '+/-')
+	/NICK SET \//IcE\///NAME SET Erik//Prutser	(2 commands in one)
+
+Many seg faults and buffer overflow fixes.
+Most static (overflow-sensitive) arrays have been replaced by dynamic
+malloc's.
+I've had little time for testing, so I bet I overlooked some overflows/seg-
+faults. But there's another day tomorrow...
+
+
+Erik van Zijst - erik@prutser.cx

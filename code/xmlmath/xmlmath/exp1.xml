@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<log xmlns="http://prutser.cx/xmlmath/schemas">
+	<e/>
+</log>
+
+<!--
+<product datatype="long" xmlns="http://prutser.cx/xmlmath/schemas">
+	<declareLong name="x" value="2"/>
+	<long value="20"/>
+	<longRef name="y"/>
+</product>
+-->
+ 

@@ -1,0 +1,70 @@
+JIT
+
+for j in 1 2; do for i in 1 2 4 8 16 32; do ( prun -v -t 10:00 \
+./run_ibm_java $i nl.vu.pp.distributed.FifteenPuzzle -board ../dist58.txt \
+-prebranch 7 -grainsize 5 -prefetch 5 >> jit-58-$i.txt ) ; done ; done
+
+for j in 1 2; do for i in 1 2 4 6 8 16 32; do ( prun -v -t 10:00 \
+./run_ibm_java $i nl.vu.pp.distributed.FifteenPuzzle -board ../dist66.txt \
+-prebranch 10 -grainsize 25 -prefetch 7 >> jit-66-$i.txt ) ; done ; done
+
+for j in 1 2; do for i in 1 2 4 6 8 16 32; do ( prun -v -t 1:00:00
+./run_ibm_java $i nl.vu.pp.distributed.FifteenPuzzle -board ../dist68.txt
+-prebranch 10 -grainsize 25 -prefetch 7 >> jit-68-$i.txt ) ; done ; done
+
+for j in 1 2; do for i in 1 2 4 6 8 16 32; do ( prun -v -t 2:10:00 \
+./run_ibm_java $i nl.vu.pp.distributed.FifteenPuzzle -board ../dist70.txt \
+-prebranch 8 -grainsize 25 -prefetch 7 >> jit-70-$i.txt ) ; done ; done
+
+for j in 1 2; do for i in 1 2 4 6 8 16 32; do ( prun -v -t 2:10:00 \
+./run_ibm_java $i nl.vu.pp.distributed.FifteenPuzzle -board ../dist74.txt \
+-prebranch 8 -grainsize 25 -prefetch 7 >> jit-74-$i.txt ) ; done ; done
+
+for j in 1 2; do for i in 1 2 4 6 8 16 32; do ( prun -v -t 4:00:00 \
+./run_ibm_java $i nl.vu.pp.distributed.FifteenPuzzle -board ../dist82.txt \
+-prebranch 10 -grainsize 25 -prefetch 7 >> jit-82-$i.txt ) ; done ; done
+
+for j in 1 2; do for i in 1 2 4 6 8 16 32; do ( prun -v -t 8:00:00 -asocial \
+./run_ibm_java $i nl.vu.pp.distributed.FifteenPuzzle -board ../dist84.txt \
+-prebranch 10 -grainsize 25 -prefetch 7 >> ../doc/tests/jit-84-$i.txt ) ; \
+done ; done
+
+for j in 1 2; do for i in 32 16 8 6 4 2 1; do ( prun -v -t 16:00:00 \
+./run_ibm_java $i nl.vu.pp.distributed.FifteenPuzzle -board ../dist86.txt \
+-prebranch 10 -grainsize 25 -prefetch 7 >> ../doc/tests/jit-86-$i.txt ) ; \
+done ; done
+
+
+MANTA
+
+for j in 1 2; do for i in 1 2 4 6 8 16 32; do ( prun -v -t 10:00 \
+./15puzzle-distributed $i -board dist58.txt -prebranch 7 -grainsize 5 \
+-prefetch 5 >> doc/tests/manta-58-$i.txt ) ; done ; done
+
+for j in 1 2; do for i in 1 2 4 6 8 16 32; do ( prun -v -t 10:00 \
+./15puzzle-distributed $i -board dist66.txt -prebranch 10 -grainsize 25 \
+-prefetch 7 >> doc/tests/manta-66-$i.txt ) ; done ; done
+
+for j in 1 2; do for i in 1 2 4 6 8 16 32; do ( prun -v -t 1:00:00 \
+./15puzzle-distributed $i -board dist68.txt -prebranch 10 -grainsize 25 \
+-prefetch 7 >> doc/tests/manta-68-$i.txt ) ; done ; done
+
+for j in 1 2; do for i in 1 2 4 6 8 16 32; do ( prun -v -t 2:10:00 \
+./15puzzle-distributed $i -board dist70.txt -prebranch 8 -grainsize 25 \
+-prefetch 7 >> doc/tests/manta-70-$i.txt ) ; done ; done
+
+for j in 1 2; do for i in 1 2 4 6 8 16 32; do ( prun -v -t 2:10:00 \
+./15puzzle-distributed $i -board dist74.txt -prebranch 8 -grainsize 25 \
+-prefetch 7 >> doc/tests/manta-74-$i.txt ) ; done ; done
+
+for j in 1 2; do for i in 1 2 4 6 8 16 32; do ( prun -v -t 4:00:00 \
+-asocial ./15puzzle-distributed $i -board dist82.txt -prebranch 10 \
+-grainsize 25 -prefetch 7 >> doc/tests/manta-82-$i.txt ) ; done ; done
+
+for j in 1 2; do for i in 1 2 4 6 8 16 32; do ( prun -v -t 8:00:00 \
+-asocial ./15puzzle-distributed $i -board dist84.txt -prebranch 10 \
+-grainsize 25 -prefetch 7 >> doc/tests/manta-84-$i.txt ) ; done ; done
+
+for j in 1 2; do for i in 32 16 8 6 4 2 1; do ( prun -v -t 16:00:00 \
+./15puzzle-distributed $i -board dist86.txt -prebranch 10 \
+-grainsize 25 -prefetch 7 >> doc/tests/manta-86-$i.txt ) ; done ; done

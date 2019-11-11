@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <title>Operating Systems - Practical Work Assignment</title>
+  </head>
+
+  <body>
+    <h1>Operating Systems - General Information</h1>
+
+    <h2>Introduction</h2>
+
+The assignment is divided into three separate exercises, each adding
+functionality to a different part of the MINIX operating system. All three
+exercises are required. Starting this year (2003), there will be 3 new exercises,
+one for adding kernel functionality (profiling), one adding filesystem functionality (defragmentation) and one related to the memory manager (signal handlers). 
+The exercises will be introduced in-order, starting with exercise 1. 
+You are advised to start with exercise 1 as soon as possible, and only 
+to start with exercise 2 after you have finished exercise 1. When there 
+are any problems interpreting the exercises, please contact your 
+supervisor as soon as possible. 
+<p> 
+You may work alone,
+although groups of two persons are encouraged. Groups larger than
+two are not permitted.
+
+
+    <h2>Information</h2>
+
+Information is provided in four ways:
+
+<ul>
+   <li>These WWW pages
+   (<a href="http://www.cs.vu.nl/~bs/">http://www.cs.vu.nl/~bs/</a>)
+   <li>The MINIX source code
+   <li>The book <i>Operating Systems - Design and Implementation</i>
+   <li>The advisors
+</ul>
+
+Students are <b>strongly</b> advised to (re)read the relevant parts of
+the book, and thoroughly examine the source code, before implementing
+a solution. Contrary to previous practical work, the exercises require
+thorough examination the existing code.  Discussing a design or
+implementation plan with the advisor can also be useful. Students should
+visit these WWW pages frequently to check for updates. 
+
+    <h2>Grades</h2>
+
+Each exercise is graded on functionality (3 points), source code (3 points),
+and documentation (3 points). The tenth point is free. Submitted work is
+usually tested and graded in the first weeks of September.
+
+
+    <h4>Testing</h4>
+
+<p>
+A minimal amount of functionality is required of the submitted work before
+any real testing, or review of source code and documentation is done. The
+test to check this minimal amount is called the <b>basis test</b>.
+Experience has shown that most submitted work
+will not pass the basis test the first time. To prevent students from being
+surprised by failing even this basis test after submitting their final
+version, students can submit their work for a basis
+test before the beginning of every month (max. 3 times / exercise). 
+
+<p>
+Failing the basis test means the work is returned without being graded at
+all. Passing the basis test allows the student's work to be graded at the end
+of the semester. Passing the basis test does <b>not</b> imply that a 
+grade >= 5.5 will be given. On failure of the basis test, students will only be told what kind
+of error was encountered. Students can discuss ways to find the error and
+their testing plans with
+their advisor. <i>A precise description of where, why, and how the basis test
+failed will not be given</i>. The basis test is not meant as an aid to
+help students test and debug their implementation, it is meant only to warn
+them if their current implementation will not be accepted. Students should
+therefore test their implementation THOROUGHLY before submitting it.
+Students are only allowed to submit each exercise three times
+for a basis test. If more tests are needed, please contact your 
+supervisor. More than three submissions will result in lower grading of
+the exercise.
+
+    <h4>Documentation</h4>
+
+Documentation describing the project should come in a separate document.
+This document should be 2-3 pages per exercise. It should provide
+insight in the issues encountered during the exercises. 
+Preferrably, the documentation should be written in English.
+
+<p>
+You should show a professional approach in writing your code,
+commenting your code, and in writing
+the documentation. Assume insiders as the audience, and write for them. So,
+leave out details about the specification (which are mentioned in the assignment
+and the man-pages) and trivialities.
+
+<p>
+The documentation needs to adhere to the following 
+requirements. First, for exercises 1 and 2, the documentation needs a section
+describing the design of your user program. Second, for all exercises, 
+the documentation needs a section
+on the kernel changes you made. 
+Third, for all exercises, your test procedures hould be described in the
+documentation, and an evaluation of the apparent thoroughness of these 
+procedures. 
+
+<p>
+The documentation should not be a chronology of what you have done, but 
+rather a theoretical treatment of the problems you 
+encountered, showing to us that you understand the issues that occur 
+in modifying the kernel or writing the user programs.
+In other words, WHY did something go wrong, and why 
+did you choose a particular solution, rather than only describing the final
+solution.
+For example, next to describing your final solution, this solution 
+may well be illustrated by a description of earlier solutions
+that failed.
+The documentation should, as a whole, provide insight in the
+issues encountered during the exercises. It can contain, amongst others, descrip
+tions of design decisions, comments on problems encountered and their solutions,
+descriptions of the testing phase, etc.
+
+<p>
+Since a third of your grade depends on the documentation, 
+you should give a great deal of care to it, and not postpone writing it until
+the last moment.
+Students should preferrably discuss the contents and the format of the documentation with their advisor. The deadline for submitting your exercises for final grading also applies to the documentation! Documentation should be sent in 
+postscript-format to bs@cs.vu.nl <i>before</i> the prakticum's deadline! 
+If this is not possible, please contact your supervisor.
+    
+    <h4>Source code</h4>
+    
+Since your source code will be thoroughly examined and graded, it is
+advised that your code looks clean. This means that the style rules and
+implementation techniques learned during the <i>Inleiding Programmeren</i>
+and <i>Data Structuren</i> courses should be used. Experience has shown
+that students forget to use these rules and techniques. Failure to do so
+will inevitably result in low scores for the source! When modifying the
+sources try to stick to the original style. Another important aspect of
+modifying sources is that you should try to keep your modifications small
+and local.
+
+
+    <h2>How to submit</h2>
+
+The exact details 
+of how to turn in your assignments will be mailed to all
+course participants at the start of the semester. In general, we expect you
+to use the <a href="mnx_diff.1.html">mnx_diff(1)</a> program which
+creates an output file containing all the modifications you made to MINIX.
+See the <A Href="config-note.html">note</a> on checking
+your tar-file and on modifications to /usr/include/minix/config.h!
+
+To assist you in maintaining bootable kernels on a floppy disk a number of
+additional programs are provided
+(<a href="mnx_fresh.1.html">mnx_fresh(1),
+mnx_backup(1), and mnx_restore(1)</a>).
+See their respective manual pages for more information.
+
+
+</body>
+</html>

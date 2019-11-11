@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://prutser.cx/xmlmath/schemas"
+	xmlns="http://prutser.cx/xmlmath/schemas"
+	xmlns:tns="http://prutser.cx/xmlmath/schemas"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
+
+	<xs:annotation>
+		<xs:documentation xml:lang="en">This schema describes elements that can be chained together to form relatively complex mathematical expressions.</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="expression" type="value-type"/>
+	
+	<xs:element name="value" type="value-type" abstract="true" substitutionGroup="expression"/>
+	<xs:complexType name="value-type" abstract="true">
+		<xs:annotation>
+			<xs:documentation xml:lang="en"></xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="declare" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="stanza" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="declare" type="declare-type"/>
+	<xs:complexType name="declare-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Declarations are used to give a particular sub-expression a name so that it can be referenced from elements deeper in the expression tree. The expression inside a declaration is not evaluated at runtime, unless it is explicitly referenced by the link-tag. It is evaluated each time it is linked.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="value"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="declaredName" use="required"/>
+	</xs:complexType>
+	
+	<xs:element name="stanza" type="stanza-type"/>
+	<xs:complexType name="stanza-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Stanzas can be used at any position in the expression tree to describe a certain sub-expression. In contrast to declarations, stanzas are not evaluated at the same place as they were declared. Instead, stanzas are inlined when they are referred to using &lt;inline&gt;. This allows them to operation on variables that weren't yet declared when the stanza was defined.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="value"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="declaredName" use="required"/>
+	</xs:complexType>
+	
+ 	<xs:element name="nil" type="nil-type" final="#all" substitutionGroup="value"/>
+	<xs:complexType name="nil-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Useful when a value is not defined. For example when an external source is sampled that doesn't currently exist. Or an empty cell in a spreadsheet program.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="value-type">
+				<xs:sequence/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Nil"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="inline" type="inline-type" substitutionGroup="value"/>
+	<xs:complexType name="inline-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Counterpart of the &lt;stanza&gt; tag. Used to place a copy of a previously defined stanza at the current location in the expression tree.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="value-type">
+				<xs:sequence/>
+				<xs:attribute name="name" type="declaredName" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Inline"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="inlineLong" type="inlineLong-type" substitutionGroup="abstract-long"/>
+	<xs:complexType name="inlineLong-type">
+		<xs:complexContent>
+			<xs:extension base="abstract-long-type">
+				<xs:sequence/>
+				<xs:attribute name="name" type="declaredName" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.InlineLong"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="inlineDouble" type="inlineDouble-type" substitutionGroup="abstract-double"/>
+	<xs:complexType name="inlineDouble-type">
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence/>
+				<xs:attribute name="name" type="declaredName" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.InlineDouble"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="inlineString" type="inlineString-type" substitutionGroup="abstract-string"/>
+	<xs:complexType name="inlineString-type">
+		<xs:complexContent>
+			<xs:extension base="abstract-string-type">
+				<xs:sequence/>
+				<xs:attribute name="name" type="declaredName" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.InlineString"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="inlineList" type="inlineList-type" substitutionGroup="abstract-list"/>
+	<xs:complexType name="inlineList-type">
+		<xs:complexContent>
+			<xs:extension base="abstract-list-type">
+				<xs:sequence/>
+				<xs:attribute name="name" type="declaredName" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.InlineList"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="link" type="link-type" substitutionGroup="value"/>
+	<xs:complexType name="link-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Counterpart of the declare-tag. Used to return a previously declared sub-expression.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="value-type">
+				<xs:sequence/>
+				<xs:attribute name="name" type="declaredName" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Link"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="linkLong" type="linkLong-type" substitutionGroup="abstract-long"/>
+	<xs:complexType name="linkLong-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Counterpart of the declare-tag. Used to return a previously declared sub-expression as a long. Will result in a ClassCastException at evaluation-time when the referred declaration is not of type long.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-long-type">
+				<xs:sequence/>
+				<xs:attribute name="name" type="declaredName" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.LinkLong"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="linkDouble" type="linkDouble-type" substitutionGroup="abstract-double"/>
+	<xs:complexType name="linkDouble-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Counterpart of the declare-tag. Used to return a previously declared sub-expression as a long. Will result in a ClassCastException at evaluation-time when the referred declaration is not of type double.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence/>
+				<xs:attribute name="name" type="declaredName" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.LinkDouble"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="linkString" type="linkString-type" substitutionGroup="abstract-string"/>
+	<xs:complexType name="linkString-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Counterpart of the declare-tag. Used to return a previously declared sub-expression as a long. Will result in a ClassCastException at evaluation-time when the referred declaration is not of type string.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-string-type">
+				<xs:sequence/>
+				<xs:attribute name="name" type="declaredName" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.LinkString"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="linkList" type="linkList-type" substitutionGroup="abstract-list"/>
+	<xs:complexType name="linkList-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Counterpart of the declare-tag. Used to return a previously declared sub-expression as a long. Will result in a ClassCastException at evaluation-time when the referred declaration is not of type list.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-list-type">
+				<xs:sequence/>
+				<xs:attribute name="name" type="declaredName" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.LinkList"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+ 	<xs:element name="isNil" type="isNil-type" substitutionGroup="abstract-boolean"/>
+	<xs:complexType name="isNil-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Tests if the argument is nil.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-boolean-type">
+				<xs:sequence>
+					<xs:element ref="value"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.IsNil"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="abstract-boolean" type="abstract-boolean-type" abstract="true" substitutionGroup="value"/>
+	<xs:complexType name="abstract-boolean-type" abstract="true">
+		<xs:annotation>
+			<xs:documentation xml:lang="en"></xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="value-type">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+ 	<xs:element name="true" type="true-type" substitutionGroup="abstract-boolean" final="#all"/>
+	<xs:complexType name="true-type" final="#all">
+		<xs:annotation>
+			<xs:documentation xml:lang="en"></xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-boolean-type">
+				<xs:sequence/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.True"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+ 	<xs:element name="false" type="false-type" substitutionGroup="abstract-boolean"/>
+	<xs:complexType name="false-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en"></xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-boolean-type">
+				<xs:sequence/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.False"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="and" type="and-type" substitutionGroup="abstract-boolean"/>
+	<xs:complexType name="and-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Returns true if all operands evaluate to true, false otherwise.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-boolean-type">
+				<xs:sequence>
+					<xs:element ref="abstract-boolean" minOccurs="2" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.And"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="equals" type="equals-type" substitutionGroup="abstract-boolean"/>
+	<xs:complexType name="equals-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Compares two operands of any type.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-boolean-type">
+				<xs:sequence>
+					<xs:element ref="value"/>
+					<xs:element ref="value"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Equals"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="greaterThan" type="greaterThan-type" substitutionGroup="abstract-boolean"/>
+	<xs:complexType name="greaterThan-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en"></xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-boolean-type">
+				<xs:sequence>
+					<xs:element ref="number"/>
+					<xs:element ref="number"/>
+				</xs:sequence>
+				<xs:attribute name="inclusive" type="xs:boolean" use="optional" default="false"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.GreaterThan"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="lessThan" type="lessThan-type" substitutionGroup="abstract-boolean"/>
+	<xs:complexType name="lessThan-type">
+		<xs:complexContent>
+			<xs:extension base="abstract-boolean-type">
+				<xs:sequence>
+					<xs:element ref="number"/>
+					<xs:element ref="number"/>
+				</xs:sequence>
+				<xs:attribute name="inclusive" type="xs:boolean" use="optional" default="false"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.LessThan"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="not" type="not-type" substitutionGroup="abstract-boolean"/>
+	<xs:complexType name="not-type">
+		<xs:complexContent>
+			<xs:extension base="abstract-boolean-type">
+				<xs:sequence>
+					<xs:element ref="abstract-boolean"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Not"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="or" type="or-type" substitutionGroup="abstract-boolean"/>
+	<xs:complexType name="or-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Returns true if at least one of its operands evaluate to true, false otherwise.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-boolean-type">
+				<xs:sequence>
+					<xs:element ref="abstract-boolean" minOccurs="2" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Or"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="xor" type="xor-type" substitutionGroup="abstract-boolean"/>
+	<xs:complexType name="xor-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Performs an exclusive-or on two boolean operands.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-boolean-type">
+				<xs:sequence>
+					<xs:element ref="abstract-boolean"/>
+					<xs:element ref="abstract-boolean"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Xor"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="isDistinct" type="isDistinct-type" substitutionGroup="abstract-boolean"/>
+	<xs:complexType name="isDistinct-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Returns false if one or more list items are duplicates. True otherwise.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-boolean-type">
+				<xs:sequence>
+					<xs:element ref="abstract-list"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.IsDistinct"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="abstract-list" type="abstract-list-type" abstract="true" substitutionGroup="value"/>
+	<xs:complexType name="abstract-list-type" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="value-type">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="list" type="list-type" substitutionGroup="abstract-list"/>
+	<xs:complexType name="list-type">
+		<xs:complexContent>
+			<xs:extension base="abstract-list-type">
+				<xs:sequence>
+					<xs:element ref="value" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.ListValue"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="unique" type="unique-type" substitutionGroup="abstract-list"/>
+	<xs:complexType name="unique-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Filters all duplicate items from the list and returns the result. The ordering is the same as in the original list.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-list-type">
+				<xs:sequence>
+					<xs:element ref="abstract-list"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Unique"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="sort" type="sort-type" substitutionGroup="abstract-list"/>
+	<xs:complexType name="sort-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Sorts the given list according to the natural ordering of its elements. All elements in the list must be of the same type. The sorting algorithm is a modified mergesort (in which the merge is omitted if the highest element in the low sublist is less than the lowest element in the high sublist). This algorithm offers guaranteed n log(n) performance. This implementation dumps the specified list into an array, sorts the array, and iterates over the list resetting each element from the corresponding position in the array. This avoids the n^2 log(n) performance that would result from attempting to sort a linked list in place.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-list-type">
+				<xs:sequence>
+					<xs:element ref="abstract-list"/>
+				</xs:sequence>
+				<xs:attribute name="order" type="sortOrder" default="ascending" use="optional"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Sort"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="for" type="for-type" substitutionGroup="abstract-list"/>
+	<xs:complexType name="for-type">
+		<xs:complexContent>
+			<xs:extension base="abstract-list-type">
+				<xs:sequence>
+					<xs:element ref="abstract-long">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">Specifies the "from" value. The for-loop starts at this number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="abstract-long">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">Specifies the "to" value. The for-loop runs until the incrementing iterator reaches this value.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="value">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">This is the expression that is evaluated multiple time in the for-loop. Each result is added to a list. This list is eventually returned to the parent operator when the loop finishes.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="iterator" type="declaredName" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.For"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="sum" type="sum-type" substitutionGroup="number"/>
+	<xs:complexType name="sum-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Evaluates its operand in a loop, starting at "from", up to and including "to" and computes the sum of all results. This operation represents the capital sigma. The iterator is automatically declared as a long variable which can be referenced from within the sum's expression.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="number-type">
+				<xs:sequence>
+					<xs:element ref="abstract-long">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">Specifies the "from" value. The sum-loop starts at this number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="abstract-long">
+						<xs:annotation>
+							 <xs:documentation xml:lang="en">This is the last and highest value that is used in the sum operation. There is an important difference between this attribute and the "to" attribute of the "for" operation. The latter treats the attribute as "exclusive", while the sum operation treats it as "inclusive".</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="number"/>
+				</xs:sequence>
+				<xs:attribute name="iterator" type="declaredName" use="required"/>
+				<xs:attribute name="datatype" type="numberType" default="double" use="optional">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">Used to specify whether the expression must be interpreted as longs or doubles. Defaults to double when omitted.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Sum"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="number" type="number-type" abstract="true" substitutionGroup="value"/>
+	<xs:complexType name="number-type" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="value-type">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="listProduct" type="listProduct-type" substitutionGroup="number"/>
+	<xs:complexType name="listProduct-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes the product of all numbers in the given list. On an empty list null is returned, which may cause NullPointerExceptions further up the expression.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="number-type">
+				<xs:sequence>
+					<xs:element ref="abstract-list"/>
+				</xs:sequence>
+				<xs:attribute name="datatype" type="numberType" default="double" use="optional">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">Used to specify whether the list's elements must be interpreted as integers or doubles. Defaults to double when omitted.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.ListProduct"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="listSum" type="listSum-type" substitutionGroup="number"/>
+	<xs:complexType name="listSum-type">
+		<xs:complexContent>
+			<xs:extension base="number-type">
+				<xs:sequence>
+					<xs:element ref="abstract-list"/>
+				</xs:sequence>
+				<xs:attribute name="datatype" type="numberType" default="double" use="optional">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">Used to specify whether the list's elements must be interpreted as integers or doubles. Defaults to double when omitted.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.ListSum"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="add" type="add-type" substitutionGroup="number"/>
+	<xs:complexType name="add-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes the sum of two or more numbers.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="number-type">
+				<xs:sequence>
+					<xs:element ref="number" minOccurs="2" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="datatype" type="numberType" default="double" use="optional">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">Used to specify whether the operands must be interpreted as integers or doubles. Defaults to double when omitted.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Add"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="subtract" type="subtract-type" substitutionGroup="number"/>
+	<xs:complexType name="subtract-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes the difference between two numbers.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="number-type">
+				<xs:sequence>
+					<xs:element ref="number"/>
+					<xs:element ref="number"/>
+				</xs:sequence>
+				<xs:attribute name="datatype" type="numberType" default="double" use="optional">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">Used to specify whether the operands must be interpreted as integers or doubles. Defaults to double when omitted.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Subtract"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="product" type="product-type" substitutionGroup="number"/>
+	<xs:complexType name="product-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes the product of two numbers.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="number-type">
+				<xs:sequence>
+					<xs:element ref="number"/>
+					<xs:element ref="number"/>
+				</xs:sequence>
+				<xs:attribute name="datatype" type="numberType" default="double" use="optional">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">Used to specify whether the operands must be interpreted as integers or doubles. Defaults to double when omitted.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Product"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="pow" type="pow-type" substitutionGroup="abstract-double"/>
+	<xs:complexType name="pow-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes the value of the first argument raised to the power of the second argument.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence>
+					<xs:element ref="abstract-double"/>
+					<xs:element ref="abstract-double"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Power"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="sqrt" type="sqrt-type" substitutionGroup="abstract-double"/>
+	<xs:complexType name="sqrt-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes the correctly rounded positive square root of a double value.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence>
+					<xs:element ref="abstract-double"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Sqrt"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="sin" type="sin-type" substitutionGroup="abstract-double"/>
+	<xs:complexType name="sin-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes the trigonometric sine of an angle.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence>
+					<xs:element ref="abstract-double"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Sin"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="log" type="log-type" substitutionGroup="abstract-double"/>
+	<xs:complexType name="log-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes the natural logarithm (base e) of a double  value. If the argument is positive infinity, then the result is positive infinity. If the argument is positive zero or negative zero, then the result is negative infinity.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence>
+					<xs:element ref="abstract-double"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Log"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="log10" type="log10-type" substitutionGroup="abstract-double"/>
+	<xs:complexType name="log10-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes the common logarithm (base 10) of a double  value. If the argument is positive infinity, then the result is positive infinity. If the argument is positive zero or negative zero, then the result is negative infinity. If the argument is equal to 10^n for integer n, then the result is n.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence>
+					<xs:element ref="abstract-double"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Log10"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="cos" type="cos-type" substitutionGroup="abstract-double"/>
+	<xs:complexType name="cos-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes the trigonometric cosine of an angle.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence>
+					<xs:element ref="abstract-double"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Cos"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="tan" type="tan-type" substitutionGroup="abstract-double"/>
+	<xs:complexType name="tan-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes the trigonometric tangent of an angle.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence>
+					<xs:element ref="abstract-double"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Tan"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="quotient" type="quotient-type" substitutionGroup="number"/>
+	<xs:complexType name="quotient-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes the quotient of two numbers. Throws a DivideByZeroException when an integer division by zero is attempted.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="number-type">
+				<xs:sequence>
+					<xs:element ref="number"/>
+					<xs:element ref="number"/>
+				</xs:sequence>
+				<xs:attribute name="datatype" type="numberType" default="double" use="optional">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">Used to specify whether the operands must be interpreted as integers or doubles. Defaults to double when omitted.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Quotient"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="abstract-double" type="abstract-double-type" abstract="true" substitutionGroup="number"/>
+	<xs:complexType name="abstract-double-type" abstract="true">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Base type for double-precision 64-bit IEEE 754 floating point numbers.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="number-type">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="double" type="double-type" substitutionGroup="abstract-double"/>
+	<xs:complexType name="double-type">
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence/>
+				<xs:attribute name="value" type="xs:double" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.DoubleValue"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="doubleRef" type="doubleRef-type" substitutionGroup="abstract-double"/>
+	<xs:complexType name="doubleRef-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Returns the value of the declared double variable whose name attribute matches this name.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence/>
+				<xs:attribute name="name" type="xs:string" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.DoubleRef"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="pi" type="pi-type" substitutionGroup="abstract-double" final="#all"/>
+	<xs:complexType name="pi-type" final="#all">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">The double value that is closer than any other to pi, the ratio of the circumference of a circle to its diameter.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Pi"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="e" type="e-type" substitutionGroup="abstract-double" final="#all"/>
+	<xs:complexType name="e-type" final="#all">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">The double value that is closer than any other to e, the base of the natural logarithms.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.E"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="infinity" type="infinity-type" substitutionGroup="abstract-double" final="#all"/>
+	<xs:complexType name="infinity-type" final="#all">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">A constant holding the positive infinity of type double.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Infinity"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="toDouble" type="toDouble-type" substitutionGroup="abstract-double"/>
+	<xs:complexType name="toDouble-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Converts any number to a double value.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-double-type">
+				<xs:sequence>
+					<xs:element ref="number"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.ToDouble"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="abstract-long" type="abstract-long-type" abstract="true" substitutionGroup="number"/>
+	<xs:complexType name="abstract-long-type" abstract="true">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Base type for 64-bit signed two's-complement integer values.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="number-type">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="long" type="long-type" substitutionGroup="abstract-long"/>
+	<xs:complexType name="long-type">
+		<xs:complexContent>
+			<xs:extension base="abstract-long-type">
+				<xs:sequence/>
+				<xs:attribute name="value" type="xs:long" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.LongValue"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="longRef" type="longRef-type" substitutionGroup="abstract-long"/>
+	<xs:complexType name="longRef-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Returns the value of the declared long variable whose name attribute matches this name.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-long-type">
+				<xs:sequence/>
+				<xs:attribute name="name" type="xs:string" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.LongRef"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="toLong" type="toLong-type" substitutionGroup="abstract-long"/>
+	<xs:complexType name="toLong-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Used to convert (truncate) any number to an long.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-long-type">
+				<xs:sequence>
+					<xs:element ref="number"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.ToLong"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="round" type="round-type" substitutionGroup="abstract-long"/>
+	<xs:complexType name="round-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Returns the closest long to the argument. The result is rounded to an long by adding 1/2, taking the floor of the result, and casting the result to type long.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-long-type">
+				<xs:sequence>
+					<xs:element ref="number"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Round"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="fact" type="fact-type" substitutionGroup="abstract-long"/>
+	<xs:complexType name="fact-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes the factorial of an long. Note that xmlmath uses 64-bit, signed integers, making 2^63 - 1 the biggest achievable number. This is not large enough to hold the result of factorials larger than 20!</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-long-type">
+				<xs:sequence>
+					<xs:element ref="abstract-long"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Factorial"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="mod" type="mod-type" substitutionGroup="abstract-long"/>
+	<xs:complexType name="mod-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes long % denominator, where the denominator is the second operand.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-long-type">
+				<xs:sequence>
+					<xs:element ref="abstract-long"/>
+					<xs:element ref="abstract-long"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Mod"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="abs" type="abs-type" substitutionGroup="number"/>
+	<xs:complexType name="abs-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes absolute value of a number.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="number-type">
+				<xs:sequence>
+					<xs:element ref="number"/>
+				</xs:sequence>
+				<xs:attribute name="datatype" type="numberType" default="double" use="optional">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">Used to specify whether the operand must be interpreted as long or double. Defaults to double when omitted.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Absolute"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="count" type="count-type" substitutionGroup="abstract-long"/>
+	<xs:complexType name="count-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Counts the size of a list.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-long-type">
+				<xs:sequence>
+					<xs:element ref="abstract-list"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.Count"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="abstract-string" type="abstract-string-type" substitutionGroup="value" abstract="true"/>
+	<xs:complexType name="abstract-string-type" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="value-type">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="string" type="string-type" substitutionGroup="abstract-string"/>
+	<xs:complexType name="string-type">
+		<xs:complexContent>
+			<xs:extension base="abstract-string-type">
+				<xs:sequence/>
+				<xs:attribute name="value" type="xs:string" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.StringValue"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="stringRef" type="stringRef-type" substitutionGroup="abstract-string"/>
+	<xs:complexType name="stringRef-type">
+		<xs:complexContent>
+			<xs:extension base="abstract-string-type">
+				<xs:sequence/>
+				<xs:attribute name="name" type="xs:string" use="required"/>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.StringRef"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="strlen" type="strlen-type" substitutionGroup="abstract-long"/>
+	<xs:complexType name="strlen-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Computes the length of a string.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-long-type">
+				<xs:sequence>
+					<xs:element ref="abstract-string"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.StringLength"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="strcat" type="strcat-type" substitutionGroup="abstract-string"/>
+	<xs:complexType name="strcat-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Concatenates two or more strings (starting with the first, then the second, etc).</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-string-type">
+				<xs:sequence>
+					<xs:choice>
+						<xs:element ref="abstract-string" minOccurs="2" maxOccurs="unbounded"/>
+						<xs:element ref="abstract-list"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.StringCat"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="toString" type="toString-type" substitutionGroup="abstract-string"/>
+	<xs:complexType name="toString-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Returns a string representation of its operand. When the operand is a list, the string representation consists of a list of the operands elements in their original order, enclosed in square brackets ("[]"). Adjacent elements are separated by the characters ", " (comma and space). The list elements are converted to strings with this operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-string-type">
+				<xs:sequence>
+					<xs:element ref="value"/>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.ToString"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="substr" type="substr-type" substitutionGroup="abstract-string"/>
+	<xs:complexType name="substr-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Returns a new string that is a substring of this string. The substring begins at the specified beginIndex and extends to the character at index endIndex - 1. Thus the length of the substring is endIndex-beginIndex.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="abstract-string-type">
+				<xs:sequence>
+					<xs:element ref="abstract-string"/>
+					<xs:element ref="abstract-long" minOccurs="1" maxOccurs="2">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">First is the begin index, second the ending index. The ending index, exclusive, defaults to the end of the string when omitted.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="classname" type="xs:string" fixed="cx.prutser.xmlmath.operands.SubString"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:simpleType name="dataType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="long"/>
+			<xs:enumeration value="double"/>
+			<xs:enumeration value="string"/>
+			<xs:enumeration value="list"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="numberType">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Enumeration used to identify either longs or doubles. This is used as attribute in operations sum and product to indicate a list's item types.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dataType">
+			<xs:enumeration value="long"/>
+			<xs:enumeration value="double"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="declaredName">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Used for variable names in declarations. Variable names are strings that consist purely of characters, digits and the underscore. The first character may not be a digit.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Za-z_]+[A-Za-z\d_]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="sortOrder">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ascending"/>
+			<xs:enumeration value="descending"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

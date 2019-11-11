@@ -1,0 +1,277 @@
+# KTranslator Generated File
+
+msgid ""
+msgstr ""
+"Project-Id-Version: KTranslator 0.3.0\n"
+"POT-Creation-Date: 1998-04-27 19:21:33+0200\n"
+"PO-Revision-Date: Mon Apr 27 1998 19:25:50+0200\n"
+"Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
+"Language-Team: Italiano <it@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.3.0"
+
+#: TranslData.cpp:41
+msgid "Total ID:0              "
+msgstr "ID Totali:0              "
+
+#: TranslData.cpp:42
+msgid "Current ID:0            "
+msgstr "ID Attuale:0            "
+
+#: TranslData.cpp:43
+msgid "OLD Translations:0      "
+msgstr "Vecchie Traduzioni :0    "
+
+#: TranslData.cpp:54
+msgid "Open"
+msgstr "Apri"
+
+#: TranslData.cpp:55
+msgid "Save as.."
+msgstr "Salva con nome"
+
+#: TranslData.cpp:56
+msgid "Quit"
+msgstr "Esci"
+
+#: TranslData.cpp:58
+msgid "Setup"
+msgstr "Impostazioni"
+
+#: TranslData.cpp:59
+msgid "Save Options"
+msgstr "Salva Opzioni"
+
+#: TranslData.cpp:61
+msgid "Help"
+msgstr "Aiuto"
+
+#: TranslData.cpp:62
+msgid "About"
+msgstr "Info Su..."
+
+#: TranslData.cpp:63
+msgid "&File"
+msgstr "&File"
+
+#: TranslData.cpp:64
+msgid "&Options"
+msgstr "&Opzioni"
+
+#: TranslData.cpp:66
+msgid "&Help"
+msgstr "&Aiuto"
+
+#: TranslData.cpp:70
+msgid "open a .pot file"
+msgstr "apre un file .pot"
+
+#: TranslData.cpp:71
+msgid "Make the po files"
+msgstr "Crea i file po"
+
+#: TranslData.cpp:74
+msgid "Previous message"
+msgstr "Messaggio Precedente"
+
+#: TranslData.cpp:75
+msgid "Next message"
+msgstr "Messaggio successivo"
+
+#: TranslData.cpp:76
+msgid "Go to Previous message & Copy OldMsgStr to NewMsgStr"
+msgstr "Va al messaggio precedente e copia la Vecchia MsgStr in Nuova Msgstr"
+
+#: TranslData.cpp:77
+msgid "Go to Next message & Copy OldMsgStr to NewMsgStr"
+msgstr "Va al messaggio successivo e copia la Vecchia MsgStr in Nuova Msgstr"
+
+#: TranslData.cpp:79
+msgid "Look for a translation in old catalogues"
+msgstr "Cerca una traduzione nei cataloghi"
+
+#: TranslData.cpp:93
+msgid "Total ID:%i"
+msgstr "ID Totali:%i"
+
+#: TranslData.cpp:99
+msgid "Current ID:%i"
+msgstr "ID Attuale:%i"
+
+#: TranslData.cpp:106
+msgid "Old Translations :%i"
+msgstr "Vecchie Traduzioni :%i"
+
+#: TranslData.cpp:177
+msgid "Old Msgstr"
+msgstr "Vecchia  MsgStr"
+
+#: TranslData.cpp:189
+msgid "Old Translations found in"
+msgstr "Vecchia traduzione trovata in"
+
+#: TranslData.cpp:194
+msgid ".po File"
+msgstr "File .po"
+
+#: TranslData.cpp:199
+msgid "Catalogues"
+msgstr "Cataloghi"
+
+#: TranslData.cpp:204 transconf.cpp:119
+msgid "Fuzzy"
+msgstr "FUZZY"
+
+#: TranslData.cpp:209
+msgid "C-Format"
+msgstr "Formato-C"
+
+#: TranslData.cpp:215
+msgid "Identical"
+msgstr "Identici"
+
+#: TranslData.cpp:221
+msgid "This Cat"
+msgstr "Questo catalogo"
+
+#: TranslData.cpp:226
+msgid "New Msgstr"
+msgstr "Nuova MsgStr"
+
+#: TranslData.cpp:230
+msgid "Msgid"
+msgstr "MsgId"
+
+#: TranslData.cpp:304
+msgid "Catalogues:"
+msgstr "Cataloghi"
+
+#: TranslData.cpp:307
+msgid "Lang:"
+msgstr "Lingua:"
+
+#: TranslData.cpp:316
+msgid "Previous"
+msgstr "Precedente"
+
+#: TranslData.cpp:323
+msgid "Next"
+msgstr "Successivo"
+
+#: TranslData.cpp:339
+msgid "-> && Next"
+msgstr "-> && Precedente"
+
+#: TranslData.cpp:352
+msgid "-> && Prev"
+msgstr "-> && Successivo"
+
+#: TranslData.cpp:356
+msgid "Header->"
+msgstr "Intestazione->"
+
+#: TranslData.cpp:361
+msgid "Continue!"
+msgstr "Continua !"
+
+#: TranslData.cpp:366
+msgid "Remove \"fuzzy\" string"
+msgstr "Rimuovi la stringa \"fuzzy\""
+
+#: TranslData.cpp:371
+msgid "Search in cats "
+msgstr "Cerca traduzione"
+
+#: transconf.cpp:24
+msgid "KTransaltor Setup"
+msgstr "Impostazioni Ktranslator"
+
+#: transconf.cpp:46
+msgid "Sources Dir"
+msgstr "Directory Sorgenti"
+
+#: transconf.cpp:50
+msgid "Output Dir"
+msgstr "Directory Output"
+
+#: transconf.cpp:54
+msgid "Default Translation Language (it,de,fr,es..)"
+msgstr "Lingua Traduzione di Default (it,de,fr,es..)"
+
+#: transconf.cpp:57
+msgid "Files"
+msgstr "File"
+
+#: transconf.cpp:82
+msgid "Author Name"
+msgstr "Nome Autore"
+
+#: transconf.cpp:86
+msgid "Author E-Mail"
+msgstr "E-Mail Autore"
+
+#: transconf.cpp:90
+msgid "Language MailingList"
+msgstr "Mailinglist Lingua"
+
+#: transconf.cpp:94
+msgid "Full Language Name"
+msgstr "Nome esteso Lingua"
+
+#: transconf.cpp:99
+msgid "Identity"
+msgstr "Identità"
+
+#: transconf.cpp:110
+msgid "Auto Search"
+msgstr "Ricerca Automatica"
+
+#: transconf.cpp:115
+msgid "Stop Normal Scrolling if New MsgStr is"
+msgstr "Ferma lo scorrimento normale se la Nuova MsgStr è"
+
+#: transconf.cpp:124
+msgid "Identical to MsgId"
+msgstr "Identica al MsgId"
+
+#: transconf.cpp:129
+msgid "Null"
+msgstr "Nulla"
+
+#: transconf.cpp:134
+msgid "Stop \"->\" Scrolling.."
+msgstr "Ferma lo scorrimento \"->\".."
+
+#: transconf.cpp:138
+msgid "if Fuzzy"
+msgstr "se FUZZY"
+
+#: transconf.cpp:143
+msgid "if there are no translations in catalogues"
+msgstr "se non ci sono traduzioni nei cataloghi"
+
+#: transconf.cpp:148
+msgid "if there is no translation in current catalogue"
+msgstr "se non c'è traduzione nel catalogo corrente"
+
+#: transconf.cpp:153
+msgid "if .po file entry isn't Null"
+msgstr "se la Msgstr nel file .po non è nulla"
+
+#: transconf.cpp:159
+msgid "Translation"
+msgstr "Traduzione"
+
+#: transconf.cpp:179
+msgid "Header"
+msgstr "Intestazione"
+
+#: transconf.cpp:183
+msgid "Cancel"
+msgstr "Cancella"
+
+#: transconf.cpp:188
+msgid "Ok"
+msgstr "OK"

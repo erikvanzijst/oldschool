@@ -1,0 +1,28 @@
+From velm@cs.vu.nl Tue Jun  3 14:02:35 2003
+Return-Path: <velm@few.vu.nl>
+Received: from solo.cs.vu.nl (root@solo.cs.vu.nl [130.37.24.1])
+	by prutser.cx (8.11.6/8.11.6) with ESMTP id h53AOBV18824
+	for <vu@prutser.cx>; Tue, 3 Jun 2003 12:24:11 +0200
+Received: from flits.cs.vu.nl (flits.cs.vu.nl [192.31.231.65])
+	by solo.cs.vu.nl with esmtp
+	(Smail #87) id m19N8xX-0009LrC; Tue, 3 Jun 2003 12:24 +0200
+Received: by flits.cs.vu.nl (Smail #87)
+	id m19N8xW-001CEGC; Tue, 3 Jun 2003 12:24 +0200
+Message-Id: <m19N8xW-001CEGC@flits.cs.vu.nl>
+Date:     Tue, 3 Jun 2003 12:24:02 CEST
+From: R van Veldhuizen <velm@cs.vu.nl>
+To: evzijst@cs.vu.nl
+cc: velm@cs.vu.nl, m.van.steen@acm.org
+Subject:  ex.cie W&I
+
+Geachte heer van Zijst
+
+Op advies van prof. M. van Steen vervalt voor u 
+het onderdeel computernetwerken (theorie en practicum)
+als deficient vak. De heer Van Steen is van het besluit van de
+ex.cie op de hoogte. Ik stuur geen brief, maar doe deze email
+in uw dossier.
+
+M. van Veldhuizen
+secr.ex.cie W&I
+

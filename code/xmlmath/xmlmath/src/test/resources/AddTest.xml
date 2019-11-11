@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test xmlns="http://prutser.cx/xmlmath/schemas"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<testLong result="25">
+		<toLong>
+			<add datatype="long">
+				<long value="10"/>
+				<long value="5"/>
+				<long value="10"/>
+			</add>
+		</toLong>
+	</testLong>
+</test>

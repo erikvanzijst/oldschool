@@ -1,0 +1,576 @@
+Processor 2: row 10 to 12
+Processor 4: row 16 to 18
+Processor 8: row 28 to 30
+Processor 3: row 13 to 15
+Processor 0: row 0 to 6
+Processor 12: row 40 to 42
+Processor 11: row 37 to 39
+Processor 10: row 34 to 36
+Processor 7: row 25 to 27
+Processor 9: row 31 to 33
+Processor 6: row 22 to 24
+Processor 5: row 19 to 21
+Processor 1: row 7 to 9
+Processor 17: row 55 to 57
+Processor 18: row 58 to 60
+Processor 13: row 43 to 45
+Processor 14: row 46 to 48
+Processor 22: row 70 to 72
+Processor 16: row 52 to 54
+Processor 23: row 73 to 75
+Processor 15: row 49 to 51
+Processor 19: row 61 to 63
+Processor 24: row 76 to 78
+Processor 26: row 82 to 84
+Processor 25: row 79 to 81
+Processor 29: row 91 to 93
+Processor 21: row 67 to 69
+Processor 20: row 64 to 66
+Processor 27: row 85 to 87
+Processor 28: row 88 to 90
+Processor 30: row 94 to 96
+Processor 31: row 97 to 99
+Processor 0: 7 rows
+Processor 1: 3 rows
+Processor 1: ready to start ASP
+Processor 5: 3 rows
+Processor 5: ready to start ASP
+Processor 2: 3 rows
+Processor 2: ready to start ASP
+Processor 4: 3 rows
+Processor 4: ready to start ASP
+Processor 6: 3 rows
+Processor 6: ready to start ASP
+Processor 11: 3 rows
+Processor 11: ready to start ASP
+Processor 7: 3 rows
+Processor 7: ready to start ASP
+Processor 9: 3 rows
+Processor 9: ready to start ASP
+Processor 10: 3 rows
+Processor 10: ready to start ASP
+Processor 12: 3 rows
+Processor 12: ready to start ASP
+Processor 3: 3 rows
+Processor 3: ready to start ASP
+Processor 8: 3 rows
+Processor 8: ready to start ASP
+Processor 15: 3 rows
+Processor 15: ready to start ASP
+Processor 13: 3 rows
+Processor 13: ready to start ASP
+Processor 17: 3 rows
+Processor 17: ready to start ASP
+Processor 16: 3 rows
+Processor 16: ready to start ASP
+Processor 14: 3 rows
+Processor 14: ready to start ASP
+Processor 18: 3 rows
+Processor 18: ready to start ASP
+Processor 20: 3 rows
+Processor 23: 3 rows
+Processor 19: 3 rows
+Processor 19: ready to start ASP
+Processor 21: 3 rows
+Processor 22: 3 rows
+Processor 24: 3 rows
+Processor 25: 3 rows
+Processor 26: 3 rows
+Processor 27: 3 rows
+Processor 28: 3 rows
+Processor 29: 3 rows
+Processor 31: 3 rows
+Processor 30: 3 rows
+Processor 20: ready to start ASP
+Processor 23: ready to start ASP
+Processor 0: ready to start ASP
+Processor 25: ready to start ASP
+Processor 24: ready to start ASP
+Processor 22: ready to start ASP
+Processor 21: ready to start ASP
+Processor 26: ready to start ASP
+Processor 27: ready to start ASP
+Processor 28: ready to start ASP
+Processor 30: ready to start ASP
+Processor 31: ready to start ASP
+Processor 29: ready to start ASP
+Processor 23: ASP took 0.116437 seconds
+Processor 2: ASP took 0.116391 seconds
+Processor 20: ASP took 0.116396 seconds
+Processor 1: ASP took 0.116446 seconds
+Processor 6: ASP took 0.116419 seconds
+Processor 0: ASP took 0.116375 seconds
+Processor 7: ASP took 0.116457 seconds
+Processor 9: ASP took 0.116456 seconds
+Processor 3: ASP took 0.116458 seconds
+Processor 5: ASP took 0.116459 seconds
+Processor 8: ASP took 0.116398 seconds
+Processor 11: ASP took 0.116452 seconds
+Processor 4: ASP took 0.116398 seconds
+Processor 10: ASP took 0.116399 seconds
+Processor 12: ASP took 0.116402 seconds
+Processor 15: ASP took 0.116427 seconds
+Processor 16: ASP took 0.116383 seconds
+Processor 13: ASP took 0.116452 seconds
+Processor 17: ASP took 0.116462 seconds
+Processor 18: ASP took 0.116400 seconds
+Processor 14: ASP took 0.116390 seconds
+Processor 21: ASP took 0.116468 seconds
+Processor 25: ASP took 0.116457 seconds
+Processor 24: ASP took 0.116402 seconds
+Processor 19: ASP took 0.116457 seconds
+Processor 22: ASP took 0.116409 seconds
+Processor 26: ASP took 0.116417 seconds
+Processor 27: ASP took 0.116434 seconds
+Processor 28: ASP took 0.116414 seconds
+Processor 29: ASP took 0.116434 seconds
+Processor 31: ASP took 0.116384 seconds
+Processor 30: ASP took 0.116353 seconds
+Processor 2: ASP done
+Processor 2: done
+Processor 10: ASP done
+Processor 10: done
+Processor 31: ASP done
+Processor 31: done
+Processor 4: ASP done
+Processor 4: done
+Processor 8: ASP done
+Processor 8: done
+Processor 11: ASP done
+Processor 11: done
+Processor 5: ASP done
+Processor 5: done
+Processor 12: ASP done
+Processor 12: done
+Processor 3: ASP done
+Processor 3: done
+Processor 14: ASP done
+Processor 14: done
+Processor 9: ASP done
+Processor 9: done
+Processor 28: ASP done
+Processor 28: done
+Processor 7: ASP done
+Processor 7: done
+Processor 0: ASP done
+Processor 0: done
+Processor 6: ASP done
+Processor 6: done
+Processor 1: ASP done
+Processor 1: done
+Processor 17: ASP done
+Processor 17: done
+Processor 13: ASP done
+Processor 13: done
+Processor 16: ASP done
+Processor 16: done
+Processor 15: ASP done
+Processor 15: done
+Processor 18: ASP done
+Processor 18: done
+Processor 23: ASP done
+Processor 23: done
+Processor 19: ASP done
+Processor 19: done
+Processor 20: ASP done
+Processor 20: done
+Processor 24: ASP done
+Processor 24: done
+Processor 25: ASP done
+Processor 25: done
+Processor 22: ASP done
+Processor 22: done
+Processor 21: ASP done
+Processor 21: done
+Processor 26: ASP done
+Processor 26: done
+Processor 27: ASP done
+Processor 27: done
+Processor 29: ASP done
+Processor 29: done
+Processor 30: ASP done
+Processor 30: done
+Processor 1: row 7 to 9
+Processor 4: row 16 to 18
+Processor 10: row 34 to 36
+Processor 0: row 0 to 6
+Processor 5: row 19 to 21
+Processor 9: row 31 to 33
+Processor 7: row 25 to 27
+Processor 6: row 22 to 24
+Processor 2: row 10 to 12
+Processor 8: row 28 to 30
+Processor 3: row 13 to 15
+Processor 14: row 46 to 48
+Processor 11: row 37 to 39
+Processor 13: row 43 to 45
+Processor 15: row 49 to 51
+Processor 18: row 58 to 60
+Processor 12: row 40 to 42
+Processor 23: row 73 to 75
+Processor 16: row 52 to 54
+Processor 20: row 64 to 66
+Processor 21: row 67 to 69
+Processor 22: row 70 to 72
+Processor 17: row 55 to 57
+Processor 19: row 61 to 63
+Processor 24: row 76 to 78
+Processor 25: row 79 to 81
+Processor 29: row 91 to 93
+Processor 31: row 97 to 99
+Processor 27: row 85 to 87
+Processor 30: row 94 to 96
+Processor 28: row 88 to 90
+Processor 26: row 82 to 84
+Processor 0: 7 rows
+Processor 2: 3 rows
+Processor 2: ready to start ASP
+Processor 1: 3 rows
+Processor 1: ready to start ASP
+Processor 7: 3 rows
+Processor 7: ready to start ASP
+Processor 3: 3 rows
+Processor 3: ready to start ASP
+Processor 8: 3 rows
+Processor 8: ready to start ASP
+Processor 6: 3 rows
+Processor 6: ready to start ASP
+Processor 5: 3 rows
+Processor 5: ready to start ASP
+Processor 10: 3 rows
+Processor 10: ready to start ASP
+Processor 9: 3 rows
+Processor 9: ready to start ASP
+Processor 4: 3 rows
+Processor 4: ready to start ASP
+Processor 11: 3 rows
+Processor 11: ready to start ASP
+Processor 13: 3 rows
+Processor 13: ready to start ASP
+Processor 14: 3 rows
+Processor 14: ready to start ASP
+Processor 12: 3 rows
+Processor 12: ready to start ASP
+Processor 15: 3 rows
+Processor 16: 3 rows
+Processor 18: 3 rows
+Processor 19: 3 rows
+Processor 17: 3 rows
+Processor 22: 3 rows
+Processor 20: 3 rows
+Processor 21: 3 rows
+Processor 23: 3 rows
+Processor 24: 3 rows
+Processor 25: 3 rows
+Processor 27: 3 rows
+Processor 28: 3 rows
+Processor 26: 3 rows
+Processor 30: 3 rows
+Processor 29: 3 rows
+Processor 31: 3 rows
+Processor 15: ready to start ASP
+Processor 19: ready to start ASP
+Processor 28: ready to start ASP
+Processor 0: ready to start ASP
+Processor 16: ready to start ASP
+Processor 18: ready to start ASP
+Processor 22: ready to start ASP
+Processor 20: ready to start ASP
+Processor 21: ready to start ASP
+Processor 23: ready to start ASP
+Processor 17: ready to start ASP
+Processor 24: ready to start ASP
+Processor 25: ready to start ASP
+Processor 31: ready to start ASP
+Processor 29: ready to start ASP
+Processor 30: ready to start ASP
+Processor 26: ready to start ASP
+Processor 27: ready to start ASP
+Processor 19: ASP took 0.117029 seconds
+Processor 2: ASP took 0.116958 seconds
+Processor 3: ASP took 0.117039 seconds
+Processor 1: ASP took 0.117007 seconds
+Processor 10: ASP took 0.116993 seconds
+Processor 7: ASP took 0.117043 seconds
+Processor 8: ASP took 0.116977 seconds
+Processor 0: ASP took 0.116945 seconds
+Processor 9: ASP took 0.117033 seconds
+Processor 5: ASP took 0.117034 seconds
+Processor 4: ASP took 0.116983 seconds
+Processor 6: ASP took 0.116984 seconds
+Processor 11: ASP took 0.117045 seconds
+Processor 13: ASP took 0.117057 seconds
+Processor 12: ASP took 0.117008 seconds
+Processor 14: ASP took 0.116984 seconds
+Processor 15: ASP took 0.117001 seconds
+Processor 16: ASP took 0.116961 seconds
+Processor 18: ASP took 0.116972 seconds
+Processor 21: ASP took 0.117036 seconds
+Processor 17: ASP took 0.117024 seconds
+Processor 23: ASP took 0.117014 seconds
+Processor 20: ASP took 0.116981 seconds
+Processor 22: ASP took 0.116996 seconds
+Processor 24: ASP took 0.116980 seconds
+Processor 25: ASP took 0.117035 seconds
+Processor 27: ASP took 0.117011 seconds
+Processor 31: ASP took 0.116970 seconds
+Processor 29: ASP took 0.117008 seconds
+Processor 28: ASP took 0.116984 seconds
+Processor 26: ASP took 0.116989 seconds
+Processor 30: ASP took 0.116958 seconds
+Processor 5: ASP done
+Processor 5: done
+Processor 4: ASP done
+Processor 4: done
+Processor 9: ASP done
+Processor 9: done
+Processor 6: ASP done
+Processor 6: done
+Processor 0: ASP done
+Processor 0: done
+Processor 8: ASP done
+Processor 8: done
+Processor 7: ASP done
+Processor 7: done
+Processor 1: ASP done
+Processor 1: done
+Processor 3: ASP done
+Processor 3: done
+Processor 2: ASP done
+Processor 2: done
+Processor 11: ASP done
+Processor 11: done
+Processor 15: ASP done
+Processor 15: done
+Processor 14: ASP done
+Processor 14: done
+Processor 12: ASP done
+Processor 12: done
+Processor 13: ASP done
+Processor 13: done
+Processor 16: ASP done
+Processor 16: done
+Processor 18: ASP done
+Processor 18: done
+Processor 22: ASP done
+Processor 22: done
+Processor 20: ASP done
+Processor 20: done
+Processor 17: ASP done
+Processor 17: done
+Processor 19: ASP done
+Processor 19: done
+Processor 23: ASP done
+Processor 23: done
+Processor 21: ASP done
+Processor 21: done
+Processor 24: ASP done
+Processor 24: done
+Processor 25: ASP done
+Processor 25: done
+Processor 30: ASP done
+Processor 30: done
+Processor 26: ASP done
+Processor 26: done
+Processor 28: ASP done
+Processor 28: done
+Processor 29: ASP done
+Processor 29: done
+Processor 31: ASP done
+Processor 31: done
+Processor 27: ASP done
+Processor 27: done
+Processor 10: ASP done
+Processor 10: done
+Processor 5: row 19 to 21
+Processor 14: row 46 to 48
+Processor 3: row 13 to 15
+Processor 0: row 0 to 6
+Processor 12: row 40 to 42
+Processor 9: row 31 to 33
+Processor 7: row 25 to 27
+Processor 10: row 34 to 36
+Processor 6: row 22 to 24
+Processor 11: row 37 to 39
+Processor 4: row 16 to 18
+Processor 8: row 28 to 30
+Processor 1: row 7 to 9
+Processor 2: row 10 to 12
+Processor 15: row 49 to 51
+Processor 17: row 55 to 57
+Processor 18: row 58 to 60
+Processor 16: row 52 to 54
+Processor 13: row 43 to 45
+Processor 19: row 61 to 63
+Processor 21: row 67 to 69
+Processor 27: row 85 to 87
+Processor 20: row 64 to 66
+Processor 24: row 76 to 78
+Processor 25: row 79 to 81
+Processor 23: row 73 to 75
+Processor 22: row 70 to 72
+Processor 28: row 88 to 90
+Processor 26: row 82 to 84
+Processor 30: row 94 to 96
+Processor 29: row 91 to 93
+Processor 31: row 97 to 99
+Processor 0: 7 rows
+Processor 0: ready to start ASP
+Processor 7: 3 rows
+Processor 7: ready to start ASP
+Processor 4: 3 rows
+Processor 4: ready to start ASP
+Processor 5: 3 rows
+Processor 5: ready to start ASP
+Processor 6: 3 rows
+Processor 6: ready to start ASP
+Processor 8: 3 rows
+Processor 8: ready to start ASP
+Processor 2: 3 rows
+Processor 2: ready to start ASP
+Processor 11: 3 rows
+Processor 11: ready to start ASP
+Processor 12: 3 rows
+Processor 12: ready to start ASP
+Processor 10: 3 rows
+Processor 10: ready to start ASP
+Processor 9: 3 rows
+Processor 9: ready to start ASP
+Processor 14: 3 rows
+Processor 14: ready to start ASP
+Processor 1: 3 rows
+Processor 1: ready to start ASP
+Processor 3: 3 rows
+Processor 3: ready to start ASP
+Processor 18: 3 rows
+Processor 18: ready to start ASP
+Processor 17: 3 rows
+Processor 17: ready to start ASP
+Processor 16: 3 rows
+Processor 16: ready to start ASP
+Processor 13: 3 rows
+Processor 13: ready to start ASP
+Processor 15: 3 rows
+Processor 15: ready to start ASP
+Processor 19: 3 rows
+Processor 19: ready to start ASP
+Processor 20: 3 rows
+Processor 20: ready to start ASP
+Processor 24: 3 rows
+Processor 24: ready to start ASP
+Processor 23: 3 rows
+Processor 23: ready to start ASP
+Processor 22: 3 rows
+Processor 22: ready to start ASP
+Processor 25: 3 rows
+Processor 25: ready to start ASP
+Processor 27: 3 rows
+Processor 27: ready to start ASP
+Processor 26: 3 rows
+Processor 26: ready to start ASP
+Processor 28: 3 rows
+Processor 28: ready to start ASP
+Processor 29: 3 rows
+Processor 29: ready to start ASP
+Processor 31: 3 rows
+Processor 31: ready to start ASP
+Processor 30: 3 rows
+Processor 30: ready to start ASP
+Processor 14: ASP took 0.116886 seconds
+Processor 31: ASP took 0.116883 seconds
+Processor 0: ASP took 0.116827 seconds
+Processor 30: ASP took 0.116850 seconds
+Processor 10: ASP took 0.116883 seconds
+Processor 7: ASP took 0.116941 seconds
+Processor 5: ASP took 0.116927 seconds
+Processor 2: ASP took 0.116864 seconds
+Processor 4: ASP took 0.116844 seconds
+Processor 3: ASP took 0.116931 seconds
+Processor 11: ASP took 0.116939 seconds
+Processor 12: ASP took 0.116877 seconds
+Processor 9: ASP took 0.116927 seconds
+Processor 8: ASP took 0.116858 seconds
+Processor 1: ASP took 0.116906 seconds
+Processor 6: ASP took 0.116861 seconds
+Processor 15: ASP took 0.116909 seconds
+Processor 13: ASP took 0.116943 seconds
+Processor 16: ASP took 0.116841 seconds
+Processor 17: ASP took 0.116924 seconds
+Processor 18: ASP took 0.116880 seconds
+Processor 19: ASP took 0.116929 seconds
+Processor 20: ASP took 0.116860 seconds
+Processor 25: ASP took 0.116922 seconds
+Processor 24: ASP took 0.116858 seconds
+Processor 27: ASP took 0.116927 seconds
+Processor 23: ASP took 0.116931 seconds
+Processor 22: ASP took 0.116868 seconds
+Processor 26: ASP took 0.116879 seconds
+Processor 28: ASP took 0.116875 seconds
+Processor 29: ASP took 0.116926 seconds
+Processor 5: ASP done
+Processor 5: done
+Processor 14: ASP done
+Processor 14: done
+Processor 0: ASP done
+Processor 0: done
+Processor 26: ASP done
+Processor 26: done
+Processor 1: ASP done
+Processor 1: done
+Processor 11: ASP done
+Processor 11: done
+Processor 8: ASP done
+Processor 8: done
+Processor 3: ASP done
+Processor 3: done
+Processor 12: ASP done
+Processor 12: done
+Processor 4: ASP done
+Processor 4: done
+Processor 2: ASP done
+Processor 2: done
+Processor 6: ASP done
+Processor 6: done
+Processor 7: ASP done
+Processor 7: done
+Processor 10: ASP done
+Processor 10: done
+Processor 18: ASP done
+Processor 18: done
+Processor 16: ASP done
+Processor 16: done
+Processor 9: ASP done
+Processor 9: done
+Processor 15: ASP done
+Processor 15: done
+Processor 13: ASP done
+Processor 13: done
+Processor 19: ASP done
+Processor 19: done
+Processor 20: ASP done
+Processor 20: done
+Processor 23: ASP done
+Processor 23: done
+Processor 27: ASP done
+Processor 27: done
+Processor 24: ASP done
+Processor 24: done
+Processor 25: ASP done
+Processor 25: done
+Processor 22: ASP done
+Processor 22: done
+Processor 28: ASP done
+Processor 28: done
+Processor 29: ASP done
+Processor 29: done
+Processor 31: ASP done
+Processor 31: done
+Processor 30: ASP done
+Processor 30: done
+Processor 21: 3 rows
+Processor 21: ready to start ASP
+Processor 21: ASP took 0.116923 seconds
+Processor 21: ASP done
+Processor 21: done
+Processor 17: ASP done
+Processor 17: done

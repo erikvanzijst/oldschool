@@ -1,0 +1,152 @@
+KExample
+--------
+
+This README describes how to use the provided templates to write your own KDE application.
+The first version of this document was written by Janos Farkas. 
+
+The example application provided is the well known khexdit which you can find in the
+kdeutils package.
+
+I have added automake to show everybody how easy it is to use automake.
+If you have trouble with automake, feel free to use autoconf only, but autoconf
+is a must! The purpose of this README is to teach you how to write a Makefile.am 
+without knowing any of the details.
+
+You need autoconf-2.12 and automake-1.2 or higher.
+
+The rules: -don't hardcode any paths
+           -don't hardcode programs
+           -use only one subdir named like your app
+
+the features: 
+
+you can use several programs :
+	@CC@ for C-compiler
+	@CXX@ for C++-compiler (don't use CC!)
+	@INSTALL@ for compatible install
+	@MOC@ for moc
+
+you can use several predefined flags :
+	@CXXFLAGS@ is set to "-g -Wall" or "-O2 -Wall"
+	@LDFLAGS@ is set to "-s" by default for striping
+	@all_libraries@ is set to all needed libraries for compiling KDE
+	@all_includes@ is set to all needed include paths 
+	
+Don't use QTDIR and KDEDIR, please use @all_includes@ and @all_libraries@
+and the kde_ paths for installing.
+
+The available paths are:
+kde_htmldir       Where your docs should go to. (contains lang subdirs)
+kde_appsdir       Where your application file (.kdelnk) should go to.
+kde_icondir       Where your icon should go to.
+kde_minidir       Where your mini icon should go to.
+kde_datadir       Where you install application data. (Use a subdir)
+kde_locale        Where translation files should go to.(contains lang subdirs)
+kde_cgidir        Where cgi-bin executables should go to.
+kde_confdir       Where config files should go to.
+kde_mimedir       Where mimetypes should go to.
+kde_toolbardir    Where general toolbar icons should go to.
+kde_wallpaperdir  Where general wallpapers should go to.      
+
+The main idea is to use these aliases to keep an abstraction
+layer in the Makefiles. The abstraction layer will make it possible 
+to adopt the directories easily and error free in case the directory
+structure should change, without changing every single Makefile.
+
+I've added a Makefile.in.temp. Use this if you wish to write your own
+Makefile.in, rathen than using automake. I strongly recommend
+the use of automake, since this will give you dependency checking for free.
+Futher more you can work with a Makefile.am just as with any other Makefile.
+
+When you want to release your package, execute 'make maintainer-clean', this will 
+remove all files that are not needed. After that, you have to re-run 
+Makefile.dist, however this time you must use the target "dist".
+
+
+Some rules about Makefiles:
+
+- Don't use the autoconf macros themselves. Add a line "MOC = @MOC@" for example
+  and use $(MOC) instead. automake creates this lines for you automaticly.
+
+- split binaries and datas within the "make install" process. Use
+  "install-exec" and "install-data" for this and add a 
+  "install: install-exec install-data" in your Makefile.in. automake does
+  this automaticly
+
+- paths, that you use more then once, assign to a variable and use this one.
+  This will allow you to change the value quickly.
+
+- add the libraries in the order of highest to lowest dependency. This means
+  in the order kfm/khtmlw, kdeui, kdecore, qt, Xext, X11, others (jpeg, gif, m)
+  
+- remove all the files, you create at least while making "distclean". What
+  you do while "make clean", is up to you. But in "make distclean", every-
+  thing must be gone (including the created Makefile)
+
+- add a uninstall target and remove everything, that you have installed.
+  Don't remove directories, just remove the files.
+
+- keep files, that other guys (e.g. translators) change away from your
+  sources. 
+
+- everything, I have forgotten
+
+
+A chapter about KLocale:
+
+Klocale is a class in libkdecore, that allows you to internationalize
+messages (only messsages currently). For this add a klocale->translate
+to all messages, that needs to be translated. 
+After that do a "xgettext -C -ktranslate <your_sources>". xgettext is
+part of GNU gettext (that stands behind KLocale). This will create a
+file messages.po in your directory. Some messages are already defined
+in kde.po (part of kdelibs). You can remove this one, if you don't need
+a different translation for them. 
+BUT: be aware, that the contents of a word differs from language to
+language. For example in italian the word for low depends on the word,
+you want to decrease.
+
+After you have done this, the best way is to mail this messages.po file
+to me. Since I'm the coordinator of the KDE Internationalization Project
+(cool name, but it's just me and the translators ;), I may help you with
+finding translations.
+
+The reason, why I added khexdit and not a khello or something is very
+simple. For khexdit there are a lot of translations, so I wanted to 
+demonstrate, how strong the concept is. Just try to export LANG=fr for
+example before starting khexdit.
+
+
+OK, since I got several questions about it, here is a short list of the
+files, that have to be changed when using kexample for your own application:
+
+configure.in: 
+   there are two parts. First, you can change the AM_INIT_AUTOMAKE line
+   for your own application name and version number. The second part is
+   on the end of the file; there you can find a list of Makefiles. You
+   have to add all Makefiles, you want configure to create there.
+
+Makefile.am in toplevel:
+   there is a line about SUBDIRS. Add all subdirs there. Usualy your
+   application name and po.
+
+Makefile.am in your source:
+   the one in kexample is documented and is it worth to be understood ;)
+
+Makefile.am in po:
+   perhaps you haven't translations prepared. Then remove the po sub
+   directory from the sources. But if you have, you have to edit the
+   Makefile.am there.
+
+
+I have added Makefile.dist to the distribution. You may want to look at
+it to find out, how to create the autoconf/automake files. It has two
+targets. all and dist. If you work on your package, all is right, but
+if you want to release the package, you should use dist, since some de-
+tails differ. Be sure, you ran "make maintainer-clean" before.
+
+OK. If you have further questions or problems with this package, contact
+me.
+
+Stephan Kulow (coolo@kde.org)
+15. Nov 1997

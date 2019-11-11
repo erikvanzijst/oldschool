@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test xmlns="http://prutser.cx/xmlmath/schemas"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<testBoolean result="true">
+		<and>
+			<equals>
+				<infinity/>
+				<toDouble>
+					<product>
+						<infinity/>
+						<infinity/>
+					</product>
+				</toDouble>
+			</equals>
+			<not>
+				<equals>
+					<infinity/>
+					<toDouble>
+						<product>
+							<infinity/>
+							<double value="-1.0"/>
+						</product>
+					</toDouble>
+				</equals>
+			</not>
+			<equals>
+				<infinity/>
+				<toDouble>
+					<abs>
+						<quotient>
+							<double value="-1"/>
+							<double value="0"/>
+						</quotient>
+					</abs>
+				</toDouble>
+			</equals>
+		</and>
+	</testBoolean>
+</test>
+	

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test xmlns="http://prutser.cx/xmlmath/schemas"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<testBoolean result="true">
+		<not>
+			<false/>
+		</not>
+	</testBoolean>
+</test>

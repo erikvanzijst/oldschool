@@ -1,0 +1,252 @@
+Local JobManager started and registered.
+Solving 15-puzzle distributed.
+
+Initial board:
+6	14	10	13	
+15	5	9	12	
+	1	8	4	
+11	7	3	2	
+
+Goal:
+	1	2	3	
+4	5	6	7	
+8	9	10	11	
+12	13	14	15	
+
+Waiting for all 32 worker processes...
+Worker //das018.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-0-0 started successfully.
+Worker //das041.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-23-0 started successfully.
+Worker //das032.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-14-0 started successfully.
+Worker //das037.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-19-0 started successfully.
+Worker //das040.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-22-0 started successfully.
+Worker //das019.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 started successfully.
+Worker //das028.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-10-0 started successfully.
+Worker //das026.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-8-0 started successfully.
+Worker //das030.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-12-0 started successfully.
+Worker //das050.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-31-0 started successfully.
+Worker //das045.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-26-0 started successfully.
+Worker //das035.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-17-0 started successfully.
+Worker //das043.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-25-0 started successfully.
+Worker //das031.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-13-0 started successfully.
+Worker //das029.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-11-0 started successfully.
+Worker //das039.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-21-0 started successfully.
+Worker //das038.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-20-0 started successfully.
+Worker //das049.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-30-0 started successfully.
+Worker //das021.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 started successfully.
+Worker //das042.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-24-0 started successfully.
+Worker //das033.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-15-0 started successfully.
+Worker //das022.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-4-0 started successfully.
+Worker //das020.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 started successfully.
+Worker //das047.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-28-0 started successfully.
+Worker //das034.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-16-0 started successfully.
+Worker //das036.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-18-0 started successfully.
+Worker //das024.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-6-0 started successfully.
+Worker //das025.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 started successfully.
+Worker //das048.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-29-0 started successfully.
+Worker //das027.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-9-0 started successfully.
+Worker //das046.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-27-0 started successfully.
+Trying bound 50
+Worker //das023.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-5-0 started successfully.
+Waiting for all 32 workers to finish their work...
+Trying bound 52
+Waiting for all 32 workers to finish their work...
+Trying bound 54
+Waiting for all 32 workers to finish their work...
+Trying bound 56
+Waiting for all 32 workers to finish their work...
+Trying bound 58
+Waiting for all 32 workers to finish their work...
+Trying bound 60
+Waiting for all 32 workers to finish their work...
+Solution found after 60 moves: (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (1, 2) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (0, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (0, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (0, 1) (0, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (0, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (0, 1) (0, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (0, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 0) (1, 0) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+9 solutions found after 20.34 seconds.
+//das020.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 computed 212052 nodes.
+//das042.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-24-0 computed 525132 nodes.
+//das038.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-20-0 computed 299883 nodes.
+//das031.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-13-0 computed 1720782 nodes.
+//das045.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-26-0 computed 126446 nodes.
+//das026.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-8-0 computed 156695 nodes.
+//das027.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-9-0 computed 583609 nodes.
+//das040.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-22-0 computed 1245340 nodes.
+//das024.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-6-0 computed 310966 nodes.
+//das041.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-23-0 computed 238608 nodes.
+//das047.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-28-0 computed 143390 nodes.
+//das018.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-0-0 computed 739660 nodes.
+//das033.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-15-0 computed 206509 nodes.
+//das049.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-30-0 computed 322595 nodes.
+//das029.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-11-0 computed 580221 nodes.
+//das035.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-17-0 computed 192850 nodes.
+//das030.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-12-0 computed 102934 nodes.
+//das046.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-27-0 computed 185008 nodes.
+//das019.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 computed 1679940 nodes.
+//das025.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 computed 205071 nodes.
+//das032.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-14-0 computed 187889 nodes.
+//das034.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-16-0 computed 355272 nodes.
+//das022.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-4-0 computed 683230 nodes.
+//das021.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 computed 207290 nodes.
+//das039.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-21-0 computed 500835 nodes.
+//das043.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-25-0 computed 416896 nodes.
+//das050.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-31-0 computed 348527 nodes.
+//das023.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-5-0 computed 131955 nodes.
+//das028.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-10-0 computed 421525 nodes.
+//das048.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-29-0 computed 778950 nodes.
+//das037.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-19-0 computed 109643 nodes.
+//das036.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-18-0 computed 112931 nodes.
+Master process exits.
+Worker //das028.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-10-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das041.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-23-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das026.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-8-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das024.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-6-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das025.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das047.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-28-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das046.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-27-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das019.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das043.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-25-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das049.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-30-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das030.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-12-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das032.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-14-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das025.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das026.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-8-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das047.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-28-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das046.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-27-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das032.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-14-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das049.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-30-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das043.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-25-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das030.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-12-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das038.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-20-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das031.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-13-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das045.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-26-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das039.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-21-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das023.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-5-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das021.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das048.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-29-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das025.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das047.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-28-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das046.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-27-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das049.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-30-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das032.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-14-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das030.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-12-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das038.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-20-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das031.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-13-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das045.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-26-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das039.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-21-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das023.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-5-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das021.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das037.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-19-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das022.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-4-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das033.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-15-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das048.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-29-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das028.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-10-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das042.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-24-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das036.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-18-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Local JobManager started and registered.
+Solving 15-puzzle distributed.
+
+Initial board:
+6	14	10	13	
+15	5	9	12	
+	1	8	4	
+11	7	3	2	
+
+Goal:
+	1	2	3	
+4	5	6	7	
+8	9	10	11	
+12	13	14	15	
+
+Waiting for all 32 worker processes...
+Worker //das018.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-0-0 started successfully.
+Worker //das025.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 started successfully.
+Worker //das047.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-28-0 started successfully.
+Worker //das024.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-6-0 started successfully.
+Worker //das019.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 started successfully.
+Worker //das046.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-27-0 started successfully.
+Worker //das049.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-30-0 started successfully.
+Worker //das032.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-14-0 started successfully.
+Worker //das020.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 started successfully.
+Worker //das030.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-12-0 started successfully.
+Worker //das035.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-17-0 started successfully.
+Worker //das034.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-16-0 started successfully.
+Worker //das031.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-13-0 started successfully.
+Worker //das045.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-26-0 started successfully.
+Worker //das023.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-5-0 started successfully.
+Worker //das039.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-21-0 started successfully.
+Worker //das021.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 started successfully.
+Worker //das037.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-19-0 started successfully.
+Worker //das022.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-4-0 started successfully.
+Worker //das033.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-15-0 started successfully.
+Worker //das048.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-29-0 started successfully.
+Worker //das042.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-24-0 started successfully.
+Worker //das036.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-18-0 started successfully.
+Worker //das043.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-25-0 started successfully.
+Worker //das026.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-8-0 started successfully.
+Worker //das040.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-22-0 started successfully.
+Worker //das029.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-11-0 started successfully.
+Worker //das041.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-23-0 started successfully.
+Worker //das038.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-20-0 started successfully.
+Worker //das027.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-9-0 started successfully.
+Worker //das050.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-31-0 started successfully.
+Trying bound 50
+Worker //das028.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-10-0 started successfully.
+Waiting for all 32 workers to finish their work...
+Trying bound 52
+Waiting for all 32 workers to finish their work...
+Trying bound 54
+Waiting for all 32 workers to finish their work...
+Trying bound 56
+Waiting for all 32 workers to finish their work...
+Trying bound 58
+Waiting for all 32 workers to finish their work...
+Trying bound 60
+Waiting for all 32 workers to finish their work...
+Solution found after 60 moves: (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (1, 2) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (0, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (0, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (0, 1) (0, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (0, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (0, 1) (0, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 60 moves: (0, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 0) (1, 0) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+9 solutions found after 28.955 seconds.
+//das032.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-14-0 computed 2326855 nodes.
+//das050.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-31-0 computed 220383 nodes.
+//das046.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-27-0 computed 363203 nodes.
+//das041.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-23-0 computed 45991 nodes.
+//das047.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-28-0 computed 1055654 nodes.
+//das026.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-8-0 computed 731749 nodes.
+//das042.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-24-0 computed 190219 nodes.
+//das022.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-4-0 computed 326930 nodes.
+//das039.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-21-0 computed 215194 nodes.
+//das031.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-13-0 computed 460029 nodes.
+//das030.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-12-0 computed 77206 nodes.
+//das028.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-10-0 computed 277543 nodes.
+//das049.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-30-0 computed 308412 nodes.
+//das038.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-20-0 computed 123341 nodes.
+//das024.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-6-0 computed 240915 nodes.
+//das040.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-22-0 computed 1626287 nodes.
+//das018.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-0-0 computed 793937 nodes.
+//das036.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-18-0 computed 311490 nodes.
+//das033.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-15-0 computed 273114 nodes.
+//das021.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 computed 233278 nodes.
+//das045.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-26-0 computed 229667 nodes.
+//das035.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-17-0 computed 443100 nodes.
+//das020.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 computed 149575 nodes.
+//das027.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-9-0 computed 188285 nodes.
+//das019.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 computed 241418 nodes.
+//das029.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-11-0 computed 529344 nodes.
+//das025.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 computed 84681 nodes.
+//das043.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-25-0 computed 552322 nodes.
+//das048.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-29-0 computed 232622 nodes.
+//das037.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-19-0 computed 242206 nodes.
+//das023.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-5-0 computed 118657 nodes.
+//das034.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-16-0 computed 819027 nodes.
+Master process exits.

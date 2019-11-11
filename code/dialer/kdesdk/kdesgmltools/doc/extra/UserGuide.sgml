@@ -1,0 +1,288 @@
+<!DOCTYPE LINUXDOC SYSTEM>
+<article>
+
+<titlepag>
+<title>A User's Guide to kdesgmltools</title>
+<author>
+<name>Panayotis Vryonis <htmlurl url="mailto:vrypan@hol.gr" name="vrypan@hol.gr">
+</author>
+<date> Last updated 11 Jan 1998.
+<abstract>
+This is the User's Giude to kdesgmltools version 0.6 (former known as niceSgml2Html), 
+a package that extends the functionality 
+of sgml-tools, when it comes to formating an sgml document as html.
+</abstract>
+</titlepag>
+
+<sect>General
+
+<p>This document is also available in 
+<htmlurl url="http://users.hol.gr/~vrypan/cactus/doc/niceUG.dvi.gz" name="DVI format"> and
+<htmlurl url="http://users.hol.gr/~vrypan/cactus/doc/niceUG.ps.gz" name="Postscript format">.
+
+<p>sgml-tools is an SGML-based formating system which allows you to produce a 
+variety of output formats. For more information visit <htmlurl 
+url="http://www.xs4all.nl/~cg/sgmltools" 
+name="http://www.xs4all.nl/~cg/sgmltools">. 
+
+<p>Even though sgml-tools is an exelent system, in some cases it is 
+insufficient. One of those is when you want to publish on the Internet
+a document you wrote. The HTML output is spartian; it may be great when you 
+are only interested in converting the original document to HTML so that 
+anyone, using any HTML browser will be able to read it, but when it comes to 
+aesthetics...
+
+<p>Even so, it has many advantages; when you write the document you do not 
+have to worry about the apearence details and you can always convert the 
+original document to LaTeX and print it.
+
+<p>The idea behind kdesgmltools is to modify the original tools (included in 
+sgml-tools) that are responsible for the conversion from SGML to HTML in such 
+a way that we can get better-looking HTML output.
+
+<sect>Installation
+<p>The current version of kdesgmltools is v0.6 .
+This version works with sgml-tools-1.0.0 and MAY NOT WORK WITH OLDER VERSIONS.
+
+<p>The installation is now automated.
+<p>Create an empty directory and move there kdesgmltools-0.6.tar.gz. Extract 
+the contents with
+<verb>gzip -dc kdesgmltools-0.5.tar.gz | tar xv </verb>
+<p>Type:<verb>
+# ./configure
+# make install
+</verb>
+
+<sect>What you get
+<p>From version 0.5 many things have changed. So, even if you were familiar
+with older versions, read this chapter.
+<p>When you originally wanted to create HTML from SGML you used the command
+<verb>sgml2html sgmlfile.sgml</verb>
+Now you have a new option invoced with --nice or -N.
+<p>Typing <verb>sgml2html --nice sgmlfile.sgml</verb> activates the 
+kdesgmltools modifications. I strongly recomend using --nice in association 
+with --imagebuttons (same as -I).
+<p>You also get a new mapping from sgml to html called "nice" too :-)
+
+<sect>Theory <label id="theory">
+<p>Part of the sgml-tools system is a perl module called Html2Html.pm.
+<p>When you activate the option --nice (or -N), instead of 
+Html2Html.pm, a new module called niceHtml2Html.pm is used.
+
+<sect1>Html2Html.pm
+<p>In order to understand how to use effeciently the --nice option you have
+to know exactly what Html2Html.pm is doing.
+<p>When you format an sgml document with sgml2html, it is filtered
+using some programs, in such way that the sgml tags defined in the 
+appropriate dtd (Document Type Description) are replaced by html tags.
+<p>This could be straight-forward but the problem is that the output of
+sgml2html is not one file; the document is split to several files,
+as many as the sections it contains. This makes sense; you wouldn't
+want to download a whole book from your browser, just to read the
+"credits" section!
+<p>This is what causes the main trouble; the internal links are destroyed
+and they must be redefined so that they point to the right file. This is a job for
+Html2Html.pm. This is why if you take a look at html/mapping you
+will see that some sgml tags are not replaced by html tags but by strange
+<@@abcd> tags. Those tags are important for Html2Html.pm.
+<p>Html2Html.pm adds more value to your documents by creating a Table of Contents
+and taking care of some other little thing like the navigation icons or words
+that appear at the top and bottom of each page and point to the next and previous
+section as well as to the Table of Contents.
+
+<sect1>niceHtml2Html.pm
+<p>What Html2Html.pm creates is a fully functional set of html documents.
+<p>The body of each document starts with the buttons mentioned above (either
+as text or iconic) and goes on with the text of your document.
+<p>niceHtml2Html.pm is a hacked version of Html2Html.pm. It does all what
+the original Html2Html does plus, it inserts user-defined html tags at certain
+critical sections of the document. Those are:
+<sect2>SectionA
+<p>We will call SectionA the section between the &lt/TITLE&gt; tag and the
+&lt;/HEAD&gt; tag. Here is where we may insert &lt;META&gt; tags or any
+other tag that could go in the HEAD of an html document.
+<sect2>SectionB
+<p>SectionB is between &lt;/HEAD&gt; tag and the first line of our document.
+Note that the &lt;BODY&gt; tag belongs to SectionB.
+<sect2>SectionC
+<p>SectionC is just before the &lt;/BODY&gt; tag.
+<sect2>BarTags1i and BarTags2
+<p>BarTags1 are the tags inserted just before the navigation buttons
+and BarTags2 are inserted just after them.
+
+<p>So, your resulting document will look like this:
+<verb><HTML>
+&lt;HEAD>
+&lt;TITLE>The test document&lt;/TITLE>
+---------------->PartA
+&lt;/HEAD>
+---------------->PartB
+		containing &lt;BODY>
+---------------->BarTags1
+(The buttons)
+---------------->BarTags2
+
+(The text of the document)
+
+---------------->BarTags1
+(The buttons)
+---------------->BarTags2
+---------------->PartC
+&lt;/BODY>
+&lt;/HTML>
+</verb>
+
+<p>The advantages are obvious! You can define in an important degree
+the look of your document.
+
+<sect>Practice
+<p>If you have read the <ref id="theory" name="Theory Section"> it
+will be easy to understand how to use kdesgmltools.
+<sect1>--nice option
+<p>As stated above, when you type <verb>sgml2html --nice &lt;file&gt;.sgml</verb>
+you can insert html tags at certain poionts of your document.
+Those tags are read from the file named <tt/&lt;file&gt;.nif/ which
+MUST be present at the directory where you issue the sgml2html
+command.
+<p>The structure of this file is simple. It is a text file containing
+the html tags for the above mentioned sections. Each section begins with
+a line like this:
+<verb><--A--></verb>
+for SectionA. The lines <verb>
+<--B-->
+<--C-->
+<--BarTags1-->
+<--BarTags2-->
+</verb>are used in the same way.
+<p>You must be careful since SectionB MUST contain a &lt;BODY&gt;
+tag.
+<p>A useful tip. If you use the word DOCNAME in any BarTags section
+it will be replaced by the title of the document.
+
+<sect1>--style=nice
+<p>In <ref id="theory" name="Theory"> I mentioned the substitution of
+sgml tags by html tabs which is done by Html2Html.pm (and consequently
+by niceSgml2Html.pm). This substitution is described in a file
+called <tt/mapping/. This file is found somewhere in your sgml-tools
+tree and looks like this:<verb>
+<name>          +       "<H3>"                  +
+&etago;name>         +       "&etago;H3>"                 +     
+</verb>
+<p>These two lines state that the &lt;name&gt; tag will be replaced
+by &lt;H3> tag and &etago;name> tag by &etago;H3>. The + signs indicate
+newline.
+<p>You may define alternative mappings. If you call sgml2html using
+the option <tt/--style=my/, sgml-tools will look for a file named
+<tt/mymapping/ at the same directory where <tt/mapping/ resides.
+I have created a mapping called by <tt/--style=nice/, which I find
+better. If you like it you may use it.
+
+<sect1>Navigation Icons
+<p>Just like the documents created by the original sgml2html,
+documents created with <tt/--nice/ in combination with <tt/--imagebuttons/,
+will look for <tt/next.gif/, <tt/prev.gif/, <tt/toc.gif/ and an additional one, 
+<tt/blank.gif/.
+<p><tt/blank.gif/ is only needed when using the <tt/--nice/ option and it is
+used when it does not make sence to put one of the other navigation buttons.
+For example, it is used where the <tt/next.gif/ would be used on the last page of
+our document, or in the place of <tt/toc.gif/ on the <it/Table of Contents/ page.
+<p>What's more, nice looking icons are included in the kdesgmltools package and
+may be used instead of the original icons. These icons are created using 
+<htmlurl url="http://www.ginp.org" name="The Gimp"> and are based on icons
+found at the <htmlurl url="http://www.iconbazaar.com/" name="http://www.iconbazaar.com/">. 
+ 
+
+<sect>Examples of "nif"s (nice include files)
+
+<sect1>minimal nif
+<p>The minimal nif would be:
+<verb>
+&lt;--B-->
+&lt;BODY>
+</verb>
+<p>This will actually have the same result as if you did not use
+the --nice option.
+
+<sect1>cactus style nif
+<p>This is the nif I used for my www 
+<htmlurl url="http://users.hol.gr/~vrypan/cactus/kdesgmltools.html" name="kdesgmltools pages">.
+<tscreen><verb>
+<--BarTags1-->
+<TABLE WIDTH="100%" CELLSPACING="0">
+<TR>
+<TD WIDTH="350" BGCOLOR="#000000" ALIGN="left">
+	<FONT FACE="Helvetica" COLOR="#ffffff"><B> 
+	The Cactus Site
+ 	&etago;B>&etago;FONT> 
+&etago;TD>
+<TD WIDTH="150" BGCOLOR="#000000" ALIGN="right">
+
+<--BarTags2-->
+&etago;TD>
+&etago;TABLE>                                    
+
+<--A-->
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="SGML HTML">
+<META NAME="description" 
+	CONTENT="Create attractive HTML documents from LINUXDOC.DTD SGML.">
+
+<--B-->
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000"  
+	BACKGROUND="BackGround.gif" >
+<TABLE CELLSPACING="0">
+<TR>
+<TD VALIGN="top" WIDTH="140"> 
+<!-- Here are the left margin contents -->
+<FONT FACE="Helvetica" SIZE="1">
+<A HREF="index.html">
+<IMG SRC="img/home.gif" 
+	ALIGN="middle" ALT="home" HEIGHT=28 WIDTH=20 BORDER=0>
+&etago;A>
+Cactus Home Page
+<BR><BR> 
+<A HREF="mailto:vrypan@hol.gr">
+<IMG SRC="img/envelope.gif" 
+	ALIGN="middle" ALT="vrypan@hol.gr" HEIGHT=28 WIDTH=28 BORDER=0>
+&etago;A>
+Send me mail
+<BR><BR> 
+The kdesgmltools resources :
+&lt;UL>
+&lt;LI><A HREF="kdesgmltools.html">Main Page&etago;A>
+&lt;LI><A HREF="niceUG.html">User's Guide&etago;A>
+&lt;LI><A HREF="src/kdesgmltools-0.4.tar.gz">Download&etago;A>
+&lt;LI><A HREF="Gallery.html">Gallery&etago;A>
+&lt;LI><A HREF="Comparing.html">Comparing&etago;A>
+&etago;UL>
+<BR><BR>
+&lt;CENTER>Here is a random number
+&lt;IMG SRC="http://users.hol.gr/cgi-bin/count.cgi?ft=2|md=5|dd=C|df=vrypan$fntop" absmiddle> 
+&etago;CENTER>
+&etago;FONT>
+&etago;TD> <!-- End of left margin contents -->
+<TD VALIGN="top"><FONT FACE="Helvetica" SIZE="2">
+
+<--C-->
+&etago;FONT>&etago;TD>
+&etago;TABLE>
+</verb></tscreen>
+
+<sect>Especially for kde documentation.
+<p>If you want your resulting HTML file to have the "kde look", a small
+script called ksgml2html is included in the package. 
+<p>ksgml2html creates an appropriate niceInclude file (nif) in the directory where it is
+invoced from and runs sgml2html with the right options. When you run it
+you will be asked for the "Description" and the "keywords". The answers
+will form two META tags in the resulting HTML document, useful for
+search engines.
+
+<sect>What now?
+<p>kdesgmltools will continue to evolve. New features will be added. For more
+information and news visit <htmlurl url="http://users.hol.gr/~vrypan/cactus" 
+name="http://users.hol.gr/~vrypan/cactus"> or contact 
+<htmlurl url="mailto:vrypan@hol.gr" name="vrypan@hol.gr">.
+
+
+</article>
+

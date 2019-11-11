@@ -1,0 +1,252 @@
+<html>
+<head>
+   <title>CS 4953 -- Cryptography, Mid-term Exam</title>
+<base href=
+ "http://www.cs.utsa.edu/~wagner/CS4953/exam1_ans.html">
+</head>
+<body bgcolor="#FFFFEB">
+
+<center><font color="#FF0000" face="arial, helvetica">
+<h2>
+CS 4953 -- Cryptography<br>
+<i>Answers to </i>Mid-term Exam<br>
+Wednesday, 20 March 2002
+</h2>
+</font></center>
+
+
+Please try to give your answers on the lines provided below.
+In each case you should show your work for full credit.
+(An incorrect answer with proper work might get full credit.)
+<b>Points for each problem in bold parentheses.</b><p>
+
+<b><font size=+1 color="#FF0000">Part I: Preliminaries</font></b><p>
+<ol type=1>
+<li><b>(4)</b> <i>Exclusive-Or:</i> 
+Start with <b><tt>a</tt></b> and <b><tt>b</tt></b>, and set
+<b><tt>c = a xor b</tt></b>, where the variables are single
+booleans or bit strings.  Show a simple way to write <b><tt>a</tt></b> in
+terms of <b><tt>b</tt></b> and <b><tt>c</tt></b> using <b><tt>xor</tt></b>.
+Show why your formula works using properties of <b><tt>xor</tt></b>.
+<p><b>The a = b xor c, because b xor c = b xor (a xor b)
+ = a xor (b xor b) = a xor 0 = a</b><hr><p>
+
+<li><b>(4)</b> <i>Logarithms:</i>
+Calculate about how many binary bits are required to represent a
+<b><tt>12</tt></b>-digit
+number?  For full credit you must explain briefly why your answer
+is correct. (Use your knowledge of
+<b><tt>log<sub>10</sub>(10<sup>12</sup>)</tt></b>,
+and the fact that <b><tt>log<sub>10</sub>2 = 0.3</tt></b>.  Actually
+<b><tt>log<sub>10</sub>2 = 0.3010299...</tt></b> but
+<b><tt>0.3</tt></b> is close enough.)
+<p><b># of bits to represent x is log<sub>2</sub>x, and
+  log<sub>2</sub>(10<sup>12</sup>) = log<sub>10</sub>(10<sup>12</sup>)
+ / log<sub>10</sub>(2) = 12 / 0.3 = 40 bits</b><hr><p>
+
+<li><b>(3)</b> <i>The integers mod <b><tt>n</tt></b> as a group,
+<b><tt>Z<sub>n</sub></tt></b>:</i>
+Find the additive inverse of the element <b><tt>10</tt></b>
+in the group <b><tt>Z<sub>14</sub></tt></b>.
+<p><b>inv(10) = 14 - 10 = 4, so that (4 + 10)%14 = 0</b><hr><p>
+
+<li><b>(3)</b> <i>The integers mod <b><tt>p</tt></b> as a field, 
+<b><tt>Z<sub>p</sub></tt></b>:</i>
+Assuming that <b><tt>p</tt></b> is a prime, does every element of
+<b><tt>Z<sub>p</sub></tt></b> have a multiplicative inverse?
+(Yes or no).  If "no", which element or elements do not have a
+multiplicative inverse?
+<p><b>No, only 0 has no multiplicative inverse</b><hr><p>
+
+<li><b>(3)</b> <i>The Extended Euclidean Algorithm:</i>
+Find integers <b><tt>x</tt></b> and <b><tt>y</tt></b> such that
+<b><tt>x*8 + y*19 = 1</tt></b>.  (Big hint: <b><tt>y = -5</tt></b>.)
+Use this result to find the multiplicative inverse of
+<b><tt>8</tt></b> in <b><tt>Z<sub>19</sub></tt></b>.
+<p><b>Knowing that y = -5, x is clearly 12.  Then
+12*8 = 1 + 5*19, so (12*8) % 19 = 1</b><hr><p>
+
+<li><b>(4)</b> <i>Fermat's Theorem:</i>
+If <b><tt>p</tt></b> is a prime, what is
+<b><tt>a<sup>p</sup> mod p</tt></b> equal to?
+Find the value of <b><tt>1437<sup>37</sup> mod 19</tt></b>.
+<p><b>a<sup>p</sup> mod p = a (if a < p).  1437<sup>37</sup> mod 19
+= 1437<sup>37 mod 18</sup> mod 19 = 1437<sup>1</sup> = 12</b><hr><p>
+
+<li><b>(4)</b> <i>Euler's Theorem:</i>
+Find the value of <b><tt>25<sup>802</sup> mod 15</tt></b>.
+<p><b>phi(15) = (3-1)*(5-1) = 8, so that
+25<sup>802</sup> mod 15 = 25<sup>802 mod 8</sup> mod 15 =
+ 25<sup>2</sup> mod 15 = 625 mod 15 = 10</b><hr><p>
+
+<li><b>(3)</b> <i>The Fast Exponentiation Algorithm:</i>
+For a random <b><tt>n</tt></b>-bit exponent, approximately how many 
+multiplications (including squarings) are needed on the average,
+using one of the fast exponentiation algorithms?
+<p><b>n interations of the loop, with a square in each iteration,
+and a product for each 1 bit, so n/2 products on the average.
+Thus 3n/2 multiplications on the average.</b><hr><p>
+
+<li><b>(4)</b> <i>The Simple Test:</i>
+Suppose the following is true for a large random integer
+<b><tt>n</tt></b>:<br>
+<b><tt>3<sup>n-1</sup> mod n</tt></b> is not equal
+to <b><tt>1</tt></b>.
+What does this say about <b><tt>n</tt></b>? <p><b>n cannot be prime</b><hr><p>
+</ol>
+
+<p>&nbsp;<p>
+<p>&nbsp;<p>
+<p>&nbsp;<p>
+<p>&nbsp;<p>
+
+<b><font size=+1 color="#FF0000">Part II: Coding and Information 
+  Theory</font></b><p>
+<ol type=1>
+<li><b>(4)</b> <i>Entropy:</i> Suppose there are <b><tt>3</tt></b> messages
+with probabilities <b><tt>0.5</tt></b>, <b><tt>0.25</tt></b>,
+and <b><tt>0.25</tt></b>.  What is the entropy in this case?
+<p><b>H = (1/2)*log<sub>2</sub>(1/(1/2)) +
+(1/4)*log<sub>2</sub>(1/(1/4)) + (1/4)*log<sub>2</sub>(1/(1/4)) =
+(1/2)*1 + (1/4)*2 + (1/4)*2 = 3/2</b><hr><p>
+
+<li><b>(3)</b> <i>Channel Capacity:</i> Using the binary symmetric (noisy) channel, 
+assume that the channel capacity is <b><tt>0.25</tt></b>.
+Intuitively, what does this imply about the performance of the channel?
+In particular, using a 56K bit per second channel, how much information
+could you get through this channel?
+<p><b>One can get at most 1/4 of the channel bandwidth through,
+so that a 56K channel could transmit at most 14K bits/sec of
+information.  That is a theoretical limit, but general codes to
+meet the limit have never been devised.</b><hr><p>
+
+<li><b>(4)</b> <i>ISBN Decimal Error Detection:</i>
+The ISBN number of a book uses the following check equation:<p>
+
+<ul><b><tt>
+         (10*a<sub>0</sub> + 9*a<sub>1</sub> + 8*a<sub>2</sub> + 
+        7*a<sub>3</sub> + 6*a<sub>4</sub> + 5*a<sub>5</sub> +<br>
+        4*a<sub>6</sub> + 3*a<sub>7</sub> + 2*a<sub>8</sub> + 
+         a<sub>9</sub>) mod 11 = 0</tt></b>.
+</tt></b></ul><p>
+
+Suppose the data digits of an ISBN number are <b><tt>014004656</tt></b>.
+Determine the value of the final digit, labeled
+<b><tt>a<sub>9</sub></tt></b> above, so that the check equation is true.
+<p><b>(9 + 32 + 20 + 24 + 15 + 12 + a<sub>9</sub>) % 11 =
+(112 + a<sub>9</sub>) % 11 = (2 + a<sub>9</sub>) % 11,
+and for this to be 0, one must have a<sub>9</sub> = 9</b><hr><p>
+
+<li><b>(4)</b> <i>Verhoeff's Decimal Error Detection:</i>
+Using <b><tt>#</tt></b> as the group operation, the group
+used in Verhoeff's scheme has the property
+that <b><tt>2 # 9 = 6</tt></b>, while <b><tt>9 # 2 = 7</tt></b>.
+What is the name of this property?  Is it true that
+<b><tt>a # b</tt></b> and <b><tt>b # a</tt></b> are different
+for any two distinct group elements <b><tt>a</tt></b> and
+<b><tt>b</tt></b>?
+<p><b>Non-commutativity.  No. 0#a = a#0 for any a, and
+any of 0, 1, 2, 3, and 4 commute</b><hr><p>
+</ol>
+
+<p>&nbsp;<p>
+<p>&nbsp;<p>
+
+<b><font size=+1 color="#FF0000">Part III: Introduction to
+  Cryptography</font></b><p>
+<ol type=1>
+
+<li><b>(4)</b> <i>Cryptograms:</i>
+Is it hard to break a cryptogram?  Give at least two facts about
+cryptograms that make it easier to break them.
+<p><b>No.  They give word breaks and one can use letter frequencies
+or occurrences of double letters</b><hr><p>
+
+<li><b>(5)</b> <i>Cryptography terminology:</i>
+Briefly explain the difference between a
+<i>known plaintext attack</i> and a <i>chosen plaintext attack</i>.
+<p><b>Known: have corresponding plaintext/ciphertext pairs.
+Chosen: can choose plaintext and get the corresponding ciphertext</b><hr><p>
+
+<li><b>(5)</b> <i>Caesar cipher, Beale cipher, One-time Pad:</i>
+For each of these three example ciphers, say how hard it is to break?
+<p><b>Trivial, very hard, impossible (if key used only once)</b><hr><p>
+
+<li><b>(5)</b> <i>Block ciphers:</i>
+Consider the <b>CBC</b> mode of operation.  What is the 
+<i>initialization vector</i>?
+Give two important properties of the <b>CBC</b> mode.
+<p><b>IV is xored in at the beginning</b><hr><p>
+<p><b>See the writeup about CBC mode</b><hr><p>
+</ol>
+
+<b><font size=+1 color="#FF0000">Part IV: Public Key 
+    Cryptography</font></b><p>
+<ol type=1>
+
+<li><b>(4)</b> <i>Merkle's Puzzles:</i>
+Suppose Bob is using this to communicate with Alice, and that
+Boris is listening in.  Bob sends Alice a large number of puzzles.
+Why is it that Alice only needs to break (or solve) one of the
+puzzles, but Boris has to break half of them on the average?
+<p><b>Alice obtains the puzzle sequence number by breaking the
+puzzle, but since the puzzles were sent in random order, Boris
+must break puzzles until he finds that number.</b><hr><p>
+
+<li><b>(4)</b> <i>The Diffie-Hellman Distribution System:</i>
+This system essentially uses exponentiation as a cryptosystem,
+so that if <b><tt>M</tt></b> is a message, then the ciphertext
+is computed as <b><tt>C = a<sup>M</sup> mod p</tt></b> for some
+public integer <b><tt>a</tt></b> and public prime <b><tt>p</tt></b>.
+What essential property does this cipher have that allows
+it to be used in this distribution system?
+<p><b>Commutativity of encryption:  E<sub>B</sub>(E<sub>A</sub>(M)) =
+E<sub>A</sub>(E<sub>B</sub>(M)).  Also, difficulty of
+solving discrete log problem.</b><hr><p>
+
+<li><b>(4)</b> <i>Public Key Cryptography:</i>
+Explain how Alice uses a public key cryptosystem to send a secret
+message to Bob, and how Bob reads the message.
+<p><b>Alice fetches Bob's public key and encrypts for Bob.
+Bob uses his secret key to decrypt.</b><hr><p>
+
+<li><i>The RSA Cryptosystem:</i>
+ Various details about RSA:
+  <ol type=a>
+   <li>Basic parameters for RSA:
+    <ol type = i>
+     Each RSA user chooses large random primes <b><tt>p</tt></b> and
+      <b><tt>q</tt></b> and calculates the product <b><tt>n = p*q</tt></b>.
+     <li><b>(3)</b> What simple value is commonly used for the encryption exponent? <b>3</b><p>
+     <li><b>(3)</b> With this exponent, what must then be true about
+      <b><tt>p-1</tt></b> and <b><tt>q-1</tt></b>?
+        <p><b>They must not be divisible by 3</b><hr><p>
+
+     <li><b>(3)</b> What equation does the <i>decryption exponent</i> satisfy?
+      <p><b>e*d mod((p-1)*(q-1)) = 1</b><hr><p>
+     <li><b>(3)</b> How do you encrypt? (Give equation)    
+         <b>c = m<sup>e</sup> mod n</b><p>
+     <li><b>(3)</b> How do you decrypt? (Give equation)
+          <b>m = c<sup>d</sup> mod n</b><p>
+   </ol>
+
+ <li><b>(3)</b> How is the extended Euclidean algorithm used in RSA?<br>
+  <p><b>Used to calculate the secret exponent d from e, p, and q</b><hr><p>
+ <li><b>(2)</b> How does the speed of RSA compare with that of a conventional
+  block cipher such as the AES?<br>
+  <p><b>RSA is very slow, AES is very fast</b><hr><p>
+ <li><b>(2)</b> By what factor does the variation of RSA using the
+   Chinese Remainder Theorem speed up ordinary RSA? <b>4, or
+  about 3.4 in my actual software implementation</b>
+  </ol>
+
+<p>
+
+</ol>
+</body>
+</html>
+
+
+
+
+

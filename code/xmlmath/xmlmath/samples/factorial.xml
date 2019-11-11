@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Factorial? Why another factorial? There's already <fact> for this.
+True, this merely serves to illustrate how complex operations can be built
+using the basics. Using <fact> would of course evaluate faster.
+Change the declaration of "x" to compute the factorial of a specific number.
+
+Remember: xmlmath uses 64-bit, signed integers, making 2^63 - 1 the biggest
+achievable number. This is not large enough to hold the result of factorials
+larger than 20!
+-->
+
+<toLong xmlns="http://prutser.cx/xmlmath/schemas">
+	<declare name="x">
+		<long value="5"/>
+	</declare>
+	<listProduct datatype="long">
+		<for iterator="i">
+			<long value="0"/>
+			<linkLong name="x"/>
+			<add datatype="long">
+				<linkLong name="i"/>
+				<long value="1"/>
+			</add>
+		</for>
+	</listProduct>
+</toLong>

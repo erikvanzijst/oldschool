@@ -1,0 +1,45 @@
+
+		MarketXS overlay multicast experiment
+		(Overlay Middleware Distribution Platform)
+
+
+	EXAMPLE
+
+The package includes configuration files to setup and test a three-node
+network, where all nodes run on the same physical computer system. Note that
+the package must have been build (using ant) first. To run the example
+network, open three shells. In the first one, type:
+
+	$ cd node1
+	node1$ java -classpath ../build/:../lib/management-1.2.jar -Dcom.marketxs.log.stacktrace.debug=true com.marketxs.messaging.SimpleSink -addresses node1.iface1,node1.iface2
+	Fri Nov 28 17:13:56 CET 2003 - SimpleSink started and subscribed to 2 unicast address(es).
+
+This starts up the first node (a sink application that listens for messages
+addressed to its interface addresses.
+
+In the second shell typ:
+
+	$ cd node2
+	node2$ (i=0; while true; do echo $i; let i=i+1; sleep 2; done) | java -classpath ../build/:../lib/management-1.2.jar -Dcom.marketxs.log.stacktrace.debug=true com.marketxs.messaging.SimpleSource -addresses node1.iface1
+	
+This starts the second node (the simple source application that is bundled
+with the package). It sends a message to address node1.iface1 every two
+seconds containing a sequence number. These messages should now be printed by
+the sink in the first shell.
+
+In the third shell, type:
+
+	$ cd node3
+	node3$ java -classpath ../build:../lib/management-1.2.jar -Dcom.marketxs.log.stacktrace.debug=true com.marketxs.messaging.SimpleRouter
+	
+This starts an instance of the simple router application. The nodes are
+configured by the messaging.properties files that are provided in the
+directories. They form a simple ring topology with non-uniform link costs.
+Also note that the third node is configured to be very verbose and print all
+debug information to the console. This can be changed in the log.properties
+file.
+
+
+Erik van Zijst
+erik@marketxs.com
+28.nov.2003

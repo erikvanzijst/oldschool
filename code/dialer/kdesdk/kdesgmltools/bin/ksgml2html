@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if [ ! $# = 2 ]; then  
+	echo "Usage ksgml2html {filename} {language}"
+	return 1
+fi
+
+base=`basename $1 .sgml`
+
+if [ ! -f $base.nif ]; then
+	echo "$base.nif not found."
+	echo Creating $base.nif...
+	kniceinc $base
+else 
+	echo Using existing $base.nif. 
+fi
+
+sgml2html --style=nice -N $base -l $2
+
+echo Copping neccessary icons...
+CURDIR=`pwd`
+cd $KDEDIR/share/apps/niceSgml2Html/img
+cp logotp3.gif $CURDIR
+echo Done.
+
+exit 0	

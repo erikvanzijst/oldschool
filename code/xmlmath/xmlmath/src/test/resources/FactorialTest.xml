@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test xmlns="http://prutser.cx/xmlmath/schemas"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<testBoolean result="true">
+		<and>
+			<equals>
+				<fact>
+					<long value="3"/>
+				</fact>
+				<long value="6"/>
+			</equals>
+			<equals>
+				<fact>
+					<long value="0"/>
+				</fact>
+				<long value="1"/>
+			</equals>
+			<equals>
+				<fact>
+					<long value="1"/>
+				</fact>
+				<long value="1"/>
+			</equals>
+			<equals>
+				<fact>
+					<long value="10"/>
+				</fact>
+				<long value="3628800"/>
+			</equals>
+		</and>
+	</testBoolean>
+</test>

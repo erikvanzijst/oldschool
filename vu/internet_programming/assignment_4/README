@@ -1,0 +1,198 @@
+	Internet Programming
+
+	Programming Assignment 4: Web Programming
+
+
+This document describes the installation and use of the teddy bear website
+of assignment 4.
+
+Unpack the package somewhere in the web server's document space. In our
+example, we'll install the site in our private document root on a server
+that already runs apache and php (4.1.2):
+
+	p3:~$ cd public_html/
+	p3:~/public_html$ tar zxvf ~/assignment_4.tgz
+	assignment_4/
+	assignment_4/list.php
+	<snip>
+	p3:~/public_html$
+
+After unpacking the package, we need to setup the site properly before using
+it. Edit setup.php and configure it correctly for the environment. In our
+case, the setup.php looks like this:
+
+	p3:~/public_html$ cd ted
+	p3:~/public_html/assignment_4$ cat setup.php
+	<?
+	$BASEPHP                = "http://p3.prutser.cx/~erik/assignment_4";
+	$BASECGI                = "http://p3.prutser.cx/cgi-bin/";
+	$BANK_SERVER_ADDR       = "localhost";
+	$BANK_SERVER_PORT       = 3211;
+	$BANK_ACCOUNT           = 555;  // the site's bank account
+	
+	// make sure this resource is writable by apache!
+	$STOCKFILE              = "/tmp/stocks.txt";
+	?>
+	p3:~/public_html/assignment_4$
+
+The STOCKFILE variable points to the file that the server will use to manage
+the site's teddy bear stocks. It is essential that the file is readable and
+writable to apache as the php scripts will be executed under apache's userid.
+If the file does not exist, make sure apache can create the file in the
+specified directory. In most cases the easiest is to use the /tmp
+filesystem. In a production environment this is not recommended however, as
+all users have access to it and some unix systems periodically clean the
+filesystem, potentially removing the database file.
+In our example the /tmp filesystem is empty, so the site will create the
+file when needed.
+
+The next file to edit is the assignment_4/admin/.htaccess file. This file
+password-protects the site's stocks administration page. It is a standard
+apache file that contains the name of the password file it uses for
+authorization. The htpasswd file containing the username and password is
+included in the same directory, so edit the .htaccess file and point it to
+the included htpasswd file:
+
+	p3:~/public_html/assignment_4$ cd admin/
+	p3:~/public_html/assignment_4/admin$ cat .htaccess
+	AuthUserFile /home/erik/public_html/assignment_4/admin/htpasswd
+	AuthName "Stocks administration of Ted's Teddy Toko"
+	AuthType Basic
+	
+	<Limit GET POST PUT>
+	require user administrator
+	</Limit>
+	p3:~/public_html/assignment_4/admin$
+
+Having the htpasswd inside the webspace is potentially insecure. After a
+user has acquired access the protected part of the site by entering the
+correct credentials, he can download the htpasswd file if its name and
+location are known. This could reveal the names and (encrypted) passwords of
+other users. This is similar to the way unix uses the /etc/passwd file on a
+system without shadow passwords. On a production system it is recommended to
+place the htpasswd file outside the document root.
+
+Buying teddy bears from the site involves interaction with the bank server
+from assignment 3. Make sure it is running at the address that was specified
+in setup.php. In our example we have a bankd server running at localhost
+with the default accounts:
+
+	p3:~/public_html/assignment_4$ cd bank
+	p3:~/public_html/assignment_4/bank$ cat accounts.cfg
+	123,1012.00
+	987,2800.12
+	555,9090.09
+	p3:~/public_html/assignment_4/bank$ ./bankd ./accounts.cfg
+
+Now start a browser and point it to the site at
+http://localhost/~erik/assignment_4/index.php
+If all goes well, the site greets us with a sober white page with two main
+links: one that takes us right to the shop (list.php) and another that takes
+us to the stocks administration (admin.php). We'll define some stocks first
+by clicking on the second link.
+When the browser pops up the authorization dialog, use:
+
+	login:	administrator
+	passwd:	abc123
+
+The admin.php page shows all teddy bears (as hardcoded in db.php) and allows
+us to define how many of each are in stock. In addition, the site also keeps
+track of the number of items sold.
+For our example, we enter 2 "Ted" bears (product one) and 10 "Hairy Potter"
+bears (product 2) and click "commit".
+
+The page displays our new stocks and we return to the homepage by clicking
+"Home" at the bottom of the page. Behind the scenes the site created the
+stocks database file in /tmp/stocks.txt. Because the file is not meant to be
+edited manually, it uses php's serialization routines to read and write the
+stock's datastructure to disk. This is convenient, robust and powerfull and
+saves us the error-prone process of writing our own parser routines. The
+serialized database file clearly reveals the structure of an associative
+array.
+
+Now let's enter the site using the link at the homepage and buy some bears.
+
+We select the "Hairy Potter" bear and click "I want one!" at the product
+page (item.php). We enter "2" bears and use the standard account number 123.
+After clicking ok, the site first takes our order (2 bears) out of stock (to
+reserve it during payment clearing) and does the money transfer at the bank
+server. If the payment succeeds, the page displays "The product is yours!",
+together with the transfer's certificate.
+Trying to buy more items than in stock, or using false account numbers,
+results in an error message.
+
+The site attempts to act transactional and uses synchronization between
+processes when two or more users concurrently try to buy the same item. To
+protect the stocks database file from getting corrupted by concurrent
+transactions, access is serialized using conventional advisory file locks in
+php. See stockmanip.php for details.
+
+During the process of buying a bear, the site first decrements the avaiable
+items in stock to make sure no other concurrent user also tries to buy the
+same bear. This could otherwise lead to two successfull payments while we
+only had one bear left to sell. When a payment fails, the item(s) are placed
+back into stock (the equivalent to a roll-back in a real transaction).
+
+
+Setting up ads
+
+The CGI used for ad display is called adget.cgi. The program is part of the
+adserver package. Compile and install the CGI in your webservers cgi-bin
+directory and configure the path in setup.php. For further details on
+adget.cgi read the README.txt in the ad subdirectory.
+In our example we install the cgi on localhost in the system's global
+cgi-bin directory, so we specify "http://p3.prutser.cx/cgi-bin/" in the
+setup.php file. Note that by default the cgi is compiled to look for the
+adserver running at localhost. If your setup runs the adserver at a
+different host, edit the bank/hosts.h file and recompile the cgi.
+
+If the cgi worked correctly so far (displaying "Ad Space For Sale!"), start
+up the adserver and upload some ads:
+
+	p3:~/public_html/assignment_4$ cd ad
+	p3:~/public_html/assignment_4/ad$ ./adserver_server ./prices.cfg 987
+
+And on a different console:
+
+        p3:~/public_html/assignment_4$ cd ad
+	p3:~/public_html/assignment_4/ad$ ./adsend
+	Usage: ./adsend <budget> <source account> <destination account> [ad]...
+	p3:~/public_html/assignment_4/ad$ ./adsend 7.5 123 987 ads/ad*
+	8 ads within the budget of 7.500000 totalling 7.200000
+	Purchasing 8 ads
+	Connecting to 127.0.0.1:3211...
+	Connected!
+	Purchase completed
+	p3:~/public_html/assignment_4/ad$
+
+Returning to the site should now display real ads at the top of the pages.
+
+Ted's Teddy Toko uses a primitive, yet effective, home-grown template
+system. The templates completely separate the business logic from the site's
+layout and presentation. All HTML code is centralized in the
+presentation.php file. To prove that the site can switch its complete look
+and feel without modifying anything at all, try changing the symbolic link:
+
+	p3:~/public_html/assignment_4$ ls -l presentation*
+	-rw-rw-r--    1 erik     erik        41445 May 11 02:58
+	presentation-complex.php
+	lrwxrwxrwx    1 erik     erik           23 May 11 03:17
+	presentation.php -> presentation-simple.php
+	-rw-rw-r--    1 erik     erik         7930 May 10 01:59
+	presentation-simple.php
+	p3:~/public_html/assignment_4$ ln -sf presentation-complex.php
+	presentation.php
+	p3:~/public_html/assignment_4$
+
+After pointing the symbolic link to presentation-complex.php, the site
+immediately looks totally different. Switching back and forth between these
+or custom templates can be done without affecting the site's operation.
+Note that the templates look quite messy. This is partly due to the fact
+that the assignment requires all templates to be merged into one single file
+and partly due to the WYSIWYG editor we used for the complex template.
+
+
+
+Erik van Zijst, 1351745, erik@marketxs.com
+Sander van Loo, 1351753, sander@marketxs.com
+10.may.2003

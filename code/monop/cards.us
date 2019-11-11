@@ -1,0 +1,262 @@
+# These are the chance and community chest cards of the
+# original US version.
+#
+# For now, see globals.h for information on the entry's
+# Note that this file is not yet being used, and will probably
+# get a different syntaxis.
+#
+
+chance 0
+name	Get out of jail for free
+payToBank	0
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	1
+gotoJail	0
+stepForward	0
+gotoStreet	-1
+gotoSpecialProperty	0
+SPPayPerEye	0
+SPPay	0
+
+
+chance 1
+name	Go to jail, do not pass start, do not collect $200
+payToBank	0
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	1
+stepForward	0
+gotoStreet	-1
+gotoSpecialProperty	0
+SPPayPerEye	0
+SPPay	0
+
+
+chance 2
+name	Advance to Boardwalk
+payToBank	0
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	0
+stepForward	0
+gotoStreet	39
+gotoSpecialProperty	0
+SPPayPerEye	0
+SPPay	0
+
+
+chance 3
+name	Advance to St. Charles Place
+payToBank	0
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	0
+stepForward	0
+gotoStreet	11
+gotoSpecialProperty	0
+SPPayPerEye	0
+SPPay	0
+
+
+chance 4
+name	Advance to Go
+payToBank	0
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	0
+stepForward	0
+gotoStreet	0
+gotoSpecialProperty	0
+SPPayPerEye	0
+SPPay	0
+
+
+chance 5
+name	Advance to Illinois Ave
+payToBank	0
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	0
+stepForward	0
+gotoStreet	24
+gotoSpecialProperty	0
+SPPayPerEye	0
+SPPay	0
+
+
+chance 6
+name	Take a ride on the reading
+payToBank	0
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	0
+stepForward	0
+gotoStreet	-1
+gotoSpecialProperty	0
+SPPayPerEye	0
+SPPay	0
+
+
+chance 7
+name	Go back three spaces
+payToBank	0
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	0
+stepForward	-3
+gotoStreet	-1
+gotoSpecialProperty	0
+SPPayPerEye	0
+SPPay	0
+
+
+chance 8
+name	Advance token to the nearest station and pay owner twice the normal rent. If unowned, you may buy it from the bank.
+payToBank	0
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	0
+stepForward	0
+gotoStreet	-1
+gotoSpecialProperty	2
+SPPayPerEye	0
+SPPay	2
+
+
+chance 9
+name	Advance token to the nearest utility, roll dice and pay the owner 10 times the amount thrown. If unowned, you may buy it from the bank.
+payToBank	0
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	0
+stepForward	0
+gotoStreet	-1
+gotoSpecialProperty	1
+SPPayPerEye	10
+SPPay	0
+
+
+chance 10
+name	Pay poor tax $15
+payToBank	15
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	0
+stepForward	0
+gotoStreet	-1
+gotoSpecialProperty	0
+SPPayPerEye	0
+SPPay	0
+
+
+chance 11
+name	You have been elected chairman of the board, pay each player $50
+payToBank	0
+payToAll	50
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	0
+stepForward	0
+gotoStreet	-1
+gotoSpecialProperty	0
+SPPayPerEye	0
+SPPay	0
+
+
+chance 12
+name	Placebo card 12, nothing happens
+payToBank	0
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	0
+stepForward	0
+gotoStreet	-1
+gotoSpecialProperty	0
+SPPayPerEye	0
+SPPay	0
+
+
+chance 13
+name	Placebo card 13, nothing happens
+payToBank	0
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	0
+stepForward	0
+gotoStreet	-1
+gotoSpecialProperty	0
+SPPayPerEye	0
+SPPay	0
+
+
+chance 14
+name	Placebo card 14, nothing happens
+payToBank	0
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	0
+stepForward	0
+gotoStreet	-1
+gotoSpecialProperty	0
+SPPayPerEye	0
+SPPay	0
+
+
+chance 15
+name	Placebo card 15, nothing happens
+payToBank	0
+payToAll	0
+repair	0
+perHouse	0
+perHotel	0
+isFreeJailCard	0
+gotoJail	0
+stepForward	0
+gotoStreet	-1
+gotoSpecialProperty	0
+SPPayPerEye	0
+SPPay	0

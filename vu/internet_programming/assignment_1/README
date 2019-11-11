@@ -1,0 +1,152 @@
+	Internet Programming
+
+	Programming Assignment 1: Unix Multiprocessing
+
+
+	1 Writing a Micro-Shell
+
+1.1 Start by writing a program called mysh1 which reads a program name from the
+keyboard.
+
+Answer:
+See mysh1.c
+The execlp system call is chosen because it has the simplest syntax for
+parameterless commands while taking the PATH variable into account.
+
+
+1.2 Extend mysh1 to accept a number of parameters in addition to the program
+name.
+
+Answer:
+See mysh2.c
+The execvp system call is chosen because it allows multiple parameters to
+be passed as a single (dynamically) allocated array while taking the PATH
+variable into account.
+
+
+1.3 Extend mysh2 to accept piped commands such as "ls /tmp | wc -l".
+
+Answer:
+See mysh3.c
+The shell supports command chaining and can handle "sort foo | uniq -c | wc
+-l". When the shell executes a piped command, say "sort foo | uniq -c | wc
+-l", it extracts the individual processes the command contains (in this case
+3, namely "sort foo", "uniq -c" and "wc -l") and forks a child process for
+each one. Inside the child process, the program executes execvp().
+To execute a chained command, the shell creates n-1 pipes, where n is the
+number of processes in the chained command. This means that "ls /tmp | wc
+-l" needs one pipe, while "sort foo | uniq -c | wc -l" needs two. As data
+flows in one direction only, only one pipe is needed between two processes.
+After every process has been forked, the shell calls wait() in a loop until
+every child has exited. Only then the shell can read the next command.
+
+
+1.4 Can you realize a shell program which only utilizes threads (instead of
+processes)? Why?
+
+No, this will go wrong as soon as the first program needs to be spawned.
+Since the exec() family of functions replaces the current process image with
+a new process image, the shell will cease to exist.
+Aside from exec(), the approach suffers from a number of other issues.
+Another important one is that even if it would be possible to run multiple
+child applications from within one process, they would share resources,
+including global variables. For many programs and library functions that are
+not thread-safe, this would result in race conditions.
+
+
+
+	2. Synchronization
+
+2.1 What does the following program do?
+
+Answer:
+The program forks in two processes, one process printing 'Hello World' the 
+other process printing 'Bonjour Monde'. After printing a character each
+process sleeps 100 usec before printing the next character. Without
+synchronization the output will be garbled.
+
+2.1.1 Add synchronization code to this program to prevent the two messages to
+interpenetrate each other.
+
+See syn1.c
+
+
+2.1.2 Which type of synchronization is required? Why? Which synchronization
+primitives must be used? Why? How?
+
+Answer:
+Mutual exclusion is required for the display function to prevent the processes
+to print their message to the screen while another process is already doing so.
+If no synchronization is used characters from other processes will be
+printed between the characters of the currently writing process. A semaphore is
+used to enforce this synchronization (other primitives like POSIX mutexes/
+read-write locks are for thread synchronization). The semaphore is initialially
+set to 1. Each process is required to decrement the semaphore before calling 
+the display function. When the display function returns the process will
+increment the semaphore again making it possible for other processes tot decrement
+the semaphore. Note that this does not control the order in which both processes 
+print their messages.
+
+
+2.2 What does the following program do?
+
+Answer:
+The program forks in two processes, one process printing 'ab' the 
+other process printing 'cd\n'. After printing a character each
+process sleeps 100 usec before printing the next character. Without
+synchronization the output will be garbled.
+
+2.2.1 Add synchronization code to make sure the output is exactly the following
+and call your program syn2.c.
+
+Answer:
+See syn2.c
+
+2.2.2 What is the difference with the previous excercise?  Which type of 
+synchronization is required? Why? Which synchronization primitives must be used? 
+Why? How?
+
+Answer:
+This time the processes do not use mutual exclusion to prevent concurrent access
+to stdout. Since the order of the messages does matter each process signals the
+other process when it should start printing. Two semaphores are used, one for
+signals from the parent to the child, the second for signals from the child to the
+parent. If they would use the same semaphore for both types of signalling it would
+not be possible for a process to distinguish between it's own signal and that of the
+other process. Both semaphores are initially set to 0. The child immediately starts
+waiting for a signal of its parent by performing a down operation. The parent 
+immediately starts printing and calls an up operation on the semaphore that the child
+is blocked on. The parent then calls the down operation on the other semaphore that
+is upped by the child once it completes printing.
+
+
+2.3 Transform the programs syn1 and syn2 to use pthreads instead of
+processes.
+
+See synthread1.c and synthread2.c
+
+Could you have used semaphores instead of thread synchronization primitives?
+Which one is prefereable? Why?
+
+Answer:
+Of course semaphores can be used, but they are likely to be less efficient than
+thread synchronization primitives. The thread synchronization primitives are 
+easier to use and at least you are sure that they do not occupy resources after
+your program has terminated. The number of semaphores available in a system is also 
+very limited. Thread synchronization primitives are thus preferred.
+
+
+2.4 Write the same two programs in Java (using Java threads). Can you use
+semaphores in this program? Why?
+
+Answer:
+You cannot use semaphores in this programs, as Java doesn't offer them.
+Neither would it be very useful, as semaphores as offered by the POSIX
+C-library are used to synchronize between processes. while these programs
+run as a single multi-threaded process.
+See Syn1.java and Syn2.java
+
+
+Erik van Zijst, erik@marketxs.com
+Sander van Loo, sander@marketxs.com
+21.feb.2003

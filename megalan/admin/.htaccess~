@@ -1,0 +1,8 @@
+AuthUserFile /home/httpd/conf/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Deelnemer admin"
+AuthType Basic
+
+<Limit GET POST PUT>
+require valid
+</Limit>

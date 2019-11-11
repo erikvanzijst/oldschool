@@ -1,0 +1,2 @@
+select marketid, name, submarketname, comstockid, submarket from mxs.market@MXS4 where comstockid in ('17i','17s','17u')
+/

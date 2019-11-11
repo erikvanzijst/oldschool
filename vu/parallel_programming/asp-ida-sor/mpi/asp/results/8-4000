@@ -1,0 +1,144 @@
+Processor 1: row 500 to 999
+Processor 4: row 2000 to 2499
+Processor 3: row 1500 to 1999
+Processor 5: row 2500 to 2999
+Processor 6: row 3000 to 3499
+Processor 7: row 3500 to 3999
+Processor 2: row 1000 to 1499
+Processor 0: row 0 to 499
+Processor 3: 500 rows
+Processor 2: 500 rows
+Processor 7: 500 rows
+Processor 6: 500 rows
+Processor 1: 500 rows
+Processor 4: 500 rows
+Processor 0: 500 rows
+Processor 5: 500 rows
+Processor 1: ready to start ASP
+Processor 2: ready to start ASP
+Processor 3: ready to start ASP
+Processor 4: ready to start ASP
+Processor 5: ready to start ASP
+Processor 6: ready to start ASP
+Processor 0: ready to start ASP
+Processor 7: ready to start ASP
+Processor 3: ASP took 2779.353425 seconds
+Processor 2: ASP took 2779.356649 seconds
+Processor 6: ASP took 2779.356939 seconds
+Processor 7: ASP took 2779.354862 seconds
+Processor 0: ASP took 2779.356675 seconds
+Processor 5: ASP took 2779.357352 seconds
+Processor 4: ASP took 2779.357067 seconds
+Processor 1: ASP took 2779.356260 seconds
+Processor 6: ASP done
+Processor 5: ASP done
+Processor 0: ASP done
+Processor 4: ASP done
+Processor 2: ASP done
+Processor 7: ASP done
+Processor 3: ASP done
+Processor 1: ASP done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 4: done
+Processor 5: done
+Processor 6: done
+Processor 7: done
+Processor 0: done
+Processor 4: row 2000 to 2499
+Processor 2: row 1000 to 1499
+Processor 0: row 0 to 499
+Processor 3: row 1500 to 1999
+Processor 6: row 3000 to 3499
+Processor 1: row 500 to 999
+Processor 5: row 2500 to 2999
+Processor 7: row 3500 to 3999
+Processor 4: 500 rows
+Processor 1: 500 rows
+Processor 0: 500 rows
+Processor 2: 500 rows
+Processor 3: 500 rows
+Processor 5: 500 rows
+Processor 6: 500 rows
+Processor 7: 500 rows
+Processor 1: ready to start ASP
+Processor 2: ready to start ASP
+Processor 3: ready to start ASP
+Processor 4: ready to start ASP
+Processor 5: ready to start ASP
+Processor 6: ready to start ASP
+Processor 0: ready to start ASP
+Processor 7: ready to start ASP
+Processor 3: ASP took 2779.387687 seconds
+Processor 1: ASP took 2779.390471 seconds
+Processor 5: ASP took 2779.391614 seconds
+Processor 7: ASP took 2779.393744 seconds
+Processor 6: ASP took 2779.390961 seconds
+Processor 4: ASP took 2779.391105 seconds
+Processor 2: ASP took 2779.390450 seconds
+Processor 0: ASP took 2779.390718 seconds
+Processor 6: ASP done
+Processor 4: ASP done
+Processor 7: ASP done
+Processor 5: ASP done
+Processor 1: ASP done
+Processor 3: ASP done
+Processor 2: ASP done
+Processor 0: ASP done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 4: done
+Processor 5: done
+Processor 6: done
+Processor 7: done
+Processor 0: done
+Processor 2: row 1000 to 1499
+Processor 1: row 500 to 999
+Processor 0: row 0 to 499
+Processor 4: row 2000 to 2499
+Processor 5: row 2500 to 2999
+Processor 3: row 1500 to 1999
+Processor 6: row 3000 to 3499
+Processor 7: row 3500 to 3999
+Processor 0: 500 rows
+Processor 1: 500 rows
+Processor 4: 500 rows
+Processor 2: 500 rows
+Processor 5: 500 rows
+Processor 3: 500 rows
+Processor 6: 500 rows
+Processor 7: 500 rows
+Processor 1: ready to start ASP
+Processor 2: ready to start ASP
+Processor 3: ready to start ASP
+Processor 4: ready to start ASP
+Processor 5: ready to start ASP
+Processor 6: ready to start ASP
+Processor 0: ready to start ASP
+Processor 7: ready to start ASP
+Processor 3: ASP took 2779.373320 seconds
+Processor 7: ASP took 2779.375932 seconds
+Processor 4: ASP took 2779.376728 seconds
+Processor 2: ASP took 2779.376075 seconds
+Processor 1: ASP took 2779.375831 seconds
+Processor 0: ASP took 2779.376429 seconds
+Processor 5: ASP took 2779.377013 seconds
+Processor 6: ASP took 2779.376551 seconds
+Processor 4: ASP done
+Processor 1: ASP done
+Processor 0: ASP done
+Processor 6: ASP done
+Processor 2: ASP done
+Processor 5: ASP done
+Processor 3: ASP done
+Processor 7: ASP done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 4: done
+Processor 5: done
+Processor 6: done
+Processor 7: done
+Processor 0: done

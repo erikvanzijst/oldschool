@@ -1,0 +1,58 @@
+Other Inode Types
+
+To test if our defragmentation process leaves other inode types (such as character devices) in tact we create a character device with the mknod command:
+
+mknod chardev c 4 16
+
+
+Looking at the inode with the disk editor (de) shows that the zone 0 pointer contains data:
+
+  Device = /dev/hd1a       V2 file system                                         
+  Block  =     4 of 1440   I-nodes
+  Offset =   128           I-node 3 of 480  (in use)
+
+  >   128     8612            character  ---rw-r--r--               (base 10)
+      130        1            links 1
+      132        0            user root
+      134        0            group operator
+      136        0            file size 0
+      138        0
+      140    26261            a_time Fri Jul 30 17:17:41 2004
+      142    16650            major 4, minor 16
+      144    26261            m_time Fri Jul 30 17:17:41 2004
+      146    16650
+      148    26261            c_time Fri Jul 30 17:17:41 2004
+      150    16650
+      152     1040            zone 0
+      154        0
+      156        0            zone 1
+      158        0
+
+
+After defragmentation the contents of the inode ar preserved:
+
+  Device = /dev/hd1b       V2 file system                                         
+  Block  =     4 of 1440   I-nodes
+  Offset =   128           I-node 3 of 480  (in use)
+
+  >   128     8612            character  ---rw-r--r--               (base 10)
+      130        1            links 1
+      132        0            user root
+      134        0            group operator
+      136        0            file size 0
+      138        0
+      140    26261            a_time Fri Jul 30 17:17:41 2004
+      142    16650            major 4, minor 16
+      144    26261            m_time Fri Jul 30 17:17:41 2004
+      146    16650
+      148    26261            c_time Fri Jul 30 17:17:41 2004
+      150    16650
+      152     1040            zone 0
+      154        0
+      156        0            zone 1
+      158        0
+
+
+
+
+

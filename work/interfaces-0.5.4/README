@@ -1,0 +1,72 @@
+		MarketXS overlay multicast experiment
+		(Overlay Middleware Distribution Platform)
+		
+		Erik van Zijst
+		03.december.2003
+		erik@marketxs.com
+
+
+OUTLINE
+
+This document describes the working of the 5th wide-area routing and
+multicasting experiment. This version combines dotted string addresses,
+address summarization, ExBF and configurable, autonomous interface modules
+to form a fairly complete middleware solution that is flexible, resilient,
+adaptive and highly scalable. It should even be useable for real wide-area
+demonstrations and tests.
+
+
+ADDRESS SUMMARIZATION
+
+This version uses independent interface objects to communicate with
+connected neighbors. In addition to that (which is a significant change
+compared to previous experiments) a unique address is assigned to each
+interface. The node itself (middleware library instance) does not have an
+address anymore. This is similar to the way IP routers are addressed on an
+interface level, rather than per host. In our case this modification was
+necessary to make address summarization possible. As described in [1], there
+is a problem when a node has two or more connections to a foreign domain.
+The nature of summarization is that distance vectors are summarized before
+being processed. This includes the addresses of the connected neighbors. The
+problem of this is that the addresses of neighbors that share the same
+foreign domain are summarized into one and the same wildcard address, which
+in turn makes it impossible to distinguish between them. In the current
+version, hops no longer point to the neighbor, but instead identify the
+local interface that communicates with the neighbor. Incoming distance
+vectors are now summarized against the addresses of the receiving interface
+before being passed on to the router core. Interface addresses themselves
+are not summarized anymore. Essentially this means a router node can be in
+different domains at the same time by giving the interfaces addresses in
+different domains. Again, this approach is similar to IP.
+During operation, incoming distance vectors are first summarized by the
+receiving interface and then merged with the distance table. The entries are
+sorted in a way that the first entry is the most specific address, while the
+least specific (usually a wildcard) address is the last entry. When a
+message or packet has to be routed, its destination address is matched with
+the addresses in the distance table top-down. It will be copied to the
+interface that is the preferred hop of the first entry that matches the
+address.
+When an interface receives a distance vector for a wildcard address for
+which it already has one or more more specific entries, the vector is
+ignored. In practice this may happen when a two-interface node has one
+interface with address B.A, while the second interface is in a different
+domain, for example A.A. Due to summarization interface B.A will keep track
+of all addresses under B (1-level deep). So it will end up with entries for
+B.B, B.C, etc. Because the other interface (as well as its peer) are in a
+different domain, they will only keep track of the wildcard B.*. This means
+that at one point interface A.A will receive a distance vector for B.*. It
+is important that B.* is not entered in the distance table as it does not
+contain any valuable information. Since interface B.A already keeps track of
+all nodes and subdomains relative to B, there is no need for a B.* entry. In
+fact, if B.* was listed in the distance table with interface A.A being the
+next hop, it would mean that messages addressed to non-existing addresses in
+domain B would automatically be forwarded to interface A.A (after all B.* is
+the first entry that matches non-existing address B.X). This obviously
+creates a routing loop as A.A's peer node will bounce it right back, due to
+the fact that it has only a single wildcard entry B.* pointing to A.A.
+
+
+REFERENCES
+
+[1] E. van Zijst, Address Summarization for the Extended Bellman-Ford
+Protocol, MarketXS internal paper, September 2003

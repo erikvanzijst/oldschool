@@ -1,0 +1,31 @@
+Compiling:
+
+If your system meets the requirements, this is how to compile (and install):
+
+	./install.sh
+
+
+KDialer will install itself in your KDE bin directory and will setup the
+Help pages.
+
+
+Or do it by hand and ditch the little script by typing:
+
+	gcc -I$QTDIR/include -I$KDEDIR/include -L$QTDIR/lib -L$KDEDIR/lib -lqt -lkdecore -lkdeui -lXext -o kdialer kdialer.cc
+
+But I guess the script is easier ;)
+I kept everything in one file and I was too lazy make a Makefile, but I'm
+sure you'll succeed in typing the above command.
+I will make a Makefile some day, I promise ;)
+
+If the compile fails, check if you have Qt (at least 1.32) properly
+installed and KDE is properly setup and is running.
+If it still fails, you can rebuild the moc file by typing:
+
+	moc -o kdialer.moc kdialer.cc
+	gcc -I$QTDIR/include -I$KDEDIR/include -L$QTDIR/lib -L$KDEDIR/lib -lqt -lkdecore -lkdeui -lXext -o kdialer kdialer.cc
+
+Any questions?
+icehawk@xs4all.nl  (feel free!)
+
+Erik van Zijst, 06-15-1998

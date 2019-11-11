@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Stanzas are not like normal subroutines in programming languages that you can
+call recursively. Instead, because stanzas substitute their referring <inline>
+counterpart when the expression is being parsed, recursion is not possible.
+Attempting to use a stanza recursively (or creating a circular reference
+between different stanzas) will cause a StackOverflowError or OutOfMemoryError
+being dumped to stderr while the expression is being parsed.
+
+The expression below illustrates the problem of recursive stanzas: it crashes
+during parsing.
+
+Note that the example below would also fail in a normal programming language
+due to the lack of a termination condition. However, the difference with
+xmlmath is that xmlmath would still fail even with a proper termination
+condition, because the expression parser crashes even before the evaluation
+begins.
+-->
+
+<toString xmlns="http://prutser.cx/xmlmath/schemas">
+
+	<stanza name="foo">
+		<inline name="foo"/>
+	</stanza>
+	<inline name="foo"/>
+</toString>

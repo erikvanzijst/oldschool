@@ -1,0 +1,16 @@
+#!/bin/sh
+echo "Compiling..."
+
+moc -o kdialer.moc kdialer.cc
+
+g++ -lqt -I$QTDIR/include -I$KDEDIR/include -L$KDEDIR/lib -L/usr/X11R6/lib -lXext -lkdecore -lkdeui -o kdialer kdialer.cc
+
+echo "Installing kdialer and help files..."
+
+mkdir $KDEDIR/share/doc/HTML/default/kdialer
+
+cp ./doc/* $KDEDIR/share/doc/HTML/default/kdialer
+
+cp ./kdialer $KDEDIR/bin
+
+echo "done! You can now type 'kdialer'."

@@ -1,0 +1,39 @@
+# This function takes $destion_addr and summarizes it against the
+# $local_addr. The result is stored in $summarized_addr.
+
+FUNCTION summarize ($destination_addr, $local_addr, $summarized_addr)
+{
+	FOR ($fieldnr = 0; $fieldnr < $local_addr.numfields; $fieldnr++)
+	{
+		IF ($destination_addr.numfields <= $fieldnr)
+		{
+			# all fields in the destination address are equal to
+			# those in the local address - no summarization
+			# necessary
+			$summarized_addr = $destination_addr
+			EXIT
+		}
+		
+		$summarized_addr += $destination_addr[$fieldnr]
+		
+		IF ($local_addr[$fieldnr] != $destination_addr[$fieldnr])
+		{
+			# if destination has more fields than local, replace
+			# them by a wildcard and exit
+			IF ($destination_addr.numfields > $fieldnr + 1)
+			{
+				$summarized_addr += "*"
+			}
+			EXIT
+		}
+	}
+	
+	IF ($destination_addr.numfields != $local_addr.numfields AND
+	    $destination_addr.numfields != $local_addr.numfields + 1)
+	{
+		# local = A.B.C, destination = A.B.C.D.E.F
+		$summarized_addr += $destination_addr[$local_addr.numfields]
+		$summarized_addr += *
+	}
+	EXIT
+}

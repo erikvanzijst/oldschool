@@ -1,0 +1,451 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.8 [en] (X11; U; SunOS 5.8 sun4u) [Netscape]">
+   <title>Network Security</title>
+</head>
+<body>
+&nbsp;
+<table BORDER=0 WIDTH="637" >
+<caption><tbody>
+<br></tbody></caption>
+
+<tr>
+<td WIDTH="627">
+<h1>
+Network Security&nbsp;<br>
+(Spring 2003&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp; 6 credit points)&nbsp;</h1>
+<i><font size=-2>Last Update 20h May 03 @ 17:00</font></i>
+<br>&nbsp;
+<p>The final exam&nbsp; is&nbsp; scheduled for Tuesday 27th of May&nbsp;
+at&nbsp; 13:30 - 16:30&nbsp; in Q105
+<br>Some exam's sample questions can be found at the end of the page.
+<br>Please see the note at the bottom of the table.
+<br>&nbsp;
+<p>Vrije Universiteit, Faculty of Science, Dept. of Math. and Computer
+Science De Boelelaan 1081a, 1081 HV, Amsterdam, The Netherlands <a href="http://www.cs.vu.nl/cs/education-en.html">(VU)</a>
+<p><b>Lecturer</b>:&nbsp;&nbsp; Bruno Crispo&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+crispo@cs.vu.nl
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Room P4.22&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Phone ext. 47829
+<p>If you wish to talk to me about the course or a master thesis, please
+make an appointment after class, by calling, or via email at any time.
+<br>
+<hr>
+<h2>
+Schedule:</h2>
+<!-- Sheets in their final version are made available at least one day before
+ class is scheduled and can be found <a href="sheets.html">here</a> . -->Slides
+in their final version are made available before class is scheduled and
+can be found here. Chapters and sections refer to:&nbsp;
+<p>C. Kaufman, R. Perlman amd M. Speciner, "Network Security", 2nd edition,
+Prentice Hall, 2002,
+<br>ISBN 0-13-046019-2.&nbsp;
+<p>Class meets Tuesday 14.45 in M143&nbsp;
+<table BORDER=3 CELLSPACING=2 CELLPADDING=2 >
+<caption><tbody></caption>
+
+<tr>
+<td><b>class</b></td>
+
+<td><b>week</b></td>
+
+<td><b>topic</b></td>
+
+<td><b>material</b></td>
+
+<td><b>slides</b></td>
+</tr>
+
+<tr>
+<td>1&nbsp;</td>
+
+<td>6&nbsp;</td>
+
+<td>Fundamentals: Security Goals and Definitions&nbsp;
+<br>Introduction to Cryptography</td>
+
+<td>Chp. 1 ,2&nbsp;&nbsp; and [ <a href="http://www.cacr.math.uwaterloo.ca/hac/about/chap1.pdf">Chp</a>
+1]</td>
+
+<td>&nbsp;<a href="04_02_Spring2003.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td>2&nbsp;</td>
+
+<td>7&nbsp;</td>
+
+<td>Secret Key Cryptography and Mode of Operation</td>
+
+<td>Chp. 3 (no 3.4 and 3.5) and 4</td>
+
+<td>&nbsp;<a href="http://www.cs.vu.nl/~crispo/teaching/11_02_Spring2003_1.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td>3&nbsp;</td>
+
+<td>8&nbsp;</td>
+
+<td>&nbsp;Hash Functions and Asymmetric-Key Cryptography</td>
+
+<td>Chp. 5 (no 5.3 and 5.5),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Chp. 6,7&nbsp;</td>
+
+<td><a href="http://www.cs.vu.nl/~crispo/teaching/11_02_Spring2003_1.pdf">&nbsp;</a><a href="http://www.cs.vu.nl/~crispo/teaching/18_02_Spring2003.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td>4</td>
+
+<td>9</td>
+
+<td>Protocols</td>
+
+<td>Chp. 9,10,12</td>
+
+<td>&nbsp;<a href="http://www.cs.vu.nl/~crispo/teaching/25_02_Spring2003.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td>5</td>
+
+<td>10</td>
+
+<td>Protocols</td>
+
+<td>Chp. 9, 11 and&nbsp; <a href="clock.ps">paper</a></td>
+
+<td>&nbsp;<a href="04_03_Spring2003.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td>6&nbsp;</td>
+
+<td>11</td>
+
+<td>Key Management
+<br>Kerberos</td>
+
+<td>Chp. 9,&nbsp; 13 only from 13.1 to 13.7, 14&nbsp; only from 14.1 to
+14.6</td>
+
+<td>&nbsp;<a href="11_03_Spring2003.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td>7</td>
+
+<td>12&nbsp;</td>
+
+<td>Kerberos</td>
+
+<td>Chp. 13 only from 13.1 to 13.7, 14&nbsp; only from 14.1 to 14.6</td>
+
+<td>&nbsp; <a href="02_04_Spring2003.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td>8</td>
+
+<td>14</td>
+
+<td>PGP</td>
+
+<td>Chp. 20 only 20.1, 20.2, 20.3, 22 (no 22.10)</td>
+
+<td>&nbsp;<a href="02_04_Spring2003part2.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td>9</td>
+
+<td>15&nbsp;</td>
+
+<td>PKI</td>
+
+<td>Chp. 15,</td>
+
+<td><a href="08_04_Spring2003.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td>10&nbsp;</td>
+
+<td>16&nbsp;</td>
+
+<td>SSL and IPSEC</td>
+
+<td>Chp. 19 (no 19.14), 17 and 18.3 18.4, 18.5 and 18.6&nbsp;</td>
+
+<td>&nbsp;<a href="15_04_Spring2003-1.pdf">.pdf&nbsp;</a>
+<br>&nbsp;<a href="22_04_Spring2003.pdf">.pdf&nbsp;</a></td>
+</tr>
+
+<tr>
+<td>11&nbsp;</td>
+
+<td>17</td>
+
+<td>Real Time Communication, Firewall</td>
+
+<td>Chp. 16, 23, and 24 only 24.8</td>
+
+<td>&nbsp;<a href="06_05_Spring2003part1.pdf">.pdf&nbsp;</a></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td>12&nbsp;</td>
+
+<td>19&nbsp;</td>
+
+<td>Web Security Issues</td>
+
+<td>Chp. 25;</td>
+
+<td>&nbsp;<a href="13_05_Spring2003.pdf">.pdf&nbsp;</a></td>
+</tr>
+
+<tr>
+<td>13</td>
+
+<td>20</td>
+
+<td>Access Control&nbsp;</td>
+
+<td>Chp 1.13, 15.8 and&nbsp; <a href="AC_principles.pdf">paper</a></td>
+
+<td><a href="13_05_Spring2003part2.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td>14</td>
+
+<td>21</td>
+
+<td>Trusted GUI and Intrusion Detection</td>
+
+<td>&nbsp;(Topics of this class only are not included in the exam)</td>
+
+<td>&nbsp;<a href="20_05_Spring2003part2.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td></tbody></td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP>
+<br><img SRC="new1.gif" height=12 width=31><b> Note:&nbsp; All the material
+listed in the above table (Chps + papers) can be argument of the exam's
+questions.&nbsp; Sections/Chapters&nbsp; are recursive so include all subsections.
+(ie. 24.8 includes 24.8, 24.8.1 and 24.8.2)</b></td>
+</tr>
+</table>
+
+<hr>
+<br><b>Note:&nbsp;</b> During the course additional literature (e.g., research
+papers) will be used and distributed.
+<p>Further (optional) Reading:
+<br>&nbsp;
+<table BORDER WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td NOSAVE>Class 1</td>
+
+<td>Reflections on Trusting Trust (Turing Lecture)&nbsp; <a href="http://www.acm.org/classics/sep95">web</a>
+<br>Computer Viruses as Artificial Life,&nbsp; <a href="viruses.pdf">.pdf</a>
+<br>Soft Tempest: Hidden Data Transmission Using Electromagnetic Emanations,
+<a href="soft-tempest.pdf">.pdf</a>
+<br>Differential Power Analysis&nbsp; <a href="pda.pdf">.pdf</a>
+<br>The Spread of the Sapphire/Slammer Worm&nbsp; <a href="http://www.caida.org/outreach/papers/2003/sapphire/sapphire.html">web</a></td>
+</tr>
+
+<tr>
+<td>Class 2</td>
+
+<td>Please read the copyright notice.&nbsp;&nbsp; <a href="http://www.cacr.math.uwaterloo.ca/hac/about/chap7.pdf">Chp
+7</a></td>
+</tr>
+
+<tr>
+<td>Class 3&nbsp;</td>
+
+<td>Please read the copyright notice&nbsp;&nbsp;&nbsp; <a href="http://www.cacr.math.uwaterloo.ca/hac/about/chap9.pdf">Chp
+9,</a>
+<br>New Direction in Cryptography (Diffie-Hellman)&nbsp;&nbsp; <a href="DH.pdf">.pdf</a>
+<br>A Method for Obtaining Digital Signatures and Public-Key Cryptosystems
+(RSA)&nbsp; <a href="RSA.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td>Class 4</td>
+
+<td>Systematic Design of a Family of Attack-Resistant Authentication Protocols
+<a href="IBM_AuthProt.pdf">.pdf</a>
+<br>Lamport's Hash Scheme <a href="haller94skey.pdf">.pdf&nbsp;</a>
+<br>Dictionary attacks&nbsp; (Gong,Lomas,Seltzer,Needham)&nbsp; <a href="guessing.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td>Class 5</td>
+
+<td>Using Encryption for Authentication in Large Networks of Computers
+(Needham-Schroeder)&nbsp; <a href="needham-schroeder.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td>Class 6,7</td>
+
+<td>Designing an Authentication System: a Dialogue in Four Scenes (Kerberos)
+<a href="web.mit.edu/kerberos/www/dialogue.html">web</a>
+<br>Kerberos v4 spec.&nbsp; <a href="kerberos4.ps">.pdf</a>
+<br>Limitation to Kerberos v 4 (Bellovin-Meritt) <a href="bell_merr.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td>Class 8</td>
+
+<td>PGP software&nbsp; <a href="http://www.pgpi.org/download">www</a></td>
+</tr>
+
+<tr>
+<td>Class 9</td>
+
+<td>IETF Timestamp Prococol&nbsp; (RFC 3161)&nbsp; <a href="http://www.ietf.org/rfc/rfc3161.txt">.txt</a>
+<br>IETF Online Certificate&nbsp; Status Protocol (RFC 2560)&nbsp; <a href="http://www.ietf.org/rfc/rfc2560.txt">.txt</a>
+<br>Certificate Revocation and Certificate Update (Naor,Nissim)&nbsp; <a href="http://www.wisdom.weizmann.ac.il/%7Enaor/PAPERS/cert.ps">.ps</a></td>
+</tr>
+
+<tr>
+<td>Class 10</td>
+
+<td>TLS Protocol Specification (RFC 2246) <a href="http://www.ietf.org/rfc/rfc2246.txt">.txt</a></td>
+</tr>
+
+<tr>
+<td>Class 13</td>
+
+<td>Protection (Lampson)&nbsp; <a href="protection.pdf">.pdf</a>
+<br>Role Based Access Control (Sandhu et. al.) <a href="RBAC.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+<td>Class 14</td>
+
+<td>A note on the Confinement Problem (about covert channels. Lampson)
+<a href="confinement.pdf">pdf</a></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td></td>
+</tr>
+</table>
+
+<p><b><u>Sample exam questions</u></b>
+<p>Par. 2.7&nbsp; Q. 3 and why?
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Exercises in the slide of Calss 2.&nbsp; Sketch one or more method to retrieve
+the original M
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+from&nbsp; C without the knowledge of the key.
+<br>Par 3.7&nbsp; Q. 3, 4, 5, 6, 7
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Describe how does the DES algorithm work
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Describe at least two different modes of operation of DES.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Why&nbsp; triple DES instead of double DES?
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Describe the RSA algorithm. On which assuptions its security relies upon?
+<p>Par 6.9&nbsp; Q.&nbsp; 6
+<p>Par 9.10&nbsp; Q.&nbsp; 2 and why?
+<br>Par 11.9&nbsp;&nbsp; Q. 2, 4, 7
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3 and why?
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5 if not why?
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+6 if not why?
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Timestamps and nonces can be used to prevent replay attacks. Explain why?
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+What are the difference between the two approaches?
+<p>Par 12.5&nbsp; Q. 1, 2
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Specify the Kerberos v5 messages involved from the time a user first walks
+up to
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+a workstation to the time the user succesfully send a file to printer located
+in the same
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+realm of the user
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+What are the main differences between X.509 and PGP trust models?
+<p>Par 15.9&nbsp; Q. 1, 5, 6, 7, 8
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Describe the message flow of the SSL protocol
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+What are ACL and capabilities and what are the differences between the
+two?
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+What is a cookie?
+<br>Par 25.7&nbsp;&nbsp;&nbsp; Q. 3, 4, 5, 6
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Describe the Java security model (JDK 1.2)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Why Applets can be a security hazard? What are the security&nbsp; restrictions
+that apply to them?
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Let's assume we have a system composed of three components (A,B,C).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Let's also assume we&nbsp; can rate the security strenght of each component
+with a number
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(0 lowest security -&nbsp; 10 highest security). If A=3, B=8, C=6, what
+is the security rate of the
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+system as a whole?
+</body>
+</html>

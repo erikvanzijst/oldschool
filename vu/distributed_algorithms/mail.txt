@@ -1,0 +1,80 @@
+From erik@marketxs.com Tue Sep 30 21:07:35 2003
+Return-Path: <erik@marketxs.com>
+Received: from mail.office.MarketXS.com (213-84-200-37.adsl.xs4all.nl
+    [213.84.200.37])
+	by prutser.cx (8.11.6/8.11.6) with ESMTP id h8UHB7S28280
+	for <erik@prutser.cx>; Tue, 30 Sep 2003 19:11:07 +0200
+Received: from erik.middleware.MarketXS.com
+    (IDENT:wqYPfYCxua30AKyN/II2sqiay2iWk3jO@erik.middleware.marketxs.com
+    [10.1.2.1])
+	by mail.office.MarketXS.com (8.12.9/8.12.3/Debian-6.4) with ESMTP
+    id h8UHATai006757
+	for <erik@prutser.cx>; Tue, 30 Sep 2003 19:10:29 +0200
+Content-Type: text/plain;
+  charset="iso-8859-1"
+From: Erik van Zijst <erik@marketxs.com>
+Organization: MarketXS
+Subject: Fwd: RE: tentamen Distributed Algorithms
+Date: Tue, 30 Sep 2003 19:09:18 +0200
+User-Agent: KMail/1.4.3
+To: erik@prutser.cx
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Message-Id: <200309301909.18738.erik@marketxs.com>
+X-MailScanner: Found to be clean
+
+
+
+----------  Forwarded Message  ----------
+
+Subject: RE: tentamen Distributed Algorithms
+Date: Tue, 30 Sep 2003 19:10:01 +0200
+From: "Sander van Loo" <sander@marketxs.com>
+To: <Wan.Fokkink@cwi.nl>, "Erik van Zijst" <Erik.van.Zijst@marketxs.com>
+
+Best Wan,
+
+Ja, wij zijn nog steeds van plan het vak zelfstandig te studeren. Kunnen
+wij dinsdag 7 oktober 10.30u even langskomen?
+
+Mvg,
+Sander van Loo
+
+-----Original Message-----
+From: Wan.Fokkink@cwi.nl [mailto:Wan.Fokkink@cwi.nl]
+Sent: dinsdag 30 september 2003 11:38
+To: Erik.van.Zijst@marketxs.com; sander@marketxs.com
+Cc: Wan.Fokkink@cwi.nl
+Subject: tentamen Distributed Algorithms
+
+Beste Sander van Loo en Erik van Zijst,
+
+In het voorlopige tentamen-schema is een tentamen gedistribueerde
+algoritmes
+opgenomen, op 21 januari. Zijn jullie nog steeds van plan het vak
+zelfstandig
+te studeren? Misschien kunnen jullie binnenkort langskomen om het vak
+even
+door te nemen.
+
+Mvg,
+Wan Fokkink
+
+> Geachte heer Fokkink,
+>
+> Erik en ik zouden graag Gedistribueerde Algoritmes aan ons masters
+> vakkenpakket willen toevoegen (keuzevak theoretische informatica). Het
+> blijkt echter dat dit vak dit jaar niet wordt gegeven. Is het wel
+
+mogelijk
+
+> om dit jaar tentamen te doen in dit vak?
+>
+> Mvg,
+> Sander van Loo
+
+-------------------------------------------------------
+
+-- 
+College:
+	The fountains of knowledge, where everyone goes to drink.

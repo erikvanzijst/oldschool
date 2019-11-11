@@ -1,0 +1,133 @@
+jit - Problem size 56, 7962313 jobs (dist58.txt)
+parameters: -prebranch 7 -grainsize 5 -prefetch 5
+1 cpu (46.363 44.725) average: 45.544 speedup: 1
+2 cpu (29.273 30.014) average: 29.644 speedup: 1.536
+4 cpu (21.618 22.504) average: 22.061 speedup: 2.064
+8 cpu (16.215 15.321) average: 15.768 speedup: 2.888
+16 cpu (13.354 14.037) average: 13.696 speedup: 3.325
+32 cpu (13.461 13.183) average: 13.322 speedup: 3.419
+
+manta - Problem size 56, 7962313 jobs (dist58.txt)
+parameters: -prebranch 7 -grainsize 5 -prefetch 5
+1 cpu (65.946 65.861) average: 65.904 speedup: 1
+2 cpu (34.712 35.05) average: 34.881 speedup: 1.890
+4 cpu (19.074 18.587) average: 18.831 speedup: 3.500
+6 cpu (13.006 13.554) average: 13.280 speedup: 4.963
+8 cpu (12.498 16.244) average: 14.371 speedup: 4.586
+16 cpu (9.955 9.928) average: 9.942 speedup: 6.629
+32 cpu (14.501 11.795) average: 13.148 speedup: 5.012
+
+jit - Problem size 60, 14032634 jobs (dist74.txt)
+parameters: -prebranch 8 -grainsize 25 -prefetch 7
+1 cpu (79.605 78.966) average: 79.286 speedup: 1
+2 cpu (54.109 50.801) average: 52.455 speedup: 1.151
+4 cpu (34.982 35.964) average: 35.473 speedup: 2.235
+6 cpu (30.966 37.956) average: 34.461 speedup: 2.301
+8 cpu (33.6 29.585) average: 31.593 speedup: 2.510
+16 cpu (24.563 23.184) average: 23.874 speedup: 3.321
+32 cpu (24.708 26.953) average: 25.831 speedup: 3.070
+
+manta - Problem size 60, 14032634 jobs (dist74.txt)
+1 cpu (123.847 115.59) average: 119.719 speedup: 1
+2 cpu (64.974 62.226) average: 63.6 speedup: 1.882
+4 cpu (39.278 44.465) average: 41.872 speedup: 2.859
+6 cpu (44.201 37.335) average: 40.768 speedup: 2.937
+8 cpu (27.621 30.356) average: 28.989 speedup: 4.130
+16 cpu (27.529 27.449) average: 27.489 speedup: 4.355
+32 cpu (20.34 28.955) average: 24.648 speedup: 4.857
+
+jit - Problem size 62, 58832778 jobs (dist70.txt)
+parameters: -prebranch 8 -grainsize 25 -prefetch 7
+1 cpu (320.917 331.613) average: 326.265 speedup: 1
+2 cpu (187.253 188.849) average: 188.051 speedup: 1.735
+4 cpu (115.38 111.841) average: 113.611 speedup: 2.872
+6 cpu (84.446 87.309) average: 85.878 speedup: 3.799
+8 cpu (67.285 73.334) average: 70.310 speedup: 4.640
+16 cpu (61.648 64.642) average: 63.145 speedup: 5.167
+32 cpu (56.893 52.202) average: 54.548 speedup: 5.981
+
+manta - Problem size 62, 58832778 jobs (dist70.txt)
+parameters: -prebranch 8 -grainsize 25 -prefetch 7
+1 cpu (509.457 484.522) average: 496.99 speedup: 1
+2 cpu (248.693 242.437) average: 245.565 speedup: 2.024
+4 cpu (132.65 134.632) average: 133.641 speedup: 3.719
+6 cpu (98.67 93.516) average: 96.093 speedup: 5.172
+8 cpu (81.67 87.045) average: 84.358 speedup: 5.891
+16 cpu (69.976 74.881) average: 72.429 speedup: 6.862
+32 cpu (60.261 50.749) average: 55.505 speedup: 8.954
+
+jit - Problem size 62, 91545972 jobs (dist66.txt)
+parameters: -prebranch 10 -grainsize 25 -prefetch 7
+1 cpu (519.224 501.641) average: 510.433 speedup: 1
+2 cpu (299.247 300.987) average: 300.117 speedup: 1.701
+4 cpu (169.276 168.32) average: 168.798 speedup: 3.024
+6 cpu (132.286 121.86) average: 127.073 speedup: 4.017
+8 cpu (96.222 98.161) average: 97.191 speedup: 5.252
+16 cpu (92.757 74.062) average: 83.410 speedup: 6.120
+32 cpu (64.396 65.985) average: 65.191 speedup: 7.830
+
+manta - Problem size 62, 91545972 jobs (dist66.txt)
+parameters: -prebranch 10 -grainsize 25 -prefetch 7
+1 cpu (774.066 830.298) average: 802.182 speedup: 1
+2 cpu (432.563 393.151) average: 412.857 speedup: 1.943
+4 cpu (229.514 212.644) average: 221.079 speedup: 3.628
+6 cpu (140.584 156.222) average: 148.403 speedup: 5.405
+8 cpu (121.126 103.963) average: 112.544 speedup: 7.128
+16 cpu (87.328 59.831) average: 73.580 speedup: 10.902
+32 cpu (78.347 72.661) average: 75.504 speedup: 10.624
+
+jit - Problem size 64, 275890257 jobs (dist68.txt)
+parameters: -prebranch 10 -grainsize 25 -prefetch 7
+1 cpu (1461.5 1533.335) average: 1497.42 speedup: 1
+2 cpu (785.732 825.23) average: 805.481 speedup: 1.860
+4 cpu (468.54 460.043) average: 464.292 speedup: 3.225
+6 cpu (370.532 356.52) average: 363.526 speedup: 4.120
+8 cpu (336.33 335.538) average: 335.934 speedup: 4.460
+16 cpu (198.102 192.695) average: 195.399 speedup: 7.663
+32 cpu (131.382 156.874) average: 144.128 speedup: 10.390
+
+manta - Problem size 64, 275890257 jobs (dist68.txt)
+parameters: -prebranch 10 -grainsize 25 -prefetch 7
+1 cpu (2293.795 2289.598) average: 2291.7 speedup: 1
+2 cpu (1180.12 1169.198) average: 1174.66 speedup: 1.951
+4 cpu (600.009 596.825) average: 598.417 speedup: 3.830
+6 cpu (396.0 437.33) average: 416.665 speedup: 5.500
+8 cpu (333.897 321.643) average: 327.77 speedup: 6.992
+16 cpu (238.001 218.229) average: 228.115 speedup: 10.046
+32 cpu (181.393 175.441) average:  speedup: 
+
+jit - Problem size 62, 775922910 jobs (dist82.txt)
+1 cpu (4375.97 4403.833) average: 4389.9 speedup: 1
+2 cpu (2309.623 2188.637) average: 2249.13 speedup: 1.952
+4 cpu (1237.167 1220.517) average: 1228.84 speedup: 3.572
+6 cpu (844.955 860.127) average: 852.541 speedup: 5.149
+8 cpu (657.56 659.337) average: 658.448 speedup: 6.667
+16 cpu (351.724 371.681) average: 361.702 speedup: 12.137
+32 cpu (365.833 283.558) average: 324.696 speedup: 13.520
+
+manta - Problem size 62, 775922910 jobs (dist82.txt)
+1 cpu (7120.421 7062.63) average: 7091.53 speedup: 1
+2 cpu (3313.067 3233.881) average: 3273.47 speedup: 2.166
+4 cpu (1718.186 1802.253) average: 1760.22 speedup: 4.029
+6 cpu (1155.446 1146.083) average: 1150.76 speedup: 6.162
+8 cpu (853.694 904.502) average: 879.098 speedup: 8.067
+16 cpu (460.508 503.333) average: 481.921 speedup: 14.715
+32 cpu (317.662 285.644) average: 301.653 speedup: 23.509
+
+jit - Problem size 64,  jobs (dist84.txt)
+1 cpu ( ) average:  speedup: 1
+2 cpu ( ) average:  speedup: 
+4 cpu ( ) average:  speedup: 
+6 cpu ( ) average:  speedup: 
+8 cpu ( ) average:  speedup: 
+16 cpu ( ) average:  speedup: 
+32 cpu ( ) average:  speedup: 
+
+manta - Problem size 64,  jobs (dist84.txt)
+1 cpu ( ) average:  speedup: 1
+2 cpu ( ) average:  speedup: 
+4 cpu ( ) average:  speedup: 
+6 cpu ( ) average:  speedup: 
+8 cpu ( ) average:  speedup: 
+16 cpu ( ) average:  speedup: 
+32 cpu ( ) average:  speedup: 

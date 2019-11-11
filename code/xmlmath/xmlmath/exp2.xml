@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- declare/link -->
+	<declare name="j">
+		<double value="2.0"/>
+	</declare>
+	
+<!-- stanza/inline -->
+	<stanza name="s">
+		<quotient>
+			<fact>
+				<link name="x"/>
+			</fact>
+			<e/>
+		</quotient>
+	</stanza>
+
+	<pow>
+		<product>
+			<declare name="x">
+				<quotient>
+					<link name="j"/>
+					<double value=".01"/>
+				</quotient>
+			</declare>
+			<inline name="s"/>
+		</product>
+	</pow>
+
+
+<equals xmlns="http://prutser.cx/xmlmath/schemas">
+	<log>
+		<double value="1"/>
+	</log>
+	<assign name="i">
+	</assign>
+
+	<declareDouble name="i">
+		<double value="1"/>
+	</declareDouble>
+
+	<!-- macro's are not expanded, but placed in the current scope -->
+	<stanza name="triple-x">
+		<product>
+			<doubleRef name="x"/>
+			<long value="3"/>
+		</product>
+	</stanza>
+	
+	<greaterThan>
+		<log>
+			<declareLong name="x" value="4"/>
+			<!-- when <inline> is used, the stanza is pulled from the stack,
+			cloned and parsed, yielding a copy of the stanza at the current
+			position in the expression -->
+			<inline name="triple-x"/>
+		</log>
+		<double value="2"/>
+	</greaterThan>
+
+	<call name="doit">
+		<!-- declares variables arg0,..,arg2 in order of the operands and then
+			evaluates the expression -->
+		<double value="0"/>
+		<double value="10"/>
+		<string value="arie"/>
+	</call>
+</equals>
+
+<expression name="doit" args="i,j,k">
+	<!-- expects 3 variables, reads arg0,..,arg2 then declares three new
+		variables: i,j,k, copies the values of the args to the new ones and
+		evaluates the expression -->
+	<doubleRef name="j"/>
+</expression>
+
+<!--
+<strcat xmlns="http://prutser.cx/xmlmath/schemas">
+	<declareLong name="x" value="3"/>
+	<string value="Result: "/>
+	<toString>
+		<sum iterator="i" from="1" to="x" datatype="long">
+			<longRef name="i"/>
+		</sum>
+	</toString>
+</strcat>
+
+<e xmlns="http://prutser.cx/xmlmath/schemas"/>
+
+<sum iterator="j" from="1" to="100" xmlns="http://prutser.cx/xmlmath/schemas">
+	<longRef name="j"/>
+</sum>
+
+<for iterator="j" from="0" to="100" xmlns="http://prutser.cx/xmlmath/schemas">
+	<longRef name="j"/>
+</for>
+
+<doubleExpression xmlns="http://prutser.cx/xmlmath/schemas">
+	<toDouble>
+		<declareDouble name="x" value="9"/>
+		<abs>
+			<quotient>
+				<double value="-1"/>
+				<doubleVar name="x"/>
+			</quotient>
+		</abs>
+		<declare type="long" name="i"/>
+		<sum var="i" from="0" to="9">
+			<double value="-1"/>
+			<doubleVar name="x"/>
+		</sum>
+		<listSum>
+			<declare type="long" name="j"/>
+			<for var="j" from="0" to="100">
+				<product>
+					<longVar value="j"/>
+					<longVar name="x"/>
+				</product>
+			</for>
+		</listSum>
+	</toDouble>
+</doubleExpression>
+-->

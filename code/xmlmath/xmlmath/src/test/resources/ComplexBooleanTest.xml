@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test xmlns="http://prutser.cx/xmlmath/schemas"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<testBoolean result="true">
+		<true/>
+<!-- 
+		<and>
+			<equals>
+				<integer value="3"/>
+				<mod denominator="10">
+					<integer value="13"/>
+				</mod>
+			</equals>
+			<xor>
+				<not>
+					<greaterThan>
+						<integer value="12"/>
+						<integer value="35"/>
+					</greaterThan>
+				</not>
+				<lessThan inclusive="true">
+					<toFloat>
+						<listProduct datatype="integer">
+							<unique>
+								<list>
+									<integer value="1"/>
+									<integer value="1"/>
+									<integer value="2"/>
+									<integer value="3"/>
+								</list>
+							</unique>
+						</listProduct>
+					</toFloat>
+					<float value="0.032"/>
+				</lessThan>
+			</xor>
+		</and>
+		 -->
+	</testBoolean>
+</test>

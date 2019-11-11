@@ -1,0 +1,44 @@
+Studie-aktiviteiten.
+
+
+1.	Analyseer hoe de geluidskaart in je PC configuratie is
+        opgenomen. Breng hiervan verslag uit op schrift. In het
+        verslag moeten zijn opgenomen schermafdrukken van het
+        configuratiescherm en dienen de submenus van multimedia
+        en system te zijn uitgewerkt.
+2.	Controleer zeif de werking van je geluidskaart door via de
+        mediaplayer een way een midi bestand af te spelen.
+3.      Zoek in het configuratiescherrn in het menu 'geluiden'
+        welke geluiden Windows nu gebruikt. Maak een
+        schermafdruk en neem deze in het versiag op. Verander in
+        het menu geluiden, het opstari en afsluiten geluid door een
+        ander wav bestand. Test dit en maak een afdruk van het
+        geluidsmenu met de nieuwe bestandsnaam en neem dit op
+        in je verslag.
+4.      Verzamel 5 wav bestanden en 2 midibestanden die samen
+        op 1 floppy 1 .44 MB kunnen worden opgeslagen. Deze
+        bestanden gebruik je in de volgende opdrachten bij Word,
+        Excel en Powerpoint.
+5.	Maak een presentatie in Word waarbij je in een zelf gekozen
+        stuk tekst minstens 4 geluiden en 1 muziekfragment
+        integreerd. Demonstreer je tekst met geluid in het
+        practicum.
+6.	Maak een presentatie van een spreadsheat in Excel waarin
+        je 5 geluiden integreert in de presentatie van de gegevens.
+        Demonstreer je spreadsheat met geluid in het practicum.
+7.	Bewerk in een wave edittor de 5 way geluiden door: een
+        keer reverse toe te passen, 1 geluid te verknippen en weer
+        in een andere vorm te plakken, 1 geluid in te faden, 1
+        geluid uit te faden, 1 geluid van een effect te voorzien.
+        Demonstreer de bewerkte geluiden. Maak een schermafdruk
+        van het onbewerkte geluid en van elke bewerkte
+        wavevorm. Lever de schermafdrukken op schrift in.
+8.	Maak een Powerpoint presentatie van minimaall 5
+        afbeeldingen die met elkaar een (verhaal)lijn vormen.
+        Integreer in de diapresentatie de 5 bewerkte geluiden en 2
+        midi muziekfragmenten zodanig dat de presentatie
+        automatisch kan worden gedraaid. Demonstreer de
+        presentatie tijdens het practicum.
+
+E-mail: m.j.boer@hro.nl
+

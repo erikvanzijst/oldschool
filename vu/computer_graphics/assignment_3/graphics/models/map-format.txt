@@ -1,0 +1,30 @@
+Each map file starts with the monster's trajectory. A trajectory is
+a number of landmark coordinates that the monster will visit one after
+the other.
+The rest of the map file describes the scenery of the world. It can
+contain an arbitrary amount of models, each with a position in the
+world.
+
+<filename.sgf>
+<translation values>
+<rotation angles>
+<scaling factors>
+
+example:
+
+
+# Monster's trajectory of 2 landmarks
+2
+1.0 3.0
+5.5 -6.4
+
+..\models\maps\appartment.sgf
+10.0 0.0 0.0
+0.0 0.0 0.0
+1.0 1.0 1.0
+
+..\models\maps\appartment.sgf
+10.0 5.0 0.0
+0.0 30.0 0.0
+1.0 1.0 1.0
+

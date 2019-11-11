@@ -1,0 +1,52 @@
+#!/bin/bash
+. config
+PIDFILE=`grep "pid" $STUNNEL_CONF | cut -f2 -d'='`
+DEFAULT_SRC_ACCOUNT=555
+DEFAULT_DST_ACCOUNT=123
+DEFAULT_AMOUNT=100.00
+export LD_LIBRARY_PATH=$LIBBANK_DIR:$LD_LIBRARY_PATH
+echo -n "Enter source account [$DEFAULT_SRC_ACCOUNT]: "
+read
+if [ -z "$REPLY" ]; then
+	SRC_ACCOUNT=$DEFAULT_SRC_ACCOUNT
+else
+	SRC_ACCOUNT=$REPLY
+fi
+echo -n "Enter destination account [$DEFAULT_DST_ACCOUNT]: "
+read
+if [ -z "$REPLY" ]; then
+	DST_ACCOUNT=$DEFAULT_DST_ACCOUNT
+else
+	DST_ACCOUNT=$REPLY
+fi
+echo -n "Enter amount [$DEFAULT_AMOUNT]: "
+read
+if [ -z "$REPLY" ]; then
+	AMOUNT=$DEFAULT_AMOUNT
+else
+	AMOUNT=$REPLY
+fi
+echo -n "Enter certificate: "
+read
+if [ -z "$REPLY" ]; then
+	echo "A certificate is required to verify a payment!"
+	exit 1
+else
+	CERTIFICATE=$REPLY
+fi
+echo -n "Enter password: "
+read
+if [ -z "$REPLY" ]; then
+        echo "A password is required to authorize the verification"
+        exit 1
+else
+        PASSWORD=$REPLY
+fi
+if [ ! -r $PIDFILE ]; then
+	echo "Starting SSL tunnel software..."
+        $STUNNEL_DIR/stunnel $STUNNEL_CONF 
+else
+	echo "SSL tunnel software still running..."
+fi
+echo "Verifying transfer of $AMOUNT from account $SRC_ACCOUNT to $DST_ACCOUNT using certificate $CERTIFICATE..."
+`pwd`/bankcheck $SRC_ACCOUNT $DST_ACCOUNT $AMOUNT $CERTIFICATE $PASSWORD localhost 9999

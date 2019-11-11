@@ -1,0 +1,146 @@
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<BASE HREF="http://nexus.cs.usfca.edu/benson/cs326/minix-system-calls"><table border=1 width=100%><tr><td><table border=1 bgcolor=#ffffff cellpadding=10 cellspacing=0 width=100% color=#ffffff><tr><td><font face=arial,sans-serif color=black size=-1>Dit is <b><font color=#0039b6>G</font> <font color=#c41200>o</font> <font color=#f3c518>o</font> <font color=#0039b6>g</font> <font color=#30a72f>l</font> <font color=#c41200>e</font></b> 's <a href="http://www.google.com/intl/nl/help/features.html#cached"><font color=blue>cache</font></a> van <A HREF="http://nexus.cs.usfca.edu/benson/cs326/minix-system-calls"><font color=blue>http://nexus.cs.usfca.edu/benson/cs326/minix-system-calls</font></a>.<br>
+<b><font color=#0039b6>G</font> <font color=#c41200>o</font> <font color=#f3c518>o</font> <font color=#0039b6>g</font> <font color=#30a72f>l</font> <font color=#c41200>e</font></b>'s cache is de momentopname die we van deze pagina hebben gemaakt toen we het web doorzochten.<br>
+De pagina kan ondertussen gewijzigd zijn. Klik hier voor de <A HREF="http://nexus.cs.usfca.edu/benson/cs326/minix-system-calls"><font color=blue>huidige pagina</font></a> zonder selectie<br>Gebruik de volgende URL om deze pagina aan je Favorieten toe te voegen of ernaar te linken: <code>http://www.google.com/search?q=cache:A2FDw-C9LNAC:nexus.cs.usfca.edu/benson/cs326/minix-system-calls+adding+system+call+to+minix&amp;hl=nl&amp;ie=UTF-8</code></font><br><br><center><font size=-2><i>Google heeft geen banden met de auteurs van deze pagina en is niet verantwoordelijk voor de inhoud ervan</i></font></center></td></tr>
+<tr><td>
+<table border=0 cellpadding=0 cellspacing=0><tr><td><font face=arial,sans-serif color=black size=-1>Deze zoektermen werden geselecteerd:&nbsp;</font></td><td bgcolor=#ffff66><B><font face=arial,sans-serif color=black size=-1>adding&nbsp;</font></B></td><td bgcolor=#A0FFFF><B><font face=arial,sans-serif color=black size=-1>system&nbsp;</font></B></td><td bgcolor=#99ff99><B><font face=arial,sans-serif color=black size=-1>call&nbsp;</font></B></td><td bgcolor=#ff9999><B><font face=arial,sans-serif color=black size=-1>minix&nbsp;</font></B></td></tr></table>
+</td></tr></table></td></tr></table>
+<hr>
+<html>
+<head>
+</head><body><pre>COMPILING THE KERNEL
+
+1) cd /usr/src/tools
+2) make clean (if necessary)
+3) make
+4) make hdboot
+5) sync; sync; halt
+6) image=/<B style="color:black;background-color:#ff9999">minix</B>/2.0.3r13 (or something similar)
+7) boot
+
+-------------------------------------------------------------------------------
+WRITING A <B style="color:black;background-color:#A0FFFF">SYSTEM </B><B style="color:black;background-color:#99ff99">CALL</B>
+
+There are 2 parts to writing a <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B>
+   o User level - This is a few lines of code to send the message to
+kernel space about which <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> is invoked and the parameters. 
+   o kernel level - The actual implementation of the <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> as well
+as putting it in the <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> table.
+
+Kernel level code :-
+1) The kernel does not understand <B style="color:black;background-color:#A0FFFF">system</B> calls. It identifies <B style="color:black;background-color:#A0FFFF">system</B>
+   calls by a number which is an index in the <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> array
+   Edit the file /usr/include/<B style="color:black;background-color:#ff9999">minix</B>/callnr.h and add your new <B style="color:black;background-color:#A0FFFF">system
+   </B><B style="color:black;background-color:#99ff99">call</B> number to it.
+   eg - 
+	#define FOO 78
+   Also change NCALLS at the top of the file to indicate the increased
+   number of <B style="color:black;background-color:#A0FFFF">system</B> calls.
+
+2) The actual <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> can be implemented in either a separate file
+   or one of the existing files. 
+   Create a new file(foo.c) in the /usr/src/mm(or /usr/src/fs)
+   directory and add the code for <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> inside it. The simplest of
+   the <B style="color:black;background-color:#A0FFFF">system</B> calls(prints out a line) should look something like -
+	PUBLIC int do_foo(void) {
+		printf(&quot;Foo <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> invoked!\n&quot;);
+	}
+   If you are creating a new file, dont forget to include relevant
+   files at the top(get the files to be included from any other file in 
+   the directory. If I remember right they are &quot;mm.h&quot;, &lt;sys/wait.h&gt;, 
+   &lt;signal.h&gt;, &lt;<B style="color:black;background-color:#ff9999">minix</B>/callnr.h&gt;, &quot;mproc.h&quot; and &quot;param.h&quot;
+   I am not sure which of these actually need to be included. But safer
+   to include all(it wont hurt).
+   Edit the Makefile in /usr/src/mm(or /usr/src/fs) and add your
+   filename.o to the OBJ list. In this case, add foo.o.
+
+   If you are editing an existing file(like forkexit.c) and <B style="color:black;background-color:#ffff66">adding</B> your 
+   <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> at the end, you need not do anything except add your
+   code. This is simpler.
+
+3) Add the prototype of the <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> to /usr/src/mm/proto.h
+   _PROTOTYPE(int foo, (void));
+
+4) Add the new <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> function pointer to the syscall table
+   Edit /usr/src/mm/table.c, and add the function pointer(do_foo in 
+   this case) at the end of the syscall array, call_vec.
+  
+   Note -&gt; Edit /usr/src/fs/table.c and add a no_sys in the
+   corresponding entry of the syscall array, call_vec. Otherwise you
+   will get compilation problems. This is necessary because the kernel
+   checks the number of <B style="color:black;background-color:#A0FFFF">system</B> calls and the size of the call_vec
+   variable and if they dont match, it throws an error. This is done in
+   just the next line after call_vec is defined -
+
+   /* This should not fail with &quot;array size is negative&quot;: */
+   extern int dummy[sizeof(call_vec) == NCALLS * sizeof(call_vec[0]) ? 1
+: -1];
+
+   Obviously if either in MM or FS, the size of call_vec is not equal to
+   NCALLS times size of one function pointer, it will give compilation
+   errors.
+
+Kernel configuration is done. Now for the user level code -
+
+User level code :-
+There are 2 ways in which you can do this - by creating a local library
+which holds the linking information or by <B style="color:black;background-color:#ffff66">adding</B> the same information to
+the library. Since <B style="color:black;background-color:#A0FFFF">system</B> calls in <B style="color:black;background-color:#ff9999">minix</B> are compiled in the library,
+you will have to recompile the entire library.
+
+1) Small local library(recommended)-
+   Add the prototype of the function to /usr/include/unistd.h
+   Create a file called libfoo.h and add the following code to it -
+
+   #include &lt;lib.h&gt;
+   #define foo _foo
+   #include &lt;unistd.h&gt;
+
+   /* 
+    * note -&gt; foo is the &quot;user level&quot; name of the <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B>. It can be
+    * same or different from the kernel function(do_foo). We are passing
+    * the number of the <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> to the MM subsystem(FOO = 78)
+    * via the _syscall macro
+    */
+   PUBLIC int foo(void) {
+	message m;
+	return (_syscall(MM, FOO, &amp;m));
+   }
+ 
+   While writing your test program, use #include &quot;libfoo.h&quot; and compile 
+   normally.
+
+2) <B style="color:black;background-color:#ffff66">Adding </B><B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> to the library
+   Add the prototype of the function to /usr/include/unistd.h
+
+   Create a file in the directory /usr/src/lib/posix. The filename is
+   _foo.c where foo is the <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> name. Add to it the code similar
+   to that in 1).
+
+   Create the assembly linkage in /usr/src/lib/syscall in a file called
+   foo.s(where foo is the <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> name).
+   Add the following code to it -
+
+   .sect .text
+   .extern __foo
+   .define _foo
+   .align 2
+
+   _foo:
+	jmp     __foo
+   
+   Now we have to compile the library. For that, modify the makefiles in
+   /usr/src/lib/posix/ and /usr/src/lib/syscall directories to refect
+   the new files just added(_foo.c and foo.s) and to properly compile
+   them. The changes to the makefiles should be easy. You can simply
+   observe how the other files are being compiled and add your filename
+   to the list of target objects and the respective dependencies.
+   
+   Now compile the library. Go to the /usr/src/lib directory and do
+   &quot;make&quot;. On the safe side, you might want to save the original library
+   file, which is /usr/src/lib/libc.a before compiling it.
+
+   While writing test programs, simply use #include &lt;unistd.h&gt; and the
+   <B style="color:black;background-color:#A0FFFF">system </B><B style="color:black;background-color:#99ff99">call</B> should work.
+
+</pre></body></html>

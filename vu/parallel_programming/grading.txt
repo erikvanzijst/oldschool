@@ -1,0 +1,49 @@
+From rob@cs.vu.nl  Fri Mar 14 12:48:44 2003
+Return-Path: <rob@cs.vu.nl>
+Received: from solo.cs.vu.nl (root@solo.cs.vu.nl [130.37.24.1])
+	by prutser.cx (8.11.6/8.11.6) with ESMTP id h2EBmii25800
+	for <vu@prutser.cx>; Fri, 14 Mar 2003 12:48:44 +0100
+Received: from tornado.cs.vu.nl (tornado-net2.cs.vu.nl [130.37.24.3])
+	by solo.cs.vu.nl with esmtp
+	(Smail #86) id m18tnfz-0009H3C; Fri, 14 Mar 2003 12:48 +0100
+Received: from smtp6.wanadoo.nl (smtp6.wanadoo.nl [194.134.35.177])
+	by tornado.cs.vu.nl with esmtp
+	(Smail #86) id m18tnfy-00060FC; Fri, 14 Mar 2003 12:48 +0100
+Received: from phobos (unknown [81.68.134.180])
+	by smtp6.wanadoo.nl (Postfix) with ESMTP
+	id 2158B71511; Fri, 14 Mar 2003 12:48:37 +0100 (CET)
+Content-Type: text/plain;
+  charset="us-ascii"
+From: Rob van Nieuwpoort <rob@cs.vu.nl>
+Organization: Vrije Universiteit Amsterdam
+To: evzijst@cs.vu.nl, apjvloo@cs.vu.nl
+Subject: PP practical course
+Date: Fri, 14 Mar 2003 12:50:57 +0100
+User-Agent: KMail/1.4.3
+Cc: rob@cs.vu.nl
+MIME-Version: 1.0
+Message-Id: <200303141250.57586.rob@cs.vu.nl>
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by prutser.cx id h2EBmii25800
+Status: RO
+X-Status: 
+X-Keywords:                 
+
+Hi,
+
+Here the result of the practical course parallel programming.
+
+- ASP does an unnecesary memcpy.
+-- ASP does an unnecesary barrier after each bcast.
++ ASP does data distribution and gathering.
++ SOR does data distribution/gathering
+
++ IDA uses prefetching / local queues
++ Good performance analysis for IDA, background research done
++ excellent documentation, nice speedup graphs
++ reported bugs in Manta :-)
+
+result: 9
+
+Rob
+

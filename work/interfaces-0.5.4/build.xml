@@ -1,0 +1,101 @@
+<project name="MarketXS Messaging Library" basedir="." default="dist">
+<description>build file for ant to compile and assemble the MarketXS Wide-Area Messaging Library</description>
+
+<!-- set global properties for this build -->
+  <property name="src" location="src"/>
+  <property name="build" location="build"/>
+  <property name="dist"  location="dist"/>
+  <property name="doc"  location="doc/javadoc"/>
+  <property name="manifest" location="lib/manifest"/>
+  <property name="version" value="0.5.4"/>
+  <property name="libname" value="mxs-messaging-${version}"/>
+
+	<target  name="prepare">
+		<tstamp/><!-- Create the time stamp -->
+		<mkdir dir="${build}"/>
+		<mkdir dir="${doc}"/>
+	</target>
+
+	<target name="dist" depends="library, stripped, bootstrap, doc" description="Builds everything." />
+	
+	<target name = "compile" depends = "prepare" description="compile the source">
+		<javac  srcdir="${src}" destdir="${build}" debug="true" classpath="lib/management-1.3.jar"></javac>
+	</target>
+	
+	<target name="doc" description="creates the javadoc documentation">
+		<javadoc author="true"
+			sourcepath="src"
+			packagenames="com.marketxs.messaging.*"
+			version="true"
+			destdir="${doc}"
+			windowtitle="MarketXS Wide-Area Messaging API"
+			verbose="no"></javadoc>
+	</target>
+	
+	<target name="library" depends="compile" description="generate the library" >
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}"/>
+		
+		<!-- Put everything in ${build} into the mxs-messaging-${DSTAMP}.jar file -->
+		<jar destfile="${dist}/${libname}.jar">
+			<fileset dir="${build}"/>
+<!--			<fileset dir="${src}"/>	 add the sources as well -->
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Main-Class" value="com.marketxs.messaging.Usage"/>
+				<attribute name="Class-Path" value="management-1.3.jar"/>
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="stripped" depends="library" description="Obfuscates class files and packages them in mxs-messaging-0.5.4-stripped.jar">
+		<taskdef name="proguard" classname="proguard.ant.ProGuardTask" classpath="lib/proguard.jar" />
+		<proguard outjar="${dist}/${libname}-stripped.jar" obfuscate="on">
+			<libraryjar name="${java.home}/lib/rt.jar" />
+			<libraryjar name="lib/management-1.3.jar"/>
+			<injar name="${dist}/${libname}.jar" />
+
+	      <!-- Preserve all public applications. -->
+	       <keep access="public">
+<!--	          <method access="public static" name="main(java.lang.String[])" /> -->
+				<method name="*"/>
+	       </keep>
+	       
+	       <keep name="*MBean" >
+				<method access="public" name="*"/>
+	       </keep>
+
+			<!-- Explicitly preserve all serialization members. -->
+	      <keepclassmembers name="*" implements="java.io.Serializable">
+<!--	         <field access="final" type="long" name="serialVersionUID" /> -->
+	         <field access="final" />
+	         <method access="private" name="writeObject(java.io.ObjectOutputStream)" />
+	         <method access="private" name="readObject(java.io.ObjectInputStream)" />
+	         <method access="public" />
+	         <method type="java.lang.Object" name="writeReplace()" />
+	         <method type="java.lang.Object" name="readResolve()" />
+	      </keepclassmembers>
+		</proguard>
+	</target>
+	
+	<target name="bootstrap" depends="compile" description="Assembles a tiny bootstrap class that loads classes from a central server.">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}"/>
+	 <jar destfile="${dist}/bootstrap.jar">
+	 	<fileset dir="${build}">
+	 		<include name="**/Bootstrap*" />
+	 	</fileset>
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Main-Class" value="com.marketxs.messaging.Bootstrap"/>
+			</manifest>
+	 </jar>
+	</target>
+	
+	<target name="clean" description="clean up" >
+		<!-- Delete the ${build} and ${dist} directory trees -->
+		<delete dir="${build}"/>
+		<delete dir="${dist}"/>
+		<delete dir="${doc}"/>
+	</target>
+</project>

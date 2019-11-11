@@ -1,0 +1,403 @@
+Local JobManager started and registered.
+Solving 15-puzzle distributed.
+
+Initial board:
+15	6	14	13	
+1	5	10	12	
+	8	9	4	
+11	7	3	2	
+
+Goal:
+	1	2	3	
+4	5	6	7	
+8	9	10	11	
+12	13	14	15	
+
+Waiting for all 4 worker processes...
+Worker //das016.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-0-0 started successfully.
+Worker //das019.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 started successfully.Worker //das018.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 started successfully.
+
+Trying bound 46
+Waiting for all 4 workers to finish their work...
+Worker //das017.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 started successfully.
+Trying bound 48
+Waiting for all 4 workers to finish their work...
+Trying bound 50
+Waiting for all 4 workers to finish their work...
+Trying bound 52
+Waiting for all 4 workers to finish their work...
+Trying bound 54
+Waiting for all 4 workers to finish their work...
+Trying bound 56
+Waiting for all 4 workers to finish their work...
+Trying bound 58
+Waiting for all 4 workers to finish their work...
+Trying bound 60
+Waiting for all 4 workers to finish their work...
+Trying bound 62
+Waiting for all 4 workers to finish their work...
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (2, 1) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (2, 2) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (2, 1) (2, 2) (2, 3) (1, 3) (0, 3) (0, 2) (0, 1) (1, 1) (1, 0) (2, 0) (2, 1) (2, 2) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (2, 1) (3, 1) (3, 2) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (2, 1) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (2, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (0, 2) (0, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (0, 2) (0, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (2, 1) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (0, 1) (1, 1) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (0, 1) (0, 0) (1, 0) (2, 0) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (0, 1) (0, 0) (1, 0) (2, 0) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+21 solutions found after 1237.167 seconds.
+//das017.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 computed 185807113 nodes.
+//das018.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 computed 177815968 nodes.
+//das019.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 computed 194283679 nodes.
+//das016.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-0-0 computed 218016150 nodes.
+Master process exits.
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Local JobManager started and registered.
+Solving 15-puzzle distributed.
+
+Initial board:
+15	6	14	13	
+1	5	10	12	
+	8	9	4	
+11	7	3	2	
+
+Goal:
+	1	2	3	
+4	5	6	7	
+8	9	10	11	
+12	13	14	15	
+
+Waiting for all 4 worker processes...
+Worker //das001.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-0-0 started successfully.
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 started successfully.
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 started successfully.
+Trying bound 46
+Waiting for all 4 workers to finish their work...
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 started successfully.
+Trying bound 48
+Waiting for all 4 workers to finish their work...
+Trying bound 50
+Waiting for all 4 workers to finish their work...
+Trying bound 52
+Waiting for all 4 workers to finish their work...
+Trying bound 54
+Waiting for all 4 workers to finish their work...
+Trying bound 56
+Waiting for all 4 workers to finish their work...
+Trying bound 58
+Waiting for all 4 workers to finish their work...
+Trying bound 60
+Waiting for all 4 workers to finish their work...
+Trying bound 62
+Waiting for all 4 workers to finish their work...
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (2, 1) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (2, 2) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (2, 1) (2, 2) (2, 3) (1, 3) (0, 3) (0, 2) (0, 1) (1, 1) (1, 0) (2, 0) (2, 1) (2, 2) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (2, 1) (3, 1) (3, 2) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (2, 1) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (2, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (0, 2) (0, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (0, 2) (0, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (2, 1) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (1, 2) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (0, 1) (1, 1) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (0, 1) (0, 0) (1, 0) (2, 0) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 62 moves: (0, 1) (0, 0) (1, 0) (2, 0) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+21 solutions found after 1220.517 seconds.
+//das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 computed 200039707 nodes.
+//das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 computed 186012065 nodes.
+//das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 computed 187221109 nodes.
+//das001.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-0-0 computed 202650029 nodes.
+Master process exits.

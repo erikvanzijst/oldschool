@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test xmlns="http://prutser.cx/xmlmath/schemas"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<testBoolean result="true">
+		<and>
+			<equals>
+				<toLong>
+					<sin>
+						<double value="0.0"/>
+					</sin>
+				</toLong>
+				<long value="0"/>
+			</equals>
+
+			<lessThan>
+				<subtract>
+					<sin>
+						<toDouble>
+							<product>
+								<pi/>
+								<double value="2.0"/>
+							</product>
+						</toDouble>
+					</sin>
+					<double value="0.0"/>
+				</subtract>
+				<double value=".0000000001"/>
+			</lessThan>		
+		</and>
+	</testBoolean>
+</test>

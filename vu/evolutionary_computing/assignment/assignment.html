@@ -1,0 +1,186 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="description" content="Practical assignment for Evolutionary Computing 2003">
+   <meta name="keywords" content="assignment">
+   <meta name="resource-type" content="document">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (WinNT; I) [Netscape]">
+   <title>Practical assignment for Evolutionary Computing 2003</title>
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+
+* with significant contributions from:
+
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+</head>
+<body>
+Check the <a href="http://www.cs.vu.nl/%7Eschut/EA2003/">online
+version</a> for the latest updates and info!
+<h2>
+Latest news</h2>
+You can find the GradeTester software <a href="GradeTester.tar">here</a>.
+We strongly advise
+<br>you to use the GradeTester to check if your program conforms to the
+specs
+<br>as specified below!
+<br><i>Posted on September 25, 2003 by Martijn.</i>
+<center>
+<h1>
+Practical assignment for<br>
+Evolutionary Computing<br>
+October 2003</h1></center>
+In this practical assignment you are required to write a program in Java
+that optimizes a secret function using an evolutionary algorithm. Besides
+of writing the software you will have to write a report in which you describe
+your algorithm. This description should include not only the algorithm
+components, but also the motivation behind preferring them to others.
+<p>The performance of your algorithm determines the half of your grade
+for the practical assignment (see later exactly how). Your report (and
+programming) will determine the other half<font color="#000000"><b>. </b>The
+report should consist of at most four pages, including figures and references.<b>
+</b></font>(Do not use a separate banner page, show the names of authors
+on the first page, atop.) The final grade of the course is (Practical grade)/4
++ 3(``Tentamen'' grade)/4, in concordance with the distribution of ``study
+points''. Note that both grades, the practical and the tentamen, have to
+be ``voldoende'', i.e. at least 6.
+<p>The practical assignment should be performed in groups of at most three
+persons. <b><u><font color="#FF0000">Each group must register a.s.a.p.
+before starting the assignment by sending an email to <a href="mailto:schut@cs.vu.nl">Martijn</a>
+with the names of the group members.</font></u></b>
+<p><b>Download</b> the <a href="EA2002-0.0.tar.gz">latest version</a> of
+the assignment package. This link is up to date only in the <a href="http://www.cs.vu.nl/%7Eschut/EA2003/">online
+version</a>.
+<h1>
+<a NAME="SECTION00030000000000000000"></a>Things to have in mind</h1>
+When you start creating your evolutionary algorithm be sure you have all
+the ingredients clearly written down. Here is a list of the most common
+ingredients:
+<ul>
+<li>
+representation</li>
+
+<li>
+initialization procedure</li>
+
+<li>
+variation operators</li>
+
+<ul>
+<li>
+mutation</li>
+
+<li>
+crossover</li>
+</ul>
+
+<li>
+fitness function</li>
+
+<li>
+selection procedures</li>
+
+<ul>
+<li>
+parent selection</li>
+
+<li>
+survivors selection</li>
+</ul>
+
+<li>
+stop criteria</li>
+</ul>
+There is no recipe for writing a good evolutionary algorithm for a given
+problem. The techniques you have learned during the course provide a toolbox
+which you can use to build your algorithm for the given problem. Experiment
+with them to find the most suitable ones.
+<p>Document your code as this should be easy to read and understand when
+we verify your report with your actual running algorithm. When programming,
+it is possible that you need to change your initial plans. Maybe because
+you overlooked something or maybe because the performance is too low. In
+any case, remember to keep your report and design up to date.
+<p>Tune your algorithm when you are confident that it works correctly.
+Find some good values for the parameters. It is impossible to test everything,
+but it should be possible to figure out a reasonable parameters set. Again,
+report what you do here, such that you, or anyone else, can repeat your
+experiments.
+<h1>
+<a NAME="SECTION00040000000000000000"></a>Technical Information</h1>
+All information we give you about the secret function is that it is of
+type [0,1]<sup>10</sup> -> [-2,11]. It is implemented by the class <tt>EA2002</tt>.
+This class implements the interface <tt>RealBlackBoxProblem</tt>. For the
+documentation of this interface please refer to its <a href="api/RealBlackBoxProblem.html">API
+documentation</a>. This interface allows you to plug this class into an
+optimizer algorithm. You may find looking at the source code of the class
+<tt><a href="SampleEA.java">SampleEA.java</a></tt>
+useful. This class implements a (1+1) EA using the class <tt>EA2002</tt>
+as the fitness function.
+<p>You will have to write a class like <tt>SampleEA</tt> but with the name
+<tt>MyEA</tt>.
+It has to implement the interface <tt>java.lang.Runnable</tt>, and has
+to have a public constructor which accepts one RealBlackBoxProblem, and
+an object of type <tt>java.util.Random</tt>, in this order. That is, it
+has to have the signature
+<pre>public MyEA( RealBlackBoxProblem p, Random r)</pre>
+The results of the algorithm have to be reproducible, so all randomness
+has to be generated by the given Random object. This feature is not crucial,
+it is useful only if you have complaints over the final result generated
+by us with your algorithm . In that case we can repeat the experiments
+to prove you that it is indeed correct.
+<p>Do not hard-wire EA2002 into your code, always use <tt>RealBlackBoxProblem</tt>
+instead. You do not have to write a main function like it is done in <tt>SampleEA</tt>
+but you might find it useful for experimenting.
+<p>Evaluation will be done automatically. This will involve constructing
+an instance of the class you hand in with the constructor described above,
+and calling its run method. During this evaluation every constructed instance
+of your algorithm will be allowed to use 1000000 (a million) evaluations
+of the black box problem. Apart from that, your algorithm can do anything.
+You do not have to worry about recording the best solution, or any other
+statistics, the evaluation software will take care of that. Failure to
+comply with these requirements will result in the rejection of your work.
+<h1>
+<a NAME="SECTION00050000000000000000"></a> How to Submit Your Work</h1>
+<b><u><font color="#FF0000">By Monday 17 November 2003 you are required
+to hand in your work</font></u></b>. This means you have to send an archive
+containing your source files and your report. The archive must be in tar.gz
+or zip format, and it has to create a separate directory when decompressing
+as opposed to only a collection of files. The archive has to contain
+<ul>
+<li>
+Your source files, i.e. <tt>MyEA.java</tt> and any additional classes that
+you have written and are used by <tt>MyEA</tt>. We do not need your class
+files, but if you used public libraries, please include the classes you
+used in a jar file.</li>
+
+<li>
+The report of at most 4 pages, in which you describe the algorithm you
+are using and motivate the choices for the different components. Do not
+forget to include your name(s) in the report. The document has to be in
+pdf, or postscript format.</li>
+</ul>
+
+<h1>
+<a NAME="SECTION00050000000000000000"></a>Evaluation Procedure</h1>
+
+<p><br>The grade for the performance of your algorithm will be calculated
+as follows. The algorithm will be run 10 times, until <tt>MyEA.run()</tt>
+exits but at most until 1000000 evaluations each time. The best function
+values found during the runs give ten real numbers. We throw away the smallest
+one, so nine numbers remain. These are truncated (not rounded!) to integer
+(thus 6.0001, 6.5 and 6.999 all give 6). The grade is the average of these
+numbers, this time rounded (not truncated) to integer. For example, 6.5
+is already 7, but 6.49 is 6.
+<p>If there are any questions regarding the practical assignment direct
+them to Martijn by (<a href="mailto:schut@cs.vu.nl">email</a>). Also, whenever
+you feel something is wrong with the assignment do not hesitate telling
+it. Please watch the local news group <a href="news://vucsm.prac/">vucsm.prac</a>
+for any messages regarding updates or other information related to the
+practical course. Good luck!
+<br>
+<hr>
+</body>
+</html>

@@ -1,0 +1,72 @@
+Processor 2: row 500 to 749
+Processor 1: row 250 to 499
+Processor 0: row 0 to 249
+Processor 3: row 750 to 999
+Processor 0: 250 rows
+Processor 3: 250 rows
+Processor 1: 250 rows
+Processor 2: 250 rows
+Processor 1: ready to start ASP
+Processor 2: ready to start ASP
+Processor 0: ready to start ASP
+Processor 3: ready to start ASP
+Processor 3: ASP took 88.266574 seconds
+Processor 0: ASP took 88.266756 seconds
+Processor 2: ASP took 88.266723 seconds
+Processor 1: ASP took 88.266678 seconds
+Processor 2: ASP done
+Processor 2: done
+Processor 1: ASP done
+Processor 1: done
+Processor 0: ASP done
+Processor 0: done
+Processor 3: ASP done
+Processor 3: done
+Processor 3: row 750 to 999
+Processor 0: row 0 to 249
+Processor 1: row 250 to 499
+Processor 2: row 500 to 749
+Processor 1: 250 rows
+Processor 2: 250 rows
+Processor 0: 250 rows
+Processor 3: 250 rows
+Processor 1: ready to start ASP
+Processor 2: ready to start ASP
+Processor 0: ready to start ASP
+Processor 3: ready to start ASP
+Processor 3: ASP took 88.249589 seconds
+Processor 1: ASP took 88.249697 seconds
+Processor 0: ASP took 88.249847 seconds
+Processor 2: ASP took 88.249829 seconds
+Processor 2: ASP done
+Processor 2: done
+Processor 1: ASP done
+Processor 1: done
+Processor 0: ASP done
+Processor 0: done
+Processor 3: ASP done
+Processor 3: done
+Processor 2: row 500 to 749
+Processor 1: row 250 to 499
+Processor 0: row 0 to 249
+Processor 3: row 750 to 999
+Processor 0: 250 rows
+Processor 1: 250 rows
+Processor 3: 250 rows
+Processor 2: 250 rows
+Processor 1: ready to start ASP
+Processor 2: ready to start ASP
+Processor 0: ready to start ASP
+Processor 3: ready to start ASP
+Processor 0: ASP took 88.265841 seconds
+Processor 2: ASP took 88.265806 seconds
+Processor 3: ASP took 88.265647 seconds
+Processor 1: ASP took 88.265771 seconds
+Processor 3: ASP done
+Processor 3: done
+Processor 0: ASP done
+Processor 0: done
+Processor 1: ASP done
+Processor 1: done
+Processor 2: ASP done
+Processor 2: done

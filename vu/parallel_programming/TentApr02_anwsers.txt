@@ -1,0 +1,184 @@
+# Tentamen April 2002
+# Exam Parallel Programming 17 April 2002
+# Devision of Mathematics and Computer Science, Faculty of Sciences
+
+	1
+
+UMA stands for Uniform Memory Architecture and indicates a shared memory
+machine where all processors are directly connected to the same physical memory.
+NUMA stands for Non Uniform Memory Architecture and indicates a shared memory
+machine where every processor has its own memory, but is able to read memory
+associated with other processors. NUMA has the advantage that the central memory
+bus does not get saturated as quickly as with UMA, since most memory operations
+are done on the cpu's local memory segment. Remote memory access is slower.
+In both architectures special hardware keep the cpu caches consistent.
+
+
+	2
+
+A store-and-forward multicomputer routes messages from the sending to the
+receiving processor through intermediate processors (hops). These processors
+read the message, store it and then forward it the next intermediate hop. In a
+store-and-forward multicomputer, the intermediate processors are involved in
+message routing explicitly, increasing overhead. Latency is linear to
+(distance * message_length).
+Example: iPSC
+
+In circuit-switched multicomputer, messages are routed directly between sending
+and receiving processor as a direct circuit is established between them. The
+intermediate hop processors have a hardware routing module that sets up a direct
+connection between the sender and receiver. The hop processors along the circuit's
+path are not involved in the transmission. Latency is linear to (distance +
+message_length).
+Example: iPSC/2
+
+
+	3
+
+The Myrinet interface card is the network adaptor that reads messages from the
+host's memory and writes it to the network. Data transfers through Myrinet do not
+involve the local OS as data is transferred between the user program and the
+interface card through DMA (Direct Memory Access) channels. A program that wants
+to send a message, puts it in the DMA memory and sets a flag in interface memory
+that there is data to be sent. The interface copies the message from main memory
+to the interface card's memory and transmits it.
+The receiving interface card copies an incoming packet via its interface memory
+into the host's DMA area and sets a flag that the user program uses to detect
+new messages.
+Myrinet interfaces come with programmable chips that allow users to change the
+default behaviour.
+
+The Myrinet switch is the device that connects myrinet interfaces and other
+switches. These are crossbar switches that maximize the network's bisection width
+and minimize the diameter.
+
+
+	4a
+
+The ability to do a nondeterministic send could be useful when implementing
+load balancing.
+
+	4b
+
+Implementing the suggested construct is non-trivial as the system would need
+reliable communication to be sure whether a message has been received by one
+of the receivers. The system would probably also need a complicated
+transactional mechanism that ensures that only one message is received and
+processed by one receiver, although the sender initiated multiple sends.
+
+
+	5a
+
+Method to setup the barrier:
+
+	OUT("barrier-name", n); // n = number_of_processes
+
+Method to enter the barrier (executed by all processes):
+
+	IN("barrier-name", ? &val);
+	OUT("barrier-name", val - 1);
+	READ("barrier-name", 0);
+
+Note that the implementation also introduces a resource leak, as the barrier's
+tuple is not cleaned up after it has been used.
+
+N.B.
+This implementation was copied from http://www.cs.uwaterloo.ca/~fmavadda/linda.ppt
+
+	5b
+
+Hash-based distribution:
+A has function on the tuple determines which node the tuple is associated with.
+An OUT() call would first use the hash function to determine on which node to
+store the tuple and then send it to the host. Each tuple has only one instance.
+A READ() would read the (possibly) remote tuple, an IN() would read and delete
+the tuple.
+
+Uniform distribution:
+All tuples are replicated over all nodes. The advantage is that a tuple is always
+locally available, but at the same time a reliable synchronization mechanism is
+required and OUT()'s must be broadcasted.
+
+
+	6a
+
+Object specification accumulator;
+	operation init(P:integer);	# P is the number of machines
+	operation add(N:integer);	# add N to the current total
+	operation total(): integer;	# return the final sum
+end;
+
+
+Object implementation accumulator;
+	Result:integer;		# internal data of the object
+	Submissions:integer;	# number of submitted values
+	Workers:integer;	# total number of machines
+
+	operation init(P:integer);
+	begin
+		Workers := P;
+		Result := 0;
+	end;
+
+	operation add(N:integer);
+	begin
+		Result := Result + N;
+		Submissions := Submissions + 1;
+	end;
+
+	operation total(): integer;
+	begin
+		guard (Submission == Workers)
+		do
+			return Result;
+		od;
+	end;
+end;
+
+
+	6b
+
+In case of the shared accumulator object being replicated among all participating
+machines, the system will send a message everytime a worker invokes the add() method,
+resulting in P messages. These P broadcast messages update all replica's.
+The manager's total() invocation is a read-only call and is done locally.
+
+If the shared accumulator object is stored on a single machine, the workers
+invoke the the remote instance over RPC, leading to an RPC for every add()
+invocation except for the worker that happens to host the instance.
+Synchronization is done through mutual exclusion. The total() invocation also
+results in an RPC call.
+
+
+	7a
+
+!HPF$ PROCESSORS pr(4)
+This is directive that reserves 4 abstract processors in a linear arrangement
+and can be referred to from "ONTO" directives under the name "pr".
+
+!HPF$ ALIGN New(:,:) WITH X(:,:)
+This directive aligns the two-dimensional array "New" with the array "X". Every
+element in New is aligned with the same element in X.
+
+!HPF$ DISTRIBUTE X(BLOCK,*) ONTO pr
+This directive distributes both array X and New over the abstract processors
+declared in the first directive. X(BLOCK,*) means that the two-dimensional
+array is devided in 4 rows, each row mapped onto a unique abstract processor.
+
+
+	8
+
+Static or straightforward parallel implementations do not scale because the
+workload distribution and communication characteristics in the applications are
+nonuniform and change as the computation proceeds. The load imbalance results
+from the fact that an equal number of particles does not imply an equal amount
+of work.
+
+The tree representation already contains information about the spatial
+distribution of the particles. We can therefore partition the tree
+rather than partition space directly. In the costzone scheme the
+particle cost (the number of interactions with other particles or cells)
+is used to assign processors contiguous parts of the tree with equal
+total cost (the sum of particle costs in that part/zone of the tree).
+
+

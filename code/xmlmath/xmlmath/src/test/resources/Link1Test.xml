@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test xmlns="http://prutser.cx/xmlmath/schemas"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<testBoolean result="true">
+		<and>
+			<declare name="x">
+				<nil/>
+			</declare>
+			<declare name="y">
+				<long value="2"/>
+			</declare>
+			<declare name="z">
+				<double value="3.0"/>
+			</declare>
+			<declare name="q">
+				<string value="foobar"/>
+			</declare>
+
+			<equals>
+				<nil/>
+				<link name="x"/>
+			</equals>
+
+			<equals>
+				<linkLong name="y"/>
+				<long value="2"/>
+			</equals>
+
+			<equals>
+				<linkDouble name="z"/>
+				<double value="3.0"/>
+			</equals>
+
+			<equals>
+				<linkString name="q"/>
+				<string value="foobar"/>
+			</equals>
+
+		</and>
+	</testBoolean>
+</test>

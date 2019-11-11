@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE network SYSTEM "file:C:\\MarketXS\NetworkManagement\configuration\configuration.dtd">
+
+<!--
+    Document   : XMLDocument.xml
+    Created on : 30 September 2003, 14:21
+    Author     : Laurence Crutcher
+    Description:
+        Purpose of the document follows.
+-->
+
+<network>
+
+<node>
+<ID>3</ID>
+<administration>
+
+<host>localhost</host>
+<management_port>1095</management_port>
+<http_user>administrator</http_user>
+<http_password>secret</http_password>
+<http_port>8082</http_port>
+<listener_port>5050</listener_port>
+<management_key>
+<management_domain>Test</management_domain>
+<management_agent>testagent</management_agent>
+</management_key>
+</administration>
+<interface>
+<SrcInterface>
+<Address>
+<AddressElement>3</AddressElement>
+<AddressElement>1</AddressElement>
+</Address>
+</SrcInterface>
+<DestInterface>
+<Address>
+<AddressElement>1</AddressElement>
+<AddressElement>2</AddressElement>
+</Address>
+</DestInterface>
+<DestHost>
+1
+</DestHost>
+<Distance>
+1
+</Distance>
+
+</interface>
+</node>
+
+</network>
+
+

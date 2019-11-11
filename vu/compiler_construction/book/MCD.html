@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Solaris (vers 1st June 2003), see www.w3.org">
+
+
+<TITLE>Modern Compiler Design</TITLE>
+  <link href="http://www.few.vu.nl/css/few.css" type="text/css" rel="StyleSheet">
+</head>
+
+<body>
+  <table width="880" cellspacing="0" cellpadding="10" summary="">
+    <tr>
+      <td><img src="http://www.few.vu.nl/pics/head-cs-en.gif" width="880" height="120" border="0" alt="logo" usemap="#logomap"><br />
+<map id="logomap" name="logomap">
+<area shape="rect" coords="4,3,109,116" title="Go to the homepage of the Vrije Universiteit." alt="Go to the homepage of the Vrije Universiteit." href="http://www.vu.nl/english/">
+<area shape="rect" coords="140,20,374,50" title="Goto the homepage of the faculty of sciences." alt="Goto the homepage of the faculty of sciences." href="http://www.few.vu.nl/index-en.html">
+<area shape="rect" coords="140,55,390,74" title="Goto the homepage of the department of computer science." alt="Goto the homepage of the department of computer science." href="http://www.cs.vu.nl/index-en.html">
+</map>
+</td>
+    </tr>
+
+    <tr>
+      <td>
+        <!-- ENTER YOUR CONTENT BELOW. BEFORE THIS LINE, YOU CAN ONLY CHANGE THE TITLE. -->
+        <hr>
+
+
+<!-- $Id: MCD.html,v 1.3 2004/01/15 10:32:33 dick Exp $ -->
+
+<H2>
+<A HREF="http://www.wiley.co.uk/wileychi/grune/">Modern Compiler Design</A>
+</H2><HR>
+
+<H3>
+<A HREF="http://www.cs.vu.nl/~dick/">Dick Grune</A>,
+<A HREF="http://www.cs.vu.nl/~bal/">Henri E. Bal</A>,
+<A HREF="http://www.cs.vu.nl/~ceriel/">Ceriel J.H. Jacobs</A>,
+and
+<A HREF="http://www.pds.twi.tudelft.nl/~koen/">Koen G. Langendoen</A>,
+</H3>
+
+<H4>
+<A HREF="http://www.vu.nl/">
+Vrije Universiteit</A>,
+<A HREF="http://www.cwi.nl/~steven/amsterdam.html">
+Amsterdam</A>,
+<A HREF="http://www.travel-guide.com/data/nld/nld.asp/">
+The Netherlands</A>
+</H4>
+
+<P>
+<A HREF="http://www.wiley.co.uk/">John Wiley &amp; Sons, Ltd.</A>,
+pp. 736 + xviii, 2000;
+<A HREF="http://www.wiley.co.uk/wileychi/grune/">ISBN 0 471 97697 0</A>
+</P>
+
+<P>
+French translation, titled
+<A HREF="http://www.dunod.com/pages/ouvrages/ficheouvrage.asp?Pro_Code_GPE=45887">Compilateurs</A>,
+published by <A HREF="http://www.dunod.com">Dunod</A>,
+pp. 774 + xxi, 2002;
+<A HREF="http://www.dunod.com/pages/ouvrages/ficheouvrage.asp?Pro_Code_GPE=45887">ISBN 2 10 005887 8</A>.
+</P>
+
+<P>
+Brazilian/Portugese translation, titled
+'Projeto Moderno De Compiladores - Implementa&ccedil;ao E Aplica&ccedil;oes',
+published by Campus,
+pp. 752,
+ISBN 8 53 520876 3.
+</P>
+
+<H3>Description</H3>
+
+<P>
+The book is intended for students who have at least used a compiler
+and have given some thought to the notion of compilation.  It is not
+an introductory course (although it explains almost everything from
+basics).
+</P>
+
+<P>
+The book consists conceptually of two parts.  The first part covers
+the general compilation process, and contains three chapters based on
+the analysis/processing/synthesis paradigm: text analysis, context
+handling and code generation.  The second part consists of four
+chapters, covering the paradigm-specific problems of imperative and
+object-oriented, functional, logic and parallel and distributed
+programs.  The two parts are separated by a chapter on memory
+management/garbage collection.
+</P>
+
+<P>
+We, the authors, have tried hard to write the book in an intuitively
+appealing style, concentrating on the reasoning behind and the
+mechanics of the algorithms rather than emphasizing rigorous
+formulation and formal correctness proofs.
+</P>
+
+<P>
+Although the book covers most of the traditional techniques, it makes
+a number of strong philosophical and perhaps controversial statements,
+for which we think the time has come:
+</P>
+
+<UL>
+<LI>
+It recognizes lexical analysis, LR parsing and BURS code
+generation as instances of bottom-up pattern matching and explains
+them uniformly using dotted items, thus unifying three important
+techniques in compiler design, and allowing the students to extend
+them to fit their needs.
+</LI>
+
+<LI>
+A recurrent theme is `precomputation': first a simple,
+understandable, and obviously correct technique is designed, then all
+computation that can be done at compiler generation time is performed
+there.  This leads naturally from interpretive lexical analysis to
+FSAs and allows us to view generated code as an instantiation of an
+interpreter, thus introducing connections with partial evaluation.
+</LI>
+
+<LI>
+It emphasizes closure algorithms wherever possible, thus unifying
+many seemingly different algorithms.
+</LI>
+
+<LI>
+It places compiler construction in a wider frame of file and data
+conversion, thus enabling the student to see applicability in other
+programming domains.
+</LI>
+</UL>
+
+<P>
+The top level structure of the book is:
+</P>
+
+<UL>
+<LI>Introduction</LI>
+<PRE>
+</PRE>
+<LI>From Program Text to Abstract Syntax Tree</LI>
+<LI>Annotating the Abstract Syntax Tree - The Context</LI>
+<LI>Processing the Intermediate Code</LI>
+<PRE>
+</PRE>
+<LI>Memory Management</LI>
+<PRE>
+</PRE>
+<LI>Imperative and Object-Oriented Programs</LI>
+<LI>Functional Programs</LI>
+<LI>Logic Programs</LI>
+<LI>Parallel and Distributed Programs</LI>
+<PRE>
+</PRE>
+<LI>Bibliography</LI>
+<LI>Answers to Exercises</LI>
+</UL>
+
+
+<P>
+For more information, see the
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/preface.ps">Preface (in PostScript</A>
+or
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/preface.pdf">or in PDF)</A>,
+the
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/toc.ps">Table of Contents (in PostScript</A>
+or
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/toc.pdf">or in PDF)</A>, and the
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/index.ps">Index (in Postscript</A>
+or
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/index.pdf">or in PDF)</A>.
+</P>
+
+<H3>Course Material</H3>
+
+<P>
+All figures and tables in the book are available for the preparation of
+overhead sheets or slides, to be used in the classroom or otherwise.
+There are two versions,
+one with one diagram per page (561 pages)
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/DiagramsBeamer.ps.gz">(in PostScript</A>
+or
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/DiagramsBeamer.pdf"> in PDF)</A>, and
+one with several diagrams per page (245 pages)
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/DiagramsSheets.ps.gz">(in PostScript</A>
+or
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/DiagramsSheets.pdf"> in PDF)</A>.
+</P>
+
+<P>
+More answers to exercises
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/more_answers.ps">(in PostScript</A>
+or
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/more_answers.pdf">in PDF)</A>
+than provided in the book are also available.
+</P>
+
+<P>
+The code of the examples in the book, runnable under UNIX + look-alikes and
+MSDOS, can be downloaded by clicking
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/code.tar.gz">here</A>
+for a tar.gz version or
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/code.zip">here</A>
+for a zip version.
+</P>
+
+<P>
+Click
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/Errata.html">here</A>
+to obtain an
+<A HREF="ftp://ftp.cs.vu.nl/pub/dick/MCD/Errata.html">errata sheet</A>.
+</P>
+
+<H3>Purchasing</H3>
+
+<P>
+Visit the
+<A HREF="http://www.amazon.com/exec/obidos/ASIN/0471976970/">US Amazon.com</A>
+page, the
+<A HREF="http://www.amazon.co.uk/exec/obidos/ASIN/0471976970/">European Amazon.com</A>
+page, the
+<A HREF="http://www.amazon.de/exec/obidos/ASIN/0471976970/">German Amazon.com</A>
+page, or your bookshop.
+</P>
+
+<P>
+There is a French translation, titled
+<A HREF="http://www.dunod.com/pages/ouvrages/ficheouvrage.asp?Pro_Code_GPE=45887">Compilateurs</A>,
+published by <A HREF="http://www.dunod.com">Dunod</A>,
+<A HREF="http://www.dunod.com/pages/ouvrages/ficheouvrage.asp?Pro_Code_GPE=45887">ISBN 2-10-005887-8</A>.
+</P>
+
+<H3>About the authors</H3>
+
+<P>
+<A HREF="http://www.cs.vu.nl/~dick/">Dick Grune</A>
+teaches principles of programming languages and compiler construction.
+He was involved in constructing Algol 68 compilers in the 1970s and
+participated in the Amsterdam Compiler Kit in the 1980s.
+He is co-author of two other books:
+<A HREF="http://www.cs.vu.nl/~dick/PLE.html">
+Programming Language Essentials
+</A>
+and
+<A HREF="http://www.cs.vu.nl/~dick/PTAPG.html">
+Parsing Techniques - A Practical Guide
+</A>.
+</P>
+
+<P>
+<A HREF="http://www.cs.vu.nl/~bal/">Henri Bal</A>
+presently heads the Orca group, doing research on parallel and distributed
+programming.
+He has more than 20 years of experience in compiler construction and is a
+recipient of the prestigious "Pionier" Award of NWO (Dutch Organization for
+Scientific Research).
+He is the author of more than 60 articles and (co-)author of two other books:
+<A HREF="http://www.cs.vu.nl/~dick/PLE.html">
+Programming Language Essentials
+</A>
+and
+<A HREF="http://www.cs.vu.nl/~bal/PDS.html">
+Programming Distributed Systems
+</A>.
+</P>
+
+<P>
+<A HREF="http://www.cs.vu.nl/~ceriel/">Ceriel Jacobs</A>
+has been working in compiler construction on a full-time basis since the
+beginning of the 1980s.
+In the 1980s he was in charge of the
+<A HREF="http://www.cs.vu.nl/vakgroepen/cs/ack.html">Amsterdam Compiler Kit</A>,
+he wrote the compiler for the
+<A HREF="http://www.cs.vu.nl/orca">Orca parallel programming system</A>,
+and is now involved in the
+<A HREF="http://www.cs.vu.nl/~rob/manta/index.html">Manta project</A>,
+which includes a native Java compiler.
+He is also coauthor of the book
+<A HREF="http://www.cs.vu.nl/~dick/PTAPG.html">
+Parsing Techniques - A Practical Guide
+</A>.
+</P>
+
+<P>
+<A HREF="http://www.pds.twi.tudelft.nl/~koen/">Koen Langendoen</A>
+has been working in compiler construction since around 1985, and is
+specialized in code generation.
+He has written compiler backends and runtime support systems for
+imperative languages (the Amsterdam Compiler Kit),
+functional languages (the FAST/FCG compiler) and
+parallel languages (the Orca compiler).
+</P>
+
+<H6>
+<HR>
+[<A HREF="http://www.cs.vu.nl/~dick/">Dick Grune</A>]
+[<A HREF="http://www.cs.vu.nl/~bal/">Henri Bal</A>]
+[<A HREF="http://www.cs.vu.nl/~ceriel/">Ceriel Jacobs</A>]
+[<A HREF="http://www.pds.twi.tudelft.nl/~koen/">Koen Langendoen</A>]
+[<A HREF="http://www.wiley.co.uk/">John Wiley &amp; Sons, Ltd.</A>]
+<HR>
+</H6>
+
+<ADDRESS>
+Modern Compiler Design / Dick Grune /
+<A HREF="mailto:dick@cs.vu.nl">dick@cs.vu.nl</A>
+</ADDRESS>
+
+<!-- DON'T CHANGE ANY THING FROM THIS LINE ON. -->
+      </td>
+    </tr>
+
+    <tr>
+      <td><table border="0" cellpadding="0" cellspacing="0" summary="." width="880"><tr>
+<td colspan="8"><hr></td></tr>
+<tr>  <td width="16%" class="footer"><s><del>Nederlands</del></s></td>
+  <td width="12%" class="footer"><a class="footer" href="http://www.vu.nl/personen/index.cfm" title="Goto the online phonebook of the Vrije Universiteit.">phonebook<img src="http://www.few.vu.nl/icon/blanco.gif" alt="" align="middle" width="2" height="14" border="0"></a></td>
+  <td width="12%" class="footer"><a class="footer" href="http://www.cs.vu.nl/index-en.html" title="Goto the homepage of the department of computer science."><img src="http://www.few.vu.nl/icon/home.gif" width="14" height="14" border="0" align="middle"  alt="Goto the homepage of the department of computer science."><img src="http://www.few.vu.nl/icon/blanco.gif" alt="" align="middle" width="2" height="14" border="0">comp.sci.</a></td>
+  <td width="12%" class="footer"><a class="footer" href="http://www.few.vu.nl/index-en.html" title="Goto the homepage of the faculty of sciences."><img src="http://www.few.vu.nl/icon/home.gif" width="14" height="14" border="0" align="middle"  alt="Goto the homepage of the faculty of sciences."><img src="http://www.few.vu.nl/icon/blanco.gif" alt="" align="middle" width="2" height="14" border="0">FEW</a></td>
+  <td width="12%" class="footer"><a class="footer" href="http://www.vu.nl/english/" title="Goto the homepage of the Vrije Universiteit."><img src="http://www.few.vu.nl/icon/home.gif" width="14" height="14" border="0" align="middle"  alt="Goto the homepage of the Vrije Universiteit."><img src="http://www.few.vu.nl/icon/blanco.gif" alt="" align="middle" width="2" height="14" border="0">VU</a></td>
+  <td width="12%" class="footer"><a class="footer" href="http://www.few.vu.nl/sitemap-en.html" title="Go to the sitemap of the faculty of sciences."><img src="http://www.few.vu.nl/icon/blanco.gif" alt="" align="middle" width="2" height="14" border="0">site map</a></td>
+  <td width="12%" class="footer"><a class="footer" href="http://www.few.vu.nl/zoek-en.html" title="Search the site of the faculty of sciences."><img src="http://www.few.vu.nl/icon/blanco.gif" alt="" align="middle" width="2" height="14" border="0">search</a></td>
+  <td width="12%" class="footer"><a class="footer" href="mailto:webmaster&#064;few.vu.nl"title="Send email to the Webmaster."><img src="http://www.few.vu.nl/icon/blanco.gif" alt="" align="middle" width="2" height="14" border="0">webmaster</a></td>
+</tr><tr><td colspan="8"><div align="center">If you spot a mistake, please <a href="mailto:dick&#64;few.vu.nl?subject=About%3A%20%2Fhome%2Fdick%2Fwww%2FMCD.html">e-mail the maintainer</a> of this page.</div>
+<div align="center" style="visibility:hidden"><b>Your browser does not fully support CSS. This may result in visual artifacts.</b></div></td></tr></table></td>
+    </tr>
+  </table>
+</body>
+</html>
+

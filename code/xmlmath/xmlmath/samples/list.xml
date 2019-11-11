@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This example shows how the <list> operator is used to create a list of
+elements. Lists maintain their original order, have no hard boundary on size,
+can be empty and can contain elements of different types.
+-->
+
+<list xmlns="http://prutser.cx/xmlmath/schemas">
+	<long value="1"/>
+	<string value="foo"/>
+	<double value="2.55"/>
+	<true/>
+	<pi/>
+	<e/>
+	<infinity/>
+</list>

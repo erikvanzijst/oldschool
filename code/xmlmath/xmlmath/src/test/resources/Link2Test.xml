@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test xmlns="http://prutser.cx/xmlmath/schemas">
+	
+	<testException>
+		<equals>
+			<declare name="x">
+				<double value="3.0"/>
+			</declare>
+			<linkLong name="x"/>
+			<long value="3"/>
+		</equals>
+	</testException>
+</test>

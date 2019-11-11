@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://www.cs.vu.nl/~bs/exercise_1_profiling.html -->
+<!-- saved from url=(0049)http://www.cs.vu.nl/~bs/exercise_1_profiling.html --><!-- saved from url=(0034)http://www.cs.vu.nl/~bs/prof7.html --><HTML><HEAD><TITLE>Exercise 1: Profile your processes !</TITLE>
+<META content="text/html; charset=windows-1253" http-equiv=Content-Type>
+<META content="Microsoft FrontPage 4.0" name=GENERATOR></HEAD>
+<BODY>
+<H1 align=center><font face="Times New Roman">Exercise 1: Profile your processes!</font></H1>
+<P><I><font face="Times New Roman">Changelog:</font> 
+<P><font face="Times New Roman">17/2: Changed descriptions of GETPROF, return values of the system calls, and 
+of the user program. Updated hint for copying the results, in 'hints and notes'. 
+Please reread this page carefully, it contains significant changes.</font></I> 
+<P><I><font face="Times New Roman">11/2, added sections 2.5 and 2.6 to "recommended reading".</font> </I></P>
+<H2><font face="Times New Roman">Introduction</font></H2><font face="Times New Roman">Profiling is a very useful tool for code development, as it 
+consists the application's X-ray map in terms of its execution time. More 
+precisely, profiling is a statistical tool that provides detailed information on 
+the time spent by the CPU on each line of a program during its execution. This 
+generally gives the programmer a better understanding of the program's runtime 
+behaviour, as well as valuable help for making performance improvements. It 
+occasionally also provides good hints for discovering bugs.</font> 
+<P><font face="Times New Roman">To profile a process, the operating system allocates a large number of 
+counters, called <I>bins</I>, each corresponding to a small range of bytes in 
+the program's code. The more the counters, the finer the profiling granularity. 
+By means of an interrupt, the operating system periodically checks (many times 
+per second) which instruction the process is executing, and increases the 
+respective bin by one. Eventually, the bins' values give a good statistical 
+approximation of the percentage of time the CPU spent within each little slice 
+of the program code.</font></P>
+<P><font face="Times New Roman">The low-level nature of profiling, prevents it from being implemented as a 
+user-level tool. It has to be taken care of by the operating system's kernel. 
+Unfortunately the Minix 2.0.0 kernel does not support it. Your task is to add 
+support for profiling to the Minix kernel, and write a user program that 
+retrieves and presents profiling data in a useful way.</font></P>
+<H2><font face="Times New Roman">Part I: Add profiling support to the Minix kernel</font></H2><font face="Times New Roman">You have to modify the 
+kernel to support profiling. You should define two new system calls:</font> 
+<UL>
+  <LI><font face="Times New Roman"><B>PROFILE</B> : Starts profiling. Takes three parameters: the PID of the 
+  process to be profiled, and the lowest and highest addresses of the range of 
+  code to be profiled. Calling it with PID 0 (zero), should stop the ongoing 
+  profiling (if any). Calling PROFILE with PID != 0 while already profiling some 
+  process, should result in an error. Calling PROFILE with lowest <I>and</I> 
+  highest addresses 0, should profile the whole code of the process. In that 
+  case, for processes with separate I &amp; D (text and data) segments the 
+  system call should profile the text segment. For processes with combined I 
+  &amp; D segments, it should profile the combined text and data segment, 
+  excluding the stack.</font> 
+  <P><font face="Times New Roman"><B>Return values:</B> Upon successful completion, PROFILE returns 0. 
+  Otherwise, a value of -1 is returned and <I>errno</I> is set to indicate the 
+  error. The following error codes are defined for profile:</font> 
+  <P><font face="Times New Roman"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ESRCH:</B> no process with 
+  the given pid exists (except for special case of pid 0, which should never 
+  return any errors)</font> 
+  <P><font face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B> EFAULT:</B> if there is some 
+  error related to the memory arguments (i.e. start memory &gt; end memory, or 
+  any of the arguments out of range)</font> 
+  <P><font face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <B>EBUSY:</B> if profiling for 
+  some process is already active</font> 
+  <P><font face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <B>EGENERIC:</B> for any other 
+  type of failure</font> </P></LI></UL>
+<UL></UL>
+<UL>
+  <LI><font face="Times New Roman"><B>GETPROF</B> : Retrieves the information collected by profiling. It 
+  takes one argument: a pointer to a <I>struct prof_data</I> allocated in the 
+  user program (defined in <A 
+  href="http://www.cs.vu.nl/~bs/profstub.h">profstub.h</A>) variable, where the 
+  profiling addresses and the profiling buffer (containing all the bin counters) 
+  should be copied to.</font> 
+  <P><font face="Times New Roman"><B>Return values:</B> Upon successful completion, GETPROF returns 0. If an 
+  error occurs, GETPROF returns -1. Errno is set to indicate the error. The 
+  following error codes are defined:</font> 
+  <P><font face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <B>EFAULT:</B> a memory error 
+  has occurred (e.g., trying to write to memory not belonging to the calling 
+  user process)</font> </P></LI></UL><font face="Times New Roman">The files <A 
+href="http://www.cs.vu.nl/~bs/profstub.h">profstub.h</A> and <A 
+href="http://www.cs.vu.nl/~bs/profstub.c">profstub.c</A> are provided. These 
+files define the data and message formats to which your application should 
+adhere. It is obligatory to use this header file and the stub routines, as 
+defined here, to access the system calls.</font> 
+<H2><font face="Times New Roman">Part II: Retrieve and present profiling data</font></H2>
+<P><font face="Times New Roman">This part of the assignment is meant to help you experiment with the usage of 
+the first part. Write a utility that profiles the execution of a given program, 
+and outputs some data and a simple histogram (in ASCII) of the program's 
+execution time.</font></P>
+<P><font face="Times New Roman">The utility (called <I>profile</I>) should have the following syntax:</font> 
+<P><B><font face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; profile [-n number_of_rows] [-r 
+startaddr-endaddr] program-name [program_arguments ...]</font></B> 
+<P><font face="Times New Roman">Profile has one mandatory argument, program-name, which is the name of the 
+program to be profiled. Arguments following the program_name should be passed on 
+as arguments to the profiled program. I.e., in the following, "-laF" should be 
+passed as an argument to /bin/ls :</font> 
+<P><font face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <B>profile /bin/ls -laF</B> 
+</font> 
+<P><font face="Times New Roman">Optional is the argument -n, which specifies the number of bars (rows) in 
+which the histogram is divided. For example, assuming all 1024 bins have been 
+used in a profiling, the command:</font> 
+<P><font face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <B>profile -n 25 ls /</B> 
+</font> 
+<P><font face="Times New Roman">will output a histogram of 25 lines, each aggregating the profiling data of 
+41 bins (because 1024/25 = 40.96), to provide a histogram of 25 lines (the 25th 
+line, though, will be the sum of only the last 40 bins). In principle, divide 
+the number of bins used (*) by the number of lines, and <B>round up</B> to get 
+the number of bins that should be aggregated per line. The last line may display 
+the sum of fewer bins than the rest of the lines. If the number of rows given by 
+the -n argument is greater than the number of bins used, ignore it, and display 
+as many rows as the number of bins used.</font> 
+<P><font face="Times New Roman">(*) calculate the number of bins used just like the PROFILE system call does, 
+based on the starting and ending addresses, according to the methodology 
+described in 'Hints and Notes'.</font> 
+<P><font face="Times New Roman">Optional is also the argument -r, which defines the range of addresses to be 
+profiled. Addresses should be passed as decimal numbers, separated by "-" (minus 
+sign), as in this example:</font> 
+<P><font face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <B>profile -r 500-3700 
+./myprog</B> 
+</font> 
+<P><font face="Times New Roman">If the r argument is used, <I>startaddr</I> should be lower than 
+<I>endaddr</I>. Else return an error code.</font> 
+<P><font face="Times New Roman">It should be possible to use both the -n and -r arguments simultaneously.</font> 
+<P><font face="Times New Roman">When a program has less than 1024 bytes of code, or when a range is used that 
+is less than 1024 bytes, a number of the bins allocated in the kernel are not 
+used. Your <I>profile</I> program should output a histogram that represents only 
+the bins really used. For instance, if the argument "-n 25" is given to profile 
+a program where only 500 bins were used (i.e., the program code is 500 bytes 
+long), each line of the histogram should correspond to 20 bins (=500/25) to span 
+a range of 500 addresses, instead of 41 (=1024/25) like in the example above.</font> 
+<H3><font face="Times New Roman">Error codes:</font></H3>
+<P><font face="Times New Roman"><I>profile</I> returns <B>0</B> upon successful completion, and a value 
+<B>&gt;0 </B>if an error has occurred. No debug output should be reported to 
+stdout.</font> 
+<H3><font face="Times New Roman">Output:</font></H3><font face="Times New Roman">Output should be directed to the <I>standard output (stdout)</I> 
+and should follow strictly the style shown in the <A 
+href="http://www.cs.vu.nl/~bs/exercise_1_sample_output.txt">sample output</A>. 
+The first line should contain the filename of the profiled executable. The 
+second should show the scale of the histogram. The histogram should scale from 
+0% (no asterisks), to the percentage of the line with the highest value (62 
+asterisks). Therefore, the second line should write "SCALE :" at columns 11-17, 
+"0%" at columns 19-20, dots in columns 21-77, and the percentage of the line 
+with highest percentage (i.e. "46%") at columns 78-80. The percentage should be 
+of length 2, left-padded with zeros (i.e. "07%").</font> 
+<P><font face="Times New Roman">Starting in the third line, it should output the histogram of the profiling 
+data. Particularly, each line should start with the address range it represents 
+(two 4-digit hex left-padded-with-zero numbers, separated by "-"), a space 
+followed by the percentage (in parentheses) of CPU time spent in the bin(s) of 
+that line. Then have space, colon(<B>:</B>), space again, and finally a number 
+of asterisks (<B>*</B>) proportional to the bin's value. For the minimum value 
+(0%) there should be no asterisk. For the maximum value, whatever that is, there 
+should be 62 asterisks to reach the 80th column. Show no more lines than that 
+correspond to the addresses that have actually been profiled.</font> 
+<P><font face="Times New Roman">If that's all Greek to you, look at the <A 
+href="http://www.cs.vu.nl/~bs/exercise_1_sample_output.txt">sample output</A> 
+that we provide, and follow it strictly.</font></P>
+<P><font face="Times New Roman"><I><B>HINTS:</B></I> Here is a brief (=not exhaustive!) outline suggestion 
+for your program: Your utility should <B>fork</B>. The child process should 
+<B>exec</B>ute the given program. The parent should use your <B>PROFILE</B> 
+system call to start profiling on the child's PID and then <B>wait</B> for the 
+child to terminate. Then the parent should stop profiling (invoking 
+<B>PROFILE</B> with pid 0), and call <B>GETPROF </B>to retrieve the array of 
+bins. Finally it should output the histogram and statistics to the standard 
+output.</font></P>
+<H2><font face="Times New Roman">Hints and Notes</font></H2>
+<P><font face="Times New Roman">To make the assignment instructions more concrete, we provide you with the 
+following directions that should be followed:</font></P>
+<UL>
+  <LI><font face="Times New Roman">Use <B>4-byte-long bins</B>, and treat each of them as an unsigned long, 
+  to count from 0 to 4,294,967,295 ticks.</font> 
+  <LI><font face="Times New Roman">Use a fixed, static, system-wide allocation of <B>4096 bytes</B>, to 
+  accommodate <B>1024 bins</B> (in kernel memory).</font> 
+  <LI><font face="Times New Roman">The system call number of PROFILE is required to be <B>77</B>. The system 
+  call number of GETPROF is to be <B>78</B>. It is obligatory to use these 
+  numbers.</font> 
+  <LI><font face="Times New Roman">The system calls are placed in the memory manager; the actual work is done 
+  in the kernel. You'll therefore have to also add two calls to the kernel, to 
+  let the memory manager communicate with it. Find logical places and names for 
+  this extra functionality. Discuss your solution with your supervisor.</font> 
+  <LI><font face="Times New Roman">Since we have a fixed number of 1024 bins, granularity will depend on the 
+  size of the code region being profiled. Allocate as many bytes of code per bin 
+  as needed to just cover up all the code. HINT: <B>Divide the code size by 1024 
+  </B>and <B>round up</B> to find how many bytes fall in one bin. I.e. for a 
+  process having exactly 40.000 bytes of code, you should assume 40 bytes per 
+  bin, so that the whole code is covered. In this case, the last 24 bins are not 
+  used, that is, their counters are never touched (they remain 0). A worst-case 
+  scenario would be profiling a 1025-byte-long program. Then only the first 513 
+  bins are used, each bin representing 2 bytes (the 513th bin representing just 
+  1 byte), and the last 511 bins would be unused.</font> 
+  <LI><font face="Times New Roman">In case of profiling a code region of less than 1024 bytes, just allocate 
+  one byte per bin, and let the excess bins be wasted.</font> 
+  <LI><font face="Times New Roman">Calculate the number of bins that have actually been used based on the 
+  starting and ending address returned by GETPROF, and display only the rows 
+  corresponding to the addresses that are actually profiled.</font> 
+  <LI><font face="Times New Roman">In the rare situation that one of the bins is totally full (has reached 
+  the maximum value of 4,294 billion), just cease profiling automatically.</font> 
+  <LI><font face="Times New Roman">For copying the profiling buffer from kernel to user space (in the 
+  implementation of GETPROF), (a) figure out the physical address of the buffer 
+  in kernel space, (b) find the physical address of the destination buffer in 
+  user space, and (c) use the <B>phys_copy()</B> function to copy the 4096 
+  bytes.</font> 
+  <LI><font face="Times New Roman">The time spent while a process is <B>blocked</B> (i.e., sleep(), or 
+  waiting of I/O) should be ignored during profiling (i.e., no bins are 
+  increased).</font> </LI></UL>
+<H2><font face="Times New Roman">Recommended reading</font></H2><font face="Times New Roman">The following parts of the minix book are 
+recommended for (re)reading for this exercise (this is not intended as an 
+exhaustive list): <B>Sections 2.2.7, 2.5, 2.6, 3.8, 4.7 up to 4.7.4.</B> 
+Furthermore, study relevant information in the Minix book about the clock, 
+system calls, system task, and message handling. It is generally important to 
+understand the Minix code on message passing (proc.c) and interrupts.</font> 
+<H2><font face="Times New Roman">Testing</font></H2>
+<P><font face="Times New Roman">Here is a suggestion for testing your exercise. Write a program with expected 
+behaviour (i.e. include at various places loops of 1, 2, and 3 million (or 
+billion!) iterations, that just waste time). Profile it, and check whether the 
+output shows a realistic execution time distribution for your program (i.e. 
+number of asterisks analogous to the number of iterations of the sample 
+loops).</font></P></BODY></HTML>

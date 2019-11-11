@@ -1,0 +1,64 @@
+
+Holes
+
+To test if our defragger handles files with holes properly we created a file with a hole
+on our test filesystem by copying the contents of the file 'profile' to a new file 
+named 'hole' with dd. We instructed dd to start writing to the new file after skipping
+1 block (1024 bytes) in the new file:
+
+dd if=profile of=hole bs=1k seek=1
+
+
+The disk editor (de) shows that the first direct zone (zone 0) is indeed NIL and that 
+actual data is stored only in the block referenced by zone 1:
+
+
+  Device = /dev/hd1a       V2 file system                                         
+  Block  =     4 of 1440   I-nodes
+  Offset =   448           I-node 8 of 480  (in use)
+
+  >   448    33188            regular  ---rw-r--r--                 (base 10)
+      450        1            links 1
+      452        0            user root
+      454        0            group operator
+      456     1177            file size 1177
+      458        0
+      460    27665            a_time Fri Jul 30 17:41:05 2004
+      462    16650
+      464    27665            m_time Fri Jul 30 17:41:05 2004
+      466    16650
+      468    27665            c_time Fri Jul 30 17:41:05 2004
+      470    16650
+      472        0            zone 0
+      474        0
+      476       36            zone 1
+      478        0
+
+
+
+Looking at the file system after defragmentation shows us that the hole is preserved; zone 0 is still NIL and zone 1 now references a different data block (caused by the defragmentation process):
+
+
+  Device = /dev/hd1b       V2 file system                                         
+  Block  =     4 of 1440   I-nodes
+  Offset =   448           I-node 8 of 480  (in use)
+
+  >   448    33188            regular  ---rw-r--r--                 (base 10)
+      450        1            links 1
+      452        0            user root
+      454        0            group operator
+      456     1177            file size 1177
+      458        0
+      460    27665            a_time Fri Jul 30 17:41:05 2004
+      462    16650
+      464    27665            m_time Fri Jul 30 17:41:05 2004
+      466    16650
+      468    27665            c_time Fri Jul 30 17:41:05 2004
+      470    16650
+      472        0            zone 0
+      474        0
+      476      601            zone 1
+      478        0
+
+
+

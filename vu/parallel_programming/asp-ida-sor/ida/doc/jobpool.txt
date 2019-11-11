@@ -1,0 +1,40 @@
+# Multithreaded implementation without job pool:
+
+6 solutions found after 108.016 seconds and 11728004 tested moves.
+
+real    1m48.616s
+user    0m0.670s
+sys     0m0.070s
+
+6 solutions found after 107.54 seconds and 11722528 tested moves.
+
+real    1m48.161s
+user    0m5.130s
+sys     0m0.290s
+
+6 solutions found after 108.916 seconds and 11726580 tested moves.
+
+real    1m49.539s
+user    0m56.460s
+sys     0m0.430s
+
+# Multithreaded implementation with job pool:
+
+6 solutions found after 34.701 seconds and 11729129 tested moves.
+
+real    0m35.313s
+user    0m0.790s
+sys     0m0.030s
+
+6 solutions found after 34.024 seconds and 11729129 tested moves.
+
+real    0m34.658s
+user    0m0.780s
+sys     0m0.080s
+
+6 solutions found after 33.59 seconds and 11720899 tested moves.
+
+real    0m34.211s
+user    0m0.700s
+sys     0m0.100s
+

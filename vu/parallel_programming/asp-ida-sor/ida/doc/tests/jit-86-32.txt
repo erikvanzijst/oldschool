@@ -1,0 +1,332 @@
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-4-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Local JobManager started and registered.
+Solving 15-puzzle distributed.
+
+Initial board:
+15	6	14	13	
+1	5	10	12	
+11	8	9	4	
+7	3	2		
+
+Goal:
+	1	2	3	
+4	5	6	7	
+8	9	10	11	
+12	13	14	15	
+
+Waiting for all 32 worker processes...
+Worker //das002.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-0-0 started successfully.
+Worker //das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-4-0 started successfully.
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-8-0 started successfully.
+Worker //das019.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-17-0 started successfully.
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 started successfully.
+Worker //das016.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-14-0 started successfully.
+Worker //das012.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-10-0 started successfully.
+Worker //das013.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-11-0 started successfully.
+Worker //das007.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-5-0 started successfully.
+Worker //das024.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-22-0 started successfully.
+Worker //das023.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-21-0 started successfully.
+Worker //das022.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-20-0 started successfully.
+Worker //das017.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-15-0 started successfully.
+Worker //das025.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-23-0 started successfully.
+Worker //das027.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-25-0 started successfully.
+Worker //das014.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-12-0 started successfully.
+Worker //das005.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 started successfully.
+Worker //das003.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 started successfully.
+Worker //das004.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 started successfully.
+Worker //das008.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-6-0 started successfully.
+Worker //das021.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-19-0 started successfully.
+Worker //das015.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-13-0 started successfully.Worker //das028.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-26-0 started successfully.
+
+Worker //das033.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-31-0 started successfully.
+Worker //das032.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-30-0 started successfully.
+Worker //das011.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-9-0 started successfully.
+Worker //das030.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-28-0 started successfully.
+Worker //das020.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-18-0 started successfully.
+Worker //das031.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-29-0 started successfully.
+Worker //das026.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-24-0 started successfully.
+Worker //das029.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-27-0 started successfully.
+Trying bound 46
+Waiting for all 32 workers to finish their work...
+Worker //das018.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-16-0 started successfully.
+Trying bound 48
+Waiting for all 32 workers to finish their work...
+Trying bound 50
+Waiting for all 32 workers to finish their work...
+Trying bound 52
+Waiting for all 32 workers to finish their work...
+Trying bound 54
+Waiting for all 32 workers to finish their work...
+Trying bound 56
+Waiting for all 32 workers to finish their work...
+Trying bound 58
+Waiting for all 32 workers to finish their work...
+Trying bound 60
+Waiting for all 32 workers to finish their work...
+Trying bound 62
+Waiting for all 32 workers to finish their work...
+Trying bound 64
+Waiting for all 32 workers to finish their work...
+Trying bound 66
+Waiting for all 32 workers to finish their work...
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (2, 1) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (0, 1) (1, 1) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (2, 2) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (2, 1) (2, 2) (2, 3) (1, 3) (0, 3) (0, 2) (0, 1) (1, 1) (1, 0) (2, 0) (2, 1) (2, 2) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (2, 1) (3, 1) (3, 2) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (2, 1) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (2, 1) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (2, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (0, 2) (0, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (0, 2) (0, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (0, 1) (0, 0) (1, 0) (2, 0) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (0, 1) (0, 0) (1, 0) (2, 0) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (3, 2) (2, 2) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (2, 0) (2, 1) (1, 1) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (2, 0) (1, 0) (0, 0) 
+Solution found after 66 moves: (3, 2) (2, 2) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (2, 0) (3, 0) (3, 1) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (2, 0) (1, 0) (0, 0) 
+Solution found after 66 moves: (3, 2) (2, 2) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (2, 0) (1, 0) (0, 0) 
+Solution found after 66 moves: (3, 2) (2, 2) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (2, 2) (1, 2) (1, 3) (0, 3) (0, 2) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (2, 0) (3, 0) (3, 1) (2, 1) (2, 2) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) 
+25 solutions found after 994.011 seconds.
+//das018.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-16-0 computed 110632768 nodes.
+//das029.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-27-0 computed 99048070 nodes.
+//das026.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-24-0 computed 158475488 nodes.
+//das031.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-29-0 computed 92380898 nodes.
+//das020.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-18-0 computed 97672936 nodes.
+//das030.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-28-0 computed 91373659 nodes.
+//das011.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-9-0 computed 95145749 nodes.
+//das032.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-30-0 computed 102951905 nodes.
+//das033.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-31-0 computed 88773745 nodes.
+//das028.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-26-0 computed 82453090 nodes.
+//das015.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-13-0 computed 84518559 nodes.
+//das021.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-19-0 computed 87880447 nodes.
+//das008.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-6-0 computed 98085177 nodes.
+//das004.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 computed 89553783 nodes.
+//das003.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 computed 99579547 nodes.
+//das013.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-11-0 computed 85909980 nodes.
+//das012.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-10-0 computed 102593050 nodes.
+//das016.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-14-0 computed 78589467 nodes.
+//das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 computed 100402736 nodes.
+//das019.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-17-0 computed 99531673 nodes.
+//das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-8-0 computed 93281004 nodes.
+//das006.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-4-0 computed 83454621 nodes.
+//das002.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-0-0 computed 82356685 nodes.
+//das007.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-5-0 computed 79825619 nodes.
+//das024.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-22-0 computed 127019942 nodes.
+//das023.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-21-0 computed 104385615 nodes.
+//das022.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-20-0 computed 111046513 nodes.
+//das017.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-15-0 computed 110260302 nodes.
+//das025.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-23-0 computed 83894019 nodes.
+//das027.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-25-0 computed 92187869 nodes.
+//das014.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-12-0 computed 85301946 nodes.
+//das005.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 computed 97500106 nodes.
+Master process exits.
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das012.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-9-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refusedWorker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-6-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+
+Worker //das013.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-10-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das017.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-14-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refusedWorker //das016.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-13-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das023.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-20-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+
+Worker //das018.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-15-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refusedWorker //das032.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-29-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+
+Worker //das034.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-31-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das029.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-26-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das024.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-21-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das031.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-28-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das033.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-30-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das012.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-9-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refusedWorker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-6-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+
+Worker //das013.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-10-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das017.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-14-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refusedWorker //das016.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-13-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+
+Worker //das023.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-20-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refusedWorker //das018.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-15-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das032.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-29-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das034.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-31-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+
+Worker //das029.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-26-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.ConnectException: Connection refused to host: das001.cs.vu.nl; nested exception is: 
+	java.net.ConnectException: Connection refused
+Worker //das033.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-30-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManagerWorker //das019.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-16-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das024.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-21-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das031.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-28-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das012.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-9-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-6-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das017.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-14-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das016.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-13-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManagerWorker //das023.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-20-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+
+Worker //das013.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-10-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManagerWorker //das018.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-15-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+
+Worker //das033.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-30-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das024.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-21-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das019.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-16-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManagerWorker //das031.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-28-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+
+Worker //das032.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-29-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das034.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-31-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das002.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das012.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-9-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManager
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-6-0 unable to contact the job manager: java.rmi.RemoteException: Unable to contact the remote JobManager: java.rmi.NotBoundException: nl.vu.pp.distributed.JobManagerLocal JobManager started and registered.
+Solving 15-puzzle distributed.
+
+Initial board:
+15	6	14	13	
+1	5	10	12	
+11	8	9	4	
+7	3	2		
+
+Goal:
+	1	2	3	
+4	5	6	7	
+8	9	10	11	
+12	13	14	15	
+
+Waiting for all 32 worker processes...
+
+Worker //das001.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-0-0 started successfully.
+Worker //das017.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-14-0 started successfully.
+Worker //das023.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-20-0 started successfully.
+Worker //das013.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-10-0 started successfully.
+Worker //das018.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-15-0 started successfully.
+Worker //das016.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-13-0 started successfully.
+Worker //das029.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-26-0 started successfully.
+Worker //das008.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-5-0 started successfully.
+Worker //das033.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-30-0 started successfully.
+Worker //das024.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-21-0 started successfully.
+Worker //das019.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-16-0 started successfully.
+Worker //das031.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-28-0 started successfully.
+Worker //das032.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-29-0 started successfully.
+Worker //das011.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-8-0 started successfully.
+Worker //das034.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-31-0 started successfully.
+Worker //das002.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 started successfully.
+Worker //das021.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-18-0 started successfully.
+Worker //das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 started successfully.
+Worker //das003.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 started successfully.
+Worker //das012.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-9-0 started successfully.
+Worker //das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-6-0 started successfully.
+Worker //das020.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-17-0 started successfully.
+Worker //das028.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-25-0 started successfully.
+Worker //das026.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-23-0 started successfully.
+Worker //das015.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-12-0 started successfully.
+Worker //das025.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-22-0 started successfully.
+Worker //das022.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-19-0 started successfully.
+Worker //das027.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-24-0 started successfully.
+Worker //das030.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-27-0 started successfully.
+Worker //das004.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 started successfully.
+Worker //das014.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-11-0 started successfully.
+Trying bound 46
+Waiting for all 32 workers to finish their work...
+Worker //das005.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-4-0 started successfully.
+Trying bound 48
+Waiting for all 32 workers to finish their work...
+Trying bound 50
+Waiting for all 32 workers to finish their work...
+Trying bound 52
+Waiting for all 32 workers to finish their work...
+Trying bound 54
+Waiting for all 32 workers to finish their work...
+Trying bound 56
+Waiting for all 32 workers to finish their work...
+Trying bound 58
+Waiting for all 32 workers to finish their work...
+Trying bound 60
+Waiting for all 32 workers to finish their work...
+Trying bound 62
+Waiting for all 32 workers to finish their work...
+Trying bound 64
+Waiting for all 32 workers to finish their work...
+Trying bound 66
+Waiting for all 32 workers to finish their work...
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (0, 1) (1, 1) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (2, 1) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (0, 1) (0, 0) (1, 0) (2, 0) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (0, 1) (0, 0) (1, 0) (2, 0) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (0, 2) (0, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (0, 2) (0, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (2, 1) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 1) (2, 1) (2, 0) (1, 0) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (1, 2) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (1, 2) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) (0, 1) (0, 2) (1, 2) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (2, 2) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (1, 2) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (2, 2) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (2, 1) (2, 2) (2, 3) (1, 3) (0, 3) (0, 2) (0, 1) (1, 1) (1, 0) (2, 0) (2, 1) (2, 2) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (2, 1) (3, 1) (3, 2) (2, 2) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (1, 2) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (3, 2) (3, 1) (3, 0) (2, 0) (2, 1) (1, 1) (1, 0) (0, 0) (0, 1) (1, 1) (1, 0) (2, 0) (2, 1) (1, 1) (1, 2) (2, 2) (3, 2) (3, 3) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3) (1, 2) (1, 1) (1, 0) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (2, 0) (3, 0) (3, 1) (3, 2) (3, 3) (2, 3) (2, 2) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (0, 0) 
+Solution found after 66 moves: (3, 2) (2, 2) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 0) (2, 0) (2, 1) (1, 1) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (2, 0) (1, 0) (0, 0) 
+Solution found after 66 moves: (3, 2) (2, 2) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (2, 1) (1, 1) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (2, 0) (3, 0) (3, 1) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (2, 0) (1, 0) (0, 0) 
+Solution found after 66 moves: (3, 2) (2, 2) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (1, 3) (2, 3) (2, 2) (2, 1) (2, 0) (1, 0) (1, 1) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (1, 2) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (2, 1) (1, 1) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (2, 0) (1, 0) (0, 0) 
+Solution found after 66 moves: (3, 2) (2, 2) (2, 3) (1, 3) (0, 3) (0, 2) (1, 2) (2, 2) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (0, 0) (0, 1) (1, 1) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (3, 0) (2, 0) (1, 0) (1, 1) (2, 1) (2, 2) (1, 2) (1, 3) (0, 3) (0, 2) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (2, 0) (3, 0) (3, 1) (2, 1) (2, 2) (1, 2) (1, 3) (2, 3) (3, 3) (3, 2) (3, 1) (2, 1) (1, 1) (0, 1) (0, 2) (0, 3) (1, 3) (2, 3) (3, 3) (3, 2) (2, 2) (2, 1) (2, 0) (1, 0) (0, 0) 
+25 solutions found after 861.25 seconds.
+//das005.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-4-0 computed 102480491 nodes.
+//das014.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-11-0 computed 120505377 nodes.
+//das004.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-3-0 computed 86380865 nodes.
+//das030.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-27-0 computed 111022870 nodes.
+//das027.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-24-0 computed 110559760 nodes.
+//das022.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-19-0 computed 82744859 nodes.
+//das025.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-22-0 computed 94581688 nodes.
+//das015.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-12-0 computed 99552083 nodes.
+//das026.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-23-0 computed 137640570 nodes.
+//das028.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-25-0 computed 88397050 nodes.
+//das020.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-17-0 computed 90978989 nodes.
+//das009.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-6-0 computed 88170377 nodes.
+//das012.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-9-0 computed 93528525 nodes.
+//das003.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-2-0 computed 92494563 nodes.
+//das010.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-7-0 computed 96421884 nodes.
+//das008.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-5-0 computed 75472686 nodes.
+//das029.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-26-0 computed 90463716 nodes.
+//das016.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-13-0 computed 87687383 nodes.
+//das018.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-15-0 computed 83215010 nodes.
+//das013.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-10-0 computed 94090399 nodes.
+//das023.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-20-0 computed 109267807 nodes.
+//das017.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-14-0 computed 90289659 nodes.
+//das001.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-0-0 computed 83828634 nodes.
+//das033.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-30-0 computed 83058997 nodes.
+//das024.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-21-0 computed 96622448 nodes.
+//das019.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-16-0 computed 102923271 nodes.
+//das031.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-28-0 computed 114444628 nodes.
+//das032.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-29-0 computed 83547487 nodes.
+//das011.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-8-0 computed 103832752 nodes.
+//das034.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-31-0 computed 104284988 nodes.
+//das002.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-1-0 computed 107293535 nodes.
+//das021.cs.vu.nl:1099/nl.vu.pp.distributed.Worker-18-0 computed 90283617 nodes.
+Master process exits.

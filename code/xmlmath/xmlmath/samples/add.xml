@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Simple expression that computes 1 + 1.
+
+Note that <add> uses floating point arithmetic by default, giving "2.0" as
+the result. However, when all operands are long values, it'd be better to
+explicitly instruct <add> to calculate integer operations by specifying the
+"datatype" attribute:
+
+<add datatype="long" xmlns="http://prutser.cx/xmlmath/schemas">
+-->
+
+<add xmlns="http://prutser.cx/xmlmath/schemas">
+	<long value="1"/>
+	<long value="1"/>
+</add>

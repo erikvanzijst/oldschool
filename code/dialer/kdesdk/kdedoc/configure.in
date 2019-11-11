@@ -1,0 +1,27 @@
+AC_INIT(qt2kdoc)
+
+AC_DEFUN(AC_FIND_PERL,
+[
+AC_MSG_CHECKING(for perl 5 or greater)
+if ./findperl; then
+	$1=`cat perlbin`
+	echo $$1
+else
+	echo "Couldn't find perl 5 or later. kdoc will not run."
+	exit 1
+fi	
+])
+
+AC_DEFUN(AC_KDOC_VERSION,
+[
+AC_MSG_CHECKING(kdoc version)
+$1=`cat Version | sed 's#Revision##g' | tr -d '\$:'`
+echo $$1
+])
+
+AC_PROG_INSTALL
+AC_FIND_PERL(perl)
+AC_SUBST(perl)
+AC_KDOC_VERSION(Version)
+AC_SUBST(Version)
+AC_OUTPUT(Makefile)

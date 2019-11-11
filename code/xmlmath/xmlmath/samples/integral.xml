@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This expression computes the integral of sin(x) on the domain 0 to pi. To this
+end, it divides the area below the function in a set of thin, rectangular
+slices whose combined surface area produces the result.
+
+The calculation can be made more precise by increasing the value of
+declaration "accuracy".
+-->
+
+<toDouble xmlns="http://prutser.cx/xmlmath/schemas">
+
+	<declare name="start">
+		<double value="0.0"/>
+	</declare>
+	<declare name="end">
+		<pi/>
+	</declare>
+	<declare name="accuracy">
+		<double value="10000"/>
+	</declare>
+	
+	<!-- This is the actual function that is being integrated. -->
+	<stanza name="function">
+		<sin>
+			<linkDouble name="x"/>
+		</sin>
+	</stanza>
+
+	<!-- This stanza computes the integral value for a function f(x) that is
+	defined as a stanza with name "function". It looks for double declarations
+	named "start", "end" and "accuracy". -->
+	<stanza name="integrate">
+		<sum iterator="it" datatype="double">
+			<toLong>
+				<product datatype="long">
+					<linkDouble name="start"/>
+					<linkDouble name="accuracy"/>
+				</product>
+			</toLong>
+			<toLong>
+				<subtract datatype="long">
+					<product datatype="double">
+						<linkDouble name="end"/>
+						<linkDouble name="accuracy"/>
+					</product>
+					<long value="1"/>
+				</subtract>
+			</toLong>
+		
+			<product>
+				<declare name="x">
+					<toDouble>
+						<add>
+							<quotient datatype="double">
+								<linkLong name="it"/>
+								<linkDouble name="accuracy"/>
+							</quotient>
+							<quotient datatype="double">
+								<double value=".5"/>
+								<linkDouble name="accuracy"/>
+							</quotient>
+						</add>
+					</toDouble>
+				</declare>
+	
+				<inlineDouble name="function"/>
+				
+				<quotient datatype="double">
+					<double value="1.0"/>
+					<linkDouble name="accuracy"/>
+				</quotient>
+			</product>
+		</sum>
+	</stanza>
+	
+	<inlineDouble name="integrate"/>
+</toDouble>

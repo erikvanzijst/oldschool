@@ -1,0 +1,43 @@
+KMonop - useless developer release
+
+
+INSTALLATION
+
+	tar zxvf monop-devel.tgz
+	cd monop
+	make
+
+Eventually the monop binary will appear. Since the client will come later,
+the only way to get some life is to telnet to the monop port (2525).
+
+run ./monop and telnet to port 2525. See the API file for the commands to
+roll the dice etc.
+For very early preview of the KDE KMonop client, do this:
+
+	cd kmonop
+	make
+	./kmonop	(make sure you have monop server running)
+
+
+README
+
+The complete suite will exist of this server (see it as a text mode,
+dedicated deamon) and one client: the KDE client: KMonop.
+The very first signs of some GUI-life can already be found in the subdir
+kmonop/ Note that that client is not being written by me. Harras
+leon@prutser.cx for that.
+
+Eventually, it will become quite easy for third party developers to write
+a client in a different environment (say GTK/Gnome) by studying the (not yet
+complete) network API. The actual monopoly game routines are all being
+handled by the server, so a GTK version would only be a GUI app with some
+TCP code.
+
+
+Every day a new snapshot will automatically be made available at my own
+machine: www.prutser.cx/~icehawk/kmonop/monop-devel.tgz
+This is not garanteed to even compile! (no cvs yet)
+
+Official website: http://www.capsi.com/kmonop/
+
+Erik van Zijst - erik@prutser.cx

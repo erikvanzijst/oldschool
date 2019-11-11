@@ -1,0 +1,10 @@
+# KDE Config File  
+[KDE Desktop Entry]
+Type=Application
+Exec=kdialer -caption "%c" %i %m 
+Icon=kdialer.xpm
+DocPath=kdialer/index.html
+Comment=A simple phone dialing utility.
+Terminal=0
+Name=KDialer
+

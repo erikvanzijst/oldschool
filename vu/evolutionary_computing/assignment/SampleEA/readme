@@ -1,0 +1,38 @@
+This archive contains the stuff for the assignment for
+the EA course in 2002, VU, Amsterdam.
+
+File list:
+
+EA2002.jar: contains the class EA2002 which is the fitness function.
+	put this in your classpath.
+
+RealBlackBoxProblem.java: The interface EA2002 implements. You have 
+	to use this interface for talking to the EA2002 class.
+
+SampleEA.java: Source code illustrating the technicalities of how 
+	to write an algorithm for optimising using the
+	RealBlackBoxProblem interface (and thus class EA2002). You can
+	compile and run it with EA2002.jar in the classpath.
+
+index.html: The description of the assignment; how you get your grade,
+	what to do exactly, etc.
+
+api/: API documentation of the interface RealBlackBoxProblem.
+
+report.tex: A sample latex file for you report if you prefer to 
+	work with latex.
+
+-----------------------------------------------------------------
+
+Modified by Martijn Schut, September 2002, Amsterdam
+Fri Sep 27 10:13:37 GMT+1 2002
+
+Originally posted by Mark Jelasity, March 2002, Amsterdam
+Mon Mar 11 13:45:39 CET 2002
+
+Vrije Universiteit Amsterdam             http://www.cs.vu.nl/~jelasity/
+Dept. of Artificial Intelligence         email: jelasity@cs.vu.nl
+De Boelelaan 1081a, 1081 HV Amsterdam,   Phone: +31 (0)20 444 7695
+The Netherlands                          Fax:   +31 (0)20 444 7653 
+
+

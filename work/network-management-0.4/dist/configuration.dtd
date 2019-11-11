@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE network SYSTEM "configuration.dtd">
+
+    <network>
+    ...
+    </network>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Distance (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT DestHost (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT DestInterface (Address)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Connection (Distance|DestHost|DestInterface)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Metric (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT AddressElement (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Address (AddressElement)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT SrcInterface (Connection|Metric|Address)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT interface (SrcInterface)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT management_agent (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT management_domain (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT management_key (management_agent|management_domain)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT listener_port (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT http_port (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT http_password (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT http_user (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT management_port (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT host (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT administration (management_key|listener_port|http_port|http_password|http_user|management_port|host)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT ID (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT node (interface|administration|ID)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT network (node)*>

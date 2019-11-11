@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test xmlns="http://prutser.cx/xmlmath/schemas"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<testBoolean result="true">
+		<and>
+			<equals>
+				<declare name="x">
+					<long value="10"/>
+				</declare>
+				<sum iterator="i" datatype="long">
+					<long value="1"/>
+					<linkLong name="x"/>
+					<long value="1"/>
+				</sum>
+				<linkLong name="x"/>
+			</equals>
+			<equals>
+				<round>
+					<sum iterator="i" datatype="double">
+						<long value="1"/>
+						<long value="100"/>
+						<double value=".1"/>
+					</sum>
+				</round>
+				<long value="10"/>
+			</equals>
+		</and>
+	</testBoolean>
+</test>

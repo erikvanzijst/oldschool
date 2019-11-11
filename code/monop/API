@@ -1,0 +1,141 @@
+COMMANDS
+--------
+
+Notes: these calls are case insensitive ("/NAME GET" is just as ok as "/name
+get")
+(B) indicates a message is being broadcasted to all players.
+
+
+Nickname - Client side
+/nick get		Returns the player's nickname
+/nick set newnick	Asks the server for a new nickname as specified
+Nickname - Server side
+/nick oldnick newnick	Server changed the nickname of a player (B)
+/nick error invalid	Server tells the requester the newnick is invalid
+/nick error inuse	The new nick is already in use
+
+
+RealName - Client side
+/name get nickname	Ask someone's realname value
+/name set realname	Set your realname to something
+RealName - Server side
+/name nick RealName	Returns someone's realname, after a set this becomes (B)
+
+
+Token - Client side
+/token get nick		Ask someone's token
+/token set #		Request token number #
+Token - Server side
+/token nick #		Returns someone's token (is (B) after a set)
+/token error invalid	Tells the user the token is beyond range
+/token error inuse	Tells the user the token is already in use
+
+
+Email - Client side
+/email get nick		Asks someone's email value
+/email set user@host	Sets your email value
+Email - Server side
+/email nick e@mail	Returns someone's email value (is (B) after set)
+
+
+FQDN - Client side
+/fqdn get nick		Asks someone's fully qualified domain name
+FQDN - Server side
+/fqdn nick host.domain	Returns someone's fully qualified domain name
+
+
+IPNR - Client side
+/ipnr get nick		Asks someone's ip address
+IPNR - Server side
+/ipnr nick 12.34.56.7	Returns someone's ip address
+
+
+NAMES - Client side
+/names get		Asks the list of connected players
+NAMES - Server side
+/names nick1 nick2 n3	Returns the plauer list (is (B) after a join or quit)
+
+
+QUIT - Client side
+/quit reason		Quits the game. Your reason may be ommited
+QUIT - Server side
+/quit nick reason	Tells everyone a user quited. Reason may be ommited (B)
+
+
+CHAT - Client side
+/chat message           User talks a line in the partyline (public)
+CHAT - Server side
+/quit nick message	Server broadcasts the message to all.
+
+
+MSG - Client side
+/msg nick message	Send a private message to someone
+MSG - Server side
+/msg nick message	Message to the receiver, nick is the source
+
+
+BUDGET - Client side
+/budget get nick	Asks someone's amount of money
+/budget hide 1		Make your money invisible
+/budget hide 0		Make your moeny visible
+BUDGET - Server side
+/budget nick 1500	Displays someone's money ((B) after a change)
+/budget nick -1		The user has hidden his money ((B) after change)
+
+
+READY - Client side	(ready to start with the game)
+/ready get nick		Asks someone's ready-status
+/ready set 0		You're not ready to start the game yet
+/ready set 1		Once everyone has set to ready, the game will start
+READY - Server side
+/ready nick 0		Broadcasts if a user change the ready-status
+/ready nick 1		Same thing
+
+
+DICE - Client side
+/dice roll		Rolls the dice for you.
+DICE - Server side
+/dice nick 3:5		User "nick" threw 3 and 5 (B)
+
+
+POS - Client side
+/pos get nick		Aks someone's location
+POS - Server side
+/pos nick #		Player "nick" is at location #
+
+
+PROPERTY - Client side
+/property buy		Buy the current street
+/property mortgage #	mortgage street # // not done yet
+PROPERTY - Server side
+/property buy nick #	Player nick just aquired street #
+
+
+
+EXAMPLE (done through telnet, default port is 2525)
+-------
+
+Connected to satan.icehawk.prutser.cx.
+Escape character is '^]'.
+Monop server Protocol 1.0
+
+Login: Icehawk
+Password:
+Login successfull.
+/email get Icehawk	<-- client command (you type)
+/email Icehawk Icehawk@satan.icehawk.prutser.cx	<-- server responds
+/email set erik@prutser.cx	<-- change your email address
+/email Icehawk erik@prutser.cx	<-- server responds with a broadcast
+/nick set Erik	<-- you ask for nickname "Erik"
+/nick Icehawk Erik	<-- Server accepted and responded with a broadcast
+/token set 52	<-- you want token #52
+/token error invalid	<-- which doesn't exist
+
+
+Now if you actually decide to create a client of your own, please contact
+me. The current state of the API is not yet finished. If in this early time,
+you want to take part already, I can keep you informed with the closer
+details and specifications of the protocol. Also of course, you can get your
+line on the homepage..
+
+Erik van Zijst - erik@prutser.cx

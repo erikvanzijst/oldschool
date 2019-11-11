@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This example contains a stanza that calculates the slope of a function for a
+given point. The function that is being differentiated must be defined as a
+stanza with name "function", while the point on the x-axis must be declared as
+a double value named "x".
+Additionally, the accuracy of the calculation can be improved by increasing
+the value of variable "accuracy".
+
+The function used in this example is: y = x^2 - 1
+By altering declaration "x", the function's slope can be calculated on
+different points.
+-->
+
+<toDouble xmlns="http://prutser.cx/xmlmath/schemas">
+
+	<declare name="x">
+		<double value="2"/>
+	</declare>
+	<declare name="accuracy">
+		<double value="10000"/>
+	</declare>
+
+	<!-- This is the actual function that is being differentiated:
+	y = f(x^2 - 1) -->
+	<stanza name="function">
+		<subtract>
+			<pow>
+				<linkDouble name="x"/>
+				<double value="2"/>
+			</pow>
+			<double value="1"/>
+		</subtract>
+	</stanza>
+
+	<stanza name="differentiate">
+		<toDouble>
+			<declare name="dx">
+				<quotient>
+					<double value="1"/>
+					<linkDouble name="accuracy"/>
+				</quotient>
+			</declare>
+			<quotient>
+				<subtract>
+					<toDouble>
+						<declare name="x">
+							<add>
+								<linkDouble name="x"/>
+								<linkDouble name="dx"/>
+							</add>
+						</declare>
+						<inlineDouble name="function"/>
+					</toDouble>
+					<toDouble>
+						<declare name="x">
+							<subtract>
+								<linkDouble name="x"/>
+								<linkDouble name="dx"/>
+							</subtract>
+						</declare>
+						<inlineDouble name="function"/>
+					</toDouble>
+				</subtract>
+				<linkDouble name="dx"/>
+			</quotient>
+		</toDouble>
+	</stanza>
+	
+	<inlineDouble name="differentiate"/>
+</toDouble>

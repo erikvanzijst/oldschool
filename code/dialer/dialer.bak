@@ -1,0 +1,1037 @@
+/***************************************************************************
+  Phone Dialer
+
+A graphical utility to dial telephonenumbers.
+Stores up to 8 numbers.
+
+Written in Qt 1.32 (you MUST have Qt installed to compile/run)
+Designed for Linux. Probably runs on other unices as well, but porting could
+be necessary.
+Inspired by Microsoft's dialer.exe
+
+Compiling: moc -o dialer.moc dialer.cc ; gcc -lqt -o dialer dialer.cc
+
+
+Author: Erik van Zijst
+Email:  icehawk@xs4all.nl
+WWW:    http://www.xs4all.nl/~icehawk
+Qt:     http://www.troll.no
+Date:   May, 5th, 1998
+
+***************************************************************************/
+#include <stdio.h>
+#include <qapp.h>
+#include <qpushbt.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <termios.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <string.h>
+#include <qstring.h>
+#include <qmlined.h>
+#include <qlabel.h>
+#include <qwindefs.h>
+#include <qwidget.h>
+#include <qmenubar.h>
+#include <qmsgbox.h>
+#include <qkeycode.h>
+#include <qgrpbox.h>
+#include <qlined.h>
+#include <qframe.h>
+#include <qtooltip.h>
+#define ON 1
+#define OFF 0
+#define MAXNAME 100
+#define MAXNUMBER 30
+
+void InitPersons();
+void read_rc();
+void write_rc();
+void modemerror(void);
+
+int modem;
+QString modem_device = "/dev/modem";
+QString prefix = "";
+QString phonenumber = "";
+QString phonenumberbu = "";
+int number_of_users;
+
+struct Person
+{
+   char name[MAXNAME];
+   char number[MAXNUMBER];
+} person[8];
+
+class EditWindow : public QDialog
+{
+   Q_OBJECT
+private:
+   int selected_button;
+   QLabel *toplabel;
+   QFrame *hline;
+   QLineEdit *name_le, *number_le;
+   QLabel *name_l, *number_l, *bottomlabel;
+   QPushButton *save, *cancel;
+   QPushButton *b1, *b2, *b3, *b4, *b5, *b6, *b7, *b8;
+   QLabel *l1, *l2, *l3, *l4, *l5, *l6, *l7, *l8;
+signals:
+   void buttons_changed();
+public:
+   EditWindow(QWidget *parent, const char *name);
+   void resizeEvent(QResizeEvent *e);
+   void closeEvent(QCloseEvent *e);
+public slots:
+   void namele_changed(const char *crap);
+   void numberle_changed(const char *crap);
+   void refresh_buttons();
+   void b1clicked();
+   void b2clicked();
+   void b3clicked();
+   void b4clicked();
+   void b5clicked();
+   void b6clicked();
+   void b7clicked();
+   void b8clicked();
+   void save_slot();
+   void cancel_slot();
+};
+EditWindow *edit_window;
+
+class OptionWindow : public QDialog
+{
+   Q_OBJECT
+private:
+   QGroupBox *line;
+   QPushButton *ok, *cancel;
+   QLabel *l1, *l2;
+   QLineEdit *devicebox;
+   QLineEdit *prefix_le;
+public:
+   OptionWindow(QWidget *parent, const char *name);
+   void resizeEvent(QResizeEvent *e);
+   void closeEvent(QCloseEvent *e);
+public slots:
+   void save_slot();
+   void cancel_slot();
+};
+OptionWindow *option_window;
+
+class DialWindow : public QDialog
+{
+   Q_OBJECT
+private:
+   QLabel *message;
+   QPushButton *hangup;
+public:
+   DialWindow(QWidget *parent, const char *name);
+public slots:
+   void hangup_slot();
+};
+DialWindow *dial_window;
+
+class DialerWindow : public QWidget
+{
+   Q_OBJECT
+private:
+   QLabel *label1;
+   QLabel *l1, *l2, *l3, *l4, *l5, *l6, *l7, *l8;
+   QLineEdit *typebox;
+   QPushButton *dialnumber;
+   QPushButton *nr1, *nr2, *nr3, *nr4, *nr5, *nr6, *nr7, *nr8, *nr9, *nr0, *star, *hash;
+   QGroupBox *buttongroup;
+   QPushButton *speed1, *speed2, *speed3, *speed4, *speed5, *speed6, *speed7, *speed8;
+public:
+   DialerWindow(QWidget *parent=0, const char *name=0);
+   void resizeEvent(QResizeEvent *e);
+   void closeEvent(QCloseEvent *e);
+   void redraw_speed_dial();
+public slots:
+   void quit_slot();
+   void dial_slot();
+   void tb_changed(const char *crap);
+   void b1clicked();
+   void b2clicked();
+   void b3clicked();
+   void b4clicked();
+   void b5clicked();
+   void b6clicked();
+   void b7clicked();
+   void b8clicked();
+   void b9clicked();
+   void b0clicked();
+   void s1clicked();
+   void s2clicked();
+   void s3clicked();
+   void s4clicked();
+   void s5clicked();
+   void s6clicked();
+   void s7clicked();
+   void s8clicked();
+   void starclicked();
+   void hashclicked();
+   void about();
+   void aboutQt();
+   void edit();
+   void options();
+};
+DialerWindow *dialer_window;
+
+EditWindow::EditWindow(QWidget *parent, const char *name):QDialog(parent,name,TRUE)
+{
+   resize(300,300);
+   setMinimumSize(300,300);
+   
+   connect(this, SIGNAL(buttons_changed()), this, SLOT(refresh_buttons()) );
+
+   toplabel = new QLabel(this, "toplabel");
+   toplabel->setText("Choose a button to edit.");
+   hline = new QFrame(this);
+   hline->setFrameStyle(QFrame::HLine | QFrame::Sunken);
+   hline->setLineWidth(1);
+   hline->setMidLineWidth(0);
+   bottomlabel = new QLabel(this, "bottomlabel");
+   bottomlabel->setText("Enter a name and number for the selected button.");
+
+   b1 = new QPushButton(this, "b1");
+   b1->setText(person[0].name);
+   connect(b1, SIGNAL(clicked()), SLOT(b1clicked()) );
+   b2 = new QPushButton(this, "b2");
+   b2->setText(person[1].name);
+   connect(b2, SIGNAL(clicked()), SLOT(b2clicked()) );
+   b3 = new QPushButton(this, "b3");
+   b3->setText(person[2].name);
+   connect(b3, SIGNAL(clicked()), SLOT(b3clicked()) );
+   b4 = new QPushButton(this, "b4");
+   b4->setText(person[3].name);
+   connect(b4, SIGNAL(clicked()), SLOT(b4clicked()) );
+   b5 = new QPushButton(this, "b5");
+   b5->setText(person[4].name);
+   connect(b5, SIGNAL(clicked()), SLOT(b5clicked()) );
+   b6 = new QPushButton(this, "b6");
+   b6->setText(person[5].name);
+   connect(b6, SIGNAL(clicked()), SLOT(b6clicked()) );
+   b7 = new QPushButton(this, "b7");
+   b7->setText(person[6].name);
+   connect(b7, SIGNAL(clicked()), SLOT(b7clicked()) );
+   b8 = new QPushButton(this, "b8");
+   b8->setText(person[7].name);
+   connect(b8, SIGNAL(clicked()), SLOT(b8clicked()) );
+
+   l1 = new QLabel(this, "1");
+   l1->setText("1");
+   l2 = new QLabel(this, "2");
+   l2->setText("2");
+   l3 = new QLabel(this, "3");
+   l3->setText("3");
+   l4 = new QLabel(this, "4");
+   l4->setText("4");
+   l5 = new QLabel(this, "5");
+   l5->setText("5");
+   l6 = new QLabel(this, "6");
+   l6->setText("6");
+   l7 = new QLabel(this, "7");
+   l7->setText("7");
+   l8 = new QLabel(this, "8");
+   l8->setText("8");
+
+   name_l = new QLabel(this, "name_l");
+   name_l->setText("Name:");
+   number_l = new QLabel(this, "number_l");
+   number_l->setText("Number:");
+   name_le = new QLineEdit(this, "name_le");
+   number_le = new QLineEdit(this, "number_le");
+   connect(number_le, SIGNAL(textChanged(const char*)), SLOT(numberle_changed(const char*)) );
+   connect(name_le, SIGNAL(textChanged(const char*)), SLOT(namele_changed(const char*)) );
+
+   save = new QPushButton(this, "save");
+   save->setText("&Save");
+   connect(save, SIGNAL(clicked()), this, SLOT(save_slot()) );
+   save->setDefault(TRUE);
+   cancel = new QPushButton(this, "Cancel");
+   cancel->setText("&Cancel");
+   connect(cancel, SIGNAL(clicked()), this, SLOT(cancel_slot()) );
+
+   b1clicked();
+   name_le->selectAll();
+   name_le->setFocus();
+   number_le->selectAll();
+}
+
+void EditWindow::resizeEvent(QResizeEvent *e)
+{
+   int x1, x2, y1, y2, y3, y4, space = 2, marge = 20, x=8;
+   toplabel->setGeometry(10,10, width()-20,20);
+   hline->setGeometry(10, height()-127, width()-20,5);
+   bottomlabel->setGeometry(10, height()-112, width()-20,20);
+
+   x1 = 10;
+   x2 = width() / 2;
+   int buttonwidth = (width() / 2 - 10);
+   y1 = 40;
+   int buttonheight = (height()- 132 - y1) / 4;
+   y2 = y1 + buttonheight;
+   y3 = y2 + buttonheight;
+   y4 = y3 + buttonheight;
+
+   l1->setGeometry(x1+x, y1+space, marge-x, buttonheight-2*space);
+   l2->setGeometry(x1+x, y2+space, marge-x, buttonheight-2*space);
+   l3->setGeometry(x1+x, y3+space, marge-x, buttonheight-2*space);
+   l4->setGeometry(x1+x, y4+space, marge-x, buttonheight-2*space);
+   l5->setGeometry(x2+x, y1+space, marge-x, buttonheight-2*space);
+   l6->setGeometry(x2+x, y2+space, marge-x, buttonheight-2*space);
+   l7->setGeometry(x2+x, y3+space, marge-x, buttonheight-2*space);
+   l8->setGeometry(x2+x, y4+space, marge-x, buttonheight-2*space);
+   b1->setGeometry(x1+marge, y1+space, buttonwidth-2*space-marge, buttonheight-2*space);
+   b2->setGeometry(x1+marge, y2+space, buttonwidth-2*space-marge, buttonheight-2*space);
+   b3->setGeometry(x1+marge, y3+space, buttonwidth-2*space-marge, buttonheight-2*space);
+   b4->setGeometry(x1+marge, y4+space, buttonwidth-2*space-marge, buttonheight-2*space);
+   b5->setGeometry(x2+marge, y1+space, buttonwidth-2*space-marge, buttonheight-2*space);
+   b6->setGeometry(x2+marge, y2+space, buttonwidth-2*space-marge, buttonheight-2*space);
+   b7->setGeometry(x2+marge, y3+space, buttonwidth-2*space-marge, buttonheight-2*space);
+   b8->setGeometry(x2+marge, y4+space, buttonwidth-2*space-marge, buttonheight-2*space);
+
+   name_l->setGeometry(10, height()-87, width()/2-10-10, 20);
+   name_le->setGeometry(10, height()-65, width()/2-10-10, 22);
+   number_l->setGeometry(width()/2+10, height()-87, width()/2-20, 20);
+   number_le->setGeometry(width()/2+10, height()-65, width()/2-20, 22);
+   cancel->setGeometry( width()-80, height()-10-25, 70,25);
+   save->setGeometry( width()-160, height()-10-25, 70,25);
+}
+
+void EditWindow::closeEvent(QCloseEvent *e)
+{
+   read_rc();
+   e->accept();
+   this->~EditWindow();
+}
+
+void EditWindow::namele_changed(const char *crap)
+{
+   strcpy(person[selected_button-1].name, name_le->text() );
+   emit buttons_changed();
+}
+
+void EditWindow::numberle_changed(const char *crap)
+{
+   strcpy(person[selected_button-1].number, number_le->text() );
+}
+
+void EditWindow::refresh_buttons()
+{
+   b1->setText(person[0].name);
+   b2->setText(person[1].name);
+   b3->setText(person[2].name);
+   b4->setText(person[3].name);
+   b5->setText(person[4].name);
+   b6->setText(person[5].name);
+   b7->setText(person[6].name);
+   b8->setText(person[7].name);
+}
+
+void EditWindow::b1clicked()
+{
+   selected_button=1;
+   this->name_le->setText(person[0].name);
+   this->number_le->setText(person[0].number);
+}
+void EditWindow::b2clicked()
+{
+   selected_button=2;
+   this->name_le->setText(person[1].name);
+   this->number_le->setText(person[1].number);
+}
+void EditWindow::b3clicked()
+{
+   selected_button=3;
+   this->name_le->setText(person[2].name);
+   this->number_le->setText(person[2].number);
+}
+void EditWindow::b4clicked()
+{
+   selected_button=4;
+   this->name_le->setText(person[3].name);
+   this->number_le->setText(person[3].number);
+}
+void EditWindow::b5clicked()
+{
+   selected_button=5;
+   this->name_le->setText(person[4].name);
+   this->number_le->setText(person[4].number);
+}
+void EditWindow::b6clicked()
+{
+   selected_button=6;
+   this->name_le->setText(person[5].name);
+   this->number_le->setText(person[5].number);
+}
+void EditWindow::b7clicked()
+{
+   selected_button=7;
+   this->name_le->setText(person[6].name);
+   this->number_le->setText(person[6].number);
+}
+void EditWindow::b8clicked()
+{
+   selected_button=8;
+   this->name_le->setText(person[7].name);
+   this->number_le->setText(person[7].number);
+}
+
+void EditWindow::cancel_slot()
+{
+   read_rc();
+   reject();
+}
+
+void EditWindow::save_slot()
+{
+   write_rc();
+   read_rc();
+   dialer_window->redraw_speed_dial();
+   done(1);
+}
+
+OptionWindow::OptionWindow(QWidget *parent, const char *name) : QDialog(parent,name,TRUE)
+{
+//   setGeometry(1,1,300,200);
+   resize(300,200);
+   setMinimumSize(202,140);
+   
+   line = new QGroupBox(this, "line");
+   line->setTitle("Options");
+
+   l1 = new QLabel(this, "device");
+   l1->setText("Use device:");
+   l2 = new QLabel(this, "prefix");
+   l2->setText("Always use prefix:");
+
+   devicebox = new QLineEdit(this, "devicebox");
+   devicebox->setText(modem_device);
+   devicebox->selectAll();
+   devicebox->setFocus();
+   prefix_le = new QLineEdit(this, "prefix");
+   prefix_le->setText(prefix);
+
+   ok = new QPushButton(this, "Save");
+   ok->setText("&Save");
+   connect(ok, SIGNAL(clicked()), SLOT(save_slot()) );
+   ok->setDefault(TRUE);
+   cancel = new QPushButton(this, "cancel");
+   cancel->setText("&Cancel");
+   connect(cancel, SIGNAL(clicked()), SLOT(cancel_slot()) );
+}
+
+void OptionWindow::resizeEvent(QResizeEvent *e)
+{
+   line->setGeometry(10, 10, width()-20, height()-55);
+   int y1, y2;
+   y1 = 40;
+   y2 = (line->height() / 2) + 10 + 10;
+   l1->setGeometry(30,y1, width()/2, 20);
+   l2->setGeometry(30, y2, width()/2, 20);
+   devicebox->setGeometry(width()/2, y1, width()/2-30, 22);
+   int size = 40;
+   prefix_le->setGeometry( width()-30-size, y2, size, 22);
+
+   cancel->setGeometry( width()-80, height()-10-25, 70,25);
+   ok->setGeometry( width()-160, height()-10-25, 70,25);
+}
+
+void OptionWindow::closeEvent(QCloseEvent *e)
+{
+   this->~OptionWindow();
+}
+
+void OptionWindow::save_slot()
+{
+   QString tmp = devicebox->text();
+   modem_device = tmp.copy();
+   tmp = prefix_le->text();
+   prefix = tmp.copy();
+   write_rc();
+   read_rc();
+   done(1);
+}
+
+void OptionWindow::cancel_slot()
+{
+   reject();
+}
+
+DialWindow::DialWindow(QWidget *parent, const char *name) :QDialog(parent,name,TRUE)
+{
+   QString phonenumber2 = prefix.copy();
+   char buffer[100], newnumber[100];
+   int tmp, place=0;
+   phonenumber2.append(phonenumber);
+/*   phonenumber2->upper();
+   strcpy(buffer, phonenumber2);
+   for(int index=0; ((index<100)&&(buffer[index] != '\0')); index++)
+   {
+      if( (((buffer[index]>='A')&&(buffer[index]<='Z'))||((buffer[index]>='0')&&(buffer[index]<='9'))) )
+      {
+      	if((buffer[index]>='0')&&(buffer[index]<='9'))
+        	newnumber[place++] = buffer[index];
+        else
+        {
+        	if((buffer[index] == 'A')||(buffer[index]=='B')||(buffer[index]=='C'))
+            {  
+               for(nX=0;nX<3;++nX)newnumber[place++] = buffer[index];
+        	if((buffer[index] == 'D')||(buffer[index]=='E')||(buffer[index]=='F')) newnumber[place++] = buffer[index];
+        	if((buffer[index] == 'A')||(buffer[index]=='B')||(buffer[index]=='C')) newnumber[place++] = buffer[index];
+        	if((buffer[index] == 'A')||(buffer[index]=='B')||(buffer[index]=='C')) newnumber[place++] = buffer[index];
+*/
+   resize(280,120);
+   setMaximumSize(280,120);
+   setMinimumSize(280,120);
+   QString caption = "Dialing ", msg;
+   caption.append(phonenumber2);
+   caption.append("...");
+   setCaption(caption);
+
+   message = new QLabel(this, "label1");
+   msg = "The number is now being dialed.\n"
+      	"You can pick up the receiver and speak.";
+   message->setText(msg);
+   message->setGeometry(10,20,width()-20,50);
+
+   hangup = new QPushButton(this, "hangup");
+   hangup->setText("&Hangup");
+   hangup->setGeometry(width()/2-35, height()-10-25, 70,25);
+   connect(hangup, SIGNAL(clicked()), this, SLOT(hangup_slot()) );
+   hangup->setDefault(TRUE);
+   hangup->setFocus();
+
+   phonenumber2.prepend("ATDT");
+   phonenumber2.append("\r\n");
+   write(modem, phonenumber2, strlen(phonenumber2));
+}
+
+void DialWindow::hangup_slot()
+{
+   accept();
+}
+
+DialerWindow::DialerWindow(QWidget *parent, const char *name) : QWidget(parent,name)
+{
+   resize(290,300);
+
+   QMenuBar *menubar = new QMenuBar(this);
+   menubar->setSeparator(QMenuBar::InWindowsStyle);
+   QPopupMenu* file = new QPopupMenu;
+   file->insertItem("E&xit", this, SLOT(quit_slot()), CTRL+Key_X );
+   QPopupMenu* help = new QPopupMenu;
+   help->insertItem("&About", this, SLOT(about()), CTRL+Key_A);
+   help->insertItem("About &Qt", this, SLOT(aboutQt()), CTRL+Key_Q);
+   QPopupMenu* edit = new QPopupMenu;
+   edit->insertItem("Edit &Speed Dial", this, SLOT(edit()), CTRL+Key_S);
+   edit->insertItem("&Options", this, SLOT(options()), CTRL+Key_O);
+   menubar->insertItem("&File", file);
+   menubar->insertItem("&Edit", edit);
+   menubar->insertSeparator();
+   menubar->insertItem("&Help", help);
+
+   label1 = new QLabel(this, "number2dial");
+   label1->setText("Number to dial:");
+
+   typebox = new QLineEdit(this, "typebox");
+   typebox->setMaxLength(30);
+   typebox->setText(phonenumberbu);
+   typebox->selectAll();
+   connect(typebox, SIGNAL(textChanged(const char*)), this, SLOT(tb_changed(const char*)) );
+   connect(typebox, SIGNAL(returnPressed()), this, SLOT(dial_slot()) );
+   
+   dialnumber = new QPushButton(this, "dialnumber");
+   dialnumber->setText("&Dial");
+   if( strcmp(typebox->text(), "") == 0)
+      dialnumber->setEnabled(FALSE);
+   connect(dialnumber, SIGNAL(clicked()), this, SLOT(dial_slot()) );
+   dialnumber->setDefault(TRUE);
+   QToolTip::add(dialnumber, "Dial the number in the display.");
+
+   nr1 = new QPushButton(this, "1");
+   nr1->setText("\n1");
+   connect(nr1, SIGNAL(clicked()), this, SLOT(b1clicked()) );
+   nr2 = new QPushButton(this, "2");
+   nr2->setText("ABC\n2");
+   connect(nr2, SIGNAL(clicked()), this, SLOT(b2clicked()) );
+   nr3 = new QPushButton(this, "3");
+   nr3->setText("DEF\n3");
+   connect(nr3, SIGNAL(clicked()), this, SLOT(b3clicked()) );
+   nr4 = new QPushButton(this, "4");
+   nr4->setText("GHI\n4");
+   connect(nr4, SIGNAL(clicked()), this, SLOT(b4clicked()) );
+   nr5 = new QPushButton(this, "5");
+   nr5->setText("JKL\n5");
+   connect(nr5, SIGNAL(clicked()), this, SLOT(b5clicked()) );
+   nr6 = new QPushButton(this, "6");
+   nr6->setText("MNO\n6");
+   connect(nr6, SIGNAL(clicked()), this, SLOT(b6clicked()) );
+   nr7 = new QPushButton(this, "7");
+   nr7->setText("PQRS\n7");
+   connect(nr7, SIGNAL(clicked()), this, SLOT(b7clicked()) );
+   nr8 = new QPushButton(this, "8");
+   nr8->setText("TUV\n8");
+   connect(nr8, SIGNAL(clicked()), this, SLOT(b8clicked()) );
+   nr9 = new QPushButton(this, "9");
+   nr9->setText("WXYZ\n9");
+   connect(nr9, SIGNAL(clicked()), this, SLOT(b9clicked()) );
+   nr0 = new QPushButton(this, "0");
+   nr0->setText("\n0");
+   connect(nr0, SIGNAL(clicked()), this, SLOT(b0clicked()) );
+   star = new QPushButton(this, "star");
+   star->setText("*");
+   connect(star, SIGNAL(clicked()), this, SLOT(starclicked()) );
+   hash = new QPushButton(this, "hash");
+   hash->setText("#");
+   connect(hash, SIGNAL(clicked()), this, SLOT(hashclicked()) );
+
+   buttongroup = new QGroupBox(this, "buttongroup");
+   buttongroup->setTitle("Speed Dial");
+
+   speed1 = new QPushButton(this, "speed1");
+   speed1->setText(person[0].name);
+   connect(speed1, SIGNAL(clicked()), this, SLOT(s1clicked()) );
+   speed2 = new QPushButton(this, "speed2");
+   speed2->setText(person[1].name);
+   connect(speed2, SIGNAL(clicked()), this, SLOT(s2clicked()) );
+   speed3 = new QPushButton(this, "speed3");
+   speed3->setText(person[2].name);
+   connect(speed3, SIGNAL(clicked()), this, SLOT(s3clicked()) );
+   speed4 = new QPushButton(this, "speed4");
+   speed4->setText(person[3].name);
+   connect(speed4, SIGNAL(clicked()), this, SLOT(s4clicked()) );
+   speed5 = new QPushButton(this, "speed5");
+   speed5->setText(person[4].name);
+   connect(speed5, SIGNAL(clicked()), this, SLOT(s5clicked()) );
+   speed6 = new QPushButton(this, "speed6");
+   speed6->setText(person[5].name);
+   connect(speed6, SIGNAL(clicked()), this, SLOT(s6clicked()) );
+   speed7 = new QPushButton(this, "speed7");
+   speed7->setText(person[6].name);
+   connect(speed7, SIGNAL(clicked()), this, SLOT(s7clicked()) );
+   speed8 = new QPushButton(this, "speed8");
+   speed8->setText(person[7].name);
+   connect(speed8, SIGNAL(clicked()), this, SLOT(s8clicked()) );
+
+   l1 = new QLabel(this, "entry1");
+   l1->setText("1");
+   l2 = new QLabel(this, "entry2");
+   l2->setText("2");
+   l3 = new QLabel(this, "entry3");
+   l3->setText("3");
+   l4 = new QLabel(this, "entry4");
+   l4->setText("4");
+   l5 = new QLabel(this, "entry5");
+   l5->setText("5");
+   l6 = new QLabel(this, "entry6");
+   l6->setText("6");
+   l7 = new QLabel(this, "entry7");
+   l7->setText("7");
+   l8 = new QLabel(this, "entry8");
+   l8->setText("8");
+
+   typebox->setFocus();
+}
+
+void DialerWindow::resizeEvent(QResizeEvent *e)
+{
+   int x1, x2, x3;
+   int y1, y2, y3, y4, y5, y6, y7, y8;
+   int space = 2;
+   
+   label1->setGeometry(10, 32, (width() / 2)-10, 20);
+   typebox->setGeometry(10,60, (width() / 2)-10, 22);
+   dialnumber->setGeometry(10,88, (width()/2)-10,22);
+   
+   buttongroup->setGeometry( (width() / 2)+10,32,(width() / 2)-20, height()-42);
+
+   int buttonwidth = (dialnumber->width() / 3);
+   x1 = 10;
+   x2 = x1 + buttonwidth;
+   x3 = x2 + buttonwidth;
+   y1 = 120;
+   int buttonheight = ((this->height() - y1 - 10) / 4);
+   y2 = y1 + buttonheight;
+   y3 = y2 + buttonheight;
+   y4 = y3 + buttonheight;
+   nr1->setGeometry( x1+space, y1+space, buttonwidth-2*space, buttonheight-2*space);
+   nr2->setGeometry( x2+space, y1+space, buttonwidth-2*space, buttonheight-2*space);
+   nr3->setGeometry( x3+space, y1+space, buttonwidth-2*space, buttonheight-2*space);
+   nr4->setGeometry( x1+space, y2+space, buttonwidth-2*space, buttonheight-2*space);
+   nr5->setGeometry( x2+space, y2+space, buttonwidth-2*space, buttonheight-2*space);
+   nr6->setGeometry( x3+space, y2+space, buttonwidth-2*space, buttonheight-2*space);
+   nr7->setGeometry( x1+space, y3+space, buttonwidth-2*space, buttonheight-2*space);
+   nr8->setGeometry( x2+space, y3+space, buttonwidth-2*space, buttonheight-2*space);
+   nr9->setGeometry( x3+space, y3+space, buttonwidth-2*space, buttonheight-2*space);
+   star->setGeometry( x1+space, y4+space, buttonwidth-2*space, buttonheight-2*space);
+   nr0->setGeometry( x2+space, y4+space, buttonwidth-2*space, buttonheight-2*space);
+   hash->setGeometry( x3+space, y4+space, buttonwidth-2*space, buttonheight-2*space);
+
+   buttonwidth = ( (width() - 25) - (width() / 2 + 30) );
+   x1 = (width() / 2) + 32;
+   buttonheight = ( (height() - 10) - 62) / 8;
+   y1 = 58;
+   y2 = y1 + buttonheight;
+   y3 = y2 + buttonheight;
+   y4 = y3 + buttonheight;
+   y5 = y4 + buttonheight;
+   y6 = y5 + buttonheight;
+   y7 = y6 + buttonheight;
+   y8 = y7 + buttonheight;
+
+   speed1->setGeometry( x1, y1+space, buttonwidth, buttonheight-2*space);
+   speed2->setGeometry( x1, y2+space, buttonwidth, buttonheight-2*space);
+   speed3->setGeometry( x1, y3+space, buttonwidth, buttonheight-2*space);
+   speed4->setGeometry( x1, y4+space, buttonwidth, buttonheight-2*space);
+   speed5->setGeometry( x1, y5+space, buttonwidth, buttonheight-2*space);
+   speed6->setGeometry( x1, y6+space, buttonwidth, buttonheight-2*space);
+   speed7->setGeometry( x1, y7+space, buttonwidth, buttonheight-2*space);
+   speed8->setGeometry( x1, y8+space, buttonwidth, buttonheight-2*space);
+
+   x1 = (width() / 2) + 20;
+   l1->setGeometry( x1, y1+space, 10, buttonheight-2*space);
+   l2->setGeometry( x1, y2+space, 10, buttonheight-2*space);
+   l3->setGeometry( x1, y3+space, 10, buttonheight-2*space);
+   l4->setGeometry( x1, y4+space, 10, buttonheight-2*space);
+   l5->setGeometry( x1, y5+space, 10, buttonheight-2*space);
+   l6->setGeometry( x1, y6+space, 10, buttonheight-2*space);
+   l7->setGeometry( x1, y7+space, 10, buttonheight-2*space);
+   l8->setGeometry( x1, y8+space, 10, buttonheight-2*space);
+}
+
+void DialerWindow::closeEvent(QCloseEvent *e)
+{
+   write_rc();
+   e->accept();
+   qApp->quit();
+}
+
+void DialerWindow::quit_slot()
+{
+   write_rc();
+   qApp->quit();
+}
+
+void DialerWindow::redraw_speed_dial()
+{
+   speed1->setText(person[0].name);
+   speed2->setText(person[1].name);
+   speed3->setText(person[2].name);
+   speed4->setText(person[3].name);
+   speed5->setText(person[4].name);
+   speed6->setText(person[5].name);
+   speed7->setText(person[6].name);
+   speed8->setText(person[7].name);
+}
+
+void DialerWindow::dial_slot()
+{
+   struct termios tty;
+   int flags;
+
+   if( (modem = ::open(modem_device, O_RDWR|O_NONBLOCK)) < 0)
+   {  ::close(modem); modemerror(); return; }
+   flags = fcntl(modem, F_GETFL);
+   tcgetattr(modem, &tty);
+   cfmakeraw(&tty);
+   
+   cfsetispeed(&tty, B9600);
+   cfsetospeed(&tty, B9600);
+   tty.c_cflag = (tty.c_cflag & ~CSIZE) | CS8;
+   tty.c_cflag &= ~(PARENB|PARODD);
+   tty.c_iflag &= ~(IXON|IXOFF|IXANY);
+   tty.c_cflag |= CRTSCTS | CLOCAL;
+   tcsetattr(modem, TCSANOW, &tty);
+
+}
+
+void modemerror(void)
+{
+   QString errormsg = "Phone Dialer was unable to open\ndevice " + modem_device + "\n\nCheck you modem settings.";
+   QMessageBox::critical(dialer_window, "Error", errormsg);
+}
+
+void DialerWindow::tb_changed(const char *crap)
+{
+   QString current = typebox->text();
+   phonenumber = current.copy();
+   phonenumberbu = phonenumber.copy();
+   if(!strlen(current))
+   {
+      dialnumber->setEnabled(FALSE);
+      dialnumber->setDefault(TRUE);
+   }
+   else
+   {
+      dialnumber->setEnabled(TRUE);
+      dialnumber->setDefault(TRUE);
+   }
+}
+
+void DialerWindow::b1clicked()
+{
+   phonenumber.append("1");
+   typebox->setText(phonenumber);
+   phonenumberbu = phonenumber.copy();
+}
+void DialerWindow::b2clicked()
+{
+   phonenumber.append("2");
+   typebox->setText(phonenumber);
+   phonenumberbu = phonenumber.copy();
+}
+void DialerWindow::b3clicked()
+{
+   phonenumber.append("3");
+   typebox->setText(phonenumber);
+   phonenumberbu = phonenumber.copy();
+}
+void DialerWindow::b4clicked()
+{
+   phonenumber.append("4");
+   typebox->setText(phonenumber);
+   phonenumberbu = phonenumber.copy();
+}
+void DialerWindow::b5clicked()
+{
+   phonenumber.append("5");
+   typebox->setText(phonenumber);
+   phonenumberbu = phonenumber.copy();
+}
+void DialerWindow::b6clicked()
+{
+   phonenumber.append("6");
+   typebox->setText(phonenumber);
+   phonenumberbu = phonenumber.copy();
+}
+void DialerWindow::b7clicked()
+{
+   phonenumber.append("7");
+   typebox->setText(phonenumber);
+   phonenumberbu = phonenumber.copy();
+}
+void DialerWindow::b8clicked()
+{
+   phonenumber.append("8");
+   typebox->setText(phonenumber);
+   phonenumberbu = phonenumber.copy();
+}
+void DialerWindow::b9clicked()
+{
+   phonenumber.append("9");
+   typebox->setText(phonenumber);
+   phonenumberbu = phonenumber.copy();
+}
+void DialerWindow::b0clicked()
+{
+   phonenumber.append("0");
+   typebox->setText(phonenumber);
+   phonenumberbu = phonenumber.copy();
+}
+void DialerWindow::starclicked()
+{
+   phonenumber.append("*");
+   typebox->setText(phonenumber);
+   phonenumberbu = phonenumber.copy();
+}
+void DialerWindow::hashclicked()
+{
+   phonenumber.append("#");
+   typebox->setText(phonenumber);
+   phonenumberbu = phonenumber.copy();
+}
+
+void DialerWindow::s1clicked()
+{
+   if( strcmp(person[0].name, "") == 0) return;
+   phonenumber = person[0].number;
+   dial_slot();
+}
+void DialerWindow::s2clicked()
+{
+   if( strcmp(person[1].name, "") == 0) return;
+   phonenumber = person[1].number;
+   dial_slot();
+}
+void DialerWindow::s3clicked()
+{
+   if( strcmp(person[2].name, "") == 0) return;
+   phonenumber = person[2].number;
+   dial_slot();
+}
+void DialerWindow::s4clicked()
+{
+   if( strcmp(person[3].name, "") == 0) return;
+   phonenumber = person[3].number;
+   dial_slot();
+}
+void DialerWindow::s5clicked()
+{
+   if( strcmp(person[4].name, "") == 0) return;
+   phonenumber = person[4].number;
+   dial_slot();
+}
+void DialerWindow::s6clicked()
+{
+   if( strcmp(person[5].name, "") == 0) return;
+   phonenumber = person[5].number;
+   dial_slot();
+}
+void DialerWindow::s7clicked()
+{
+   if( strcmp(person[6].name, "") == 0) return;
+   phonenumber = person[6].number;
+   dial_slot();
+}
+void DialerWindow::s8clicked()
+{
+   if( strcmp(person[7].name, "") == 0) return;
+   phonenumber = person[7].number;
+   dial_slot();
+}
+
+void DialerWindow::about()
+{
+   QMessageBox::about(this, "About Phone Dialer",
+                    	"Phone Dialer is an easy to use utility\n"
+                      "that enables you to store several telephone-\n"
+                      "numbers, and let Linux dial them quickly for\n"
+                      "you, using the modem.\n\n\n"
+                      "Phone Dialer was written by Erik van Zijst\n"
+                      "in Qt 1.32 on Linux.\n\n"
+                      "Questions/comments: icehawk@xs4all.nl");
+}
+
+void DialerWindow::aboutQt()
+{
+   QMessageBox::aboutQt(this, "About Qt");
+}
+
+void DialerWindow::edit()
+{
+   edit_window = new EditWindow(this, "Edit");
+   edit_window->setCaption("Edit Speed Dial");
+   if( edit_window->exec() != 1)
+      read_rc();
+}
+   
+void DialerWindow::options()
+{
+   option_window = new OptionWindow(this, "Options");
+   option_window->setCaption("Options");
+   option_window->exec();
+}
+
+#include "dialer.moc"
+
+int main(int argc, char **argv)
+{
+   QApplication dialer(argc, argv);
+   dialer.setStyle(WindowsStyle);
+   QApplication::setFont(QFont("Helvetica") );
+   InitPersons();
+   read_rc();
+   dialer_window = new DialerWindow(0, "Phone Dialer");
+   dialer_window->setCaption("Phone Dialer");
+   dialer.setMainWidget(dialer_window);
+   dialer_window->show();
+   return dialer.exec();
+}
+
+void InitPersons()
+{
+   for(int index=0; index<8; index++)
+      person[index].name[0] = '\0';
+}
+
+void read_rc()
+{
+   FILE *fp;
+   int index = 0;
+   char tmp_char, tmp_device[100], tmp_prefix[100], tmp_phonenumber[31];
+   QString rc_file = getenv("HOME");
+   rc_file.append("/.dialer.rc");
+
+   if( (fp = fopen(rc_file, "r")) == NULL) return;
+
+   while( (tmp_char = fgetc(fp)) != '\n')
+      tmp_phonenumber[index++] = tmp_char;
+   tmp_phonenumber[index] = '\0';
+   phonenumber = tmp_phonenumber;
+   phonenumberbu = phonenumber.copy();
+   index = 0;
+
+   while( (tmp_char = fgetc(fp)) != '\n')
+      tmp_prefix[index++] = tmp_char;
+   tmp_prefix[index] = '\0';
+   prefix = tmp_prefix;
+   index = 0;
+
+   while( (tmp_char = fgetc(fp)) != '\n')
+      tmp_device[index++] = tmp_char;
+   tmp_device[index] = '\0';
+   modem_device = tmp_device;
+
+   index = 0;
+   number_of_users = 0;
+   while(!feof(fp))
+   {
+      tmp_char = fgetc(fp);
+      if( tmp_char == ';')
+      {
+      	person[number_of_users].name[index]='\0';
+        index = 0;
+        while( (tmp_char = fgetc(fp)) != '\n')
+           person[number_of_users].number[index++] = tmp_char;
+        person[number_of_users].number[index] = '\0';
+        number_of_users++;
+        index = 0;
+      }
+      else
+         person[number_of_users].name[index++] = tmp_char;
+   }
+   if(number_of_users < 8)
+      person[number_of_users].name[0] = '\0';
+   fclose(fp);
+}
+
+void write_rc()
+{
+   FILE *fp;
+   int index1, index2, total = 8;
+   char tmp_char, tmp_device[100], tmp_prefix[100], tmp_phonenumber[31];
+   QString rc_file = getenv("HOME");
+   rc_file.append("/.dialer.rc");
+   
+   fp = fopen(rc_file, "w");
+
+   strcpy(tmp_phonenumber, phonenumberbu);
+   for(index1=0; index1<strlen(tmp_phonenumber); ++index1)
+      fputc(tmp_phonenumber[index1], fp);
+   fputc('\n', fp);
+
+   strcpy(tmp_prefix, prefix);
+   for(index1=0; index1<strlen(tmp_prefix); ++index1)
+      fputc(tmp_prefix[index1], fp);
+   fputc('\n', fp);
+
+   strcpy(tmp_device, modem_device);
+   for(index1=0; index1<strlen(tmp_device); ++index1)
+      fputc(tmp_device[index1], fp);
+   fputc('\n', fp);
+
+   for(index1=0; index1<total; ++index1)
+   {
+      for(index2 = 0; index2 < strlen(person[index1].name); ++index2)
+         fputc(person[index1].name[index2], fp);
+      fputc(';', fp);
+      for(index2 = 0; index2 < strlen(person[index1].number); ++index2)
+         fputc(person[index1].number[index2], fp);
+      fputc('\n', fp);
+   }
+   fclose(fp);
+}
+

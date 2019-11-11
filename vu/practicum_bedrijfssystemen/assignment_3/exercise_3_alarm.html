@@ -1,0 +1,101 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.8 [en] (X11; U; SunOS 5.9 sun4u) [Netscape]">
+   <title>Assignment 3: Alternate Alarms</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<h1>
+Operating Systems Practicum</h1>
+Assignment 3&nbsp;
+<hr>
+<h2>
+Alternate Alarms</h2>
+
+<h3>
+Problem Statement</h3>
+
+<p><br><font face="Times New Roman,Times">Alarms are used to generate signals
+to the calling process after some specified time. For example, alarms can
+be used by a sensor reading process, which wakes up periodically, say,
+every 10 seconds, to record the measured value of the sensor. Alarms are
+set by processes using <i><u><a href="http://www.cs.vu.nl/pub/minix/2.0.0/manuals/CAT2/ALARM.2">alarm
+(2)</a></u></i> system call. Minix in its current form does not allow a
+process to have more than one alarm timer. When a process calls alarm(),
+any pending alarm is cancelled.</font>
+<p><font face="Times New Roman,Times">The objective of this exercise is
+to create an alternate alarm. This requires you to create a new alarm2()
+system call with same syntax as the previous alarm() system call. However,
+the alarm set through the alarm2() system call must generate a different
+signal, SIGALRM2.</font>
+<p><font face="Times New Roman,Times">This exercise requires you to understand
+the implementation of the current alarm () system call and signals.&nbsp;
+The definition of the new alarm2 system call is:</font>
+<p><font face="Times New Roman,Times"><b>&nbsp;unsigned int alarm2(unsigned
+int seconds</b>)</font>
+<p><font face="Times New Roman,Times">Alarm2 must cause a signal SIGALRM2
+to be sent to the invoking process in a number of seconds given by the
+argument. The return value is the amount of time that was previously remaining
+in the alarm clock. If no previous alarm was set, alarm2 returns 0. Note:
+Alarm and alarm2 are completely independent. Calling either one does not
+affect the other one.</font>
+<p><font face="Times New Roman,Times"><b>Hint: </b>The basic idea is to
+create a new queue for the alternate alarm. For every clock interrupt,
+the kernel must scan the alternate alarm queue, in addition to the existing
+alarm queue.</font>
+<br>&nbsp;
+<h3>
+Evaluation Criteria</h3>
+&nbsp;
+<li>
+<font face="Times New Roman,Times">The exercise is a simple one and just
+requires the comprehension of existing alarm() system call.</font></li>
+
+<li>
+<font face="Times New Roman,Times">Modify and use the existing code as
+much as possible. However, simple cut-and-paste of the existing code must
+be avoided as much as possible.</font></li>
+
+<li>
+<font face="Times New Roman,Times">Solutions will be evaluated on the following
+criteria:</font></li>
+
+<ul>
+<li>
+<font face="Times New Roman,Times">Correctness of alarm2() system call
+in generating the signals</font></li>
+
+<li>
+<font face="Times New Roman,Times">Amount of redundant code (lesser the
+better) and reuse of existing code (possibily slightly modified)</font></li>
+
+<li>
+<font face="Times New Roman,Times">If code is re-used, syntax and functionality
+of the existing alarm() system should not be changed.</font></li>
+
+<br><font face="Times New Roman,Times">Documentation and general style-rules
+(see
+<a href="http://www.cs.vu.nl/~bs/gen_info.html">General Information</a>).</font></ul>
+
+<h3>
+Basic Definitions</h3>
+<font face="Times New Roman,Times">The system call number of the alarm2
+(ALARM2) system call has to be 79. SIGALRM2 should be defined as 16. Also
+change _NSIG correspondingly in /usr/include/signal.h. For testing the
+system call use this stub <a href="http://www.cs.vu.nl/~bs/alarmstub.c">alarmstub.c</a>.</font>
+<br>&nbsp;
+<h3>
+Recommended Reading</h3>
+
+<p><br><font face="Times New Roman,Times">Study relevant information about
+the clock, signals, system calls, and message handling. It is generally
+important to understand the Minix code on clock interrupt handling (clock.c).</font>
+<br>&nbsp;
+<p>
+<hr WIDTH="100%">
+<br>Swaminathan Sivasubramanian (swami@cs.vu.nl)
+<br>Last Update: April 7, 2004.
+</body>
+</html>

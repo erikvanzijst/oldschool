@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This example is primarily used to illustrate the use of stanzas and simple
+string operations. It shows how to declare a sub-expression as a stanza and
+use it through <inline>.
+As a bonus, it puts this to use for solving pythagoras' formula
+(a^2 + b^2 = c^2). When a and b are given, c is computed.
+-->
+
+<strcat xmlns="http://prutser.cx/xmlmath/schemas">
+
+	<declare name="a">
+		<double value="3"/>
+	</declare>
+	<declare name="b">
+		<double value="4"/>
+	</declare>
+	
+	<stanza name="squared">
+		<product datatype="double">
+			<linkDouble name="x"/>
+			<linkDouble name="x"/>
+		</product>
+	</stanza>
+
+	<string value="Pythagoras: when a="/>
+	<toString>
+		<link name="a"/>
+	</toString>
+	<string value=" and b="/>
+	<toString>
+		<link name="b"/>
+	</toString>
+	<string value=" then c="/>
+
+	<toString>
+		<sqrt>
+			<toDouble>
+				<add>
+					<toDouble>
+						<declare name="x">
+							<linkDouble name="a"/>
+						</declare>
+						<inlineDouble name="squared"/>
+					</toDouble>
+					<toDouble>
+						<declare name="x">
+							<linkDouble name="b"/>
+						</declare>
+						<inlineDouble name="squared"/>
+					</toDouble>
+				</add>
+			</toDouble>
+		</sqrt>
+	</toString>
+</strcat>

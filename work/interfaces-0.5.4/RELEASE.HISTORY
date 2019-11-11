@@ -1,0 +1,121 @@
+This document describes the features per release.
+
+
+	release_0_1
+	28.nov.2003
+	
+This is the original import into CVS.
+
+
+	release_0_2
+	04.dec.2003
+
+Version 0.2 contains a working version of the library without address
+summarization and with an old-style distance table using fixed arrays.
+
+
+	release_0_3
+	10.dec.2003
+
+Release 0.3 comes with properly documented MBeans and with new State objects
+that are returned by most components to return their current state. The
+distance table was changed to a dynamic data structure that orders the
+entries. This is important for address summarization (which is not yet in
+place).
+There seems to be a counting-to-infinity problem when a node in a 3-node ring
+network is killed. Also, the head-of-path information in the distance table
+seems to get corrupted.
+
+
+	release_0_4
+	12.dec.2003
+
+Read and write buffer size can be configured (see the messaging.properties
+file in the package's root directory). Head-of-path problem fixed. This
+release offers functionality to export the distance table as a
+machine-readable datastructure through JMX. It is returned as a List with
+Map's. The maps contain key/value pairs for the record attributes such as
+"dest", "hop" and "cost". This allows for flexible client/server coupling and
+ensures the client won't break when the datastructure is changed in a future
+release.
+
+
+	release_0_4_1
+	12.dec.2003
+
+Kernel.ManageableKernel.getDistanceTable()'s output wasn't consistent with the
+documentation.
+
+
+	release_0_5
+	31.dec.2003
+
+Protocol version has been changed to 3.
+Addressing is now done per router node, with unique identifiers per interface.
+This solves the problems described in doc/Counting To Infinity.pdf.
+Address summarization is added. Because of the changed addressing policy (per
+router, not per interface), the dynamic distance table data structure is no
+longer sorted.
+MBean names of the interfaces now include "peer=some.addr".
+The kernel now has the property "RouterAddress", which is read-only, but can
+be changed by the "messaging:type=Configurator" MBean when the kernel has been
+stopped.
+A router can now be "shut down" entirely, stopping all threads other than the
+bare necessary ones to keep JMX and the JVM alive. It can be started again
+using the "messaging:type=Configurator" MBean. Stopping destroys the
+interfaces.
+The "messaging:type=Configurator" MBean now has a State property that shows
+the state of the router. The router core is automatically activated at library
+initialization.
+
+
+	release_0_5_1
+	12.jan.2004
+
+Protocol version has been changed to 4 because the message streams now contain
+message delimiters.
+Two utility applications (MBeans) were added: PingService and
+TracerouteService. To this end, the NotifyData message was created that is
+used to report errors in the network. It is somewhat comparable to ICMP.
+Two new operations in the MessageConfigurator class: removeInterfaces() and
+forceRouterAddress().
+Message priorities can now be used to influence the scheduling of messages in
+the reader and writer queues. Currently used only to prioritize PingData
+messages and avoid link cost oscillations.
+Messages that are discarded due to buffer overflows can now be logged to a
+file using the parameters com.marketxs.messaging.SocketReader.discardFile and
+com.marketxs.messaging.SocketReader.discardFile.
+
+
+	release_0_5_2
+	14.jan.2004
+
+This version fixed the counting-to-infinity problem and cleans up the package
+directory structure.
+
+
+	release_0_5_3
+	15.jan.2004
+
+This version maintains child link information and builds shortest path trees
+for every node to all other nodes. These trees are derived from the additional
+information that ExBF carries to prevent loops.
+Broadcast messages can be sent using the send() operation in the kernel MBean.
+
+
+	release_0_5_4
+	29.jan.2004
+
+This version comes with remote classloading and a bootstrap library. The ant
+script generates a tiny bootstrap.jar library that is used to start the
+applications, while downloading all classes at runtime from a central marketxs
+webserver with basic HTTP authentication. The file BOOTSTRAP contains more
+information.
+This version also allows for a stripped version of the library to be created
+that contains no sources, but only slightly obfuscated classes. This library
+is placed online for use with the bootstrap procedure.
+The kernel keeps track of unreachable destinations and expunges these entries
+after a configurable timeout. This is to avoid stale routes to hosts or
+networks that were permanently removed. This release also adds simple version
+information that is displayed in the Kernel MBean.
+

@@ -1,0 +1,7641 @@
+%!PS-Adobe-1.0
+%%Title: /mit/kerberos/doc/techplan/techplan.mss
+%%DocumentFonts: (atend)
+%%Creator: Jennifer Steiner,Jen,E40-318,0169, and Scribe 5(1501)-5
+%%CreationDate: 20 December 1988 12:12
+%%Pages: (atend)
+%%EndComments
+% PostScript Prelude for Scribe.
+/BS {/SV save def 0.0 792.0 translate .01 -.01 scale} bind def
+/ES {showpage SV restore} bind def
+/SC {setrgbcolor} bind def
+/FMTX matrix def
+/RDF {WFT SLT 0.0 eq
+  {SSZ 0.0 0.0 SSZ neg 0.0 0.0 FMTX astore}
+  {SSZ 0.0 SLT sin SLT cos div SSZ mul SSZ neg 0.0 0.0 FMTX astore}
+  ifelse makefont setfont} bind def
+/SLT 0.0 def
+/SI { /SLT exch cvr def RDF} bind def
+/WFT /Courier findfont def
+/SF { /WFT exch findfont def RDF} bind def
+/SSZ 1000.0 def
+/SS { /SSZ exch 100.0 mul def RDF} bind def
+/AF { /WFT exch findfont def /SSZ exch 100.0 mul def RDF} bind def
+/MT /moveto load def
+/XM {currentpoint exch pop moveto} bind def
+/UL {gsave newpath moveto dup 2.0 div 0.0 exch rmoveto
+   setlinewidth 0.0 rlineto stroke grestore} bind def
+/LH {gsave newpath moveto setlinewidth
+   0.0 rlineto
+   gsave stroke grestore} bind def
+/LV {gsave newpath moveto setlinewidth
+   0.0 exch rlineto
+   gsave stroke grestore} bind def
+/BX {gsave newpath moveto setlinewidth
+   exch
+   dup 0.0 rlineto
+   exch 0.0 exch neg rlineto
+   neg 0.0 rlineto
+   closepath
+   gsave stroke grestore} bind def
+/BX1 {grestore} bind def
+/BX2 {setlinewidth 1 setgray stroke grestore} bind def
+/PB {/PV save def translate 100.0 -100.0 scale pop} bind def
+/PE {PV restore} bind def
+/SH /show load def
+/MX {exch show 0.0 rmoveto} bind def
+/W {0 32 4 -1 roll widthshow} bind def
+/WX {0 32 5 -1 roll widthshow 0.0 rmoveto} bind def
+%%EndProlog
+%%Page: 1 1 
+BS
+0 SI
+10 /NewCenturySchlbk-Bold AF
+34463 7937 MT
+(PROJECT ATHENA TECHNICAL PLAN)SH
+1 SS 
+2880 8280 11022 PB % Project Athena Owl Logo
+% Copyright 1986 by the Massachusetts Institute of Technology
+%
+% Original developed by W. E. Sommerfeld, 1986.
+% Owl eye shading, twig tuning by J. H. Saltzer
+%
+% Adjustments of size and position are provided at the end.
+%
+/circle { dup 3 index add 2 index moveto 0 360 arc } bind def
+
+/ellipse
+  { 
+    matrix currentmatrix                % Push current matrix   
+    5 1 roll                    % roll to bottom
+    3 index 2 index add 3 index moveto  % move to start
+    4 2 roll translate scale    % translate then scale
+    0 0 1 0 360 arc             % draw it
+    setmatrix                   % restore matrix
+  } def
+
+/owl1 {
+% Do the filled sections first. . .
+% right eye
+newpath
+120 120 6 circle
+closepath 0 setgray fill
+newpath
+121 121 3 circle
+closepath 1 setgray fill
+% left eye
+newpath
+90 120 6 circle
+closepath 0 setgray fill
+91 121 3 circle
+closepath 1 setgray fill
+0 setgray
+
+% Containing Circle
+75 75 102 circle %75 75 100 circle     
+% Left eye
+90 120 10 circle
+% Right eye
+120 120 10 circle
+% Berry on tree
+37.5 111 3 circle  % 37.5 111 2.5 circle
+% Theta (outside)
+140 60 10 circle
+% Theta (inside)
+140 60 .5 circle
+
+% High leaf
+
+35 140 15 10 ellipse
+
+% Low leaf
+
+15 109 10 15 ellipse
+
+% Twigs holding leaves and berry
+
+% berry
+4 145 moveto
+36 113 lineto
+
+% high leaf
+9 140 moveto
+51 140 lineto
+
+% low leaf
+15 134 moveto
+15 93 lineto
+
+% squarish outline lines
+0 45 moveto
+-10 65 -15 120 3 146 curveto
+20 160 25 155 75 155 curveto
+75 -5 moveto
+100 -5 145 5 155 15 curveto
+165 25 160 100 155 135 curveto
+
+% Main outline of owl
+
+stroke currentlinewidth dup 2 mul setlinewidth
+
+35 14 moveto
+35 18 lineto
+36 19 lineto
+37 20 lineto
+50 20 lineto
+52 21 lineto
+55 24 lineto
+56 29 lineto
+54 34 lineto
+53 36 lineto
+51 38 lineto
+48 40 lineto
+41 43 lineto
+31 46 lineto
+26 45 lineto
+20 44 lineto
+15 43 lineto
+13 43 lineto
+11 44 lineto
+10 45 lineto
+10 46 lineto
+11 48 lineto
+13 51 lineto
+20 61 lineto
+30 75 lineto
+34 80 lineto
+40 87 lineto
+45 93 lineto
+50 97 lineto
+55 101 lineto
+60 103 lineto
+64 105 lineto
+71 105 lineto
+69 108 lineto
+67 112 lineto
+66 115 lineto
+67 120 lineto
+68 124 lineto
+71 129 lineto
+72 132 lineto
+73 135 lineto
+71 141 lineto
+75 139 lineto
+80 137 lineto
+90 136 lineto
+100 135 lineto
+120 135 lineto
+130 136 lineto
+140 137 lineto
+146 140 lineto
+144 136 lineto
+142 132 lineto
+141 125 lineto
+142 118 lineto
+142 112 lineto
+140 106 lineto
+136 100 lineto
+132 95 lineto
+129 92 lineto
+124 89 lineto
+126 86 lineto
+127 80 lineto
+126 73 lineto
+124 66 lineto
+120 60 lineto
+116 55 lineto
+110 50 lineto
+105 46 lineto
+100 43 lineto
+91 39 lineto
+84 36 lineto
+75 35 lineto
+73 30 lineto
+73 25 lineto
+74 22 lineto
+76 20 lineto
+90 20 lineto
+92 18 lineto
+92 14 lineto
+75 35 moveto
+65 33 lineto
+62 31 lineto
+61 27 lineto
+61 22 lineto
+62 20 lineto
+63 19 lineto
+64 19 lineto
+66 21 lineto
+67 25 lineto
+66 31 lineto
+65 33 lineto
+
+20 44 moveto
+20 27 lineto
+22 25 lineto
+38 25 lineto
+40 27 lineto
+40 43 lineto
+%  (end of main owl outline)
+
+stroke setlinewidth
+
+% everything else
+
+31 46 moveto
+39 49 lineto
+50 53 lineto
+59 57 lineto
+76 67 lineto
+80 70 lineto
+92 80 lineto
+100 88 lineto
+102 91 lineto
+102 94 lineto
+
+71 105 moveto
+75 103 lineto
+80 101 lineto
+87 100 lineto
+92 99 lineto
+99 96 lineto
+102 94 lineto
+110 90 lineto
+124 89 lineto
+% Damned stack limit!
+} bind def /owl2 {
+26 45 moveto
+26 30 lineto
+
+35 45 moveto
+35 30 lineto
+
+64 105 moveto
+78 80 lineto
+
+33 79 moveto
+60 66 lineto
+
+68 97 moveto
+66 99 lineto
+61 98 lineto
+48 83 lineto
+
+72 90 moveto
+68 94 lineto
+65 93 lineto
+63 92 lineto
+53 82 lineto
+
+75 85 moveto
+73 87 lineto
+70 88 lineto
+66 86 lineto
+60 80 lineto
+
+77 80 moveto
+75 83 lineto
+73 83 lineto
+67 79 lineto
+
+44 73 moveto
+40 74 lineto
+38 73 lineto
+33 68 lineto
+
+51 70 moveto
+46 71 lineto
+42 69 lineto
+32 61 lineto
+
+60 66 moveto
+54 67 lineto
+46 64 lineto
+30 52 lineto
+
+105 92 moveto
+105 100 lineto
+106 104 lineto
+108 107 lineto
+110 109 lineto
+115 112 lineto
+
+105 100 moveto
+104 104 lineto
+102 107 lineto
+100 109 lineto
+95 112 lineto
+
+130 90 moveto
+150 80 lineto
+130 70 lineto
+
+137 86 moveto
+137 74 lineto
+
+130 30 moveto
+130 45 lineto
+150 45 lineto
+150 30 lineto
+
+140 45 moveto
+140 35 lineto
+} bind def
+
+/owl { owl1 owl2 } bind def
+/inch { 72 mul } def
+
+gsave
+% Here's where you set size and position.  
+% Position is relative to lower left corner of picture box.  X offset first.
+% Warning:  the logo is tuned for 0.4 0.4 scale; other sizes not warranted.
+% 0.4 0.4 scale makes a 1 1/8 inch diameter logo.
+%
+0.16 inch .062 inch translate
+.4 .4 scale
+currentlinewidth 2 mul setlinewidth
+owl stroke
+grestore
+ PE 16 /Helvetica-Bold AF
+45117 13988 MT
+(Section E.2.1)SH
+16220 16872 MT
+(Kerberos Authentication and Authorization System)SH
+12 /Helvetica AF
+23065 19187 MT
+(by S. P. Miller, B. C. Neuman, J. I. Schiller, and J. H. Saltzer)SH
+10 /Symbol AF
+11228 23524 MT
+(Kerberos)SH
+/NewCenturySchlbk-Roman SF
+(; also spelled)23 W
+/NewCenturySchlbk-Italic SF
+21888 XM
+(Cerberus)SH
+/NewCenturySchlbk-Roman SF
+(.)SH
+/NewCenturySchlbk-Italic SF
+26832 XM
+("n. The)
+324 W( watch dog of Hades, whose)
+23 W( duty it was to guard)22 W
+10491 24666 MT
+(the entrance)4 W
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Italic SF
+(against whom or what does)
+4 W( not clearly appear; . . . is known to have had three)5 W
+10491 25808 MT
+(heads. . .")SH
+/Times-Roman SF
+31462 27562 MT
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(Ambrose Bierce,)SH
+/NewCenturySchlbk-Italic SF
+40296 XM
+(The Enlarged Devil's Dictionary)SH
+11 /NewCenturySchlbk-Roman AF
+9091 31553 MT
+(This document describes the assumptions, short and long term goals, and)
+116 W( system model)115 W
+8280 32790 MT
+(for a network authentication system, named Kerberos, for the Athena environment.)
+178 W( An)663 W
+8280 34027 MT
+(appendix specifies the detailed design and protocols to support these goals, and)
+185 W( a set of)184 W
+9 SS 
+11296 34916 MT
+(1)SH
+11 SS 
+8280 35286 MT
+(UNIX)SH
+12350 XM
+(manual pages,)
+248 W( not included here, describes an implementation for Berkeley 4.3)249 W
+8280 36523 MT
+(UNIX of both user interface commands and also library interfaces for)
+107 W( clients and servers.)106 W
+8280 37760 MT
+(The next section of the technical plan, E.2.2, describes a set of network applications)
+133 W( that)134 W
+8280 38997 MT
+(use Kerberos for authentication.)SH
+12 /Helvetica-Bold AF
+8280 42350 MT
+(Definitions)SH
+11 /NewCenturySchlbk-Roman AF
+8280 44500 MT
+(Accounting)SH
+18072 XM
+(Measuring resource usage attributable to a particular client.)SH
+8280 46356 MT
+(Authentication)SH
+18072 XM
+(Verifying the claimed identity of a client or service.)SH
+8280 48212 MT
+(Authorization)SH
+18072 XM
+(Allowing an authenticated client to use a particular service.)SH
+8280 50068 MT
+(Client)SH
+18072 XM
+(A program that makes use of a network service, on behalf of a user.)SH
+8280 51924 MT
+(KDBM)SH
+18072 XM
+(Kerberos Data Base Manager, a system that maintains and provides)
+50 W( an)49 W
+18072 53161 MT
+(interface for update of authoritative Kerberos data consisting)
+569 W( of)570 W
+18072 54398 MT
+(principal identifiers and private keys for both clients and services.)SH
+8280 56254 MT
+(Kerberos)SH
+18072 XM
+(Aside from the 3-headed dog guarding Hades, the name given to the)218 W
+18072 57491 MT
+(Athena authentication service, the)
+10 W( protocol used by that service, and the)11 W
+18072 58728 MT
+(libraries used to invoke the authentication and authorization services.)SH
+8280 60584 MT
+(KKDS)SH
+18072 XM
+(Kerberos Key Distribution Service, a network service)
+376 W( that supplies)375 W
+18072 61821 MT
+(tickets and temporary session)
+470 W( keys; or Kerberos Key Distribution)471 W
+18072 63058 MT
+(Server, an instance of that service.)SH
+8280 64914 MT
+(Principal)SH
+18072 XM
+(A uniquely named client or server instance that participates in)
+406 W( a)405 W
+18072 66151 MT
+(network communication.)SH
+10800 50 8280 69916 UL
+8 SS 
+9017 71649 MT
+(1)SH
+10 SS 
+9462 72000 MT
+(UNIX is a trademark of AT&T Bell Laboratories.)SH
+/Helvetica-Bold SF
+8280 74551 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+9 /Helvetica AF
+16524 75600 MT
+(Copyright)SH
+/Symbol SF
+20624 XM
+(\343)SH
+/Helvetica SF
+21585 XM
+(1985, 1986, 1987 by the Massachusetts Institute of Technology)SH
+ES
+%%Page: 2 2 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 2, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+11 /NewCenturySchlbk-Roman AF
+6120 8011 MT
+(Principal identifier)SH
+15912 XM
+(The name used to uniquely identify each different client and server.)SH
+6120 9867 MT
+(Private key)SH
+15912 XM
+(An encryption key between)
+376 W( a principal and the KKDS, distributed)377 W
+15912 11104 MT
+(outside the system, with a long lifetime;)SH
+6120 12960 MT
+(Seal)SH
+15912 XM
+(To encipher a)
+161 W( record containing several fields, in such a way that the)160 W
+15912 14197 MT
+(fields cannot be individually replaced)
+167 W( without either knowledge of the)168 W
+15912 15434 MT
+(key or leaving evidence of tampering.)SH
+6120 17290 MT
+(Session key)SH
+15912 XM
+(A temporary encryption key used between two principals, with)
+468 W( a)467 W
+15912 18527 MT
+(lifetime limited to the duration of a single communications "session".)SH
+6120 20383 MT
+(Ticket)SH
+15912 XM
+(A record that authenticates a client to a service; it contains the client's)90 W
+15912 21620 MT
+(identity, a session key, and a timestamp, all of which is sealed)
+321 W( by)320 W
+15912 22857 MT
+(encryption using the service's private key.)SH
+/NewCenturySchlbk-Italic SF
+6931 24905 MT
+(The term "principal," being somewhat)
+228 W( formal, is replaced with the word "user" in this)229 W
+6120 26142 MT
+(document wherever the context permits that usage without confusion.)SH
+12 /Helvetica-Bold AF
+6120 29495 MT
+(1. Introduction to Kerberos)SH
+11 SS 
+6120 32585 MT
+(Purpose of This Plan)SH
+/NewCenturySchlbk-Roman SF
+6931 34953 MT
+(Most conventional time-sharing systems require a prospective user)
+247 W( to identify him or)246 W
+6120 36190 MT
+(herself and to authenticate that)
+260 W( identity before using its services.  In an environment)261 W
+6120 37427 MT
+(consisting of a network that connects prospective clients with services, a network)
+141 W( service)140 W
+6120 38664 MT
+(has a corresponding need to identify and authenticate)
+33 W( its clients.  When the client is a user)34 W
+6120 39901 MT
+(of a time-sharing system,)
+134 W( one approach is for the service to trust the authentication that)133 W
+6120 41138 MT
+(was performed by the time-sharing system.  For example,)
+42 W( the network applications)43 W
+/NewCenturySchlbk-Italic SF
+49169 XM
+(lpr)SH
+/NewCenturySchlbk-Roman SF
+51004 XM
+(and)SH
+/NewCenturySchlbk-Italic SF
+6120 42375 MT
+(rcp)SH
+/NewCenturySchlbk-Roman SF
+8332 XM
+(provided with Berkeley 4.3 UNIX trust the user's time-sharing system)
+299 W( to reliably)298 W
+6120 43612 MT
+(authenticate its clients.)SH
+6931 45839 MT
+(In contrast with the time-sharing system, in)
+342 W( which a protection wall separates the)343 W
+6120 47076 MT
+(operating system from its users, a workstation is under the complete control of its)
+72 W( user, to)71 W
+6120 48313 MT
+(the extent that the user can run a private version of the operating system, or even replace)66 W
+6120 49550 MT
+(the machine itself.  As)
+265 W( a result, a network service cannot rely on the integrity of the)264 W
+6120 50787 MT
+(workstation operating system when it \050the network service\051 performs authentication.)SH
+6931 53014 MT
+(This plan extends the conventional notions of authentication, authorization,)
+562 W( and)563 W
+6120 54251 MT
+(accounting to the network environment with untrusted workstations.  It establishes)
+288 W( a)287 W
+6120 55488 MT
+(trusted third-party service)
+60 W( named Kerberos that can perform authentication to the mutual)61 W
+6120 56725 MT
+(satisfaction of)
+3 W( both clients and services.  The authentication approach allows for integration)2 W
+6120 57962 MT
+(with authorization and accounting facilities.  The resulting design is)
+153 W( also applicable to a)154 W
+6120 59199 MT
+(mixed time-sharing/network environment in which a network service is)
+91 W( not willing to rely)90 W
+6120 60436 MT
+(on the authentication performed by the client's time-sharing system.)SH
+/Helvetica-Bold SF
+6120 63526 MT
+(Goals of Kerberos)SH
+10 /Helvetica-BoldOblique AF
+6120 66353 MT
+(Authentication)SH
+11 /NewCenturySchlbk-Roman AF
+6931 67839 MT
+(Authentication is not an end in itself, but rather a tool to)
+216 W( support both integrity and)217 W
+6120 69076 MT
+(authorization. Its)
+464 W( basic purpose is to prevent fraudulent connection requests.  The goal of)78 W
+6120 70313 MT
+(Kerberos is to)
+355 W( support both one-way and mutual authentication of principals, to the)356 W
+6120 71550 MT
+(granularity of at least an individual user and specific service instance.)SH
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 3 3 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+45131 XM
+(Section E.2.1, page 3)SH
+/Helvetica-BoldOblique SF
+8280 7929 MT
+(Authorization)SH
+11 /NewCenturySchlbk-Roman AF
+9091 9484 MT
+(Authentication can imply a coarse-grained authorization)5 W
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(for example, some)
+5 W( services may)4 W
+8280 10721 MT
+(allow anyone)
+25 W( who can be reliably authenticated by the local Kerberos to use the service.  In)26 W
+8280 11958 MT
+(cases where more selective authorization is needed, the goal)
+356 W( of Kerberos is to allow)355 W
+8280 13195 MT
+(different services to implement different authorization models, and to allow)
+533 W( those)534 W
+8280 14432 MT
+(authorization models to assume that authentication of user identities is reliable.)SH
+10 /Helvetica-BoldOblique AF
+8280 17259 MT
+(Accounting)SH
+11 /NewCenturySchlbk-Roman AF
+9091 18745 MT
+(Given an authenticated client, the goal)
+83 W( of accounting is to support either quotas charged)82 W
+8280 19982 MT
+(against the client \050to limit consumption\051, e.g.)
+400 W( disk)
+1108 W( quota, and/or charges based on)401 W
+8280 21219 MT
+(consumption, e.g. $.01 per page printed.  The goal)
+328 W( of Kerberos is to permit modular)327 W
+8280 22456 MT
+(attachment of an integrated, secure, reliable accounting system.)SH
+/Helvetica-Bold SF
+8280 25546 MT
+(Requirement Examples)SH
+/NewCenturySchlbk-Roman SF
+9091 27914 MT
+(Some examples)
+776 W( of network services best illustrate the requirements of user)777 W
+8280 29151 MT
+(authentication and authorization:)SH
+/Symbol SF
+9901 30957 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Printing)SH
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(Only members of a)
+13 W( certain group may use a printer that belongs to that)12 W
+10713 32194 MT
+(group, an expensive and relatively scarce shared resource.  On)
+247 W( a more public)248 W
+10713 33431 MT
+(printer, users may be billed for printing, and may have)
+163 W( a priori limits on their)162 W
+10713 34668 MT
+(use.)SH
+/Symbol SF
+9901 36524 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Remote File Access)172 W
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(Only designated users may perform operations)
+172 W( on a given)173 W
+10713 37761 MT
+(remote file system or virtual disk.  Different users may)
+9 W( have different permissions)8 W
+10713 38998 MT
+(allowed, e.g. only the owner may write, while others may read.)SH
+/Symbol SF
+9901 40854 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Remote Login)100 W
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(Only authorized users may)100 W
+/NewCenturySchlbk-Italic SF
+33451 XM
+(rlogin)SH
+/NewCenturySchlbk-Roman SF
+36893 XM
+(to centrally-managed hosts, or)101 W
+10713 42091 MT
+(to a private workstation.)SH
+/Symbol SF
+9901 43947 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Window system)247 W
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(The user of a network-driven)
+247 W( display may want to limit the)246 W
+10713 45184 MT
+(ability of others to create or manipulate windows on that display.)SH
+/Symbol SF
+9901 47040 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Mail)SH
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(Only the addressee should be able to pick up his or her own mail at)
+156 W( the)157 W
+10713 48277 MT
+(Post Office.)SH
+/Symbol SF
+9901 50133 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Service Management)
+351 W( service)350 W
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(Users may be authorized to create, modify, or)350 W
+10713 51370 MT
+(destroy records that control various services.)
+13 W( For)
+334 W( example, system administrators)14 W
+10713 52607 MT
+(may have unlimited privileges, while the teaching assistant for a subject may only)4 W
+10713 53844 MT
+(be allowed to authorize use)
+79 W( of the libraries belonging to the subject.  A user may)80 W
+10713 55081 MT
+(be able to add or delete his or her own name on a public mailing)
+106 W( list, but not to)105 W
+10713 56318 MT
+(affect any other user's record in that list.)SH
+10 /Helvetica-BoldOblique AF
+8280 59145 MT
+(Other Requirements Assumed by the Design)SH
+11 /Symbol AF
+9901 60951 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(The authentication requirement)
+280 W( is two-way.  That is, the service learns with)281 W
+10713 62188 MT
+(confidence who the client is, and the client, if it wishes, can be certain that the)135 W
+10713 63425 MT
+(correct service is being used.)SH
+/Symbol SF
+9901 65281 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(No cleartext passwords should be transmitted over the net;)SH
+/Symbol SF
+9901 67137 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(No cleartext passwords should be stored on servers;)SH
+/Symbol SF
+9901 68993 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(At clients, cleartext passwords should be handled for the shortest possible time)154 W
+10713 70230 MT
+(and then destroyed.)SH
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 4 4 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 4, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+11 /Symbol AF
+7741 8080 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(The design should)
+58 W( confine any authentication compromises to the current session)57 W
+8553 9317 MT
+(or the current user.)SH
+/Symbol SF
+7741 11173 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(Authentication has a limited lifetime, of)
+155 W( the order of a single login session, but)156 W
+8553 12410 MT
+(may be re-used within that lifetime;)SH
+/Symbol SF
+7741 14266 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(Network authentication should go on largely unnoticed in normal)
+338 W( cases; the)337 W
+8553 15503 MT
+(traditional model of password-mediated login should be the only point)
+177 W( that the)178 W
+8553 16740 MT
+(user notices that authentication is occurring.)SH
+/Symbol SF
+7741 18596 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(The design should)
+216 W( minimize the effort needed to modify network services that)215 W
+8553 19833 MT
+(previously used other means of authentication.)SH
+10 /Helvetica-BoldOblique AF
+6120 22660 MT
+(Future requirement possibilities)SH
+11 /NewCenturySchlbk-Roman AF
+6931 24146 MT
+(The following are not currently considered essential,)
+470 W( but may be re-evaluated as)471 W
+6120 25383 MT
+(experience increases:)SH
+/Symbol SF
+7741 27189 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(Forwarding of authentications, so that one service can)
+270 W( do part of a job, then)269 W
+8553 28426 MT
+(invoke another service to complete it, under the credentials of the original client.)SH
+/Symbol SF
+7741 30282 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(Revocation of authentication or authorization)SH
+/NewCenturySchlbk-Italic SF
+32024 XM
+(within)SH
+/NewCenturySchlbk-Roman SF
+35654 XM
+(a login session.)SH
+12 /Helvetica-Bold AF
+6120 33635 MT
+(2. Assumptions Surrounding Authentication)SH
+11 SS 
+6120 36725 MT
+(Assumed Physical and Operational Security Environment)SH
+/NewCenturySchlbk-Roman SF
+6931 39093 MT
+(From a security perspective, the environment will include:)SH
+/Symbol SF
+7741 40899 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(both public and private workstations.  Public workstations)
+288 W( are in areas with)289 W
+8553 42136 MT
+(minimal physical security; private workstations are under physical and)698 W
+8553 43373 MT
+(administrative control of individuals with no responsibility to central)
+250 W( network)251 W
+8553 44610 MT
+(administration.)SH
+/Symbol SF
+7741 46466 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(a campus network without link encryption, composed of local nets of varying)
+2 W( types)1 W
+8553 47703 MT
+(linked by gateways to a backbone net; the)
+402 W( local nets are widely dispersed)403 W
+8553 48940 MT
+(physically and thus are very vulnerable to security attacks;)
+228 W( the backbone and)227 W
+8553 50177 MT
+(gateways are in locked closets and therefore are moderately secure.)SH
+/Symbol SF
+7741 52033 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(centrally-operated servers in locked rooms, assumed to operate under)
+165 W( moderate)166 W
+8553 53270 MT
+(physical security with known legitimate software;)SH
+/Symbol SF
+7741 55126 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(a small number of centrally-operated servers,)
+5 W( such as the Kerberos authentication)4 W
+8553 56363 MT
+(server, that operate under considerable physical security.)SH
+/Helvetica-Bold SF
+6120 59453 MT
+(Relevant Threats and Risks)SH
+/NewCenturySchlbk-Roman SF
+6931 61821 MT
+(The environment is not appropriate for sensitive data or high risk operations,)
+188 W( such as)189 W
+6120 63058 MT
+(bank transactions, classified government data,)
+433 W( student grades, controlling dangerous)432 W
+6120 64295 MT
+(experiments, and such.  The risks are primarily)
+496 W( uncontrolled use of resources by)497 W
+6120 65532 MT
+(unauthorized parties, violations of the)
+121 W( integrity of either the system's or user's resources,)120 W
+6120 66769 MT
+(and wholesale violations of privacy such as casual browsing through personal files.)SH
+6931 68996 MT
+(The primary security threats result from the potential of a workstation)
+87 W( user to forge the)88 W
+6120 70233 MT
+(identity of another)
+244 W( user in order to gain unauthorized access to data and/or resources.)243 W
+6120 71470 MT
+(Since a workstation, including its operating system and network interface,)
+201 W( is under the)202 W
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 5 5 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+45131 XM
+(Section E.2.1, page 5)SH
+11 /NewCenturySchlbk-Roman AF
+8280 8011 MT
+(complete control of the user, the user can)
+2 W( attempt to masquerade as another user or even as)1 W
+8280 9248 MT
+(another host.)
+266 W( In)
+840 W( lieu of the authentication provided by a centrally administered time)267 W
+8280 10485 MT
+(sharing system, an)SH
+/NewCenturySchlbk-Italic SF
+18249 XM
+(authentication service)SH
+/NewCenturySchlbk-Roman SF
+29617 XM
+(is required to counter such attempts.)SH
+9091 12712 MT
+(Privacy of data being transported across the network is currently a low priority,)
+140 W( except)139 W
+8280 13949 MT
+(where it)
+64 W( is necessary to prevent subsequent violations of integrity, e.g. the transmission of)65 W
+8280 15186 MT
+(passwords. When)
+1062 W( the cost of providing communications privacy can)
+378 W( be significantly)377 W
+8280 16423 MT
+(reduced, it will attain higher priority.)SH
+9091 18650 MT
+(Traffic analysis and covert channels are not an issue.)SH
+/Helvetica-Bold SF
+8280 21740 MT
+(Assumptions about Encryption)SH
+/NewCenturySchlbk-Roman SF
+9091 24108 MT
+(The private-key Data Encryption Standard \050DES\051, when used in single-encryption)
+88 W( mode,)89 W
+8280 25345 MT
+(is assumed to provide)
+107 W( enough security for campus applications that cryptanalysis is not a)106 W
+8280 26582 MT
+(significant threat.)SH
+9091 28809 MT
+(DES implementations are available in)
+227 W( both hardware and software.  Because system-)228 W
+8280 30046 MT
+(integrated hardware implementations are)
+12 W( not yet sufficiently low in cost, it is assumed that)11 W
+8280 31283 MT
+(software implementations will be)
+58 W( used for Kerberos except optionally at a small number of)59 W
+8280 32520 MT
+(sites \050Key Distribution Servers\051 that do a lot of encryption.)SH
+9091 34747 MT
+(DES implementations may not be exported from the U.S.  without special license.  For)151 W
+8280 35984 MT
+(this reason, the Kerberos design makes the cryptosystem)
+45 W( a modular, replaceable unit.)46 W
+/NewCenturySchlbk-Italic SF
+53165 XM
+(The)SH
+8280 37221 MT
+(initial implementation of Kerberos is based on DES.)SH
+/Helvetica-Bold SF
+8280 40311 MT
+(Global Clock Availability)SH
+/NewCenturySchlbk-Roman SF
+9091 42748 MT
+(The design of Kerberos assumes that system clocks are)
+175 W( loosely synchronized)174 W
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(within a)174 W
+8280 43985 MT
+(few minutes)294 W
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(on all machines that run)
+294 W( Kerberos-authenticated services, and that this)295 W
+/NewCenturySchlbk-Italic SF
+8280 45222 MT
+(global time)57 W
+/NewCenturySchlbk-Roman SF
+14345 XM
+(is similarly available to all workstations that use Kerberos.  We do not assume)56 W
+8280 46459 MT
+(that all workstations correctly maintain the time, but)
+166 W( in order to request authentication)167 W
+8280 47696 MT
+(tickets, a)
+354 W( workstation is required to maintain its clock within the allowable margin.)353 W
+/NewCenturySchlbk-Italic SF
+8280 48933 MT
+(Timeservers)SH
+/NewCenturySchlbk-Roman SF
+15049 XM
+(provide the official)
+377 W( time, and other systems synchronize periodically, for)378 W
+8280 50170 MT
+(example, at system boot time.)SH
+/Helvetica-Bold SF
+8280 53260 MT
+(Service Management System)SH
+/NewCenturySchlbk-Roman SF
+9091 55628 MT
+(This plan connects with the Athena Service Management System in a)
+61 W( several ways.  The)60 W
+8280 56865 MT
+(Athena Service Management System provides authoritative information)
+219 W( for Kerberos as)220 W
+8280 58102 MT
+(well as the related naming system.)SH
+12 /Helvetica-Bold AF
+8280 61455 MT
+(3. Naming)SH
+11 /NewCenturySchlbk-Roman AF
+9091 63605 MT
+(This plan assumes)
+33 W( a means for numbering network hosts and service ports so that clients)32 W
+8280 64842 MT
+(may request connection to services, including Kerberos itself. If a naming)
+324 W( system for)325 W
+8280 66079 MT
+(services is)
+208 W( also available, it is important that the service names can be congruent with)207 W
+8280 67316 MT
+(Kerberos principal identifiers \050defined in)
+31 W( the next paragraph\051 that are used to authenticate)32 W
+8280 68553 MT
+(services. In)
+816 W( addition, Kerberos clients can make use of such a name service to locate)254 W
+8280 69790 MT
+(Kerberos service)
+107 W( itself.  The design of Kerberos is modular; it can operate \050somewhat less)108 W
+8280 71027 MT
+(conveniently\051 in the absence of name services, and it)
+15 W( does not require that the name service)14 W
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 6 6 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 6, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+11 /NewCenturySchlbk-Roman AF
+6120 8011 MT
+(itself be secure.)144 W
+/NewCenturySchlbk-Italic SF
+15197 XM
+(A general network name service, Hesiod, is also)
+144 W( an Athena development,)145 W
+6120 9248 MT
+(described in another Technical Plan section.)SH
+/NewCenturySchlbk-Roman SF
+6931 11475 MT
+(In addition to such network host and service name spaces, Kerberos itself defines a name)44 W
+6120 12712 MT
+(space of authenticated users)
+105 W( and services.  For use in authentication the following simple)106 W
+6120 13949 MT
+(naming model applies.)SH
+10 /Helvetica-BoldOblique AF
+6120 16776 MT
+(Unifying Names)SH
+11 /NewCenturySchlbk-Roman AF
+6931 18262 MT
+(There isn't much difference between a client and a service.  In fact, a service)
+6 W( that wants to)5 W
+6120 19499 MT
+(use an authorization server must be able)
+86 W( to authenticate itself to the authorization server)87 W
+6120 20736 MT
+(in the same manner a client would authenticate itself to a service.  For this reason)
+143 W( both)142 W
+6120 21973 MT
+(client and service names share the)
+203 W( same structure so that they can be interchanged as)204 W
+6120 23210 MT
+(necessary.)SH
+6931 25437 MT
+(A)SH
+/NewCenturySchlbk-Italic SF
+8031 XM
+(principal identifier)SH
+/NewCenturySchlbk-Roman SF
+17952 XM
+(consists of three components:)SH
+/Symbol SF
+7741 27243 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(a)SH
+/NewCenturySchlbk-Italic SF
+9471 XM
+(principal name)SH
+/Symbol SF
+7741 29099 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(an)SH
+/NewCenturySchlbk-Italic SF
+10144 XM
+(instance name)SH
+/Symbol SF
+7741 30955 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(a)SH
+/NewCenturySchlbk-Italic SF
+9471 XM
+(realm name)SH
+/NewCenturySchlbk-Roman SF
+6120 32692 MT
+(all three of which are strings of upper and lower case letters and numbers.)SH
+6931 34919 MT
+(Each different client and service has a unique)
+173 W( principal name, assigned by negotiation)172 W
+6120 36156 MT
+(with the manager of Kerberos.)SH
+6931 38383 MT
+(The instance name is a label)
+107 W( that permits the possibility that the same client or service)108 W
+6120 39620 MT
+(may exist)
+78 W( in several forms that require distinct authentication; it is useful for both clients)77 W
+6120 40857 MT
+(and services.  In the case of services, an instance may specify the host)
+145 W( that provides the)146 W
+6120 42094 MT
+(service. For)
+312 W( example, the)3 W
+/NewCenturySchlbk-Italic SF
+19485 XM
+(rlogin)SH
+/NewCenturySchlbk-Roman SF
+22830 XM
+(service on host)3 W
+/NewCenturySchlbk-Italic SF
+30974 XM
+(menelaus)SH
+/NewCenturySchlbk-Roman SF
+36069 XM
+(is distinct from the)3 W
+/NewCenturySchlbk-Italic SF
+46052 XM
+(rlogin)SH
+/NewCenturySchlbk-Roman SF
+49396 XM
+(service)SH
+6120 43331 MT
+(on host)69 W
+/NewCenturySchlbk-Italic SF
+10254 XM
+(tartaros)SH
+/NewCenturySchlbk-Roman SF
+(. For)
+444 W( client principals)
+69 W( the instance can be useful when one wishes to have)70 W
+6120 44568 MT
+(different identifiers for different privileges.  For example,)476 W
+/NewCenturySchlbk-Italic SF
+39426 XM
+(JLSmith)SH
+/NewCenturySchlbk-Roman SF
+44753 XM
+(operating as a)475 W
+/NewCenturySchlbk-Italic SF
+6120 45805 MT
+(class-administrator)SH
+/NewCenturySchlbk-Roman SF
+16629 XM
+(may have different privileges from)265 W
+/NewCenturySchlbk-Italic SF
+35832 XM
+(JLSmith)SH
+/NewCenturySchlbk-Roman SF
+40950 XM
+(operating as a normal)266 W
+6120 47042 MT
+(user. The)
+306 W( usual case is that users operate using a name with the null instance.)SH
+6931 49269 MT
+(To allow independently administered sites, such as Athena, the)
+242 W( M.I.T. administrative)241 W
+6120 50506 MT
+(services, and the M.I.T. Laboratory for Computer Science, to inter-operate using)
+71 W( Kerberos,)72 W
+6120 51743 MT
+(a)SH
+/NewCenturySchlbk-Italic SF
+7062 XM
+(realm)SH
+/NewCenturySchlbk-Roman SF
+10344 XM
+(name is defined)
+24 W( to identify each such independent Kerberos site.  Thus a)23 W
+/NewCenturySchlbk-Italic SF
+47910 XM
+({principal)SH
+6120 52980 MT
+(name, instance name })146 W
+/NewCenturySchlbk-Roman SF
+18337 XM
+(is qualified by the)146 W
+/NewCenturySchlbk-Italic SF
+28346 XM
+(realm name)146 W
+/NewCenturySchlbk-Roman SF
+34972 XM
+(to which it belongs, and is)
+146 W( unique)147 W
+6120 54217 MT
+(only within that realm.  Kerberos does not specify any constraints on the form of the realm)39 W
+6120 55454 MT
+(name; it can be defined to be an)
+155 W( ARPA internet domain name which is itself a qualified)156 W
+6120 56691 MT
+(hierarchical name.  That choice makes)
+99 W( it possible to use the ARPA internet domain name)98 W
+6120 57928 MT
+(resolution system to locate the Kerberos authentication service for the realm.)SH
+6931 60155 MT
+(As described below, authentication is accomplished)
+230 W( by giving out tickets.  Tickets are)231 W
+6120 61392 MT
+(labeled with the name of the realm for the)
+177 W( service for which they are issued.  Principal)176 W
+6120 62629 MT
+(identifiers included in)
+44 W( tickets include a non-null realm only if it is different from the realm)45 W
+6120 63866 MT
+(for which the ticket was issued.)SH
+6931 66093 MT
+(Workstations and service hosts have network)
+61 W( names and network addresses, for example)60 W
+6120 67330 MT
+(those specified by the ARPA internet domain name system.)SH
+6931 69557 MT
+(Each application)
+520 W( protocol using the authentication service binds Kerberos {)521 W
+/NewCenturySchlbk-Italic SF
+(name)SH
+/NewCenturySchlbk-Roman SF
+(,)SH
+/NewCenturySchlbk-Italic SF
+6120 70794 MT
+(instance)SH
+/NewCenturySchlbk-Roman SF
+(} tuples for services to addresses using whatever means its chooses.  It may use,)
+21 W( for)20 W
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 7 7 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+45131 XM
+(Section E.2.1, page 7)SH
+11 /NewCenturySchlbk-Roman AF
+8280 8011 MT
+(example, the)318 W
+/NewCenturySchlbk-Italic SF
+15746 XM
+(internet domain name service)318 W
+/NewCenturySchlbk-Roman SF
+32215 XM
+(or the Hesiod)
+318 W( service and cluster location)319 W
+8280 9248 MT
+(system.)SH
+10 /Helvetica-BoldOblique AF
+8280 12075 MT
+(Specifying names)SH
+11 /NewCenturySchlbk-Roman AF
+9091 13561 MT
+(The primary interface where the user)
+238 W( will have to be concerned with names is when)237 W
+8280 14798 MT
+("logging in" to a workstation.  Normally the user would simply enter his or her principal)131 W
+8280 16035 MT
+(name, which might be the user's last name.  Optionally, the)
+21 W( user might specify an instance;)20 W
+8280 17272 MT
+(if not specified, a null instance would)
+2 W( be used as default.  The realm is normally supplied by)3 W
+8280 18509 MT
+(the workstation as a default, but the user might override that default, in effect requesting)76 W
+8280 19746 MT
+(authentication by a different Kerberos server.)SH
+9091 21973 MT
+(The principal)
+167 W( name and the instance name are separated by a period \050"."\051.  If no "." is)168 W
+8280 23210 MT
+(included in the name, it is assumed that the instance)
+109 W( is null.  In order to include a "." as)108 W
+8280 24447 MT
+(part of the principal name or the instance name, it must be quoted with a backslash.)SH
+9091 26674 MT
+(In order to)
+477 W( specify authentication in a realm different from the default for this)478 W
+8280 27911 MT
+(workstation, a user must specify the realm)
+104 W( preceded by an at-sign \050"@"\051.  The realm itself)103 W
+8280 29148 MT
+(may contain periods without the use of a backslash.  As an)
+44 W( example, consider the user who)45 W
+8280 30385 MT
+(desires authentication through the LCS.MIT.EDU realm using a system)
+339 W( management)338 W
+8280 31622 MT
+(instance. That)
+306 W( user might log in as follows:)SH
+/Courier SF
+16830 33239 MT
+(Kerberos login:  RLSmith.sysadmin@LCS.MIT.EDU)SH
+10 /Helvetica-BoldOblique AF
+8280 36066 MT
+(Local Names)SH
+11 /NewCenturySchlbk-Roman AF
+9091 37552 MT
+(The namespace used for Kerberos authentication and authorization is independent of)
+35 W( any)36 W
+8280 38789 MT
+(particular host's means of referring to users)
+23 W( or services, and any operating system specified)22 W
+8280 40026 MT
+(conventions. Each host may translate the Kerberos principal identifiers)
+206 W( to its own local)207 W
+8280 41263 MT
+(user names as required.)
+269 W( Local)
+842 W( translation provides a convenient means of supporting)268 W
+8280 42500 MT
+(proxies)SH
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(for example, Kerberos name)309 W
+/NewCenturySchlbk-Italic SF
+28894 XM
+({RLSmith,""})SH
+/NewCenturySchlbk-Roman SF
+36118 XM
+(might translate to)309 W
+/NewCenturySchlbk-Italic SF
+46611 XM
+(guest)SH
+/NewCenturySchlbk-Roman SF
+49854 XM
+(on a host)309 W
+8280 43737 MT
+(where)SH
+/NewCenturySchlbk-Italic SF
+11762 XM
+(RLSmith)SH
+/NewCenturySchlbk-Roman SF
+16816 XM
+(does not have an account.)59 W
+/NewCenturySchlbk-Italic SF
+30828 XM
+(Berkeley Unix applications that are modified to)59 W
+8280 44974 MT
+(use Kerberos authentication generally support only the identity mapping from)
+180 W( a Kerberos)181 W
+8280 46211 MT
+(principal identifier to the same Unix login name.)SH
+12 /Helvetica-Bold AF
+8280 49564 MT
+(4. The Kerberos Authentication Model)SH
+11 /NewCenturySchlbk-Roman AF
+9091 51714 MT
+(In response)
+122 W( to the requirements and assumptions sketched above, this section describes)121 W
+8280 52951 MT
+(the Athena Kerberos model for authentication and authorization, with provision for)427 W
+8280 54188 MT
+(accounting. This)
+372 W( model is based on the Needham and)
+33 W( Schroeder key distribution protocols,)32 W
+8280 55425 MT
+(modified with the)
+157 W( addition of timestamps.  Their paper \050listed in the References section\051)158 W
+8280 56662 MT
+(describes the basic protocol; a tutorial paper)
+266 W( by Voydock and Kent provides a broader)265 W
+8280 57899 MT
+(introduction to the topic and explains the timestamp modifications.)SH
+9091 60126 MT
+(The basic approach for Kerberos authentication is the following: to use a service, a client)68 W
+8280 61363 MT
+(must supply a)39 W
+/NewCenturySchlbk-Italic SF
+15899 XM
+(ticket)SH
+/NewCenturySchlbk-Roman SF
+18975 XM
+(previously obtained from)
+39 W( Kerberos.  A ticket for a service is a string of)38 W
+8280 62600 MT
+(bits with the property that it has)
+136 W( been enciphered using the private key for that service.)137 W
+8280 63837 MT
+(That private key is known only to the service itself and to Kerberos.)
+139 W( As)
+583 W( a result of that)138 W
+8280 65074 MT
+(property, the service can be)
+425 W( confident that any information found inside the ticket)426 W
+8280 66311 MT
+(originated from Kerberos.  As will be seen, Kerberos will have placed)
+156 W( the identity of the)155 W
+8280 67548 MT
+(client inside the ticket, so the service that receives a ticket)
+126 W( has a Kerberos-authenticated)127 W
+8280 68785 MT
+(opinion of the identity of the client.  To help ensure that one user does not)
+64 W( steal and reuse)63 W
+8280 70022 MT
+(another user's tickets, the client accompanies)
+139 W( the ticket with an authenticator, explained)140 W
+8280 71259 MT
+(later. \050In)
+400 W( addition, tickets expire)
+47 W( after a specified lifetime, which is usually on the order of)46 W
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 8 8 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 8, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+11 /NewCenturySchlbk-Roman AF
+6120 8011 MT
+(several hours.\051)SH
+6931 10238 MT
+(The client obtains a ticket by sending a message to Kerberos naming the principal)324 W
+6120 11475 MT
+(identifier of the desired service, the principal identifier of the \050alleged\051)
+446 W( client, and)445 W
+6120 12712 MT
+(mentioning the current time of)
+169 W( day.  Anyone could send such a message or intercept its)170 W
+6120 13949 MT
+(response; that)
+22 W( response, however, is usable only to the client named in the original request,)21 W
+6120 15186 MT
+(because Kerberos seals the response by enciphering it in the private key of that client.  The)25 W
+6120 16423 MT
+(response contains three parts:)
+37 W( the ticket \050which itself is further sealed in the private key of)36 W
+6120 17660 MT
+(the service\051, a newly-minted key for use in this client-server session, and)
+241 W( a timestamp)242 W
+6120 18897 MT
+(issued by the Kerberos server.)SH
+6931 21124 MT
+(A legitimate user will be able to unseal this message, obtain)
+112 W( the ticket and session key,)111 W
+6120 22361 MT
+(and verify that the timestamp is current \050thereby preventing replays of old responses\051.  No)51 W
+6120 23598 MT
+(other user, without the named user's private key, can correctly decrypt the reply to produce)21 W
+6120 24835 MT
+(the sealed tickets and corresponding session key.)SH
+6931 27062 MT
+(Once a client obtains a ticket and sends)
+66 W( it to a service, and the service has identified the)67 W
+6120 28299 MT
+(client, further use of the fact of authentication is specific to the protocol of the service.)
+27 W( One)359 W
+6120 29536 MT
+(application might)
+10 W( use the session key \050Kerberos seals a copy in the ticket\051 for secure end-to-)11 W
+6120 30773 MT
+(end encryption, while at the other)
+8 W( extreme, another application might throw everything but)7 W
+6120 32010 MT
+(the source network address away and assume that all)
+263 W( further requests coming on the)264 W
+6120 33247 MT
+(connection from this particular network address are from the same user.)SH
+6931 35474 MT
+(The)SH
+/NewCenturySchlbk-Italic SF
+9625 XM
+(authenticator)SH
+/NewCenturySchlbk-Roman SF
+17188 XM
+(mentioned above is a)
+431 W( simple mechanism designed to discourage)430 W
+6120 36711 MT
+(attempts at unauthorized reuse \050"replay"\051 of)
+79 W( tickets by someone who notices a ticket going)80 W
+6120 37948 MT
+(by on the network and makes a copy.  The authenticator consists of,)
+118 W( among other things,)117 W
+6120 39185 MT
+(the client's principal identifier, network address, and the current time of day all sealed)
+2 W( with)3 W
+6120 40422 MT
+(the key that Kerberos minted for this session.  After)
+50 W( the service decrypts the ticket, it uses)49 W
+6120 41659 MT
+(the session key found in that ticket to)
+46 W( decrypt the authenticator.  If the principal identifier)47 W
+6120 42896 MT
+(of the authenticator matches the one)
+4 W( in the ticket, the network address in the authenticator)3 W
+6120 44133 MT
+(is the same)
+34 W( as the one that sent the packet, and the time in the authenticator is within the)35 W
+6120 45370 MT
+(last few minutes, the authenticator is)
+160 W( probably not a replay, and the service accepts the)159 W
+6120 46607 MT
+(associated ticket.  It is because authenticators expire in a short time that)
+10 W( all the clients and)11 W
+6120 47844 MT
+(servers in a Kerberos realm need to have their clocks loosely synchronized.)SH
+6931 50071 MT
+(If a private key is compromised, another party may)
+211 W( successfully pose as the principal)210 W
+6120 51308 MT
+(until the private key)
+215 W( is changed and all tickets previously issued under it expire.  If a)216 W
+6120 52545 MT
+(session key is compromised, another party may successfully pose as)
+66 W( the principal until the)65 W
+6120 53782 MT
+(previously issued tickets expire.)SH
+6931 56009 MT
+(One more mechanism rounds out the complete Kerberos scenario.  If)
+44 W( a client uses several)45 W
+6120 57246 MT
+(services, a distinct ticket is)
+56 W( needed for each.  Not all the services to be used may be known)55 W
+6120 58483 MT
+(at the beginning of a login session, but that is when the)
+17 W( user provides the password used as)18 W
+6120 59720 MT
+(a private key to decrypt tickets.)
+280 W( To)
+865 W( avoid storing the private key in the workstation)279 W
+6120 60957 MT
+(memory for the entire duration of the session, at login time the)
+28 W( user obtains a single ticket,)29 W
+6120 62194 MT
+(useful only for)
+48 W( a service provided by Kerberos itself, the ticket-granting service.  Whenever)47 W
+6120 63431 MT
+(the client goes back)
+170 W( to Kerberos for an additional, service-specific ticket, the response is)171 W
+6120 64668 MT
+(actually enciphered in the session)
+70 W( key of the ticket-granting service.  Thus the private key)69 W
+6120 65905 MT
+(is needed only for the initial)
+72 W( ticket, and the workstation software can immediately destroy)73 W
+6120 67142 MT
+(its copy of that private key after that single use.)SH
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 9 9 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+45131 XM
+(Section E.2.1, page 9)SH
+11 SS 
+8280 8002 MT
+(Authentication Scenarios)SH
+/NewCenturySchlbk-Roman SF
+9091 10370 MT
+(Here, at the next level)
+237 W( of detail, are more complete scenarios of authentication using)236 W
+8280 11607 MT
+(Kerberos. These)
+500 W( scenarios)
+97 W( omit several options described in the next section.  The reader)98 W
+8280 12844 MT
+(not interested in security protocols can)
+249 W( skip this and the next section without missing)248 W
+8280 14081 MT
+(anything needed later.  The reader interested in full detail will also)
+160 W( want to consult the)161 W
+8280 15318 MT
+(complete protocol specification \050in the)
+141 W( Appendix to this section\051, which includes provision)140 W
+8280 16555 MT
+(for errors, key versions, and protocol versions, and which manipulates timestamps)
+56 W( in ways)57 W
+8280 17792 MT
+(not apparent in this simplified description.)SH
+10 /Helvetica-BoldOblique AF
+8280 20619 MT
+(Scenario I. Getting the First Ticket.)SH
+11 /NewCenturySchlbk-Roman AF
+10714 22356 MT
+(1.)SH
+12244 XM
+(The user establishes a principal name N)386 W
+38123 XM
+(and a private)
+386 W( key, K)385 W
+52341 XM
+(,)SH
+9 SS 
+35111 22726 MT
+(client)SH
+50021 XM
+(client)SH
+11 SS 
+10713 23722 MT
+(through some channel)
+264 W( outside the system, for example, by walking up to the)265 W
+10713 24959 MT
+(system administrator, and presenting his or)
+95 W( her identification card.  The private)94 W
+10713 26196 MT
+(key K)226 W
+16747 XM
+(becomes the authenticator between the user and the Kerberos Key)227 W
+9 SS 
+13894 26566 MT
+(client)SH
+11 SS 
+10713 27562 MT
+(Distribution Server.  The Kerberos Authentication)
+7 W( Server stores the user's private)6 W
+10713 28799 MT
+(key encrypted under its own master key, K)211 W
+36975 XM
+(. For)
+728 W( the purpose of campus)211 W
+9 SS 
+34057 29169 MT
+(master)SH
+11 SS 
+10713 30165 MT
+(security, a one-way)
+213 W( encrypted 8-character secret password serves as the user's)212 W
+10713 31402 MT
+(private key.  \050One-way encryption of)
+78 W( the original password serves the function of)79 W
+10713 32639 MT
+(assuring that if the user's Kerberos key is somehow compromised it does)
+259 W( not)258 W
+10713 33876 MT
+(reveal the original password, which the user may also be using on other systems.\051)SH
+10714 35732 MT
+(2.)SH
+12244 XM
+(The user initiates a workstation session by)
+67 W( invoking a)68 W
+/NewCenturySchlbk-BoldItalic SF
+40624 XM
+(login)SH
+/NewCenturySchlbk-Roman SF
+43915 XM
+(command, giving)68 W
+10713 36969 MT
+(as one argument the principal name of the client, N)SH
+39315 XM
+(.)SH
+9 SS 
+36995 37339 MT
+(client)SH
+11 SS 
+10713 38879 MT
+(User)SH
+/Times-Roman SF
+13463 XM
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(> WS)SH
+21513 XM
+(N)SH
+9 SS 
+22410 39249 MT
+(client)SH
+11 SS 
+10713 40735 MT
+(The workstation knows the name)
+245 W( of its default realm, R. The login command)244 W
+10713 41972 MT
+(makes a request to the Kerberos Key Distribution Server)
+13 W( for realm R, asking for a)14 W
+10713 43209 MT
+(session key and a ticket for the Kerberos ticket-granting service.)SH
+10713 45119 MT
+(WS)SH
+/Times-Roman SF
+12792 XM
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(> KKDS)SH
+21513 XM
+({N)SH
+25097 XM
+(@R, N)SH
+29462 XM
+(, T)SH
+33911 XM
+(})SH
+9 SS 
+18127 45489 MT
+(R)SH
+22777 XM
+(client)SH
+28211 XM
+(tgs)SH
+30808 XM
+(current)SH
+11 SS 
+10713 46975 MT
+(where N)97 W
+16784 XM
+(is the name)
+97 W( of the ticket-granting service, and T)96 W
+45545 XM
+(is the current)96 W
+9 SS 
+15130 47345 MT
+(tgs)SH
+42040 XM
+(current)SH
+11 SS 
+10713 48341 MT
+(date and time.)SH
+10713 50197 MT
+(This request crosses the network in cleartext to the KKDS for realm R.)SH
+10714 52053 MT
+(3.)SH
+12244 XM
+(The KKDS looks up N)102 W
+26633 XM
+(and N)102 W
+31105 XM
+(, finding private keys K)103 W
+46214 XM
+(and K)103 W
+50646 XM
+(. It)512 W
+9 SS 
+23905 52423 MT
+(client)SH
+29854 XM
+(tgs)SH
+43485 XM
+(client)SH
+49395 XM
+(tgs)SH
+11 SS 
+10713 53419 MT
+(creates a new temporary session key, K)201 W
+37316 XM
+(, for use)
+201 W( in this session, and)200 W
+9 SS 
+31992 53789 MT
+(temporary)SH
+7 SS 
+36343 54121 MT
+(tgs)SH
+11 SS 
+10713 55076 MT
+(prepares a ticket for the ticket-granting service:)SH
+9 SS 
+46460 56769 MT
+(K)SH
+7 SS 
+47160 57101 MT
+(tgs)SH
+11 SS 
+10713 57139 MT
+(Ticket)SH
+15165 XM
+(:)SH
+21513 XM
+({K)SH
+28060 XM
+(, N)SH
+31889 XM
+(, N)SH
+34649 XM
+(,T)SH
+38792 XM
+(, WS, Lifetime})SH
+9 SS 
+13914 57509 MT
+(tgs)SH
+22736 XM
+(temporary)SH
+29569 XM
+(client)SH
+33398 XM
+(tgs)SH
+35689 XM
+(current)SH
+7 SS 
+27087 57841 MT
+(tgs)SH
+9 SS 
+22651 58832 MT
+(K)SH
+7 SS 
+23351 59164 MT
+(y)SH
+11 SS 
+10713 59202 MT
+(where the)
+159 W( notation {X})160 W
+24193 XM
+(means that message X is enciphered using encryption)160 W
+10713 60439 MT
+(key K)28 W
+14179 XM
+(. The)
+362 W( value WS is the network address)
+28 W( of the requesting workstation.  The)27 W
+9 SS 
+13696 60809 MT
+(y)SH
+11 SS 
+10713 61805 MT
+(value Lifetime is the ticket lifetime chosen by the KKDS.  An explanation of the)95 W
+10713 63042 MT
+(rules for the ticket lifetime appears in the next section.)SH
+10714 64898 MT
+(4.)SH
+12244 XM
+(The KKDS sends a response packet:)SH
+9 SS 
+45616 66591 MT
+(K)SH
+7 SS 
+46316 66923 MT
+(client)SH
+11 SS 
+10713 66961 MT
+(KKDS)SH
+/Times-Roman SF
+14931 XM
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(> WS)SH
+21513 XM
+({K)SH
+28060 XM
+(, N)SH
+30820 XM
+(, Lifetime, T)SH
+40185 XM
+(, Ticket)SH
+45249 XM
+(})SH
+9 SS 
+13975 67331 MT
+(R)SH
+22736 XM
+(temporary)SH
+29569 XM
+(tgs)SH
+37082 XM
+(current)SH
+43998 XM
+(tgs)SH
+7 SS 
+27087 67663 MT
+(tgs)SH
+11 SS 
+10713 68871 MT
+(Note that authentication has not yet occurred)208 W
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(a sealed)
+208 W( response containing a)207 W
+10713 70108 MT
+(further sealed)
+141 W( ticket comes back even if the user has misrepresented his or her)142 W
+10713 71345 MT
+(identity.)SH
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 10 10 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 10, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+11 /NewCenturySchlbk-Roman AF
+8554 8011 MT
+(5.)SH
+10084 XM
+(At this point, the workstation asks the user for the password.)SH
+8553 9921 MT
+(User)SH
+/Times-Roman SF
+11303 XM
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(> WS)SH
+19353 XM
+(<password>)SH
+8553 11777 MT
+(and the workstation runs the)
+7 W( password through the one-way encryption algorithm)6 W
+8553 13014 MT
+(to produce K)SH
+17331 XM
+(. It)
+306 W( immediately destroys its copy of the password.)SH
+9 SS 
+15011 13384 MT
+(client)SH
+11 SS 
+8554 14870 MT
+(6.)SH
+10084 XM
+(The workstation decrypts the response from KKDS)132 W
+37927 XM
+(using K)132 W
+44773 XM
+(and checks)132 W
+9 SS 
+36839 15240 MT
+(R)SH
+42015 XM
+(client)SH
+11 SS 
+8553 16236 MT
+(its authenticity)
+580 W( by comparing T)579 W
+30022 XM
+(and N)579 W
+35856 XM
+(in the response with the)579 W
+9 SS 
+26919 16606 MT
+(current)SH
+33720 XM
+(tgs)SH
+11 SS 
+8553 17602 MT
+(corresponding values in the initial request.  If the)
+117 W( response passes this test, the)118 W
+8553 18839 MT
+(user knows)
+296 W( for certain that the response was prepared by the Kerberos Key)295 W
+8553 20076 MT
+(Distribution Service, because that is the only other entity in the universe that)189 W
+8553 21313 MT
+(knows K)146 W
+15421 XM
+(. The)
+598 W( response)
+146 W( is current rather than a replay of a response from)145 W
+9 SS 
+13101 21683 MT
+(client)SH
+11 SS 
+8553 22679 MT
+(yesterday, because it contains T)47 W
+28112 XM
+(. A)
+400 W( fraudulent user)
+47 W( finds that the response)48 W
+9 SS 
+25009 23049 MT
+(current)SH
+11 SS 
+8553 24045 MT
+(\050including the sealed ticket\051 is a worthless set of random bits because it is)343 W
+8553 25282 MT
+(enciphered with the unknown private key of the legitimate user.)SH
+8553 27138 MT
+(The legitimate user stashes away K)172 W
+33423 XM
+(and Ticket)172 W
+40747 XM
+(for later use.)
+172 W( The)651 W
+9 SS 
+27621 27508 MT
+(temporary)SH
+39018 XM
+(tgs)SH
+7 SS 
+31972 27840 MT
+(tgs)SH
+11 SS 
+8553 28795 MT
+(workstation destroys)
+100 W( its copy of the user's private key K)99 W
+40238 XM
+(, because it will not)99 W
+9 SS 
+37918 29165 MT
+(client)SH
+11 SS 
+8553 30161 MT
+(be needed again during this login session.)SH
+10 /Helvetica-BoldOblique AF
+6120 32988 MT
+(Scenario II.  Using a Kerberos-Mediated Service)SH
+11 /NewCenturySchlbk-Roman AF
+6931 34474 MT
+(To use a service S, the)
+309 W( user must have a ticket Ticket)310 W
+40950 XM
+(and the corresponding)310 W
+9 SS 
+37450 34844 MT
+(service)SH
+11 SS 
+6120 35840 MT
+(temporary session key for that service, K)56 W
+33878 XM
+(. Scenario)
+417 W( I traced the acquisition of)55 W
+9 SS 
+27284 36210 MT
+(temporary)SH
+7 SS 
+31635 36542 MT
+(service)SH
+11 SS 
+6120 37497 MT
+(one such ticket.  Assume for the moment that the client now has a ticket and)
+132 W( temporary)133 W
+6120 38734 MT
+(session key for service S. \050Scenario III, later, demonstrates how)
+422 W( the client can get)421 W
+6120 39971 MT
+(additional tickets without having to again present the user's password.\051)SH
+8554 41708 MT
+(1.)SH
+10084 XM
+(To use service S, the client first prepares an authenticator.)SH
+9 SS 
+30138 43401 MT
+(K)SH
+7 SS 
+30838 43733 MT
+(temporary)SH
+11 SS 
+8553 43771 MT
+(Authenticator)SH
+18573 XM
+(:)SH
+19353 XM
+({N)SH
+22937 XM
+(, T)SH
+27386 XM
+(, WS})SH
+5 SS 
+34222 44027 MT
+(service)SH
+9 SS 
+15689 44141 MT
+(service)SH
+20617 XM
+(client)SH
+24283 XM
+(current)SH
+11 SS 
+8553 45627 MT
+(where WS is the workstation's)
+94 W( network address, T)95 W
+38256 XM
+(is a current timestamp,)95 W
+9 SS 
+34752 45997 MT
+(current)SH
+11 SS 
+8553 46993 MT
+(and K)SH
+18531 XM
+(is the temporary key that came with ticket Ticket)SH
+46656 XM
+(.)SH
+9 SS 
+11631 47363 MT
+(temporary)SH
+43772 XM
+(service)SH
+7 SS 
+15982 47695 MT
+(service)SH
+11 SS 
+8553 48849 MT
+(Now the workstation begins)
+37 W( the protocol for the target service S. The protocol has)36 W
+8553 50086 MT
+(one difference from the corresponding, non-Kerberos protocol for)
+14 W( the same service:)15 W
+8553 51323 MT
+(it is prefaced with the authenticator and the ticket.)SH
+8553 53233 MT
+(WS)SH
+/Times-Roman SF
+10632 XM
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(> Service)SH
+19353 XM
+({Authenticator)SH
+29740 XM
+(, Ticket)SH
+36437 XM
+(})SH
+9 SS 
+26856 53603 MT
+(service)SH
+33553 XM
+(service)SH
+11 SS 
+8554 55089 MT
+(2.)SH
+10084 XM
+(When the target service receives this request, it first decrypts the)
+63 W( ticket using)62 W
+8553 56326 MT
+(its private key, K)171 W
+20758 XM
+(. Since)
+648 W( the only two entities in the universe that know)172 W
+9 SS 
+17874 56696 MT
+(service)SH
+11 SS 
+8553 57692 MT
+(K)SH
+12626 XM
+(are the service itself and Kerberos, the service can be confident that if the)27 W
+9 SS 
+9409 58062 MT
+(service)SH
+11 SS 
+8553 59058 MT
+(ticket deciphers properly it must have been originally)
+41 W( prepared by Kerberos.  The)42 W
+8553 60295 MT
+(test of whether or not the)
+135 W( ticket deciphered properly is whether or not the next)134 W
+8553 61532 MT
+(step works.  A correct ticket decipherment exposes the)
+30 W( temporary session key, the)31 W
+8553 62769 MT
+(client's name, and the timestamp.  The)
+94 W( temporary session key allows the service)93 W
+8553 64006 MT
+(to decrypt the authenticator, exposing its data.  If the client's name and network)75 W
+8553 65243 MT
+(address in the ticket)
+230 W( and authenticator match, the ticket's timestamp has not)229 W
+8553 66480 MT
+(expired, the network)
+123 W( address in the authenticator matches that in the incoming)124 W
+8553 67717 MT
+(packet, and the authenticator timestamp is sufficiently)
+22 W( recent, then the request is)21 W
+8553 68954 MT
+(taken as legitimate.  The service knows)
+82 W( for certain the identity of the requesting)83 W
+8553 70191 MT
+(client and the service and the client now)
+222 W( share a temporary secret key.  This)221 W
+8553 71428 MT
+(authentication remains valid for the lifetime of the client-service connection.)SH
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 11 11 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+44575 XM
+(Section E.2.1, page 11)SH
+11 /NewCenturySchlbk-Roman AF
+10714 8011 MT
+(3.)SH
+12244 XM
+(Finally, the application protocol begins, typically by transferring an)745 W
+10713 9248 MT
+(application request from the client to the server, perhaps at the end)
+44 W( of the packet)43 W
+10713 10485 MT
+(that contained the ticket.)SH
+9091 12712 MT
+(If a client has)
+241 W( a ticket for some service, that client may reuse the ticket as often as)242 W
+8280 13949 MT
+(desired, until it expires.  Each reuse requires)
+141 W( constructing a new authenticator, one that)140 W
+8280 15186 MT
+(contains a current time stamp.)SH
+10 /Helvetica-BoldOblique AF
+8280 18013 MT
+(Scenario III.  Getting Additional Tickets)SH
+11 /NewCenturySchlbk-Roman AF
+9091 19499 MT
+(If a client wants to use a service for which a ticket wasn't obtained as part)
+93 W( of the initial)94 W
+8280 20736 MT
+(encounter with Kerberos, the client invokes the Kerberos Ticket-Granting Service.)
+211 W( The)727 W
+8280 21973 MT
+(Kerberos Ticket-Granting Service is simply another protocol for talking to the)
+211 W( Kerberos)212 W
+8280 23210 MT
+(Authentication Service, one that makes use of the ticket-granting)
+271 W( ticket passed in the)270 W
+8280 24447 MT
+(initial encounter, rather than the user's private key, to establish authenticity.)SH
+10714 26184 MT
+(1.)SH
+12244 XM
+(The client first prepares an authenticator)
+249 W( exactly as before, though with a)250 W
+10713 27421 MT
+(current timestamp)
+316 W( and using the temporary session key that came with the)315 W
+10713 28658 MT
+(ticket-granting ticket.)SH
+9 SS 
+32298 30351 MT
+(K)SH
+7 SS 
+32998 30683 MT
+(temporary)SH
+11 SS 
+10713 30721 MT
+(Authenticator)SH
+19100 XM
+(:)SH
+21513 XM
+({N)SH
+25097 XM
+(, T)SH
+29546 XM
+(, WS})SH
+5 SS 
+36382 30977 MT
+(tgs)SH
+9 SS 
+17849 31091 MT
+(tgs)SH
+22777 XM
+(client)SH
+26443 XM
+(current)SH
+11 SS 
+10713 32577 MT
+(Now the workstation sends the authenticator, the previously obtained)
+140 W( ticket for)141 W
+10713 33814 MT
+(the ticket-granting service,)
+272 W( and the name of the service for which a ticket is)271 W
+10713 35051 MT
+(wanted to the ticket granting service.)SH
+10713 36961 MT
+(WS)SH
+/Times-Roman SF
+12792 XM
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(> KTGS)SH
+21513 XM
+({Authenticator)SH
+30267 XM
+(, Ticket)SH
+35331 XM
+(, N)SH
+39724 XM
+(@R})SH
+9 SS 
+18005 37331 MT
+(R)SH
+29016 XM
+(tgs)SH
+34080 XM
+(tgs)SH
+36840 XM
+(service)SH
+11 SS 
+10714 38817 MT
+(2.)SH
+12244 XM
+(The ticket-granting service goes through the same)
+30 W( procedure as does any other)31 W
+10713 40054 MT
+(Kerberos-mediated service,)
+199 W( first decrypting the ticket with its private key, and)198 W
+10713 41291 MT
+(using the temporary session key found inside to decrypt the authenticator.)
+75 W( If)
+457 W( all)76 W
+10713 42528 MT
+(the authenticity checks verify correctly,)
+309 W( the ticket-granting service knows for)308 W
+10713 43765 MT
+(certain the identity of the requesting client.  In addition,)
+217 W( it has recovered the)218 W
+10713 45002 MT
+(temporary session key which is known only to it and the client;)
+112 W( this session key)111 W
+10713 46239 MT
+(can be used to securely return a ticket)
+109 W( to the client.  KTGS looks up the service)110 W
+10713 47476 MT
+(name N)94 W
+18107 XM
+(in its database and finds the private key, K)94 W
+43765 XM
+(, for)
+94 W( that service.)93 W
+9 SS 
+14823 47846 MT
+(service)SH
+40881 XM
+(service)SH
+11 SS 
+10713 48842 MT
+(It now prepares a ticket:)SH
+9 SS 
+42891 50535 MT
+(K)SH
+7 SS 
+43591 50867 MT
+(service)SH
+11 SS 
+10713 50905 MT
+(Ticket)SH
+16798 XM
+(:)SH
+21513 XM
+({K)SH
+29330 XM
+(, N)SH
+33159 XM
+(, T)SH
+37608 XM
+(, Lifetime})SH
+9 SS 
+13914 51275 MT
+(service)SH
+22736 XM
+(temporary)SH
+30839 XM
+(client)SH
+34505 XM
+(current)SH
+7 SS 
+27087 51607 MT
+(service)SH
+11 SS 
+10713 52761 MT
+(where K)103 W
+22098 XM
+(is a new temporary session key for use between this)
+103 W( client)104 W
+9 SS 
+15095 53131 MT
+(temporary)SH
+7 SS 
+19446 53463 MT
+(service)SH
+11 SS 
+10713 54418 MT
+(and the service; it then sends the response:)SH
+9 SS 
+45236 56111 MT
+(K)SH
+7 SS 
+45936 56443 MT
+(temporary)SH
+11 SS 
+10713 56481 MT
+(KTGS)SH
+/Times-Roman SF
+14809 XM
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(> WS)SH
+21513 XM
+({K)SH
+29330 XM
+(, N)SH
+33723 XM
+(, T)SH
+38172 XM
+(, Ticket)SH
+44869 XM
+(})SH
+5 SS 
+49320 56737 MT
+(tgs)SH
+9 SS 
+13853 56851 MT
+(R)SH
+22736 XM
+(temporary)SH
+30839 XM
+(service)SH
+35069 XM
+(current)SH
+41985 XM
+(service)SH
+7 SS 
+27087 57183 MT
+(service)SH
+11 SS 
+10713 58337 MT
+(Note that the form of this response is identical to the form of the original)
+8 W( response)7 W
+10713 59574 MT
+(of the KKDS when it returned the ticket granting ticket.)SH
+10714 61430 MT
+(3.)SH
+12244 XM
+(The client, knowing the value)
+158 W( of K)159 W
+35995 XM
+(, decrypts the response, verifies)159 W
+9 SS 
+30671 61800 MT
+(temporary)SH
+7 SS 
+35022 62132 MT
+(tgs)SH
+11 SS 
+10713 63087 MT
+(its authenticity as before, and stashes away the ticket for the target service.)SH
+9091 65314 MT
+(Scenario III)
+140 W( emphasizes that the ticket-granting service is simply another example of a)139 W
+8280 66551 MT
+(Kerberos-mediated network service.  The)
+115 W( form of the messages in step one of scenarios II)116 W
+8280 67788 MT
+(and III is identical, once one realizes that the last)
+103 W( field in the second message of scenario)102 W
+8280 69025 MT
+(III is the application request mentioned in step three of Scenario II.)SH
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 12 12 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 12, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+11 SS 
+6120 8002 MT
+(Some Options)SH
+/NewCenturySchlbk-Roman SF
+6931 10370 MT
+(As mentioned, the three scenarios above follow what is expected to be the)
+99 W( most common)100 W
+6120 11607 MT
+(form of use of Kerberos authentication.  There are several)
+140 W( optional possibilities available)139 W
+6120 12844 MT
+(for applications that use Kerberos:)SH
+/Symbol SF
+7741 14650 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(The examples specified no)
+50 W( values for the instance name of either the client or the)51 W
+8553 15887 MT
+(service; those values are optional and default to the null instance.)SH
+/Symbol SF
+7741 17743 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(An application client may include in the sealed)
+323 W( authenticator an application)322 W
+8553 18980 MT
+(authenticator, such as a checksum of data to be sent.  Calculating)
+56 W( that checksum)57 W
+8553 20217 MT
+(is, of course, feasible)
+155 W( only if all the data to be transmitted is known at connect)154 W
+8553 21454 MT
+(time. As)
+884 W( an alternative, an application could devise a commit message that)290 W
+8553 22691 MT
+(appears at the end of the protocol, and that includes)
+79 W( a checksum sealed with the)78 W
+8553 23928 MT
+(session key.)SH
+/Symbol SF
+7741 25784 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(If the application)
+110 W( requires mutual authentication, it sets an option in its service)111 W
+8553 27021 MT
+(request, and places no application protocol information in the initial packet.  The)62 W
+8553 28258 MT
+(application server responds by adding one to)
+673 W( the workstation's request)674 W
+8553 29495 MT
+(timestamp, encrypting the result using the session key,)
+526 W( and sending the)525 W
+8553 30732 MT
+(encrypted result back to the client.  Once the client receives and decrypts this)190 W
+8553 31969 MT
+(handshake response, it)
+337 W( can be certain that the server is authentic, and the)336 W
+8553 33206 MT
+(application protocol may safely begin.)SH
+/Symbol SF
+7741 35062 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(The application server may retain state \050timestamps\051)
+157 W( about previous use to aid)158 W
+8553 36299 MT
+(detecting replay attempts.)SH
+/Symbol SF
+7741 38155 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(The application may use)
+252 W( the application authenticator and the session key to)251 W
+8553 39392 MT
+(continue a session)
+296 W( in which every message is both completely encrypted and)297 W
+8553 40629 MT
+(authenticated.)SH
+/Symbol SF
+7741 42485 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(An application may)
+226 W( request a ticket with a specified lifetime; if the requested)225 W
+8553 43722 MT
+(lifetime is less than the default ticket lifetime and less than that)
+74 W( specified in the)75 W
+8553 44959 MT
+(Kerberos database for the service, Kerberos)
+333 W( issues a ticket with the shorter)332 W
+8553 46196 MT
+(lifetime.)SH
+/Helvetica-Bold SF
+6120 49286 MT
+(Application and User Interface)SH
+/NewCenturySchlbk-Roman SF
+6931 51654 MT
+(For the most part, Kerberos is designed to operate under)
+187 W( the covers, without separate)188 W
+6120 52891 MT
+(actions by the user.  For network applications)
+155 W( that make use of Kerberos authentication)154 W
+6120 54128 MT
+(there is a library of Kerberos functions that simplify the obtaining)
+87 W( of authentication.  The)88 W
+6120 55365 MT
+(primary interface consists of three)
+218 W( generic user commands and two generic subroutines)217 W
+6120 56602 MT
+(that are used by applications.)SH
+/Symbol SF
+7741 58408 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(User command)253 W
+/NewCenturySchlbk-Bold SF
+17025 XM
+(kinit)SH
+/NewCenturySchlbk-Roman SF
+(: This command)
+253 W( asks the user for a password, obtains a)254 W
+8553 59645 MT
+(ticket-granting ticket, and destroys the password as soon as it has)
+240 W( stored the)239 W
+8553 60882 MT
+(ticket-granting ticket and associated session key.  Note that the function of this)125 W
+8553 62119 MT
+(command may be combined with the)SH
+/NewCenturySchlbk-Bold SF
+27430 XM
+(login)SH
+/NewCenturySchlbk-Roman SF
+30633 XM
+(command.)SH
+/Symbol SF
+7741 63975 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(User command)255 W
+/NewCenturySchlbk-Bold SF
+17029 XM
+(klist)SH
+/NewCenturySchlbk-Roman SF
+(: Displays the list of tickets obtained so far)
+255 W( in this login)254 W
+8553 65212 MT
+(session.)SH
+/Symbol SF
+7741 67068 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(User command)176 W
+/NewCenturySchlbk-Bold SF
+16871 XM
+(kdestroy)SH
+/NewCenturySchlbk-Roman SF
+(: Destroys)
+658 W( all)
+176 W( tickets.  The function of this command)177 W
+8553 68305 MT
+(may be combined with the)SH
+/NewCenturySchlbk-Bold SF
+22214 XM
+(logout)SH
+/NewCenturySchlbk-Roman SF
+26152 XM
+(command.)SH
+/Symbol SF
+7741 70161 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(Subroutine)SH
+/NewCenturySchlbk-Bold SF
+14673 XM
+(make_application_request\050\051)SH
+/NewCenturySchlbk-Roman SF
+(: Used by an)
+124 W( application to get a copy)123 W
+8553 71398 MT
+(of, or if necessary obtain, a ticket and session key for a named)
+52 W( service, to prepare)53 W
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 13 13 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+44575 XM
+(Section E.2.1, page 13)SH
+11 /NewCenturySchlbk-Roman AF
+10713 8011 MT
+(an authenticator, and return the result to)
+239 W( the application for inclusion in the)238 W
+10713 9248 MT
+(initial service request.)SH
+/Symbol SF
+9901 11104 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Subroutine)SH
+/NewCenturySchlbk-Bold SF
+17328 XM
+(read_application_request)SH
+/NewCenturySchlbk-Roman SF
+(: Used by an application server)
+619 W( to)620 W
+10713 12341 MT
+(validate a)
+19 W( presented ticket and authenticator.  It returns the identity found in the)18 W
+10713 13578 MT
+(ticket and a judgement about the authenticity of that identity.)SH
+9091 15805 MT
+(Note that the actual names, arguments, and parameters of these)
+90 W( generic commands and)91 W
+8280 17042 MT
+(subroutines are implementation-dependent.  The Kerberos library implemented for UNIX,)95 W
+8280 18279 MT
+(for example, shortens some names, combines kinit and kdestroy)
+242 W( with login and logout,)243 W
+8280 19516 MT
+(contains about a dozen additional supporting subroutines for the convenience of)621 W
+8280 20753 MT
+(applications that are using)
+5 W( optional features, and includes conventions about where to store)6 W
+8280 21990 MT
+(tickets in the UNIX environment.)SH
+/Helvetica-Bold SF
+8280 25080 MT
+(Realms)SH
+/NewCenturySchlbk-Roman SF
+9091 27448 MT
+(Kerberos provides for)
+28 W( partitioning authentication information according to administrative)27 W
+8280 28685 MT
+(divisions. All)
+996 W( users need not be registered)
+345 W( with a single organization.  In addition,)346 W
+8280 29922 MT
+(organizations that share authentication need not trust one another.  A)
+377 W( realm is an)376 W
+8280 31159 MT
+(authentication domain.  It is that part of the namespace of)
+9 W( authenticable users and services)10 W
+8280 32396 MT
+(that relies on a separately administered authentication server \050or)
+22 W( set of servers sharing the)21 W
+8280 33633 MT
+(same database\051 for their)
+211 W( authenticity.  A service can accept credentials produced by an)212 W
+8280 34870 MT
+(authentication server only for a realm of which it is a member.)
+144 W( Both)
+592 W( users and services)143 W
+8280 36107 MT
+(may belong to multiple realms.  Realm names within a network)
+140 W( need to be unique.  The)141 W
+8280 37344 MT
+(earlier-mentioned convention of naming)
+26 W( realms with ARPA Internet domain names has the)25 W
+8280 38581 MT
+(side effect of guaranteeing uniqueness.)SH
+9091 40808 MT
+(Realms can be either independent or semi-independent.)SH
+10 /Helvetica-BoldOblique AF
+8280 43635 MT
+(Independent Realms)SH
+11 /NewCenturySchlbk-Roman AF
+9091 45121 MT
+(Some users)
+153 W( will want to access services from realms with which they aren't registered.)154 W
+8280 46358 MT
+(Some services will be willing to provide services to users from other realms.)
+174 W( These)
+652 W( two)173 W
+8280 47595 MT
+(requirements lead to a mechanism to authenticate users across realms.)SH
+9091 49822 MT
+(This mechanism is provided through)
+232 W( the cooperation of the administrators of the two)233 W
+8280 51059 MT
+(realms involved.  The Kerberos for each such)
+46 W( realm is a client of the Kerberos in the other,)45 W
+8280 52296 MT
+(and shares a secret key for a)
+302 W( cross-realm ticket-granting service.  This mutual client)303 W
+8280 53533 MT
+(relationship between the Kerberos services allows a client of the Kerberos in)
+90 W( one realm to)89 W
+8280 54770 MT
+(authenticate itself to the Kerberos in the)
+29 W( other realm even though no information is shared)30 W
+8280 56007 MT
+(between the client and the other Kerberos service.  Once a client has authenticated itself to)25 W
+8280 57244 MT
+(the Kerberos)
+129 W( in the new realm, that client can request tickets for services issued by that)130 W
+8280 58481 MT
+(Kerberos.)SH
+9091 60708 MT
+(As an example, consider a user in the LCS realm who wants to access a server)
+173 W( in the)172 W
+8280 61945 MT
+(Athena realm.  The user must first authenticate with the LCS Kerberos)
+128 W( using the initial)129 W
+8280 63182 MT
+(authentication protocol.  Once this authentication is done, the user can request a)
+53 W( ticket for)52 W
+8280 64419 MT
+(the Athena Kerberos.  The user)
+81 W( presents this ticket to the Athena Kerberos which accepts)82 W
+8280 65656 MT
+(the user's identity since the Athena Kerberos is a client)
+29 W( of the LCS Kerberos.  The user can)28 W
+8280 66893 MT
+(then request a ticket for an Athena service and the Athena Kerberos will comply.  However,)8 W
+8280 68130 MT
+(the ticket that the Athena Kerberos issues indicates that the user is)
+96 W( from the LCS realm.)95 W
+8280 69367 MT
+(Thus, all the)
+69 W( ticket says is that the Athena Kerberos acknowledges that the user has been)70 W
+8280 70604 MT
+(authenticated by the LCS Kerberos.  The client then)
+171 W( presents the new ticket to the end)170 W
+8280 71841 MT
+(service which decides whether or not to accept it, based on its own authorization policy.)SH
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 14 14 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 14, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+/Helvetica-BoldOblique SF
+6120 7929 MT
+(Semi-independent Realms)SH
+11 /NewCenturySchlbk-Roman AF
+6931 9415 MT
+(The realm mechanism can also be used to provide)
+85 W( authentication services for off-campus)86 W
+6120 10652 MT
+(independent living groups.  The problem is that the ILGs must have a)
+544 W( way of)543 W
+6120 11889 MT
+(authenticating users)
+271 W( to local services even when their connection to the campus-based)272 W
+6120 13126 MT
+(facilities fails.  Yet, at the same time, there cannot be)
+19 W( a copy of the Kerberos for the Athena)18 W
+6120 14363 MT
+(realm in the ILG since there)
+66 W( would be no guarantee of its security.  Instead, each ILG has)67 W
+6120 15600 MT
+(its own realm.)SH
+6931 17827 MT
+(Local services accept authentication by either realm.  Most services)
+67 W( on campus, however,)66 W
+6120 19064 MT
+(accept authentication only from)
+51 W( the Athena realm.  When communication with the campus)52 W
+6120 20301 MT
+(network is operational, ILG users authenticate themselves)
+161 W( to the Athena Kerberos, then)160 W
+6120 21538 MT
+(use the protocol described above to authenticate themselves to the ILG)
+113 W( Kerberos.  In this)114 W
+6120 22775 MT
+(way ILG users have to)
+362 W( provide only one password \050the one required by the Athena)361 W
+6120 24012 MT
+(Kerberos\051 to use both local and campus services.)
+SH( Users)
+307 W( on campus who want to use services)1 W
+6120 25249 MT
+(located at the ILG will also be able to use this mechanism.)SH
+6931 27476 MT
+(If the connection between the ILG and main)
+333 W( campus ceases to function, ILG users)332 W
+6120 28713 MT
+(authenticate themselves directly to the ILG Kerberos and are thus be able)
+216 W( to use local)217 W
+6120 29950 MT
+(services. This)
+496 W( local authentication)
+95 W( does not allow them to use all the services on campus,)94 W
+6120 31187 MT
+(but since they are disconnected it doesn't matter.)SH
+6931 33414 MT
+(It is suggested that users choose different keys for)
+217 W( the Athena Kerberos and the ILG)218 W
+6120 34651 MT
+(Kerberos since the ILG Kerberos may be much easier)
+136 W( to compromise.  We do not plan to)135 W
+6120 35888 MT
+(enforce such a suggestion, however.)SH
+10 /Helvetica-BoldOblique AF
+6120 38715 MT
+(More Complex Realm Relationships)SH
+11 /NewCenturySchlbk-Roman AF
+6931 40201 MT
+(The realm mechanism of Kerberos is not fully developed.  In particular, the protocol)
+57 W( does)58 W
+6120 41438 MT
+(not provide the target service with detailed information)
+195 W( about the provenance of tickets)194 W
+6120 42675 MT
+(that have been)
+430 W( authenticated in other realms.  More work is required on security)431 W
+6120 43912 MT
+(implications of cross-realm authentication, so that a service examining)
+130 W( a ticket can know)129 W
+6120 45149 MT
+(exactly whom it is trusting for authentication.)SH
+12 /Helvetica-Bold AF
+6120 48502 MT
+(5. Management of Kerberos Data)SH
+11 /NewCenturySchlbk-Roman AF
+6931 50652 MT
+(The database underlying Kerberos contains a record for each user identity and for each)126 W
+6120 51889 MT
+(service \050that is, for)
+139 W( each principal\051 known within that Kerberos realm.  In order to allow)138 W
+6120 53126 MT
+(security of the data to be the primary consideration when making operational)
+210 W( tradeoffs)211 W
+6120 54363 MT
+(about management of)
+308 W( a Kerberos service, the information that Kerberos stores is the)307 W
+6120 55600 MT
+(minimum required to accomplish)
+102 W( and manage authentication.  Thus, although a Kerberos)103 W
+6120 56837 MT
+(record is a kind of per-user record, it does not)
+286 W( contain information such as telephone)285 W
+6120 58074 MT
+(number and office address, which are not used by Kerberos for)
+630 W( authentication.)631 W
+6120 59311 MT
+(Nevertheless, if there are a large number of)
+49 W( users, the Kerberos database can still be quite)48 W
+6120 60548 MT
+(large and it requires some tools for its management.)
+149 W( The)
+605 W( data management interface of)150 W
+6120 61785 MT
+(Kerberos is designed to be used in two ways:)SH
+/Symbol SF
+7741 63591 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(By a set of manual tools manually from a system manager's)
+152 W( workstation.  This)151 W
+8553 64828 MT
+(approach is suitable for management)
+344 W( of a Kerberos realm that has a small)345 W
+8553 66065 MT
+(number of users.)SH
+/Symbol SF
+7741 67921 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(By an automated Service Management System.  This approach is intended for)206 W
+8553 69158 MT
+(managing a system with thousands of users.)SH
+6931 71385 MT
+(In both cases, the management of)
+100 W( the Kerberos service is accomplished remotely via the)101 W
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 15 15 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+44575 XM
+(Section E.2.1, page 15)SH
+11 /NewCenturySchlbk-Roman AF
+8280 8011 MT
+(network, using Kerberos-authenticated secure connections.)SH
+9091 10238 MT
+(The information stored for each principal that)
+35 W( Kerberos is prepared to authenticate is the)34 W
+8280 11475 MT
+(following:)SH
+/Symbol SF
+9901 13281 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(The principal identifier, including instance identifier.)SH
+/Symbol SF
+9901 15137 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(The private key \050password\051 for this principal.)SH
+/Symbol SF
+9901 16993 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(The expiration date for this identity.)SH
+/Symbol SF
+9901 18849 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(The date that this record was last modified.)SH
+/Symbol SF
+9901 20705 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Identity of the principal who last modified this record.)SH
+/Symbol SF
+9901 22561 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Maximum lifetime of tickets to be given to this principal.)SH
+/Symbol SF
+9901 24417 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Attributes \050unused\051.)SH
+/Symbol SF
+9901 26273 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Implementation data, not visible externally:)SH
+8 /Symbol AF
+12472 27860 MT
+(\267)SH
+11 /NewCenturySchlbk-Roman AF
+13146 28010 MT
+(Key version and master key version.)SH
+8 /Symbol AF
+12472 29716 MT
+(\267)SH
+11 /NewCenturySchlbk-Roman AF
+13146 29866 MT
+(Pointer to old values of this record.)SH
+9091 32093 MT
+(One piece of)
+122 W( information in each record, the private key, must remain secret.  Kerberos)123 W
+8280 33330 MT
+(reversibly enciphers the private key fields, using a)
+177 W( master key for this Key Distribution)176 W
+8280 34567 MT
+(Service. Encipherment)
+504 W( of the private key fields allows a manager to remove copies of)
+99 W( the)100 W
+8280 35804 MT
+(database from the machine and it also)
+86 W( allows the Kerberos master to send copies over the)85 W
+8280 37041 MT
+(network to slave)
+151 W( servers without going to extraordinary lengths to protect the privacy of)152 W
+8280 38278 MT
+(those copies.  Kerberos does not store the)
+64 W( master key in the database; it manages that one)63 W
+8280 39515 MT
+(key separately.)SH
+/Helvetica-Bold SF
+8280 42605 MT
+(Kerberos Database Replication)SH
+/NewCenturySchlbk-Roman SF
+9091 44973 MT
+(The Kerberos database for a realm is managed and updated by a)
+375 W( single Kerberos)376 W
+8280 46210 MT
+(Database Management server)
+86 W( \050the KDBM\051; authentication requests are handled by one or)85 W
+8280 47447 MT
+(more Kerberos Key Distribution Servers \050KKDS's\051, each of which)
+257 W( contains an identical)258 W
+8280 48684 MT
+(complete copy of the Kerberos database.  Since all KKDS's have identical data)
+97 W( any KKDS)96 W
+8280 49921 MT
+(can handle any authentication request; a client uses a name service to obtain a list)
+231 W( of)232 W
+8280 51158 MT
+(KKDS's, and chooses the)
+63 W( one that is nearest in terms of network topology.  The separation)62 W
+8280 52395 MT
+(of responsibility between KDBM and KKDS's)
+250 W( does not imply that several distinct host)251 W
+8280 53632 MT
+(computers are)
+42 W( required; in the simplest deployment, one host can run both a KDBM server)41 W
+8280 54869 MT
+(and a KKDS.  The purpose of separation is to simplify update of)
+294 W( the database while)295 W
+8280 56106 MT
+(permitting replicated KKDS's for improved)
+267 W( availability and performance.  \050Since many)266 W
+8280 57343 MT
+(other network services may depend on it, continuous availability of Key)
+347 W( Distribution)348 W
+8280 58580 MT
+(Service is essential; continuous availability of update service is not nearly so important.\051)SH
+9091 60807 MT
+(With respect to the Kerberos database, all operations done by a KKDS are "read-only,")
+44 W( so)43 W
+8280 62044 MT
+(the only coordination among KKDS's and the KDBM is for the)
+9 W( KKDS's to receive updates of)10 W
+8280 63281 MT
+(the information when changes are made at the)
+150 W( KDBM.  Again for simplicity, the KDBM)149 W
+8280 64518 MT
+(issues KKDS updates occasionally \050e.g., a few times per day\051 and by copying)
+202 W( the entire)203 W
+8280 65755 MT
+(database. Complete)
+748 W( copying eliminates the)
+221 W( need for considerably more complex update)220 W
+8280 66992 MT
+(procedures that would maintain update queues)
+129 W( at the KDBM and recovery procedures at)130 W
+8280 68229 MT
+(the KKDS's.)
+124 W( Because)
+553 W( updates occur on a batch basis, the KKDS's may have data that is)123 W
+8280 69466 MT
+(slightly stale; update delay of a few hours is acceptable for this application.)SH
+9091 71693 MT
+(The KDBM copies its database to the KKDS's using a)
+52 W( Kerberos-protected protocol.  First,)53 W
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 16 16 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 16, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+11 /NewCenturySchlbk-Roman AF
+6120 8011 MT
+(using the Kerberos mutual authentication protocol,)
+141 W( a secure encryption key is exchanged)140 W
+6120 9248 MT
+(between the KDBM site and a given KKDS)
+165 W( site. The KDBM creates a checkpoint of the)166 W
+6120 10485 MT
+(data to be transferred, and calculates its \050strong\051 checksum, seeding the checksum with)
+22 W( the)21 W
+6120 11722 MT
+(session key.)
+119 W( Then)
+546 W( it transfers the actual data using a conventional file transfer protocol.)120 W
+6120 12959 MT
+(Recall that)
+5 W( the data does not include any cleartext passwords or other particularly sensitive)4 W
+6120 14196 MT
+(information. However,)
+702 W( its integrity must be assured.  The receiving)
+198 W( KKDS temporarily)199 W
+6120 15433 MT
+(stores all the transferred data, then)
+118 W( recalculates the checksum of the received data using)117 W
+6120 16670 MT
+(the secret session key.  It then compares the calculated checksum with)
+357 W( the original)358 W
+6120 17907 MT
+(checksum, which was separately transmitted using the)
+169 W( secure Kerberos protocol.  If and)168 W
+6120 19144 MT
+(only if the two checksums match, the newly received data updates the KKDS database.)SH
+/Helvetica-Bold SF
+6120 22234 MT
+(Updates to the Kerberos Data Base)SH
+/NewCenturySchlbk-Roman SF
+6931 24602 MT
+(Updates are done by an update protocol that runs between any authenticated client at a)84 W
+6120 25839 MT
+(workstation and the KDBM.  If the)
+130 W( KDBM is not accessible, updates are temporarily not)129 W
+6120 27076 MT
+(allowed.)SH
+6931 29303 MT
+(There are several routine updates made to the Kerberos database.)SH
+8554 31040 MT
+(1.)SH
+10084 XM
+(adding a new user)SH
+8554 32896 MT
+(2.)SH
+10084 XM
+(a user changes a password)SH
+8554 34752 MT
+(3.)SH
+10084 XM
+(system manager changes a forgotten or compromised password)SH
+8554 36608 MT
+(4.)SH
+10084 XM
+(deactivating an old user)SH
+8554 38464 MT
+(5.)SH
+10084 XM
+(removing old user identities)SH
+6931 40691 MT
+(In emergencies, a system manager can also tinker)
+174 W( directly with raw Kerberos data for)175 W
+6120 41928 MT
+(repair and other extraordinary maintenance operations.  Such tinkering)
+124 W( must be done by)123 W
+6120 43165 MT
+(logging in directly on the host that runs the master Kerberos service.)SH
+/Helvetica-Bold SF
+6120 46255 MT
+(Adding a New User)SH
+/NewCenturySchlbk-Roman SF
+6931 48623 MT
+(Adding a new user to the Kerberos database is accomplished)
+171 W( by invoking the add-user)172 W
+6120 49860 MT
+(message type of the Kerberos protocol, which)
+33 W( requires that the user doing the addition be a)32 W
+6120 51097 MT
+(previously-added user of the system whose identity appears in an)
+121 W( add-user access control)122 W
+6120 52334 MT
+(list maintained by the Kerberos master system.)SH
+6931 54561 MT
+(If an SMS is in use, a different approach is taken that is more suitable)
+345 W( for mass)344 W
+6120 55798 MT
+(production. The)
+748 W( intent of this different approach is that a user can choose a)
+221 W( principal)222 W
+6120 57035 MT
+(identifier and register the chosen principal identifier and)
+285 W( associated password without)284 W
+6120 58272 MT
+(actually involving a system manager.  Each)
+59 W( fall, the SMS is primed with a list of potential)60 W
+6120 59509 MT
+(new users \050obtained from a list of all registered students\051 including for each user a full)187 W
+6120 60746 MT
+(name and a student identification number.  A prospective user walks up to)
+225 W( an Athena)226 W
+6120 61983 MT
+(workstation, logs in as an unauthenticated user \050the user identity "register", with)
+48 W( publicly-)47 W
+6120 63220 MT
+(known password "athena", is used for this purpose\051 and)
+103 W( interacts with a user registration)104 W
+6120 64457 MT
+(program that obtains)
+174 W( from the user his or her full name, student identification number,)173 W
+6120 65694 MT
+(proposed principal identifier and proposed password.  The user registration program)
+125 W( first)126 W
+6120 66931 MT
+(connects to SMS to verify that this user's full name and)
+228 W( student identification number)227 W
+6120 68168 MT
+(match one in the list of as-yet-unregistered users.  If so, it)
+147 W( informs SMS of the principal)148 W
+6120 69405 MT
+(identifier that the user has chosen, and in turn receives an add-user session key from SMS.)23 W
+6120 70642 MT
+(The user registration program then opens an encrypted)
+400 W( connection with the master)401 W
+6120 71879 MT
+(Kerberos service using the add-user session key.  It supplies the user's)
+181 W( chosen principal)180 W
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 17 17 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+44575 XM
+(Section E.2.1, page 17)SH
+11 /NewCenturySchlbk-Roman AF
+8280 8011 MT
+(identifier and password to Kerberos, which checks to see that the principal)
+43 W( identifier is not)44 W
+8280 9248 MT
+(one already on record \050rejecting the request if it is\051 and then records)
+5 W( it and the password.  If)4 W
+8280 10485 MT
+(the transaction)
+227 W( with Kerberos is successful, the user registration program confirms the)228 W
+8280 11722 MT
+(success with SMS, which then commits this registration transaction.)SH
+9091 13949 MT
+(This unsupervised registration scenario is a)
+312 W( compromise that is only weakly secure,)311 W
+8280 15186 MT
+(because any one who knows another person's name)
+74 W( and student identification number can)75 W
+8280 16423 MT
+(register as that person.  There is some protection against such an)
+38 W( attack, however, because)37 W
+8280 17660 MT
+(when the authentic person)
+338 W( with that identity attempts to register, the fraud will be)339 W
+8280 18897 MT
+(discovered when both SMS and Kerberos reject the second registration attempt.)
+301 W( The)906 W
+8280 20134 MT
+(legitimate user can then appeal to a real)
+57 W( system administrator, who can sort things out by)58 W
+8280 21371 MT
+(forcing into the Kerberos database a new password known only to the legitimate user.)SH
+/Helvetica-Bold SF
+8280 24461 MT
+(User-Initiated Password Change)SH
+/NewCenturySchlbk-Roman SF
+9091 26829 MT
+(The basic scenario for)
+206 W( changing a password is that the user does it him or herself by)205 W
+8280 28066 MT
+(invoking the password-changing program)
+40 W( at a workstation.  This program demands the old)41 W
+8280 29303 MT
+(and new passwords, uses)
+144 W( the old password to create a completely encrypted session with)143 W
+8280 30540 MT
+(the master Kerberos server, and sends the new password on the encrypted)
+104 W( connection.  If)105 W
+8280 31777 MT
+(the user)
+64 W( has reason to believe that the old password is so badly compromised that it is not)63 W
+8280 33014 MT
+(safe to send the new password this way, the user may)
+160 W( appeal to the system manager to)161 W
+8280 34251 MT
+(install a new password.)SH
+/Helvetica-Bold SF
+8280 37341 MT
+(System-Manager-Initiated Password Change)SH
+/NewCenturySchlbk-Roman SF
+9091 39709 MT
+(Kerberos maintains)
+156 W( an access control list, which consists of a list of Kerberos principal)155 W
+8280 40946 MT
+(identifiers of individuals who are)
+258 W( authorized to act as system manager.  When a user)259 W
+8280 42183 MT
+(reports that a password is forgotten)
+375 W( or compromised, the system manager opens an)374 W
+8280 43420 MT
+(encrypted connection from the manager's workstation to)
+156 W( the Kerberos master server and)157 W
+8280 44657 MT
+(runs a password-installation protocol.  This protocol)
+11 W( requires that the invoker appear in the)10 W
+8280 45894 MT
+(system manager access control list.)SH
+/Helvetica-Bold SF
+8280 48984 MT
+(User Deactivation)SH
+/NewCenturySchlbk-Roman SF
+9091 51352 MT
+(Kerberos maintains an expiration date and an activation flag for every principal)
+72 W( identity)73 W
+8280 52589 MT
+(that it is prepared to authenticate.  Kerberos)
+295 W( always rejects attempts to authenticate)294 W
+8280 53826 MT
+(expired or inactive users, with an appropriate error response.)
+66 W( The)
+440 W( purpose of deactivation)67 W
+8280 55063 MT
+(is to provide a simple means of avoiding)
+10 W( accidental reuse of principal identifiers, which may)9 W
+8280 56300 MT
+(continue to appear in access control lists for some time after a user departs from the scene.)SH
+9091 58527 MT
+(There is a secure protocol message type by)
+102 W( which the system manager can deactivate or)103 W
+8280 59764 MT
+(reactivate a principal identifier, or change its expiration date.)SH
+/Helvetica-Bold SF
+8280 62854 MT
+(Removing Old User Identities)SH
+/NewCenturySchlbk-Roman SF
+9091 65222 MT
+(Kerberos maintains a last-modified-date as)
+213 W( part of each record of a principal identity.)212 W
+8280 66459 MT
+(Deactivation updates this date.  One use of this date is to allow a system manager to)236 W
+8280 67696 MT
+(identify old identities that have not been in use for a sufficient)
+16 W( period \050e.g., one year\051 that it)15 W
+8280 68933 MT
+(is safe to)
+17 W( remove them.  A secure protocol message allows an authorized system manager to)18 W
+8280 70170 MT
+(remove any specific inactive identity, and to remove all inactive identities)
+168 W( that have not)167 W
+8280 71407 MT
+(been changed since a specified)
+44 W( date.  This operation is designed under the assumption that)45 W
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 18 18 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 18, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+11 /NewCenturySchlbk-Roman AF
+6120 8011 MT
+(it occurs rarely, perhaps two or three times a year, so the only)
+49 W( record of identities removed)48 W
+6120 9248 MT
+(is in the Kerberos log.)SH
+/Helvetica-Bold SF
+6120 12338 MT
+(Keeping Synchronized with SMS)SH
+/NewCenturySchlbk-Roman SF
+6931 14706 MT
+(If a Service Management System is)
+59 W( in use, it maintains its own records of registered and)60 W
+6120 15943 MT
+(prospective users; those records are correlated)
+182 W( with the records of Kerberos by principal)181 W
+6120 17180 MT
+(identifer. Since)
+1280 W( the)
+487 W( principal identifier is the only piece of duplicate information)488 W
+6120 18417 MT
+(maintained, the only synchronization problem is to insure that every principal)
+171 W( identifier)170 W
+6120 19654 MT
+(that appears)
+38 W( in an SMS record also appears in some Kerberos record, and vice-versa.  User)39 W
+6120 20891 MT
+(registration, as described above, is the normal way of creating principal identifiers, and)
+27 W( if a)26 W
+6120 22128 MT
+(user registration operation completes normally, both records will match.)
+18 W( Failures,)
+344 W( or hand-)19 W
+6120 23365 MT
+(tinkering, may unsynchronize these two sets)
+145 W( of records.  No special tools are provided to)144 W
+6120 24602 MT
+(deal with this problem; the system manager, if trouble is suspected, may extract from)252 W
+6120 25839 MT
+(Kerberos a list of principal identifers to sort and compare with the)
+70 W( corresponding list from)69 W
+6120 27076 MT
+(SMS.)SH
+/Helvetica-Bold SF
+6120 30166 MT
+(Database Backup and Reload)SH
+/NewCenturySchlbk-Roman SF
+6931 32534 MT
+(The Kerberos database is)
+71 W( backed up by running a special backup program on the master)72 W
+6120 33771 MT
+(Kerberos server, which should be equipped with a private tape drive.  The Kerberos master)28 W
+6120 35008 MT
+(key is not stored on the backup tape.  A special reload program)
+11 W( is also available, although if)12 W
+6120 36245 MT
+(the system is completely reset the Kerberos master key must be reinstalled by hand.)293 W
+6120 37482 MT
+(Reload of slave servers)
+4 W( is done by invoking the usual Master-Slave update procedure, which)5 W
+6120 38719 MT
+(transfers a complete copy of the database.)SH
+12 /Helvetica-Bold AF
+6120 42072 MT
+(6. Authorization Model)SH
+11 /NewCenturySchlbk-Roman AF
+6931 44222 MT
+(The Kerberos authentication)
+328 W( model provides only a certification of the identity of a)327 W
+6120 45459 MT
+(requesting client; by itself it provides no information as to whether or not that)
+182 W( client is)183 W
+6120 46696 MT
+(actually authorized to use the service.  There are three)
+61 W( forms in which authorization could)60 W
+6120 47933 MT
+(be integrated with the Kerberos authentication model:)SH
+/Symbol SF
+7741 49739 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(The Kerberos database could)
+323 W( also contain authorization information for each)324 W
+8553 50976 MT
+(service, and issue service tickets only to authorized users of each service.)SH
+/Symbol SF
+7741 52832 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(A separate)
+298 W( authorization service could maintain authorization information by)297 W
+8553 54069 MT
+(keeping access lists for each service)
+298 W( and allowing the client to obtain sealed)299 W
+8553 55306 MT
+(certification of list membership.)
+334 W( The)
+973 W( client would present that certification,)333 W
+8553 56543 MT
+(rather than a Kerberos ticket, to the ultimate service.)SH
+/Symbol SF
+7741 58399 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(Each service could maintain its own authorization information, with the optional)72 W
+8553 59636 MT
+(help of a service that stores shared public lists and provides certification of public)36 W
+8553 60873 MT
+(list membership.)SH
+6931 63100 MT
+(The first of)
+408 W( these alternatives places the large, dynamically updated authorization)409 W
+6120 64337 MT
+(database in the midst of)
+30 W( the small, slowly changing, high-security encryption key database.)29 W
+6120 65574 MT
+(Operational parameters such as primary and)
+41 W( secondary memory size, degree of replication,)42 W
+6120 66811 MT
+(nature of backup, and physical security must be chosen as a compromise between the)265 W
+6120 68048 MT
+(requirements of the two services.)
+38 W( It)
+384 W( also locks in one particular authorization model for all)39 W
+6120 69285 MT
+(applications.)SH
+6931 71512 MT
+(The second alternative)
+301 W( separates the authorization database from the authentication)300 W
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 19 19 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+44575 XM
+(Section E.2.1, page 19)SH
+11 /NewCenturySchlbk-Roman AF
+8280 8011 MT
+(database, thereby improving separation of administration and making)
+136 W( the authentication)137 W
+8280 9248 MT
+(service simpler and smaller, which should make it more reliable)
+64 W( and easier to secure.  But)63 W
+8280 10485 MT
+(this alternative leads)
+324 W( to an extraordinarily complex \050and therefore potentially fragile\051)325 W
+8280 11722 MT
+(collection of interacting protocols among the client)
+141 W( and the authentication, authorization,)140 W
+8280 12959 MT
+(and target services.  It also creates a)
+169 W( rendezvous problem, in that the client must know)170 W
+8280 14196 MT
+(which membership certification to request from the authorization server.)SH
+9091 16423 MT
+(The Kerberos authorization model is based on the principle that each service)
+77 W( knows best)76 W
+8280 17660 MT
+(who its users should be)
+SH( and what form of authorization is appropriate, so it adopts the third)1 W
+8280 18897 MT
+(of these alternatives.  This choice has several advantages:)SH
+/Symbol SF
+9901 20703 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Many services will have short,)
+40 W( private lists of authorized users.  For example, the)39 W
+10713 21940 MT
+(display server on)
+134 W( a private workstation may have as its list of authorized users)135 W
+10713 23177 MT
+(only one)
+138 W( entry)137 W
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(the current user of the workstation)137 W
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(and that user's identity is)137 W
+10713 24414 MT
+(already known by the workstation.)
+85 W( \050In)
+477 W( addition, the identity of the user allowed)86 W
+10713 25651 MT
+(to use the display on)
+117 W( a public workstation changes as often as someone logs in.\051)116 W
+10713 26888 MT
+(By far the simplest way to manage that)
+128 W( information is to place it in the server.)129 W
+10713 28125 MT
+(Completely private services \050e.g., a)
+452 W( dating service exported from a private)451 W
+10713 29362 MT
+(workstation\051 thus require no central registration, yet can)
+348 W( take advantage of)349 W
+10713 30599 MT
+(Kerberos-quality authentication and implement access control.)SH
+/Symbol SF
+9901 32455 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Services that maintain their own lists \050e.g., the display server\051 or)
+224 W( that do not)223 W
+10713 33692 MT
+(require an access control list \050e.g., a public library\051 do)
+87 W( not depend on availability)88 W
+10713 34929 MT
+(of and network continuity to an authorization service.)SH
+/Symbol SF
+9901 36785 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Rendezvous is limited to getting the client together with the)
+176 W( service; the client)175 W
+10713 38022 MT
+(does not need to figure out what kind of)
+396 W( authorization to request for this)397 W
+10713 39259 MT
+(particular service.)SH
+/Symbol SF
+9901 41115 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(No one authorization model)
+137 W( applies to all services; by making authorization the)136 W
+10713 42352 MT
+(responsibility of the server, the designer of the service)
+116 W( has the option of using a)117 W
+10713 43589 MT
+(standard library authorization model,)
+80 W( or creating a different model that is better)79 W
+10713 44826 MT
+(adapted to the particular service it is offering.)SH
+/Symbol SF
+9901 46682 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Since the amount of information storage required for authorization information is)36 W
+10713 47919 MT
+(proportional to the number of services offered, storing and)
+498 W( managing the)497 W
+10713 49156 MT
+(authorization information at the service scales up well.  This scaling advantage is)33 W
+10713 50393 MT
+(of particular interest when one realizes that every workstation exports)
+22 W( at least its)21 W
+10713 51630 MT
+(display service, and may export)
+125 W( others.  It is also administratively preferable to)126 W
+10713 52867 MT
+(have each service provide its own authorization list)
+524 W( storage, rather than)523 W
+10713 54104 MT
+(burdening a public storehouse with this responsibility.)SH
+/Symbol SF
+9901 55960 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Administrative authority to set and change the)
+178 W( authorization information for a)179 W
+10713 57197 MT
+(service tends to be)
+494 W( automatically delegated to the appropriate entity)493 W
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(the)SH
+10713 58434 MT
+(administration of the service itself.)SH
+9091 60661 MT
+(There is one significant disadvantage to requiring)
+41 W( the service to do its own authorization:)42 W
+8280 61898 MT
+(Services that cannot depend on other network services \050for)
+276 W( example, because they are)275 W
+8280 63135 MT
+(single-threaded and should not block waiting for a network)
+258 W( reply\051 cannot make use of)259 W
+8280 64372 MT
+(shared public access control lists.)SH
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 20 20 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 20, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+11 SS 
+6120 8002 MT
+(Authorization Mechanics)SH
+/NewCenturySchlbk-Roman SF
+6931 10370 MT
+(A standard)
+436 W( authorization model based on access control lists is provided, and an)435 W
+6120 11607 MT
+(authorization library package is available for incorporation into)
+95 W( any service that finds the)96 W
+6120 12844 MT
+(standard model useful.)
+439 W( Under)
+1182 W( this standard model, the service takes the \050known,)438 W
+6120 14081 MT
+(authenticated\051 identity of the client and inquires whether or not that client is a member)
+53 W( of)54 W
+6120 15318 MT
+(a named)
+84 W( list.  The access list library package maintains any number of named lists in the)83 W
+6120 16555 MT
+(local storage of the server.  A list may contain three kinds of names:)SH
+8554 18292 MT
+(1.)SH
+10084 XM
+(Kerberos-authenticable principal identifiers,)SH
+8554 20148 MT
+(2.)SH
+10084 XM
+(names of other local lists, and)SH
+8554 22004 MT
+(3.)SH
+10084 XM
+(names of shared, public access control lists.)SH
+6931 24231 MT
+(The access list library undertakes a search of the named list, local sublists stored at the)92 W
+6120 25468 MT
+(service host, and shared, public lists.  If the client's identity is)
+165 W( found in this search, the)164 W
+6120 26705 MT
+(operation is authorized.)SH
+6931 28932 MT
+(Rather than associating operation-specific permissions with access list)
+18 W( entries, the service)19 W
+6120 30169 MT
+(maintains distinct, named access lists for each different kind of operation.)SH
+6931 32396 MT
+(The lists are maintained as simple ASCII)
+34 W( text string files in a special access list directory)33 W
+6120 33633 MT
+(that is protected from modification except by administrators)
+156 W( of the target service.  Their)157 W
+6120 34870 MT
+(format allows, in)
+197 W( simple cases, maintenance by use of standard text editors, or in more)196 W
+6120 36107 MT
+(complex cases, automatic maintenance by the Athena Service Management System.)SH
+/Helvetica-Bold SF
+6120 39197 MT
+(The Public List Server)SH
+/NewCenturySchlbk-Roman SF
+6931 41565 MT
+(A public)
+119 W( list server provides Kerberos-quality certifications that principal identifier A is)120 W
+6120 42802 MT
+(\050or is not\051 in list B. The ability to use remote servers for such a certification allows)
+178 W( the)177 W
+6120 44039 MT
+(possibility of shared, centrally managed)
+261 W( lists.  The ability to use local lists allows the)262 W
+6120 45276 MT
+(possibility of lists whose contents are unknown to any central authority.)
+76 W( The)
+456 W( architecture)75 W
+6120 46513 MT
+(allows that these two possibilities can be mixed and matched in any way desired by)
+162 W( the)163 W
+6120 47750 MT
+(implementer or manager of the host that offers the service.  \050The detailed)
+19 W( design of a public)18 W
+6120 48987 MT
+(list service)
+21 W( has not yet been undertaken.  Issues such as what action to take in the face of a)22 W
+6120 50224 MT
+(cycle in a list, and management of very large lists, have not yet been addressed.\051)SH
+/Helvetica-Bold SF
+6120 53314 MT
+(Authentication/Authorization Scenario with Name Service)SH
+/NewCenturySchlbk-Roman SF
+6931 55682 MT
+(A complete scenario for integrating)
+327 W( name service, Kerberos, and authorization is as)326 W
+6120 56919 MT
+(follows \050there)
+24 W( are a lot of services flying around in this discussion)25 W
+/Times-Roman SF
+(\320)SH
+/NewCenturySchlbk-Roman SF
+(the one the client really)25 W
+6120 58156 MT
+(wants to invoke is called the "desired service"\051:)SH
+8554 59893 MT
+(1.)SH
+10084 XM
+(Assume for starters that)
+107 W( each client \050and service\051 knows the internet address)106 W
+8553 61130 MT
+(of a name service and the name of Kerberos.)
+203 W( As)
+714 W( part of its initialization, the)204 W
+8553 62367 MT
+(client invokes the name service to determine the)
+51 W( internet address of Kerberos.  It)50 W
+8553 63604 MT
+(also performs an initial transaction with Kerberos to obtain a)
+270 W( ticket-granting)271 W
+8553 64841 MT
+(ticket. Each)
+576 W( service that cares about authorization)
+135 W( has done the same thing as)134 W
+8553 66078 MT
+(part of its initialization.)SH
+8554 67934 MT
+(2.)SH
+10084 XM
+(The person exporting the desired service has previously)
+32 W( registered the name of)33 W
+8553 69171 MT
+(that service with the name service.)
+314 W( If)
+933 W( this step hasn't happened, it doesn't)313 W
+8553 70408 MT
+(prevent use of the desired service, but it does mean)
+12 W( that the client has to invoke it)13 W
+8553 71645 MT
+(by discovering and using a host name and port number, rather than by name.)SH
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 21 21 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+44575 XM
+(Section E.2.1, page 21)SH
+11 /NewCenturySchlbk-Roman AF
+10714 8011 MT
+(3.)SH
+12244 XM
+(The user learns the)
+138 W( name of a desired service.  Learning may happen one of)137 W
+10713 9248 MT
+(any number of ways.  Here are a few examples:)SH
+/Symbol SF
+12334 11054 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+13146 XM
+(A prospective user reads the name on a bulletin board.)SH
+/Symbol SF
+12334 12910 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+13146 XM
+(The user copies a program from a public place; the program has the name)157 W
+13146 14147 MT
+(buried in it.)SH
+/Symbol SF
+12334 16003 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+13146 XM
+(The name is embedded in a system-provided library program.)SH
+/Symbol SF
+12334 17859 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+13146 XM
+(The name is embedded in a class-provided library program.)SH
+/Symbol SF
+12334 19715 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+13146 XM
+(The user learns about the service name from a system staff member.)SH
+10714 21571 MT
+(4.)SH
+12244 XM
+(The client invokes the Kerberos ticket-granting service, requesting a ticket)
+59 W( for)58 W
+10713 22808 MT
+(the desired service name.  If Kerberos has never heard of the)
+27 W( desired service, that)28 W
+10713 24045 MT
+(doesn't cause the)
+244 W( scenario to abort; it may simply be that the desired service)243 W
+10713 25282 MT
+(doesn't require authentication.)SH
+10714 27138 MT
+(5.)SH
+12244 XM
+(The client invokes the name service to learn the host name and port of)
+186 W( the)187 W
+10713 28375 MT
+(desired service.  The client can cache this)
+169 W( information at its own risk, to allow)168 W
+10713 29612 MT
+(future invocations of)
+175 W( the desired service without using the name service again.)176 W
+10713 30849 MT
+(The name service)
+82 W( provides a time-to-live value for the information that gives the)81 W
+10713 32086 MT
+(client a hint about how long it is safe to cache it.)SH
+10714 33942 MT
+(6.)SH
+12244 XM
+(The client invokes the name service)
+104 W( again, to transform the host name of the)105 W
+10713 35179 MT
+(desired service into an internet address.)SH
+10714 37035 MT
+(7.)SH
+12244 XM
+(The client invokes the desired service, presenting its Kerberos ticket \050if)
+24 W( by now)23 W
+10713 38272 MT
+(it has one\051 certifying the client's identity.)SH
+10714 40128 MT
+(8.)SH
+12244 XM
+(The desired service decides whether or not it wishes to deal with this client.)144 W
+10713 41365 MT
+(To decide, it may invoke the access)
+72 W( list library, giving the name of the client and)71 W
+10713 42602 MT
+(the name of an access control list.  The access list library performs a)
+162 W( recursive)163 W
+10713 43839 MT
+(descent through that list and any lists, local or remote, named)
+59 W( in that list, trying)58 W
+10713 45076 MT
+(to verify list membership of the client.)SH
+9091 47303 MT
+(Because the desired service)
+148 W( is depending on the authenticity of the certifications of the)149 W
+8280 48540 MT
+(list membership service, each connection with)
+160 W( a remote list membership service must be)159 W
+8280 49777 MT
+(initiated via Kerberos and the responses from)
+239 W( the service need to be integrity-assured.)240 W
+8280 51014 MT
+(Integrity assurance is provided by having the remote list membership service)
+27 W( return a copy)26 W
+8280 52251 MT
+(of the original request,)
+110 W( with a yes or no bit added, enciphered in the session key that the)111 W
+8280 53488 MT
+(invoker obtained at initial connection with the list membership service.)SH
+12 /Helvetica-Bold AF
+8280 56841 MT
+(Acknowledgments)SH
+11 /NewCenturySchlbk-Roman AF
+9091 58991 MT
+(Many people have provided ideas, or have been involved with the implementation)
+75 W( of this)74 W
+8280 60228 MT
+(design. In)
+714 W( addition to the authors of)
+204 W( this document, they include: John Ostlund, Mark)205 W
+8280 61465 MT
+(Colan, Bob Baldwin, Dan Geer, Stan Zanarotti, Bill Sommerfeld, John Kohl,)
+123 W( Jim Aspnes,)122 W
+8280 62702 MT
+(Chris Reed, and Brian Murphy.  The name "Kerberos" was suggested by Bill Bryant.)SH
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 22 22 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 22, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+12 SS 
+6120 8160 MT
+(7. Appendix I)SH
+/Helvetica SF
+(\320)SH
+/Helvetica-Bold SF
+(Design Specifications)SH
+11 /NewCenturySchlbk-Roman AF
+6931 10310 MT
+(This section contains detailed design specifications)
+272 W( for the current implementation of)273 W
+6120 11547 MT
+(Kerberos. It)
+306 W( is of interest primarily to implementers.)SH
+/Helvetica-Bold SF
+6120 14637 MT
+(7.1. Design)SH
+10 /Helvetica-BoldOblique AF
+6120 17464 MT
+(7.1.1. Conventions)SH
+11 /NewCenturySchlbk-Roman AF
+6931 18950 MT
+(The following conventions apply:)SH
+9 SS 
+42876 20539 MT
+(2)SH
+11 /Symbol AF
+7741 20909 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(encryption or decryption implies DES private key in a)
+244 W( modified)245 W
+43927 XM
+(cipher-block-)SH
+8553 22146 MT
+(chaining mode)SH
+/Symbol SF
+7741 24002 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+("{data}K)SH
+13338 XM
+(" means that "data" is encrypted using "x"s DES key;)SH
+9 SS 
+12855 24372 MT
+(x)SH
+11 /Symbol AF
+7741 25858 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(all data to be encrypted)
+10 W( is padded with trailing 0 bytes to an integral multiple of 8)9 W
+8553 27095 MT
+(bytes;)SH
+/Symbol SF
+7741 28951 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(all references to)187 W
+/NewCenturySchlbk-Italic SF
+17532 XM
+(session key)187 W
+/NewCenturySchlbk-Roman SF
+23710 XM
+(imply a distinct random session key valid only for)187 W
+8553 30188 MT
+(that particular session;)SH
+/Symbol SF
+7741 32044 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(bit 0 refers to the least significant bit;)SH
+/Symbol SF
+7741 33900 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(all field sizes are expressed)
+179 W( in numbers of 8-bit bytes, unless otherwise stated,)178 W
+8553 35137 MT
+(and whether or not the value is signed \050s\051, unsigned)
+90 W( \050u\051 or only printable ASCII,)91 W
+8553 36374 MT
+(null terminated \050a\051;)SH
+/Symbol SF
+7741 38230 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(strings are sequences of printable ASCII bytes, null terminated;)SH
+/Symbol SF
+7741 40086 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(all messages are)
+249 W( self-framing, that is, do not depend on packet boundaries to)248 W
+8553 41323 MT
+(determine their extent;)SH
+/Symbol SF
+7741 43179 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(where not otherwise stated,)71 W
+/NewCenturySchlbk-Italic SF
+23249 XM
+(name)SH
+/NewCenturySchlbk-Roman SF
+26396 XM
+(implies the local)71 W
+/NewCenturySchlbk-Italic SF
+35237 XM
+(realm)SH
+/NewCenturySchlbk-Roman SF
+(; similarly, a)
+71 W( null)72 W
+/NewCenturySchlbk-Italic SF
+47535 XM
+(realm)SH
+/NewCenturySchlbk-Roman SF
+8553 44416 MT
+(implies the local one;)SH
+/Symbol SF
+7741 46272 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(principal, indicated in)
+3 W( the protocols by either subscript)2 W
+/NewCenturySchlbk-Italic SF
+36746 XM
+(p)SH
+/NewCenturySchlbk-Roman SF
+37685 XM
+(or)SH
+/NewCenturySchlbk-Italic SF
+39031 XM
+(principal)SH
+/NewCenturySchlbk-Roman SF
+(, refers to the)2 W
+8553 47509 MT
+(subject requesting authentication and/or authorization, i.e either a user's or)373 W
+8553 48746 MT
+(service's)SH
+/NewCenturySchlbk-Italic SF
+13116 XM
+({name, instance})SH
+/NewCenturySchlbk-Roman SF
+21734 XM
+(pair.)SH
+/Symbol SF
+7741 50602 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(service, indicated in the protocols by)
+134 W( either a subscript)133 W
+/NewCenturySchlbk-Italic SF
+37805 XM
+(s)SH
+/NewCenturySchlbk-Roman SF
+38732 XM
+(or)SH
+/NewCenturySchlbk-Italic SF
+40209 XM
+(service)SH
+/NewCenturySchlbk-Roman SF
+44026 XM
+(refers to the)133 W
+8553 51839 MT
+(end service, object, or other user for which authentication/authorization was)351 W
+8553 53076 MT
+(requested. This)
+500 W( is most often a service's)97 W
+/NewCenturySchlbk-Italic SF
+30099 XM
+({name, instance})96 W
+/NewCenturySchlbk-Roman SF
+38909 XM
+(pair, but could also be)96 W
+8553 54313 MT
+(any user's to allow secure key distribution between two users.)SH
+10800 50 6120 68774 UL
+8 SS 
+6857 70507 MT
+(2)SH
+10 SS 
+7302 70858 MT
+(Modified to provide forward error propagation)
+122 W( of a single bit error in the ciphertext thru to the)121 W
+6120 72000 MT
+(end of the resulting cleartext.  Refer to Voydock and Kent [17].)SH
+/Helvetica-Bold SF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 23 23 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+44575 XM
+(Section E.2.1, page 23)SH
+11 /NewCenturySchlbk-Roman AF
+9091 8011 MT
+(Common fields used in messages)SH
+16692 50 9091 8211 UL
+/NewCenturySchlbk-Bold SF
+8280 9852 MT
+(field)SH
+19080 XM
+(size)SH
+24480 XM
+(u,s,a)SH
+29880 XM
+(description)SH
+/NewCenturySchlbk-Roman SF
+8280 11089 MT
+(--------------------------------------------------------------------------------------)SH
+8280 12326 MT
+(version)SH
+19080 XM
+(1)SH
+24480 XM
+(u)SH
+29880 XM
+(Protocol version number;)SH
+8280 13563 MT
+(auth_msg_type)SH
+19080 XM
+(1)SH
+24480 XM
+(u)SH
+29880 XM
+(Protocol message type and byte order;)SH
+29880 14800 MT
+(= m_type << 1 + byte_order ;)SH
+8892 16037 MT
+(m_type)SH
+19080 XM
+(7bits)SH
+24480 XM
+(u)SH
+29880 XM
+(Protocol message type;)SH
+8892 17274 MT
+(byte_order)SH
+19080 XM
+(1bit)SH
+24480 XM
+(u)SH
+29880 XM
+(Byte order of sender;)SH
+8280 18511 MT
+(name)SH
+19080 XM
+(>=0)SH
+24480 XM
+(a)SH
+29880 XM
+(Athena principal name \050user or service\051;)SH
+8280 19748 MT
+(instance)SH
+19080 XM
+(>=0)SH
+24480 XM
+(a)SH
+29880 XM
+(Athena principal instance \050user or service\051;)SH
+8280 20985 MT
+(realm)SH
+19080 XM
+(>=0)SH
+24480 XM
+(a)SH
+29880 XM
+(Authentication realm name;)SH
+8280 22222 MT
+(group)SH
+19080 XM
+(>=0)SH
+24480 XM
+(a)SH
+29880 XM
+(Athena group name;)SH
+8280 23459 MT
+(time_sec)SH
+19080 XM
+(4)SH
+24480 XM
+(u)SH
+29880 XM
+(UTC timestamp, sec since 0000 GMT 1/1/70;)SH
+29880 24696 MT
+(may also have direction encoded in msbit;)SH
+8280 25933 MT
+(time_5ms)SH
+19080 XM
+(1)SH
+24480 XM
+(u)SH
+29880 XM
+(rest of UTC timestamp, 5ms units;)SH
+8280 27170 MT
+(lifetime)SH
+19080 XM
+(1)SH
+24480 XM
+(u)SH
+29880 XM
+(valid ticket lifetime, 5 minute units;)SH
+8280 28407 MT
+(key)SH
+19080 XM
+(8)SH
+24480 XM
+(u)SH
+29880 XM
+(64 bit encryption key;)SH
+8280 29644 MT
+(kvno)SH
+19080 XM
+(1)SH
+24480 XM
+(u)SH
+29880 XM
+(key version number;)SH
+8280 30881 MT
+(n)SH
+19080 XM
+(1)SH
+24480 XM
+(u)SH
+29880 XM
+(count of service entries;)SH
+8280 32118 MT
+(address)SH
+19080 XM
+(4)SH
+29880 XM
+(Internet host address, IP format and order;)SH
+8280 33355 MT
+(length)SH
+19080 XM
+(1)SH
+24480 XM
+(u)SH
+29880 XM
+(length of a field,)
+SH( 0)
+612 W( - 255, bytes;)SH
+8280 34592 MT
+(length_2)SH
+19080 XM
+(2)SH
+24480 XM
+(u)SH
+29880 XM
+(length of a field, 0 - 65535, bytes;)SH
+8280 35829 MT
+(length_4)SH
+19080 XM
+(4)SH
+24480 XM
+(u)SH
+29880 XM
+(length of a field, 0 - 4,294,967,295, bytes;)SH
+8280 37066 MT
+(exp_date)SH
+19080 XM
+(4)SH
+24480 XM
+(u)SH
+29880 XM
+(UTC expiration date,)SH
+29880 38303 MT
+(sec since 0000 GMT 1/1/1970;)SH
+8280 39540 MT
+(direction)SH
+19080 XM
+(1bit)SH
+24480 XM
+(u)SH
+29880 XM
+(within an association,)SH
+29880 40777 MT
+(zero if sending {addr, port } <)SH
+29880 42014 MT
+(receiving {addr,port}, else one;)SH
+29880 43251 MT
+(multiplex into msb of time_sec;)SH
+8280 44488 MT
+(app_data)SH
+19080 XM
+(n)SH
+29880 XM
+(application specific data, arbitrary length;)SH
+8280 45725 MT
+(checksum_4)SH
+19080 XM
+(4)SH
+24480 XM
+(u)SH
+29880 XM
+(4 byte checksum;)SH
+8280 46962 MT
+(checksum_16)SH
+19080 XM
+(16)SH
+24480 XM
+(u)SH
+29880 XM
+(16 byte checksum;)SH
+8280 48199 MT
+(flags)SH
+19080 XM
+(1)SH
+24480 XM
+(u)SH
+29880 XM
+(bit-flags within ticket, set by Kerberos;)SH
+8280 49436 MT
+(err_code)SH
+19080 XM
+(4)SH
+24480 XM
+(s)SH
+29880 XM
+(Kerberos error code;)SH
+8280 50673 MT
+(err_text)SH
+19080 XM
+(>=0)SH
+24480 XM
+(a)SH
+29880 XM
+(description of Kerberos error;)SH
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 24 24 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 24, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+11 /NewCenturySchlbk-Roman AF
+6120 8011 MT
+(Network Representations)SH
+13023 50 6120 8211 UL
+6120 10059 MT
+(byte ordering)SH
+15912 XM
+(The least significant bit)
+77 W( of)78 W
+/NewCenturySchlbk-Italic SF
+29926 XM
+(auth_msg_type)SH
+/NewCenturySchlbk-Roman SF
+37889 XM
+(will encode the byte ordering)78 W
+15912 11815 MT
+(for the transmitting host. LSB_FIRST, one, implies)
+275 W( least signigicant)274 W
+15912 13571 MT
+(byte in lowest address, e.g. VAX and IBM PC's. MSB_FIRST, zero,)318 W
+15912 15327 MT
+(implies most significant byte in lowest address, e.g.)
+32 W( Sun 68000 and IBM)31 W
+15912 17083 MT
+(RT's. The)
+640 W( transmitter of a message always transmits in natural host)167 W
+15912 18839 MT
+(order, and)
+160 W( marks its byte ordering in)159 W
+/NewCenturySchlbk-Italic SF
+36144 XM
+(auth_msg_type)SH
+/NewCenturySchlbk-Roman SF
+(. The)
+624 W( receiver, if)159 W
+15912 20595 MT
+(necessary, converts fields to its own byte ordering.)SH
+6120 23229 MT
+(alignment)SH
+15912 XM
+(to avoid possible incompatibilities between compiler alignment)
+32 W( rules, all)33 W
+15912 24985 MT
+(protocol messages must be defined without use)
+475 W( of structures. All)474 W
+15912 26741 MT
+(protocol messages have no)
+27 W( holes for alignment.  Each field begins on the)28 W
+15912 28497 MT
+(next byte boundary.)SH
+6931 30545 MT
+(Protocol Message pattern)SH
+12920 50 6931 30745 UL
+6931 32772 MT
+({ version, auth_msg_type, name)SH
+23633 XM
+(, instance)SH
+29044 XM
+(, realm)SH
+33149 XM
+(, time_sec, cleartext, ciphertext })SH
+9 SS 
+23116 33142 MT
+(p)SH
+28527 XM
+(p)SH
+32632 XM
+(p)SH
+11 SS 
+8568 34138 MT
+(where unneeded parts are omitted.)SH
+6931 36365 MT
+(The protocol message specifications should be read in increasing byte)
+182 W( order within the)181 W
+6120 37602 MT
+(message as you read from left to right, with no holes.)SH
+10 /Helvetica-BoldOblique AF
+6120 40429 MT
+(7.1.2. KKDS)SH
+9 /Helvetica-Bold AF
+6120 43400 MT
+(7.1.2.1. Protocol.)924 W
+11 /NewCenturySchlbk-Roman AF
+14694 XM
+(All the Kerberos protocols described)
+337 W( are layered on a UDP datagram)338 W
+6120 44637 MT
+(between the client and the KKDS.  The)
+179 W( client interface may retransmit a request up to)178 W
+6120 45874 MT
+(<AUTH_RETRY_MAX> times if a response is not received within)
+649 W( time interval)650 W
+6120 47111 MT
+(<AUTH_RETRY_WAIT>. All)
+560 W( protocol messages between a client and the)
+127 W( KKDS must be)126 W
+6120 48348 MT
+(idempotent. To)
+482 W( minimize retransmissions, all requests)
+88 W( should generate a response, either)89 W
+6120 49585 MT
+(an)SH
+/NewCenturySchlbk-Italic SF
+7711 XM
+(auth_reply)SH
+/NewCenturySchlbk-Roman SF
+13456 XM
+(or an)SH
+/NewCenturySchlbk-Italic SF
+16391 XM
+(err_reply)SH
+/NewCenturySchlbk-Roman SF
+(, even if the response only implies failure.)SH
+6120 51633 MT
+(auth_request =)SH
+15912 XM
+({ version, auth_msg_type, name)SH
+32614 XM
+(, instance)SH
+38025 XM
+(, realm)SH
+42130 XM
+(, time_sec)SH
+48261 XM
+(,)SH
+9 SS 
+32097 52003 MT
+(p)SH
+37508 XM
+(p)SH
+41613 XM
+(p)SH
+47144 XM
+(ws)SH
+11 SS 
+15912 52999 MT
+(lifetime)SH
+20247 XM
+(, name)SH
+24089 XM
+(, instance)SH
+29400 XM
+(})SH
+9 SS 
+19830 53369 MT
+(s)SH
+23672 XM
+(s)SH
+28983 XM
+(s)SH
+11 SS 
+15912 54365 MT
+(where)SH
+15912 55602 MT
+(auth_msg_type = <AUTH_MSG_KDC_REQUEST>)SH
+15912 56839 MT
+(The service requested is local to the realm managed by the)
+205 W( Kerberos)204 W
+15912 58076 MT
+(receiving the request.)SH
+6120 63635 MT
+(auth_reply =)SH
+15912 XM
+({ version, auth_msg_type, name)SH
+32614 XM
+(, instance)SH
+38025 XM
+(, realm)SH
+42130 XM
+(, time_sec)SH
+48261 XM
+(,)SH
+9 SS 
+32097 64005 MT
+(p)SH
+37508 XM
+(p)SH
+41613 XM
+(p)SH
+47144 XM
+(ws)SH
+11 SS 
+15912 65001 MT
+(exp_date)SH
+20973 XM
+(, kvno)SH
+24568 XM
+(, length_2, {cipher}K)SH
+37378 XM
+(})SH
+9 SS 
+20456 65371 MT
+(p)SH
+24051 XM
+(p)SH
+34986 XM
+(p)SH
+7 SS 
+35503 65703 MT
+(kvno)SH
+11 SS 
+15912 66658 MT
+(where)SH
+15912 67895 MT
+(auth_msg_type = <AUTH_MSG_KDC_REPLY>)SH
+15912 69132 MT
+(length_2 = length of cipher; zero if)SH
+/NewCenturySchlbk-Italic SF
+33644 XM
+({name)SH
+37298 XM
+(, instance)SH
+42623 XM
+(})SH
+/NewCenturySchlbk-Roman SF
+43296 XM
+(is unknown;)SH
+9 /NewCenturySchlbk-Italic AF
+36781 69502 MT
+(p)SH
+42106 XM
+(p)SH
+11 /NewCenturySchlbk-Roman AF
+15912 70498 MT
+(cipher =)SH
+15912 71735 MT
+({K)SH
+20121 XM
+(, name)SH
+23963 XM
+(, instance)SH
+29274 XM
+(, realm)SH
+33279 XM
+(, lifetime)SH
+38226 XM
+(, kvno)SH
+41721 XM
+(, {ticket)SH
+46013 XM
+(}K)SH
+49222 XM
+(,)SH
+9 SS 
+17135 72105 MT
+(session)SH
+23546 XM
+(s)SH
+28857 XM
+(s)SH
+32862 XM
+(s)SH
+37809 XM
+(s)SH
+41304 XM
+(s)SH
+45596 XM
+(s)SH
+47236 XM
+(s)SH
+7 SS 
+47653 72437 MT
+(kvno)SH
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 25 25 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+44575 XM
+(Section E.2.1, page 25)SH
+11 /NewCenturySchlbk-Roman AF
+18072 8011 MT
+(time_sec)SH
+24476 XM
+(})SH
+9 SS 
+22474 8381 MT
+(kkds)SH
+11 SS 
+18072 9377 MT
+(where)SH
+18072 10614 MT
+(ticket = { flags, name)214 W
+30145 XM
+(, instance)214 W
+35770 XM
+(, realm)214 W
+40089 XM
+(, address)214 W
+45362 XM
+(, K)214 W
+50030 XM
+(, lifetime,)214 W
+9 SS 
+29628 10984 MT
+(p)SH
+35253 XM
+(p)SH
+39572 XM
+(p)SH
+44845 XM
+(p)SH
+47044 XM
+(session)SH
+11 SS 
+18072 11980 MT
+(time_sec)SH
+24476 XM
+(, name)SH
+28318 XM
+(, instance)SH
+33935 XM
+(})SH
+9 SS 
+22474 12350 MT
+(kkds)SH
+27901 XM
+(s)SH
+33212 XM
+(s)SH
+11 SS 
+18072 13346 MT
+(note:)SH
+18072 14583 MT
+(the)SH
+/NewCenturySchlbk-Italic SF
+20053 XM
+(lifetime)SH
+/NewCenturySchlbk-Roman SF
+24192 XM
+(returned is the minimum of the principal's, server's,)
+23 W( and the)24 W
+18072 15820 MT
+(lifetime requested.)SH
+8280 21379 MT
+(err_reply =)SH
+18072 XM
+({ version, auth_msg_type, name)726 W
+36952 XM
+(, instance)725 W
+43088 XM
+(, realm)725 W
+47918 XM
+(, time_sec)725 W
+54774 XM
+(,)SH
+9 SS 
+36435 21749 MT
+(p)SH
+42571 XM
+(p)SH
+47401 XM
+(p)SH
+53657 XM
+(ws)SH
+11 SS 
+18072 22745 MT
+(err_code, err_text })SH
+18072 23982 MT
+(where)SH
+18072 25219 MT
+(auth_msg_type = <AUTH_MSG_ERR_REPLY> ,)SH
+18072 26456 MT
+(err_code = Kerberos error code, defined in)SH
+/NewCenturySchlbk-Italic SF
+39639 XM
+(prot.h)SH
+/NewCenturySchlbk-Roman SF
+42981 XM
+(,)SH
+18072 27693 MT
+(err_text = text string describing error.)SH
+9 /Helvetica-Bold AF
+8280 30509 MT
+(7.1.2.2. Protocol)
+250 W( Vulnerability.)SH
+11 /Symbol AF
+9901 32315 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(replay -- The)
+14 W( timestamp serves to prevent replay attempts by limiting the lifetime)15 W
+10713 33552 MT
+(of the key.)
+321 W( If)
+947 W( the server retains)320 W
+/NewCenturySchlbk-Italic SF
+29644 XM
+(all)SH
+/NewCenturySchlbk-Roman SF
+31635 XM
+(the still valid timestamps for previous)320 W
+10713 34789 MT
+(associations for the user, all replay attempts can be)
+358 W( prevented.  The latter)359 W
+10713 36026 MT
+(requires stable store across process and machine crashes.)SH
+/Symbol SF
+9901 37882 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(modification -- The)11 W
+/NewCenturySchlbk-Italic SF
+20675 XM
+(timestamps)SH
+/NewCenturySchlbk-Roman SF
+26817 XM
+(and)SH
+/NewCenturySchlbk-Italic SF
+29050 XM
+(name)SH
+/NewCenturySchlbk-Roman SF
+32137 XM
+(can serve as effective integrity checks to)11 W
+10713 39119 MT
+(detect modification to the packet.  If the)
+122 W( ciphertext was changed or forged, with)123 W
+10713 40356 MT
+(extremely high probability the)44 W
+/NewCenturySchlbk-Italic SF
+26694 XM
+(timestamp)SH
+/NewCenturySchlbk-Roman SF
+32381 XM
+(would no longer be valid, and the)44 W
+/NewCenturySchlbk-Italic SF
+49877 XM
+(name)SH
+/NewCenturySchlbk-Roman SF
+10713 41593 MT
+(in the ticket and in the)SH
+/NewCenturySchlbk-Italic SF
+22707 XM
+(authenticator)SH
+/NewCenturySchlbk-Roman SF
+29839 XM
+(would not match.)SH
+9 /Helvetica-Bold AF
+8280 44564 MT
+(7.1.2.3. Administrative)
+1164 W( Protocol.)458 W
+11 /NewCenturySchlbk-Roman AF
+24816 XM
+(A set of protocols is required for interaction between)458 W
+8280 45801 MT
+(administrators, users, and the Kerberos Database Manager, for example to create new)256 W
+8280 47038 MT
+(principals and to change keys.  These protocols are not yet specified.)SH
+9 /Helvetica-Bold AF
+8280 50009 MT
+(7.1.2.4. Authentication)
+1154 W( Database.)452 W
+11 /NewCenturySchlbk-Roman AF
+24436 XM
+(Each Kerberos)452 W
+/NewCenturySchlbk-Italic SF
+33122 XM
+(realm)SH
+/NewCenturySchlbk-Roman SF
+36833 XM
+(maintains an independent set of)453 W
+8280 51246 MT
+(databases. The)
+306 W( following are represented:)SH
+/Symbol SF
+9901 53052 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Private keys of)
+21 W( clients and services; estimate 10,000 users + <= 15000 services x 1)20 W
+10713 54289 MT
+(record; tag each key with an index number)
+111 W( noting which KKDS master key was)112 W
+9 SS 
+18582 55178 MT
+(3)SH
+11 SS 
+10713 55548 MT
+(used to store it.)SH
+10713 56785 MT
+(record = {name,)
+225 W( instance, kvno, {key)226 W
+32257 XM
+(}K)SH
+40027 XM
+(, KKDS-kvno, exp_date,)226 W
+9 SS 
+30239 57155 MT
+(kvno)SH
+33480 XM
+(KKDS)SH
+7 SS 
+36148 57487 MT
+(KKDS-kvno)SH
+11 SS 
+10713 58442 MT
+(max_life, last_modified_by_name, last_modified_by_instance, last_modified_date})SH
+/Symbol SF
+9901 60298 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Audit trail -- A management audit trail of selected database)
+139 W( operations, not yet)138 W
+9 SS 
+25275 61202 MT
+(4)SH
+11 SS 
+10713 61572 MT
+(specified, will be maintained)SH
+25775 XM
+(.)SH
+/Symbol SF
+9901 63428 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Statistics - To be specified.)SH
+10800 50 8280 66490 UL
+8 SS 
+9017 68223 MT
+(3)SH
+10 SS 
+9462 68574 MT
+(In case the KKDS master key needs to be changed, this allows a more orderly transition to)
+41 W( a new)40 W
+8280 69716 MT
+(master key.)SH
+8 SS 
+9017 71649 MT
+(4)SH
+10 SS 
+9462 72000 MT
+(Probably as a side effect of journaling the database.)SH
+/Helvetica-Bold SF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 26 26 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 26, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+9 SS 
+6120 8011 MT
+(7.1.2.5. Database)
+354 W( management.)52 W
+11 /NewCenturySchlbk-Roman AF
+20685 XM
+(Kerberos is built on a database management layer with a very)53 W
+6120 9248 MT
+(simple set)
+251 W( of lookup operations that can be implemented using any available database)250 W
+6120 10485 MT
+(system. The)
+578 W( initial)
+136 W( implementation of that layer uses Ingres as the supporting database)137 W
+6120 11722 MT
+(system; a second implementation uses the UNIX dbm package.  Slave servers)
+262 W( use the)261 W
+6120 12959 MT
+(second implementation.)
+93 W( The)
+493 W( master server can use either implementation; the advantage)94 W
+6120 14196 MT
+(of the Ingres implementation is that administration of a large number of)
+316 W( users \050e.g.,)315 W
+6120 15433 MT
+(producing a list of all users whose accounts)
+48 W( will expire in the next six months\051 can be done)49 W
+6120 16670 MT
+(with more potent tools.)SH
+9 /Helvetica-Bold AF
+6120 19641 MT
+(7.1.2.6. User)
+716 W( interface.)233 W
+11 /NewCenturySchlbk-Roman AF
+17608 XM
+(An implementation)
+233 W( of a user interface to obtain, list, and destroy)232 W
+6120 20878 MT
+(Kerberos tickets for Berkeley 4.3 UNIX is described in a)
+159 W( set of UNIX)160 W
+/NewCenturySchlbk-Italic SF
+43369 XM
+(man)SH
+/NewCenturySchlbk-Roman SF
+46117 XM
+(pages named)160 W
+/NewCenturySchlbk-Italic SF
+6120 22115 MT
+(kerberos\0501\051, kinit\0501\051, klist\0501\051)258 W
+/NewCenturySchlbk-Roman SF
+(, and)258 W
+/NewCenturySchlbk-Italic SF
+24085 XM
+(kdestroy\0501\051)SH
+/NewCenturySchlbk-Roman SF
+(. A)
+822 W( command to change a)
+258 W( user's Kerberos)257 W
+6120 23352 MT
+(password is described in)103 W
+/NewCenturySchlbk-Italic SF
+19227 XM
+(kpasswd\0501\051)SH
+/NewCenturySchlbk-Roman SF
+(, and the Kerberos database administrator's program,)103 W
+6120 24589 MT
+(used for)
+433 W( registering new Kerberos principals and setting or changing passwords, is)432 W
+6120 25826 MT
+(explained in the)SH
+/NewCenturySchlbk-Italic SF
+14645 XM
+(kadmin\0508\051)SH
+/NewCenturySchlbk-Roman SF
+20229 XM
+(manual page.)SH
+10 /Helvetica-BoldOblique AF
+6120 28653 MT
+(7.1.3. Application Authentication Protocols)SH
+9 /Helvetica-Bold AF
+6120 31624 MT
+(7.1.3.1. Request)
+270 W( Interface.)10 W
+11 /NewCenturySchlbk-Roman AF
+18266 XM
+(The changes)
+10 W( involved in using a service should be as transparent as)11 W
+6120 32861 MT
+(possible. When)
+564 W( a user uses)129 W
+/NewCenturySchlbk-Italic SF
+21141 XM
+(lpr, lpr)129 W
+/NewCenturySchlbk-Roman SF
+25289 XM
+(should automatically)
+129 W( include the authenticator in its)128 W
+6120 34098 MT
+(request without the user having to do anything extra.  In the event that)
+145 W( the ticket for a)146 W
+6120 35335 MT
+(service has not been obtained, or)
+204 W( has expired, the service should obtain a ticket on the)203 W
+6120 36572 MT
+(user's behalf using the ticket granting ticket obtained when the user)SH
+/NewCenturySchlbk-Italic SF
+41273 XM
+(logged in)SH
+/NewCenturySchlbk-Roman SF
+(.)SH
+9 /Helvetica-Bold AF
+6120 39543 MT
+(7.1.3.2. Client)
+596 W( Request.)173 W
+11 /NewCenturySchlbk-Roman AF
+17189 XM
+(The following KKDS block normally would be transmitted from)
+173 W( the)174 W
+6120 40780 MT
+(client to the server before any user data as the first packet)
+115 W( sent, though this need not be)114 W
+6120 42017 MT
+(first. It)
+654 W( serves to)
+174 W( identify the requestor, present his or her ticket, and authenticate the)175 W
+6120 43254 MT
+(request. By)
+518 W( appropriately decrypting and checking the integrity,)
+106 W( the service may proceed)105 W
+6120 44491 MT
+(to offer or deny the requested service.)SH
+6120 46539 MT
+(appl_request)SH
+15912 XM
+({ version, auth_msg_type , kvno)573 W
+34765 XM
+(, realm)574 W
+39344 XM
+(, length_2, {ticket}K)574 W
+52614 XM
+(,)SH
+9 SS 
+34348 46909 MT
+(s)SH
+38927 XM
+(s)SH
+50628 XM
+(s)SH
+7 SS 
+51045 47241 MT
+(kvno)SH
+11 SS 
+15912 48196 MT
+({authenticator}K)SH
+27748 XM
+(})SH
+9 SS 
+24456 48566 MT
+(session)SH
+11 SS 
+15912 49562 MT
+(where)SH
+15912 50799 MT
+(auth_msg_type = <AUTH_MSG_APPL_REQUEST>)SH
+15912 52036 MT
+(i.e. one-way authentication, or)SH
+15912 53273 MT
+(<AUTH_MSG_APPL_REQUEST_MUTUAL>)SH
+15912 54510 MT
+(i.e. mutual \050two-way\051 authentication request)SH
+15912 55747 MT
+(length_2 = length of ticket, then length of authenticator)SH
+15912 56984 MT
+(ticket = { flags, name)168 W
+27801 XM
+(, instance)168 W
+33380 XM
+(, realm)168 W
+37653 XM
+(, address)167 W
+42879 XM
+(, K)167 W
+47500 XM
+(, lifetime)167 W
+52614 XM
+(,)SH
+9 SS 
+27284 57354 MT
+(p)SH
+32863 XM
+(p)SH
+37136 XM
+(p)SH
+42362 XM
+(p)SH
+44514 XM
+(session)SH
+52197 XM
+(s)SH
+11 SS 
+15912 58350 MT
+(time_sec)SH
+22316 XM
+(, name)SH
+26158 XM
+(, instance)SH
+31775 XM
+(})SH
+9 SS 
+20314 58720 MT
+(kkds)SH
+25741 XM
+(s)SH
+31052 XM
+(s)SH
+11 SS 
+15912 59716 MT
+(authenticator = {name)SH
+27842 XM
+(, instance)SH
+33253 XM
+(, realm)SH
+37358 XM
+(, checksum_4,)SH
+9 SS 
+27325 60086 MT
+(p)SH
+32736 XM
+(p)SH
+36841 XM
+(p)SH
+11 SS 
+15912 61082 MT
+(time_5ms)SH
+24134 XM
+(, time_sec)SH
+32722 XM
+(})SH
+9 SS 
+20866 61452 MT
+(ws_now)SH
+29148 XM
+(ws_now)SH
+11 SS 
+15912 62448 MT
+(checksum_4 = optional data checksum to be used by service,)SH
+15912 63685 MT
+(checksum algorithm selected by service.)SH
+9 /Helvetica-Bold AF
+6120 66656 MT
+(7.1.3.3. Server)
+386 W( Verification)
+68 W( and Response.)69 W
+11 /NewCenturySchlbk-Roman AF
+25062 XM
+(The server decrypts request, checking)69 W
+/NewCenturySchlbk-Italic SF
+44967 XM
+(name)SH
+/NewCenturySchlbk-Roman SF
+(,)SH
+/NewCenturySchlbk-Italic SF
+48418 XM
+(instance)SH
+/NewCenturySchlbk-Roman SF
+(,)SH
+/NewCenturySchlbk-Italic SF
+6120 67893 MT
+(realm)SH
+/NewCenturySchlbk-Roman SF
+(,)SH
+/NewCenturySchlbk-Italic SF
+9861 XM
+(address)SH
+/NewCenturySchlbk-Roman SF
+(, and)177 W
+/NewCenturySchlbk-Italic SF
+16978 XM
+(time_sec)SH
+/NewCenturySchlbk-Roman SF
+(, and optionally checks for a)177 W
+/NewCenturySchlbk-Italic SF
+36790 XM
+(recent playback attempt)177 W
+/NewCenturySchlbk-Roman SF
+(. If the)176 W
+6120 69130 MT
+(authentication is invalid, the client's request is denied, and an)393 W
+/NewCenturySchlbk-Italic SF
+42090 XM
+(appl_err)SH
+/NewCenturySchlbk-Roman SF
+47064 XM
+(message is)394 W
+6120 70367 MT
+(returned. Otherwise,)
+740 W( the service may then request the client's authorizations from)
+217 W( the)216 W
+6120 71604 MT
+(authorization service, if need be. It then performs the)
+298 W( requested operation within the)299 W
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 27 27 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+44575 XM
+(Section E.2.1, page 27)SH
+11 /NewCenturySchlbk-Roman AF
+8280 8011 MT
+(bounds of the authorizations granted.)SH
+9091 10238 MT
+(If)SH
+/NewCenturySchlbk-Italic SF
+10363 XM
+(auth_msg_type)SH
+/NewCenturySchlbk-Roman SF
+18399 XM
+(requests mutual authentication \050two-way\051, the server)
+151 W( replies with the)150 W
+8280 11475 MT
+(message noted below.  If the client is satisfied with the server's response, it then begins)
+26 W( the)27 W
+8280 12712 MT
+(normal operation.)SH
+8280 14760 MT
+(appl_reply)SH
+18072 XM
+({ version, auth_msg_type, {svc_authent}K)SH
+42197 XM
+(})SH
+9 SS 
+39211 15130 MT
+(session)SH
+11 SS 
+18072 16126 MT
+(where)SH
+18072 17363 MT
+(auth_msg_type = <AUTH_MSG_APPL_REPLY_MUTUAL>)SH
+18072 18600 MT
+(svc_authent = { time_sec)SH
+33871 XM
+(+1 })SH
+9 SS 
+30603 18970 MT
+(ws_now)SH
+11 SS 
+8280 20648 MT
+(appl_err =)SH
+18072 XM
+({ version, auth_msg_type, err_code, err_text })SH
+18072 21885 MT
+(where)SH
+18072 23122 MT
+(auth_msg_type = <AUTH_MSG_APPL_ERR> ,)SH
+18072 24359 MT
+(err_code = Kerberos error code, defined in)SH
+/NewCenturySchlbk-Italic SF
+39639 XM
+(prot.h)SH
+/NewCenturySchlbk-Roman SF
+42981 XM
+(,)SH
+18072 25596 MT
+(err_text = text string describing error.)SH
+9 /Helvetica-Bold AF
+8280 28567 MT
+(7.1.3.4. Secure)
+1009 W( Conversations.)379 W
+11 /NewCenturySchlbk-Roman AF
+23168 XM
+(The authentication protocols described previously create a)379 W
+8280 29804 MT
+(secure session key exchange and authenticate the principals.  This is sufficient for)
+142 W( many)143 W
+8280 31041 MT
+(purposes, but other services, such as the)309 W
+/NewCenturySchlbk-Italic SF
+31291 XM
+(authorization service)309 W
+/NewCenturySchlbk-Roman SF
+42787 XM
+(and the)309 W
+/NewCenturySchlbk-Italic SF
+47585 XM
+(KDBM service)308 W
+/NewCenturySchlbk-Roman SF
+8280 32278 MT
+(require protection for)
+201 W( every message exchanged, not just for initial "connections".  Such)202 W
+8280 33515 MT
+(protection may take two alternate forms:)SH
+/Symbol SF
+9901 35321 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(message authentication -- guarantee that a given message has)
+48 W( not been modified,)47 W
+10713 36558 MT
+(forged, replayed, or made out of sequence; the message is)
+185 W( still readable on the)186 W
+10713 37795 MT
+(network;)SH
+/Symbol SF
+9901 39651 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(message secrecy --)
+377 W( in addition to offering message authentication, providing)376 W
+10713 40888 MT
+(message secrecy by encrypting the contents of the message.)SH
+9091 43115 MT
+(Two additional protocol)
+270 W( message envelopes are provided for these purposes;)271 W
+/NewCenturySchlbk-Italic SF
+50499 XM
+(safe_msg)SH
+/NewCenturySchlbk-Roman SF
+8280 44352 MT
+(provides message authentication, and)191 W
+/NewCenturySchlbk-Italic SF
+28574 XM
+(private_msg)SH
+/NewCenturySchlbk-Roman SF
+35242 XM
+(provides both message)
+191 W( authentication)190 W
+8280 45589 MT
+(and privacy.  The)116 W
+/NewCenturySchlbk-Italic SF
+17897 XM
+(app_data)SH
+/NewCenturySchlbk-Roman SF
+23086 XM
+(field is application specific data. Each application determines)117 W
+8280 46826 MT
+(the pattern of message types needed --)200 W
+/NewCenturySchlbk-Italic SF
+29529 XM
+(private_msg)SH
+/NewCenturySchlbk-Roman SF
+(,)SH
+/NewCenturySchlbk-Italic SF
+36512 XM
+(safe_msg)SH
+/NewCenturySchlbk-Roman SF
+(,)SH
+/NewCenturySchlbk-Italic SF
+41904 XM
+(appl_err)SH
+/NewCenturySchlbk-Roman SF
+(, and application)199 W
+8280 48063 MT
+(specific messages.)SH
+9091 49300 MT
+(A)SH
+/NewCenturySchlbk-Italic SF
+10581 XM
+(safe_msg)SH
+/NewCenturySchlbk-Roman SF
+15858 XM
+(provides strong means to detect any modification attempts,)
+390 W( forgery, or)391 W
+8280 50537 MT
+(replays, but does not provide privacy.)SH
+8280 52585 MT
+(safe_msg =)SH
+18072 XM
+({ version, auth_msg_type, safe_data, checksum_16\050K)SH
+47921 XM
+(, safe_data\051 })SH
+9 SS 
+44935 52955 MT
+(session)SH
+11 SS 
+18072 53951 MT
+(where)SH
+18072 55188 MT
+(auth_msg_type = <AUTH_MSG_SAFE>)SH
+18072 56425 MT
+(length_4 = length of safe_data,)SH
+18072 57662 MT
+(safe_data = { length_4)17 W
+33359 XM
+(, app_data, time_5ms)17 W
+47547 XM
+(, address)17 W
+54774 XM
+(,)SH
+9 SS 
+29373 58032 MT
+(safe_data)SH
+44279 XM
+(ws_now)SH
+52106 XM
+(source)SH
+11 SS 
+18072 59028 MT
+(direction, time_sec)SH
+31165 XM
+(})SH
+9 SS 
+27591 59398 MT
+(ws_now)SH
+11 SS 
+18072 60394 MT
+(checksum_16 is a function of both)
+295 W( K)296 W
+41759 XM
+(and)SH
+/NewCenturySchlbk-Italic SF
+44277 XM
+(safe_data)SH
+/NewCenturySchlbk-Roman SF
+(, using the)296 W
+9 SS 
+38171 60764 MT
+(session)SH
+11 SS 
+18072 61760 MT
+(quad_cksum\050\051 algorithm.)SH
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 28 28 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 28, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+11 /NewCenturySchlbk-Roman AF
+6931 8011 MT
+(A)SH
+/NewCenturySchlbk-Italic SF
+8277 XM
+(private_msg)SH
+/NewCenturySchlbk-Roman SF
+15000 XM
+(provides strong means to detect any)
+246 W( modification attempts, forgery, or)245 W
+6120 9248 MT
+(replays, and in addition provides privacy.)
+310 W( However,)
+927 W( to provide the privacy, it incurs)311 W
+6120 10485 MT
+(significant additional)
+83 W( run-time overhead for encryption. Since the lifetime of a session key)82 W
+6120 11722 MT
+(may be greater than that of a process, timestamps are used instead of sequence numbers.)SH
+6120 13770 MT
+(private_msg =)SH
+15912 XM
+({ version, auth_msg_type, length_4)SH
+36312 XM
+(, cipher })SH
+9 SS 
+33710 14140 MT
+(cipher)SH
+11 SS 
+15912 15136 MT
+(where)SH
+15912 16373 MT
+(auth_msg_type = <AUTH_MSG_PRIVATE>)SH
+15912 17610 MT
+(length_4)SH
+23246 XM
+(= length of the encrypted portion of the message,)SH
+9 SS 
+20338 17980 MT
+(cipher)SH
+11 SS 
+15912 18976 MT
+(cipher ={ private_data } K)SH
+9 SS 
+29054 19346 MT
+(session)SH
+11 SS 
+15912 20342 MT
+(private_data = { length_4)157 W
+30778 XM
+(, app_data, time_5ms)157 W
+45246 XM
+(, address)158 W
+52614 XM
+(,)SH
+9 SS 
+29244 20712 MT
+(app)SH
+41978 XM
+(ws_now)SH
+49946 XM
+(source)SH
+11 SS 
+15912 21708 MT
+(direction, time_sec)SH
+29005 XM
+(})SH
+9 SS 
+25431 22078 MT
+(ws_now)SH
+11 SS 
+15912 23074 MT
+(length_4)SH
+22178 XM
+(= length of)SH
+/NewCenturySchlbk-Italic SF
+27944 XM
+(app_data)SH
+/NewCenturySchlbk-Roman SF
+(,)SH
+9 SS 
+20338 23444 MT
+(app)SH
+11 SS 
+15912 24440 MT
+(app_data = application specific data,)SH
+/NewCenturySchlbk-Bold SF
+6931 26488 MT
+(Rules for)SH
+/NewCenturySchlbk-Italic SF
+12457 XM
+(safe_msg)SH
+/NewCenturySchlbk-Bold SF
+17354 XM
+(and)SH
+/NewCenturySchlbk-Italic SF
+19833 XM
+(private_msg)SH
+/NewCenturySchlbk-Bold SF
+(:)SH
+/Symbol SF
+7741 28294 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(Both sides discard messages with duplicate)
+170 W( timestamps and messages with the)169 W
+8553 29531 MT
+(wrong direction \050replay attempts\051;)SH
+/Symbol SF
+7741 31387 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(Both sides retain state of both the transmitted and the)
+272 W( received timestamps;)273 W
+8553 32624 MT
+(messages with out of order timestamps are discarded)
+398 W( \050limited pipelining is)397 W
+8553 33861 MT
+(possible if one were ambitious\051;)SH
+/Symbol SF
+7741 35717 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(Messages with invalid checksums are discarded;)SH
+/Symbol SF
+7741 37573 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(\050Discarded messages cause a security log entry to be made either locally or sent to)15 W
+8553 38810 MT
+(a security audit trail log process ???\051.)SH
+10 /Helvetica-BoldOblique AF
+6120 41637 MT
+(7.1.4. Library Routines)SH
+11 /NewCenturySchlbk-Roman AF
+6931 43123 MT
+(Kerberos uses two major libraries. The first)
+62 W( is a general purpose DES encryption library,)61 W
+6120 44360 MT
+(and the second is a Kerberos-specific library to help interface to the Kerberos protocols.)SH
+9 /Helvetica-Bold AF
+6120 47331 MT
+(7.1.4.1. DES)
+334 W( Encryption Library.)42 W
+11 /NewCenturySchlbk-Roman AF
+20986 XM
+(The DES encryption)
+42 W( library created for Kerberos is a software)43 W
+6120 48568 MT
+(only implementation)
+415 W( of the DES algorithm, certain modes of operation, and related)414 W
+6120 49805 MT
+(utilities. It)
+547 W( may be used independently of Kerberos, or may be replaced \050for example, for)121 W
+6120 51042 MT
+(export\051 by any other 64-bit block cipher algorithms which maintain a compatible interface.)SH
+9 /NewCenturySchlbk-Italic AF
+43887 52899 MT
+(5)SH
+11 /NewCenturySchlbk-Roman AF
+6931 53269 MT
+(The routines supported include)293 W
+/NewCenturySchlbk-Italic SF
+24307 XM
+(ecb mode, cbc)
+293 W( mode,)292 W
+/NewCenturySchlbk-Roman SF
+35867 XM
+(and)SH
+/NewCenturySchlbk-Italic SF
+38381 XM
+(pcbc mode)292 W
+/NewCenturySchlbk-Roman SF
+44985 XM
+(encryption and)292 W
+6120 54506 MT
+(decryption, a)125 W
+/NewCenturySchlbk-Italic SF
+13279 XM
+(cbc checksum mode)125 W
+/NewCenturySchlbk-Roman SF
+(, a)125 W
+/NewCenturySchlbk-Italic SF
+25086 XM
+(quadratic checksum mode)125 W
+/NewCenturySchlbk-Roman SF
+(, \050not DES\051, a DES)125 W
+/NewCenturySchlbk-Italic SF
+48927 XM
+(random)SH
+6120 55743 MT
+(key)SH
+/NewCenturySchlbk-Roman SF
+8155 XM
+(generator, a routine to)79 W
+/NewCenturySchlbk-Italic SF
+20234 XM
+(prompt)SH
+/NewCenturySchlbk-Roman SF
+24285 XM
+(and read a password without echoing, a)
+79 W( routine to one-)78 W
+6120 56980 MT
+(way-encrypt an arbitrary string)
+4 W( into a DES key, and a routine to create a DES key schedule)5 W
+6120 58217 MT
+(from a DES key.)SH
+6931 60444 MT
+(The implementation for)
+195 W( Berkeley 4.3 UNIX is described in a UNIX man page labelled)194 W
+/NewCenturySchlbk-Italic SF
+6120 61681 MT
+(des_crypt\0503\051)SH
+/NewCenturySchlbk-Roman SF
+(.)SH
+10800 50 6120 69916 UL
+8 SS 
+6857 71649 MT
+(5)SH
+10 SS 
+7302 72000 MT
+(pcbc is a modified cbc mode to provide indefinite error propagation on decryption.)SH
+/Helvetica-Bold SF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 29 29 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+44575 XM
+(Section E.2.1, page 29)SH
+9 SS 
+8280 8011 MT
+(7.1.4.2. Kerberos)
+454 W( Protocol)
+102 W( Library.)103 W
+11 /NewCenturySchlbk-Roman AF
+24089 XM
+(A Kerberos Protocol Library provides a callable interface to)103 W
+8280 9248 MT
+(the protocol described earlier.)SH
+9091 11475 MT
+(The implementation for)
+195 W( Berkeley 4.3 UNIX is described in a UNIX man page labelled)194 W
+/NewCenturySchlbk-Italic SF
+8280 12712 MT
+(kerberos\0503\051)SH
+/NewCenturySchlbk-Roman SF
+(.)SH
+/Helvetica-Bold SF
+8280 15802 MT
+(7.2. Issues)SH
+/NewCenturySchlbk-Roman SF
+9091 18170 MT
+(Master key management for the)
+235 W( servers is a yet unresolved operational problem.  To)236 W
+8280 19407 MT
+(maintain security during maintenance operation it is preferable)
+20 W( not to store the master key)19 W
+8280 20644 MT
+(on disk on)
+14 W( the server, yet it is an operational headache to manually enter the master key at)15 W
+8280 21881 MT
+(each server every)
+73 W( time it is restarted.  One possible solution is to build a simple hardware)72 W
+8280 23118 MT
+(box that supplies)
+109 W( the master key from a set of thumbwheels, over a serial port.  This box)110 W
+8280 24355 MT
+(could remain plugged)
+9 W( in to the KKDS in case a power loss causes it to reboot, yet it could be)8 W
+8280 25592 MT
+(unplugged \050or the thumbwheels set)
+82 W( to zero\051 when it is necessary to turn the machine over)83 W
+8280 26829 MT
+(to a field service engineer for maintenance.  A related requirement is to)
+20 W( completely clear all)19 W
+8280 28066 MT
+(copies of the master key, including any that may)
+97 W( be in virtual memory swap areas on the)98 W
+8280 29303 MT
+(disk, when sanitizing the KKDS for service.)SH
+9091 31530 MT
+(Key management for user keys also presents)
+262 W( some problems.  In order to make this)261 W
+8280 32767 MT
+(authentication mechanism as familiar)
+192 W( and transparent to the user as possible, keys are)193 W
+8280 34004 MT
+(based on a password of the)
+11 W( user's choice.  Because of this, Kerberos suffers from some of the)10 W
+8280 35241 MT
+(same problems as passwords.  In particular, users may choose keys which are easy to guess,)2 W
+8280 36478 MT
+(or they may record them where others can find them.)SH
+9091 38705 MT
+(Servers may require stable storage)
+326 W( for the recently used)325 W
+/NewCenturySchlbk-Italic SF
+40860 XM
+(authenticators)SH
+/NewCenturySchlbk-Roman SF
+(, in order to)325 W
+8280 39942 MT
+(eliminate replay attempts that)
+120 W( cross system boot or process restart boundaries.  Whether)121 W
+8280 41179 MT
+(this is needed depends on the)
+65 W( difference between the expected maximum downtime for the)64 W
+9 SS 
+36266 42068 MT
+(6)SH
+11 SS 
+8280 42438 MT
+(service and the size of the service's timestamp window.)SH
+9091 44665 MT
+(The KKDS workload needs to be estimated and)
+289 W( measured, since it \050they\051 can easily)288 W
+8280 45902 MT
+(become a bottleneck.  We will then need to determine how to tune)
+138 W( the KKDS's, and how)139 W
+8280 47139 MT
+(many are needed where.)SH
+9091 49366 MT
+(The server's private key is needed to decrypt the ticket for every application request.)
+6 W( This)316 W
+8280 50603 MT
+(subjects it to potential exposure much)
+195 W( more than is desirable for a private key.  In the)196 W
+8280 51840 MT
+(future, a means to automatically change the)
+103 W( server's private key on a daily basis, using a)102 W
+8280 53077 MT
+(higher level key, is desirable. Also, a hardware implementation of DES supporting)
+130 W( write-)131 W
+8280 54314 MT
+(only master keys is highly desirable for the Kerberos servers.)SH
+9091 56541 MT
+(Another problem that is not easily dealt with)
+333 W( at the moment is authenticating the)332 W
+8280 57778 MT
+(workstation to the user.  How does a user)
+210 W( know that an adversary hasn't modified the)211 W
+8280 59015 MT
+(software on the machine he or she is using so that it will store the secret)
+259 W( key?  One)258 W
+8280 60252 MT
+(approach to this problem is to have the user carry around a)20 W
+/NewCenturySchlbk-Italic SF
+39012 XM
+(boot disk)21 W
+/NewCenturySchlbk-Roman SF
+(. The)
+348 W( user would then)21 W
+8280 61489 MT
+(boot the machine)
+24 W( off that disk, and upon logging in, the authentication would be taken care)23 W
+8280 62726 MT
+(of by software on that disk.  The problem with this approach though, is that it)
+41 W( requires the)42 W
+8280 63963 MT
+(user to carry something extra around.)SH
+9091 66190 MT
+(Another approach, although not practical at)
+123 W( the moment, is the use of)122 W
+/NewCenturySchlbk-Italic SF
+46340 XM
+(smart cards)122 W
+/NewCenturySchlbk-Roman SF
+52937 XM
+(that)SH
+10800 50 8280 68664 UL
+8 SS 
+9017 70397 MT
+(6)SH
+10 SS 
+9462 70748 MT
+(The service's timestamp window is the valid range for time_sec)119 W
+43020 XM
+(for which the service will)119 W
+8 SS 
+39719 71099 MT
+(ws_now)SH
+10 SS 
+8280 72000 MT
+(honor a request.)SH
+/Helvetica-Bold SF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 30 30 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 30, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+11 /NewCenturySchlbk-Roman AF
+6120 8011 MT
+(would do the encryption for initial authentication internally.  With this approach, the key)94 W
+6120 9248 MT
+(never leaves the card, thus, there's nothing for)
+172 W( a spoofer to store except the session key)171 W
+6120 10485 MT
+(\050which has a limited lifetime\051.)SH
+6931 12712 MT
+(The representation of names as entered by the user is somewhat awkward.)SH
+6931 14939 MT
+(The timestamp granularity for requests -- 5 ms. -- is more than)
+179 W( sufficient for software)180 W
+6120 16176 MT
+(encryption, 4.3BSD, and)
+67 W( current processors, but may be too large for systems 5 years from)66 W
+6120 17413 MT
+(now. \050The granularity will have to be reduced and the)
+26 W( fields extended, and the systems will)27 W
+6120 18650 MT
+(have to provide higher resolution timestamps)
+46 W( than the 10ms currently provided by 4.3BSD)45 W
+6120 19887 MT
+(UNIX.\051)SH
+6931 22114 MT
+(The timestamp base used in the protocols is based)
+80 W( on the Berkeley UNIX clock standard)81 W
+6120 23351 MT
+(rather than the ARPA internet clock standard used elsewhere in TCP/IP)
+141 W( protocol family;)140 W
+6120 24588 MT
+(the IP standard should be used instead.)SH
+/Helvetica-Bold SF
+6120 27678 MT
+(7.3. Well Known Services)SH
+/NewCenturySchlbk-Roman SF
+6931 30046 MT
+(All Kerberos installations should adhere to the following conventions:)SH
+/Symbol SF
+7741 31852 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(The following literals are reserved Kerberos)
+326 W( principal names:)327 W
+/NewCenturySchlbk-Italic SF
+43270 XM
+({K,M}, krbtgt,)327 W
+8553 33089 MT
+(changepw, default)SH
+/NewCenturySchlbk-Roman SF
+(.)SH
+/Symbol SF
+7741 34945 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(The Kerberos service is accessible at)
+68 W( a well known UDP port, 750.  The Kerberos)67 W
+9 SS 
+43514 35849 MT
+(7)SH
+11 SS 
+8553 36219 MT
+(administration protocol is carried on via UDP port 751.)861 W
+45182 XM
+(In UNIX)862 W
+8553 37456 MT
+(implementations, these ports are named)830 W
+/NewCenturySchlbk-Italic SF
+33556 XM
+(kerberos)SH
+/NewCenturySchlbk-Roman SF
+38905 XM
+(and)SH
+/NewCenturySchlbk-Italic SF
+41956 XM
+(kerberos_master)SH
+/NewCenturySchlbk-Roman SF
+(,)SH
+8553 38693 MT
+(respectively.)SH
+/Helvetica-Bold SF
+6120 41783 MT
+(7.4. Revision History)SH
+10 /Helvetica-BoldOblique AF
+6120 44610 MT
+(7.4.1. Revision 7 --> Release v1.1)SH
+11 /NewCenturySchlbk-Roman AF
+6931 46096 MT
+(Revision 7 represents the definitive specification for the)
+28 W( August 1986 Athena staff release)29 W
+6120 47333 MT
+(of Kerberos.)SH
+/Symbol SF
+7741 49139 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(Protocol changed to only allow one ticket request up front.  This was done)
+230 W( to)229 W
+8553 50376 MT
+(decrease the complexity of the protocol, and)
+192 W( to allow implementations that are)193 W
+8553 51613 MT
+(forced to limit)
+5 W( the number of tickets returned to interact with others.  This change)4 W
+8553 52850 MT
+(was made)
+312 W( after reliability problems resulted from the complextity of the old)313 W
+8553 54087 MT
+(protocol, and network limitations.  For a while, both the old)
+48 W( protocol \050V3\051 and the)47 W
+8553 55324 MT
+(new protocol \050V4\051 will be supported.)SH
+10 /Helvetica-BoldOblique AF
+6120 58151 MT
+(7.4.2. Revision 6 --> Release v1.0)SH
+11 /NewCenturySchlbk-Roman AF
+6931 59637 MT
+(Revision 6 represents the definitive specification for the May 1986 Athena staff release of)42 W
+6120 60874 MT
+(Kerberos.)SH
+6931 63101 MT
+(Major changes:)SH
+/Symbol SF
+7741 64907 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+8553 XM
+(Moved the design proposals for authorization into)
+349 W( a new document, entitled)348 W
+8553 66144 MT
+("Project Athena Technical Plan -- Authorization Proposals".)SH
+10800 50 6120 69916 UL
+8 SS 
+6857 71649 MT
+(7)SH
+10 SS 
+7302 72000 MT
+(These two port assignments are not official ones.  An official assignment is needed.)SH
+/Helvetica-Bold SF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 31 31 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+44575 XM
+(Section E.2.1, page 31)SH
+11 /Symbol AF
+9901 8080 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Added Kerberos)154 W
+/NewCenturySchlbk-Italic SF
+19473 XM
+(err_reply)SH
+/NewCenturySchlbk-Roman SF
+24471 XM
+(message type and an)154 W
+/NewCenturySchlbk-Italic SF
+36012 XM
+(appl_err)SH
+/NewCenturySchlbk-Roman SF
+(, the)
+154 W( latter message for)155 W
+10713 9317 MT
+(use with)SH
+/NewCenturySchlbk-Italic SF
+15363 XM
+(safe_msg)SH
+/NewCenturySchlbk-Roman SF
+20250 XM
+(and)SH
+/NewCenturySchlbk-Italic SF
+22472 XM
+(private_msg)SH
+/NewCenturySchlbk-Roman SF
+(.)SH
+/Symbol SF
+9901 11173 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Disallowed wildcard lookups)
+324 W( for ticket requests \050either via an authentication)323 W
+10713 12410 MT
+(request or ticket-granting-ticket request\051; removed the)
+790 W( cleartext service)791 W
+/NewCenturySchlbk-Italic SF
+10713 13647 MT
+({name,instance})SH
+/NewCenturySchlbk-Roman SF
+19025 XM
+(and)SH
+/NewCenturySchlbk-Italic SF
+21247 XM
+(lifetime)SH
+/NewCenturySchlbk-Roman SF
+25363 XM
+(from the corresponding reply messages.)SH
+/Symbol SF
+9901 15503 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Added a)78 W
+/NewCenturySchlbk-Italic SF
+15330 XM
+(flags)SH
+/NewCenturySchlbk-Roman SF
+18158 XM
+(field to the beginning of the)
+78 W( ticket, to include the byte order of the)77 W
+10713 16740 MT
+(system granting the ticket.)SH
+/Symbol SF
+9901 18596 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Changed the name of the)SH
+/NewCenturySchlbk-Italic SF
+23801 XM
+(des_set_key)SH
+/NewCenturySchlbk-Roman SF
+29870 XM
+(routine to)SH
+/NewCenturySchlbk-Italic SF
+35172 XM
+(key_sched)SH
+/NewCenturySchlbk-Roman SF
+(.)SH
+/Symbol SF
+9901 20452 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Modified the)15 W
+/NewCenturySchlbk-Italic SF
+17470 XM
+(safe_msg)SH
+/NewCenturySchlbk-Roman SF
+22373 XM
+(and)SH
+/NewCenturySchlbk-Italic SF
+24611 XM
+(private_msg)SH
+/NewCenturySchlbk-Roman SF
+31104 XM
+(protocols to streamline them, removed the)16 W
+/NewCenturySchlbk-Italic SF
+10713 21689 MT
+(app_code)SH
+/NewCenturySchlbk-Roman SF
+(, and replaced the)SH
+/NewCenturySchlbk-Italic SF
+24751 XM
+(sequence)SH
+/NewCenturySchlbk-Roman SF
+29455 XM
+(number with timestamps.)SH
+/Symbol SF
+9901 23545 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Added the cleartext)448 W
+/NewCenturySchlbk-Italic SF
+22348 XM
+(exp_date)SH
+/NewCenturySchlbk-Roman SF
+27500 XM
+(of the requesting principal to the)447 W
+/NewCenturySchlbk-Italic SF
+47208 XM
+(auth_reply)SH
+/NewCenturySchlbk-Roman SF
+10713 24782 MT
+(message.)SH
+10 /Helvetica-BoldOblique AF
+8280 27609 MT
+(7.4.3. Rev 5)SH
+11 /NewCenturySchlbk-Roman AF
+9091 29095 MT
+(Major changes:)SH
+/Symbol SF
+9901 30901 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Split authentication and authorization into)
+233 W( two independent services; removed)234 W
+10713 32138 MT
+(authorization information from the authentication)
+77 W( protocols.  Redefined the term)76 W
+/NewCenturySchlbk-Italic SF
+10713 33375 MT
+(KDC/AS)SH
+/NewCenturySchlbk-Roman SF
+15659 XM
+(to be the Key Distribution Center/Authentication Server.)SH
+/Symbol SF
+9901 35231 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Changed the naming of users and services to a single, unified name model)
+232 W( of)233 W
+/NewCenturySchlbk-Italic SF
+10713 36468 MT
+({name, instance})195 W
+/NewCenturySchlbk-Roman SF
+(, with an optional)195 W
+/NewCenturySchlbk-Italic SF
+29262 XM
+(realm)SH
+/NewCenturySchlbk-Roman SF
+32714 XM
+(specified. Modified protocols to reflect)194 W
+10713 37705 MT
+(the new naming model.)SH
+/Symbol SF
+9901 39561 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Added a discussion of replication for the authentication database.)SH
+/Symbol SF
+9901 41417 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Added more discussion of realms.)SH
+/Symbol SF
+9901 43273 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Added protocols for secure conversations.)SH
+/Symbol SF
+9901 45129 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Deleted most references to the existing)SH
+/NewCenturySchlbk-Italic SF
+30812 XM
+(athena_reg)SH
+/NewCenturySchlbk-Roman SF
+36719 XM
+(Athena Unix login database.)SH
+10 /Helvetica-BoldOblique AF
+8280 47956 MT
+(7.4.4. Rev 4)SH
+11 /NewCenturySchlbk-Roman AF
+9091 49442 MT
+(Major changes:)SH
+/Symbol SF
+9901 51248 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Added an)
+226 W( authentication realm)227 W
+/NewCenturySchlbk-Italic SF
+27829 XM
+(realm)SH
+/NewCenturySchlbk-Roman SF
+31314 XM
+(to qualify all uses of the authentication)227 W
+10713 52485 MT
+(name)SH
+/NewCenturySchlbk-Italic SF
+14844 XM
+({name,instance})SH
+/NewCenturySchlbk-Roman SF
+(. This allowed)
+1012 W( future enhancements to support)1011 W
+10713 53722 MT
+(authentication across administratively independent Kerberos services, for)714 W
+10713 54959 MT
+(example between Athena's Kerberos and one at LCS.  \050This)
+262 W( is similar to the)261 W
+10713 56196 MT
+(Internet domains, but not necessarily equivalent.\051)SH
+/Symbol SF
+9901 58052 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Added the cleartext service)270 W
+/NewCenturySchlbk-Italic SF
+25915 XM
+({name,instance})SH
+/NewCenturySchlbk-Roman SF
+34497 XM
+(and)SH
+/NewCenturySchlbk-Italic SF
+36989 XM
+(lifetime)SH
+/NewCenturySchlbk-Roman SF
+41375 XM
+(to the authentication)271 W
+10713 59289 MT
+(reply message,)367 W
+/NewCenturySchlbk-Italic SF
+19272 XM
+(auth_reply)SH
+/NewCenturySchlbk-Roman SF
+(. This)
+1038 W( supported the use of wildcard requests by)366 W
+10713 60526 MT
+(returning to)
+37 W( the requestor a readable version of the specific servers and instances)38 W
+10713 61763 MT
+(selected.)SH
+/Symbol SF
+9901 63619 MT
+(\267)SH
+/NewCenturySchlbk-Roman SF
+10713 XM
+(Specified byte ordering in the least significant bit)
+287 W( of the)286 W
+/NewCenturySchlbk-Italic SF
+42213 XM
+(auth_msg_type)SH
+/NewCenturySchlbk-Roman SF
+(. The)286 W
+10713 64856 MT
+(transmitter of each message sends in its natural byte order, while the)
+175 W( receiver)176 W
+10713 66093 MT
+(converts the byte order as needed.)SH
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 32 32 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 32, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+12 SS 
+6120 8160 MT
+(8. Appendix II)SH
+/Helvetica SF
+(\320)SH
+/Helvetica-Bold SF
+(The Kerberos Encryption Library)SH
+11 /NewCenturySchlbk-Roman AF
+6931 10310 MT
+(The Kerberos encryption library supports various)
+391 W( encryption related operations. Its)390 W
+6120 11547 MT
+(contents differ from the)SH
+/NewCenturySchlbk-Italic SF
+18431 XM
+(crypt, setkey,)SH
+/NewCenturySchlbk-Roman SF
+25214 XM
+(and)SH
+/NewCenturySchlbk-Italic SF
+27436 XM
+(encrypt)SH
+/NewCenturySchlbk-Roman SF
+31448 XM
+(library routines.  In this description,)
+SH( eight)1 W
+6120 12784 MT
+(bit bytes are assumed; bit numbers start with the)
+241 W( least significant bit.  Array and bit)240 W
+6120 14021 MT
+(indices start with 0.  Operation of the library is described below.)SH
+6931 16248 MT
+(For each)
+47 W( key that may be simultaneously active, create a)48 W
+/NewCenturySchlbk-Italic SF
+36688 XM
+(Key_schedule)SH
+/NewCenturySchlbk-Roman SF
+43783 XM
+(structure, defined)48 W
+6120 17485 MT
+(in "krb.h" as a structure of 64 bit-fields:)SH
+/Courier SF
+11400 19102 MT
+(typedef bit_64  Key_schedule[16];)SH
+/NewCenturySchlbk-Roman SF
+6120 20844 MT
+(Next, create key schedules \050from the 8-byte)
+86 W( keys\051 as needed, using)85 W
+/NewCenturySchlbk-Italic SF
+41076 XM
+(krb_key_sched,)SH
+/NewCenturySchlbk-Roman SF
+49045 XM
+(prior to)85 W
+6120 22081 MT
+(using the encryption or checksum routines. Then set up the input)
+47 W( and output areas.  Make)48 W
+6120 23318 MT
+(sure to note the restrictions on lengths being multiples of eight)
+140 W( bytes. Finally, invoke an)139 W
+6120 24555 MT
+(encryption/decryption routine)
+510 W( such as)511 W
+/NewCenturySchlbk-Italic SF
+27668 XM
+(pcbc_encrypt,)SH
+/NewCenturySchlbk-Roman SF
+35266 XM
+(or, to generate a cryptographic)511 W
+6120 25792 MT
+(checksum, use a routine such as)SH
+/NewCenturySchlbk-Italic SF
+22792 XM
+(quad_cksum.)SH
+/NewCenturySchlbk-Roman SF
+6931 28019 MT
+(A)SH
+/NewCenturySchlbk-Italic SF
+8145 XM
+(C_Block)SH
+/NewCenturySchlbk-Roman SF
+12720 XM
+(structure is an 8)
+114 W( byte block used as the fundamental unit for data and keys,)113 W
+6120 29256 MT
+(defined as:)SH
+/Courier SF
+11400 30873 MT
+(typedef unsigned char C_Block[8];)SH
+/NewCenturySchlbk-Roman SF
+6120 32615 MT
+(The individual library functions)232 W
+/NewCenturySchlbk-Italic SF
+23629 XM
+(krb_read_password)SH
+/NewCenturySchlbk-Roman SF
+(,)SH
+/NewCenturySchlbk-Italic SF
+34370 XM
+(krb_string_to_key)SH
+/NewCenturySchlbk-Roman SF
+(,)SH
+/NewCenturySchlbk-Italic SF
+44159 XM
+(krb_random_key)SH
+/NewCenturySchlbk-Roman SF
+(,)SH
+/NewCenturySchlbk-Italic SF
+6120 33852 MT
+(krb_key_sched)SH
+/NewCenturySchlbk-Roman SF
+(,)SH
+/NewCenturySchlbk-Italic SF
+14004 XM
+(pcbc_encrypt)SH
+/NewCenturySchlbk-Roman SF
+(, and)SH
+/NewCenturySchlbk-Italic SF
+23313 XM
+(quad_cksum)SH
+/NewCenturySchlbk-Roman SF
+29997 XM
+(will now be described.)SH
+/Courier SF
+6120 35469 MT
+(int krb_read_password\050key, prompt, verify\051)SH
+11400 36583 MT
+(C_Block *key;)SH
+11400 37697 MT
+(char *prompt;)1980 W
+11400 38811 MT
+(int verify;)2640 W
+/NewCenturySchlbk-Italic SF
+6931 41038 MT
+(krb_read_password)SH
+/NewCenturySchlbk-Roman SF
+17159 XM
+(writes the string specified by)25 W
+/NewCenturySchlbk-Italic SF
+32309 XM
+(prompt)SH
+/NewCenturySchlbk-Roman SF
+36306 XM
+(to the)
+25 W( standard output, turns off)24 W
+6120 42275 MT
+(echo \050if)
+154 W( possible\051 and reads an input string from standard input until terminated with a)155 W
+6120 43512 MT
+(newline. If)324 W
+/NewCenturySchlbk-Italic SF
+12184 XM
+(verify)SH
+/NewCenturySchlbk-Roman SF
+15330 XM
+(is non-zero, it prompts and reads)
+9 W( input again, for use in applications such)8 W
+6120 44749 MT
+(as changing a password; both versions are compared, and the input is)
+33 W( requested repeatedly)34 W
+6120 45986 MT
+(until they match.  Then)241 W
+/NewCenturySchlbk-Italic SF
+19685 XM
+(krb_read_password)SH
+/NewCenturySchlbk-Roman SF
+30129 XM
+(converts the input string into a valid)
+241 W( key,)240 W
+6120 47223 MT
+(internally using the)41 W
+/NewCenturySchlbk-Italic SF
+16667 XM
+(krb_string_to_key)SH
+/NewCenturySchlbk-Roman SF
+25959 XM
+(routine. The)
+390 W( newly created key is copied to the area)42 W
+6120 48460 MT
+(pointed to by)
+32 W( the)31 W
+/NewCenturySchlbk-Italic SF
+15116 XM
+(key)SH
+/NewCenturySchlbk-Roman SF
+17103 XM
+(argument.)SH
+/NewCenturySchlbk-Italic SF
+23077 XM
+(krb_read_password)SH
+/NewCenturySchlbk-Roman SF
+33311 XM
+(returns a zero if no errors occurred, or)31 W
+6120 49697 MT
+(-1 indicating that an error occurred trying to manipulate the terminal echo.)SH
+/Courier SF
+6120 51314 MT
+(int krb_string_to_key\050s, k\051)SH
+11400 52428 MT
+(char *s;)1980 W
+11400 53542 MT
+(C_Block *k;)SH
+/NewCenturySchlbk-Italic SF
+6931 55769 MT
+(krb_string_to_key)SH
+/NewCenturySchlbk-Roman SF
+16494 XM
+(converts a null-terminated string of arbitrary length \050e.g., a)
+312 W( user's)313 W
+6120 57006 MT
+(password\051 into an 8 byte key, with odd byte parity, per the FIPS Data Encryption Standard)20 W
+6120 58243 MT
+(\050DES\051 specification.  A one-way function is used)
+125 W( to convert the string to a key, making it)126 W
+6120 59480 MT
+(very difficult to reconstruct the string, given)
+114 W( the key.  The)113 W
+/NewCenturySchlbk-Italic SF
+37155 XM
+(s)SH
+/NewCenturySchlbk-Roman SF
+38062 XM
+(argument is a pointer to the)113 W
+6120 60717 MT
+(string, and)55 W
+/NewCenturySchlbk-Italic SF
+12102 XM
+(k)SH
+/NewCenturySchlbk-Roman SF
+13075 XM
+(should point)
+55 W( to a)56 W
+/NewCenturySchlbk-Italic SF
+22128 XM
+(C_Block)SH
+/NewCenturySchlbk-Roman SF
+26645 XM
+(supplied by the caller to receive the generated key.)56 W
+6120 61954 MT
+(No meaningful)
+127 W( value is returned. Void is not used for compatibility with other compilers.)126 W
+6120 63191 MT
+(The algorithm for the conversion is described below.)SH
+6931 65418 MT
+(The first step is to flatten the input string into a stream of 7*length\050s\051 bits)SH
+/NewCenturySchlbk-Italic SF
+45086 XM
+(b)SH
+/NewCenturySchlbk-Roman SF
+46004 XM
+(as follows:)SH
+/Courier SF
+11400 67035 MT
+(b[0] = bit 0 of s[0])SH
+11400 68149 MT
+(b[1] = bit 1 of s[0])SH
+11400 69263 MT
+(...)SH
+11400 70377 MT
+(b[6] = bit 6 of s[0])SH
+11400 71491 MT
+(b[7] = bit 0 of s[1])SH
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 33 33 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+44575 XM
+(Section E.2.1, page 33)SH
+11 /Courier AF
+13560 7886 MT
+(b[8] = bit 1 of s[1])SH
+13560 9000 MT
+(...)SH
+13560 10114 MT
+(b[7n + m] \0500<=m<=6\051 = bit m of s[n])SH
+/NewCenturySchlbk-Roman SF
+9091 12341 MT
+(In other words, the eighth \050most significant\051 bit of each)
+211 W( byte of)212 W
+/NewCenturySchlbk-Italic SF
+43677 XM
+(s)SH
+/NewCenturySchlbk-Roman SF
+44683 XM
+(is dropped, and the)212 W
+8280 13578 MT
+(remaining bits are shifted over to fill in the gaps.)SH
+9091 15805 MT
+(The second step is to "fan-fold" and XOR)222 W
+/NewCenturySchlbk-Italic SF
+31738 XM
+(b)SH
+/NewCenturySchlbk-Roman SF
+32878 XM
+(into a string)222 W
+/NewCenturySchlbk-Italic SF
+40111 XM
+(b')SH
+/NewCenturySchlbk-Roman SF
+41474 XM
+(exactly 56 bits long.  For)221 W
+8280 17042 MT
+(example, if)SH
+/NewCenturySchlbk-Italic SF
+14173 XM
+(b)SH
+/NewCenturySchlbk-Roman SF
+15091 XM
+(is 63 bits long:)SH
+/Courier SF
+13560 18659 MT
+(b'[55] = b[55] XOR b[56],)SH
+13560 19773 MT
+(b'[54] = b[54] XOR b[57],)SH
+13560 20887 MT
+(...)SH
+13560 22001 MT
+(b'[49] = b[49] XOR b[62])SH
+/NewCenturySchlbk-Roman SF
+9091 24228 MT
+(\050The two steps described above can easily be combined.\051)SH
+9091 26455 MT
+(A key is 8 bytes long, but with odd parity in each byte; the least significant bit of the)
+30 W( byte)31 W
+8280 27692 MT
+(is the parity bit.  The key is formed from)27 W
+/NewCenturySchlbk-Italic SF
+29467 XM
+(b')SH
+/NewCenturySchlbk-Roman SF
+30635 XM
+(above in two steps.  The first step is to form the)26 W
+8280 28929 MT
+(key with zero parity as follows:)SH
+/Courier SF
+13560 30546 MT
+(bit 1 of k[0] = b'[0])SH
+13560 31660 MT
+(bit 2 of k[0] = b'[1])SH
+13560 32774 MT
+(bit 1 of k[1] = b'[7])SH
+13560 33888 MT
+(...)SH
+13560 35002 MT
+(bit m of k[n] = b'[7n+m-1]  \0501<=m<=7\051 and)SH
+13560 36116 MT
+(bit 0 of k[n] = 0)SH
+/NewCenturySchlbk-Roman SF
+9091 38343 MT
+(In other words, a zero)
+73 W( parity bit is inserted into the stream)74 W
+/NewCenturySchlbk-Italic SF
+40268 XM
+(b')SH
+/NewCenturySchlbk-Roman SF
+41484 XM
+(every seven bits, resulting)74 W
+8280 39580 MT
+(in the array)77 W
+/NewCenturySchlbk-Italic SF
+14893 XM
+(k)SH
+/NewCenturySchlbk-Roman SF
+15888 XM
+(of eight 8-bit bytes.  The second step is to set or clear the parity bit in each)77 W
+8280 40817 MT
+(byte of)SH
+/NewCenturySchlbk-Italic SF
+11991 XM
+(k)SH
+/NewCenturySchlbk-Roman SF
+12909 XM
+(as appropriate.)SH
+9091 43044 MT
+(Next, the DES)
+73 W( key schedule of)74 W
+/NewCenturySchlbk-Italic SF
+25270 XM
+(k)SH
+/NewCenturySchlbk-Roman SF
+26262 XM
+(is computed using)74 W
+/NewCenturySchlbk-Italic SF
+35983 XM
+(krb_key_sched.)SH
+/NewCenturySchlbk-Roman SF
+44321 XM
+(Then the 64 bit DES)74 W
+8280 44281 MT
+(cipher-block-chaining \050CBC\051 checksum of the original string)
+139 W( is computed, and finally, the)138 W
+8280 45518 MT
+(CBC checksum is forced to odd parity.  The generated checksum is the resulting key.)SH
+9091 47745 MT
+([CBC checksumming produces an 8 byte cryptographic checksum by)
+190 W( cipher-block-chain)191 W
+8280 48982 MT
+(encrypting the cleartext data.  All of the)
+106 W( ciphertext output is discarded, except the last 8-)105 W
+8280 50219 MT
+(byte ciphertext block.  If the cleartext length is not an)
+67 W( integral multiple of eight bytes, the)68 W
+8280 51456 MT
+(last cleartext block is zero filled \050highest addresses\051.  The output is always eight bytes.])SH
+/Courier SF
+8280 53073 MT
+(int krb_random_key\050key\051)SH
+13560 54187 MT
+(C_Block *key;)5280 W
+/NewCenturySchlbk-Italic SF
+9091 56414 MT
+(krb_random_key)SH
+/NewCenturySchlbk-Roman SF
+18001 XM
+(generates a random encryption key \050eight bytes\051, set to)
+149 W( odd parity per)148 W
+8280 57651 MT
+(FIPS specifications.  The routine may use any algorithm it wishes to generate a key at)192 W
+8280 58888 MT
+(random. The)
+428 W( caller must supply space for the output key, pointed to by the argument)61 W
+/NewCenturySchlbk-Italic SF
+53124 XM
+(key,)SH
+/NewCenturySchlbk-Roman SF
+8280 60125 MT
+(then after calling)49 W
+/NewCenturySchlbk-Italic SF
+17524 XM
+(krb_random_key)SH
+/NewCenturySchlbk-Roman SF
+26334 XM
+(should call the)49 W
+/NewCenturySchlbk-Italic SF
+34231 XM
+(krb_key_sched)SH
+/NewCenturySchlbk-Roman SF
+41858 XM
+(routine when needed.)
+49 W( No)405 W
+8280 61362 MT
+(meaningful value is returned.  Void is not used for compatibility with other compilers.)SH
+/Courier SF
+8280 62979 MT
+(int krb_key_sched\050k, schedule\051)SH
+13560 64093 MT
+(C_Block *k;)5280 W
+13560 65207 MT
+(Key_schedule schedule;)1980 W
+/NewCenturySchlbk-Italic SF
+9091 67434 MT
+(krb_key_sched)SH
+/NewCenturySchlbk-Roman SF
+16986 XM
+(calculates a DES key schedule from all eight)
+317 W( bytes of the input key,)316 W
+8280 68671 MT
+(pointed to by)
+54 W( the)55 W
+/NewCenturySchlbk-Italic SF
+17368 XM
+(k)SH
+/NewCenturySchlbk-Roman SF
+18341 XM
+(argument, and outputs the schedule into the)55 W
+/NewCenturySchlbk-Italic SF
+41704 XM
+(Key_schedule)SH
+/NewCenturySchlbk-Roman SF
+48806 XM
+(indicated by)55 W
+8280 69908 MT
+(the)SH
+/NewCenturySchlbk-Italic SF
+10304 XM
+(schedule)SH
+/NewCenturySchlbk-Roman SF
+15014 XM
+(argument. Make sure to pass a valid eight byte key; no padding)
+66 W( is done.  The)65 W
+8280 71145 MT
+(key schedule may then be used in subsequent)
+102 W( encryption/decryption/checksum operations.)103 W
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 34 34 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 34, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+11 /NewCenturySchlbk-Roman AF
+6120 8011 MT
+(Many key schedules may be cached by the user for later use.  The user is responsible for)119 W
+6120 9248 MT
+(clearing keys and schedules as soon as they)
+368 W( are no longer needed, to prevent their)369 W
+6120 10485 MT
+(disclosure. The)
+700 W( routine also checks the key parity,)
+197 W( and returns 0 if the key is good, -1)196 W
+6120 11722 MT
+(indicating a key parity error, or -2 indicating use of an illegal weak key.)
+209 W( If an error is)210 W
+6120 12959 MT
+(returned, the key schedule was not created.)SH
+/Courier SF
+6120 14576 MT
+(int pcbc_encrypt\050input, output, length, schedule, ivec, encrypt\051)SH
+11400 15690 MT
+(C_Block *input;)5280 W
+11400 16804 MT
+(C_Block *output;)5280 W
+11400 17918 MT
+(long length;)7260 W
+11400 19032 MT
+(Key_schedule schedule;)1980 W
+11400 20146 MT
+(C_Block *ivec;)5280 W
+11400 21260 MT
+(int encrypt;)7920 W
+/NewCenturySchlbk-Italic SF
+6931 23487 MT
+(pcbc_encrypt)SH
+/NewCenturySchlbk-Roman SF
+13924 XM
+(encrypts/decrypts using a modified)
+212 W( block chaining mode.  It differs in its)211 W
+6120 24724 MT
+(error propagation characteristics from the DES cipher-block-chaining)
+96 W( \050CBC\051 mode, in that)97 W
+6120 25961 MT
+(modification of)
+207 W( a single bit of the ciphertext will affect ALL the subsequent \050decrypted\051)206 W
+6120 27198 MT
+(cleartext; whereas with CBC, modifying a)
+33 W( single bit of the ciphertext, then decrypting, only)34 W
+6120 28435 MT
+(affects the resulting cleartext)
+195 W( from the modified block and the succeeding block.  PCBC)194 W
+6120 29672 MT
+(mode, on encryption, "xors" both the cleartext of block N and the)
+68 W( ciphertext resulting from)69 W
+6120 30909 MT
+(block N with the cleartext for block N+1 prior to encrypting block)
+30 W( N+1.  By "ciphertext", we)29 W
+6120 32146 MT
+(mean ciphertext generated using the DES Electronic Code Book \050ECB\051 encryption mode.)SH
+6931 34373 MT
+(If the)61 W
+/NewCenturySchlbk-Italic SF
+10132 XM
+(encrypt)SH
+/NewCenturySchlbk-Roman SF
+14205 XM
+(argument is non-zero, the routine encrypts the)
+61 W( cleartext data pointed to by)62 W
+6120 35610 MT
+(the)SH
+/NewCenturySchlbk-Italic SF
+8209 XM
+(input)SH
+/NewCenturySchlbk-Roman SF
+11377 XM
+(argument into the ciphertext pointed to by the)130 W
+/NewCenturySchlbk-Italic SF
+36334 XM
+(output)SH
+/NewCenturySchlbk-Roman SF
+40073 XM
+(argument, using the key)130 W
+6120 36847 MT
+(schedule provided by the)83 W
+/NewCenturySchlbk-Italic SF
+19373 XM
+(schedule)SH
+/NewCenturySchlbk-Roman SF
+24100 XM
+(argument, and initialization vector provided by the)83 W
+/NewCenturySchlbk-Italic SF
+51006 XM
+(ivec)SH
+/NewCenturySchlbk-Roman SF
+6120 38084 MT
+(argument. If)
+446 W( the)70 W
+/NewCenturySchlbk-Italic SF
+15391 XM
+(length)SH
+/NewCenturySchlbk-Roman SF
+18947 XM
+(argument is not an integral multiple of eight bytes, the last block)70 W
+6120 39321 MT
+(is copied zero filled \050highest addresses\051.  The output is always an integral multiple)
+52 W( of eight)53 W
+6120 40558 MT
+(bytes.)SH
+6931 42785 MT
+(If)SH
+/NewCenturySchlbk-Italic SF
+8160 XM
+(encrypt)SH
+/NewCenturySchlbk-Roman SF
+12280 XM
+(is zero, the routine decrypts the \050now\051 ciphertext data pointed)
+108 W( to by the)107 W
+/NewCenturySchlbk-Italic SF
+50188 XM
+(input)SH
+/NewCenturySchlbk-Roman SF
+6120 44022 MT
+(argument into \050now\051 cleartext pointed to by the)148 W
+/NewCenturySchlbk-Italic SF
+31688 XM
+(output)SH
+/NewCenturySchlbk-Roman SF
+35445 XM
+(argument using the key schedule)149 W
+6120 45259 MT
+(provided by the)10 W
+/NewCenturySchlbk-Italic SF
+14343 XM
+(schedule)SH
+/NewCenturySchlbk-Roman SF
+18997 XM
+(argument, and initialization vector provided by the)10 W
+/NewCenturySchlbk-Italic SF
+45391 XM
+(ivec)SH
+/NewCenturySchlbk-Roman SF
+47620 XM
+(argument.)SH
+6120 46496 MT
+(Decryption ALWAYS)
+109 W( operates on integral multiples of 8 bytes, so it will round the)110 W
+/NewCenturySchlbk-Italic SF
+49740 XM
+(length)SH
+/NewCenturySchlbk-Roman SF
+6120 47733 MT
+(provided up to the appropriate multiple. Consequently, it will always produce the rounded-)42 W
+6120 48970 MT
+(up number)
+282 W( of bytes of output cleartext. The application must determine if the output)283 W
+6120 50207 MT
+(cleartext was zero-padded due to original cleartext lengths that)
+30 W( were not integral multiples)29 W
+6120 51444 MT
+(of 8.)SH
+6931 53671 MT
+(No errors)
+213 W( or meaningful values are returned.  Void is not used for compatibility with)214 W
+6120 54908 MT
+(other compilers.)SH
+/Courier SF
+6120 56525 MT
+(unsigned long quad_cksum\050input, output, length, out_count, seed\051)SH
+11400 57639 MT
+(C_Block *input;)5280 W
+11400 58753 MT
+(C_Block *output;)5280 W
+11400 59867 MT
+(long length;)7260 W
+11400 60981 MT
+(int out_count;)7920 W
+11400 62095 MT
+(C_BLOCK *seed;)5280 W
+/NewCenturySchlbk-Roman SF
+6931 64322 MT
+(The)SH
+/NewCenturySchlbk-Italic SF
+9251 XM
+(quad_cksum)SH
+/NewCenturySchlbk-Roman SF
+15992 XM
+(routine is)
+57 W( based on the Quadratic Congruential Manipulation Detection)56 W
+6120 65559 MT
+(Code described by Jueneman et al.)408 W
+/NewCenturySchlbk-Italic SF
+27219 XM
+(quad_cksum)SH
+/NewCenturySchlbk-Roman SF
+34311 XM
+(produces a checksum by)
+408 W( chaining)409 W
+6120 66796 MT
+(quadratic operations on the cleartext data pointed to by the)164 W
+/NewCenturySchlbk-Italic SF
+38343 XM
+(input)SH
+/NewCenturySchlbk-Roman SF
+41545 XM
+(argument. The)163 W
+/NewCenturySchlbk-Italic SF
+49740 XM
+(length)SH
+/NewCenturySchlbk-Roman SF
+6120 68033 MT
+(argument specifies the length of the input)
+72 W( -- only exactly that many bytes are included for)73 W
+6120 69270 MT
+(the checksum, without any padding.)SH
+6931 71497 MT
+(The algorithm may be iterated over the same input data, if)
+15 W( the)14 W
+/NewCenturySchlbk-Italic SF
+39326 XM
+(out_count)SH
+/NewCenturySchlbk-Roman SF
+44579 XM
+(argument is 2, 3)14 W
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Page: 35 35 
+BS
+0 SI
+10 /Helvetica-Bold AF
+8280 4329 MT
+(Athena Technical Plan)SH
+44575 XM
+(Section E.2.1, page 35)SH
+11 /NewCenturySchlbk-Roman AF
+8280 8011 MT
+(or 4, and the optional)56 W
+/NewCenturySchlbk-Italic SF
+19755 XM
+(output)SH
+/NewCenturySchlbk-Roman SF
+23420 XM
+(argument is a non-null pointer .)
+56 W( The)
+420 W( default is one iteration,)57 W
+8280 9248 MT
+(and it will not run more than 4 times. Multiple iterations run)
+68 W( slower, but provide a longer)67 W
+8280 10485 MT
+(checksum if desired. The)110 W
+/NewCenturySchlbk-Italic SF
+21640 XM
+(seed)SH
+/NewCenturySchlbk-Roman SF
+24193 XM
+(argument provides an 8-byte seed for the)
+110 W( first iteration.  If)111 W
+8280 11722 MT
+(multiple iterations are requested, the results of one iteration)
+43 W( are automatically used as the)42 W
+8280 12959 MT
+(seed for the next iteration.)SH
+9091 15186 MT
+(It returns both an unsigned long checksum value, and if the)13 W
+/NewCenturySchlbk-Italic SF
+40020 XM
+(output)SH
+/NewCenturySchlbk-Roman SF
+43643 XM
+(argument is not a null)14 W
+8280 16423 MT
+(pointer, up to 16 bytes of the computed checksum are written into the output.)SH
+9091 18650 MT
+(Modifications to the algorithm described)
+411 W( by Jueneman et al. are as follows.  The)410 W
+8280 19887 MT
+(accumulator \050referred)
+96 W( to as Z in the paper\051 is 64 bits, as is its initial value \050referred to as)97 W
+8280 21124 MT
+(C\051; and the modulus N is 2**63)
+53 W( - 1 rather than the suggested 2**31-1.  The optional secret)52 W
+8280 22361 MT
+(seed S is not implemented.)SH
+10 /Helvetica-Bold AF
+8280 75600 MT
+(Kerberos Authentication and Authorization System)SH
+49521 XM
+(27 Oct 1988)SH
+ES
+%%Page: 36 36 
+BS
+0 SI
+10 /Helvetica-Bold AF
+6120 4329 MT
+(Page 36, Section E.2.1)SH
+42250 XM
+(Athena Technical Plan)SH
+11 SS 
+6120 8002 MT
+(References)SH
+/NewCenturySchlbk-Bold SF
+6120 10370 MT
+(1.)SH
+/NewCenturySchlbk-Roman SF
+7547 XM
+(Bauer, R.K., Berson, A., and Feiertag, R.J.  "A Key Distribution Protocol Using Event)SH
+6120 11607 MT
+(Markers".)SH
+/NewCenturySchlbk-Italic SF
+11803 XM
+(ACM Transactions on Computer Systems 1)SH
+/NewCenturySchlbk-Roman SF
+(, 3 \050August 1983\051, 249-255.)SH
+/NewCenturySchlbk-Bold SF
+6120 13655 MT
+(2.)SH
+/NewCenturySchlbk-Roman SF
+7669 XM
+(Birrell, Andrew D. et. al.  "Grapevine: An Exercise in Distributed Computing".)SH
+/NewCenturySchlbk-Italic SF
+48135 XM
+(CACM)SH
+6120 14892 MT
+(25)SH
+/NewCenturySchlbk-Roman SF
+(, 4 \050April 1982\051, 260-274.)SH
+/NewCenturySchlbk-Bold SF
+6120 16940 MT
+(3.)SH
+/NewCenturySchlbk-Roman SF
+7669 XM
+(Birrell, A.D.  "Secure Communication Using Remote Procedure Calls".)SH
+/NewCenturySchlbk-Italic SF
+43992 XM
+(ACM)SH
+6120 18177 MT
+(Transactions on Computer Systems 3)SH
+/NewCenturySchlbk-Roman SF
+(, 1 \050February 1985\051, 1-14.)SH
+/NewCenturySchlbk-Bold SF
+6120 20225 MT
+(4.)SH
+/NewCenturySchlbk-Roman SF
+7669 XM
+(Denning, Dorothy E. and Sacco, Giovanni Maria.  "Timestamps in Key Distribution)SH
+6120 21462 MT
+(Protocols".)SH
+/NewCenturySchlbk-Italic SF
+12112 XM
+(CACM 24)SH
+/NewCenturySchlbk-Roman SF
+(, 8 \050August 1981\051, 533-536.)SH
+/NewCenturySchlbk-Bold SF
+6120 23510 MT
+(5.)SH
+/NewCenturySchlbk-Roman SF
+7669 XM
+(National Bureau of Standards.  "DES Modes of Operation".)SH
+/NewCenturySchlbk-Italic SF
+38328 XM
+(Federal Information)SH
+6120 24747 MT
+(Processing Standards Publication 81)SH
+/NewCenturySchlbk-Roman SF
+25152 XM
+(\0501980\051.)SH
+/NewCenturySchlbk-Bold SF
+6120 26795 MT
+(6.)SH
+/NewCenturySchlbk-Roman SF
+7669 XM
+(National Bureau of Standards.  "Data Encryption Standard".)SH
+/NewCenturySchlbk-Italic SF
+39290 XM
+(Federal Information)SH
+6120 28032 MT
+(Processing Standards Publication 46)SH
+/NewCenturySchlbk-Roman SF
+25152 XM
+(\0501977\051.)SH
+/NewCenturySchlbk-Bold SF
+6120 30080 MT
+(7.)SH
+/NewCenturySchlbk-Roman SF
+7669 XM
+(Gifford, D.K.  "Cryptographic Sealing for Information Secrecy and Authentication".)SH
+/NewCenturySchlbk-Italic SF
+6120 31317 MT
+(CACM 25)SH
+/NewCenturySchlbk-Roman SF
+(, 4 \050April 1982\051, 274-286.)SH
+/NewCenturySchlbk-Bold SF
+6120 33365 MT
+(8.)SH
+/NewCenturySchlbk-Roman SF
+7669 XM
+(Girling, C. G.)SH
+/NewCenturySchlbk-Italic SF
+15113 XM
+(Representation and Authentication on Computer Networks)SH
+/NewCenturySchlbk-Roman SF
+(. Ph.D.)
+306 W( Th.,)SH
+6120 34602 MT
+(University of Cambridge, April 1983. Technical report 37.)SH
+/NewCenturySchlbk-Bold SF
+6120 36650 MT
+(9.)SH
+/NewCenturySchlbk-Roman SF
+7669 XM
+(Jaeger, Eric.  Protocol for Trusted Third Party Access Control.  Bachelor Thesis,)SH
+6120 37887 MT
+(Massachusetts Institute of Technology, February 1985.)SH
+/NewCenturySchlbk-Bold SF
+6120 39935 MT
+(10.)SH
+/NewCenturySchlbk-Roman SF
+8178 XM
+(Jueneman, R.R. et. al.  "Message Authentication".)SH
+/NewCenturySchlbk-Italic SF
+34194 XM
+(IEEE Communications 23)SH
+/NewCenturySchlbk-Roman SF
+(, 9)SH
+6120 41172 MT
+(\050September 1985\051, 29-40.)SH
+/NewCenturySchlbk-Bold SF
+6120 43220 MT
+(11.)SH
+/NewCenturySchlbk-Roman SF
+8056 XM
+(Kent, Steven T.  Encryption-Based Protection Protocols for Interactive User-Computer)SH
+6120 44457 MT
+(Communications. Master)
+306 W( Th., Massachusetts Institute of Technology,May 1976. MIT-LCS)SH
+6120 45694 MT
+(Tech Report TR-162.)SH
+/NewCenturySchlbk-Bold SF
+6120 47742 MT
+(12.)SH
+/NewCenturySchlbk-Roman SF
+8178 XM
+(Miller, Steven P.  Security for Local Area Networks.  Tech. Rept. TR-227, Digital)SH
+6120 48979 MT
+(Equipment Corporation, August, 1983.)SH
+/NewCenturySchlbk-Bold SF
+6120 51027 MT
+(13.)SH
+/NewCenturySchlbk-Roman SF
+8178 XM
+(Needham, R.M. and Herbert, A.J..)SH
+/NewCenturySchlbk-Italic SF
+26234 XM
+(The Cambridge Distributed Computing System.)SH
+/NewCenturySchlbk-Roman SF
+6120 52264 MT
+(Addison-Wesley, London, 1982.)SH
+/NewCenturySchlbk-Bold SF
+6120 54312 MT
+(14.)SH
+/NewCenturySchlbk-Roman SF
+8178 XM
+(Needham, R. M. and Schroeder M. D.  "Using Encryption for Authentication in Large)SH
+6120 55549 MT
+(Networks of Computers".)SH
+/NewCenturySchlbk-Italic SF
+19528 XM
+(CACM 21)SH
+/NewCenturySchlbk-Roman SF
+(, 12 \050Dec 78\051, 993-999.)SH
+/NewCenturySchlbk-Bold SF
+6120 57597 MT
+(15.)SH
+/NewCenturySchlbk-Roman SF
+8178 XM
+(Neuman, Barry Clifford.  Sentry, A Discretionary Access Control Server.  Bachelor)SH
+6120 58834 MT
+(Thesis, Massachusetts Institute of Technology, May 1985.)SH
+/NewCenturySchlbk-Bold SF
+6120 60882 MT
+(16.)SH
+/NewCenturySchlbk-Roman SF
+8178 XM
+(Popek, Gerald J. and Kline, Charles S.  "Encryption and Secure Computer Networks".)SH
+/NewCenturySchlbk-Italic SF
+6120 62119 MT
+(Computing Surveys 11)SH
+/NewCenturySchlbk-Roman SF
+(, 4 \050December 1979\051, 331-356.)SH
+/NewCenturySchlbk-Bold SF
+6120 64167 MT
+(17.)SH
+/NewCenturySchlbk-Roman SF
+8178 XM
+(Voydock, Victor L., and Kent, Stephen T.  "Security Mechanisms in High-Level)SH
+6120 65404 MT
+(Network Protocols".)SH
+/NewCenturySchlbk-Italic SF
+16840 XM
+(Computing Surveys 15)SH
+/NewCenturySchlbk-Roman SF
+(, 2 \050June 1983\051, 135-171.)SH
+10 /Helvetica-Bold AF
+6120 75600 MT
+(Kerberos Authentication and Authorization System)SH
+47361 XM
+(27 Oct 1988)SH
+ES
+%%Trailer
+%%Pages: 36 
+%%DocumentFonts: NewCenturySchlbk-Roman Helvetica Helvetica-Bold Symbol NewCenturySchlbk-Bold NewCenturySchlbk-Italic Times-Roman Helvetica-BoldOblique Courier NewCenturySchlbk-BoldItalic

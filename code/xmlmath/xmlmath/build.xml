@@ -1,0 +1,194 @@
+<project name="XML math expressions." default="dist" basedir=".">
+
+	<property name="libs" value="lib/xbean.jar:lib/jsr173_1.0_api.jar:lib/junit.jar"/>
+	<property name="version" value="1.1-SNAPSHOT"/>
+	<property name="src.main" location="src/main/java"/>
+	<property name="src.test" location="src/test/java"/>
+	<property name="build.main" location="build/main"/>
+	<property name="build.test" location="build/test"/>
+	<property name="dist" location="dist"/>
+	<property name="reports.test" location="${dist}/test-reports"/>
+	<property name="cobertura.dir" value="/usr/local/cobertura"/>
+	<property name="coveragereport.dir" location="${dist}/cobertura-reports"/>
+	<property name="build.test" location="build/test"/>
+	<property name="instrumented.dir" location="build/instrumented"/>
+
+	<path id="cobertura.classpath">
+	    <fileset dir="${cobertura.dir}">
+	        <include name="cobertura.jar"/>
+	        <include name="lib/**/*.jar"/>
+	    </fileset>
+	</path>
+
+	<taskdef classpathref="cobertura.classpath" resource="tasks.properties"/>
+
+	<taskdef name="xmlbean"
+		classname="org.apache.xmlbeans.impl.tool.XMLBean"
+		classpath="${libs}"/>
+	
+	<description>
+		Erik van Zijst, erik@marketxs.com
+		06.apr.2006
+	</description>
+	
+	<target name="init">
+		<tstamp/>
+		<mkdir dir="${build.main}"/>
+		<mkdir dir="${build.test}"/>
+		<mkdir dir="${dist}"/>
+		<mkdir dir="${dist}/doc"/>
+	</target>
+	
+	<target name="stubs" depends="init" description="Generates the xmlbeans schema stubs for the xmlmath schema.">
+		<xmlbean classpath="${libs}" classgendir="${build.main}"
+			srcgendir="${build.main}" javasource="1.5" memorymaximumsize="512m">
+			<fileset dir="src/main/resources/" includes="xmlmath.xsd"/>
+		</xmlbean>
+	</target>
+	
+	<target name="teststubs" depends="init" description="Generates the xmlbeans schema stubs for the xmlmath schema tests.">
+		<xmlbean classpath="${libs}" classgendir="${build.test}"
+			srcgendir="${build.test}" javasource="1.5" memorymaximumsize="512m">
+			<fileset dir="src/test/resources/" includes="test.xsd"/>
+		</xmlbean>
+	</target>
+	
+	<target name="compile" depends="stubs" description="Generates the stubs and compiles the sources.">
+		<javac debug="true" classpath="${libs}:${build.main}" srcdir="${src.main}" destdir="${build.main}"/>
+	</target>
+	
+	<target name="test" depends="compile,teststubs">
+		<javac classpath="${libs}:${build.main}" srcdir="${src.test}" destdir="${build.test}"/>
+
+		<delete file="${build.test}/cobertura.ser" />
+
+		<cobertura-instrument todir="${instrumented.dir}" datafile="${build.test}/cobertura.ser">
+		    <ignore regex="org.apache.log4j.*"/>
+		    <ignore regex="cx.prutser.xmlmath.schemas.*"/>
+		    <fileset dir="${build.main}">
+		        <include name="**/*.class"/>
+		        <exclude name="**/*Test.class"/>
+		        <exclude name="**/TypeSystemHolder.class"/>
+		    	<exclude name="cx/prutser/xmlmath/schemas/**/*"/>
+		    </fileset>
+		</cobertura-instrument>
+		
+		<mkdir dir="${reports.test}"/>
+		
+		<junit fork="once" printsummary="yes" haltonfailure="yes">
+			<!--
+				Specify the name of the coverage data file to use.
+				The value specified below is the default.
+			-->
+			<sysproperty key="net.sourceforge.cobertura.datafile"
+				file="${build.test}/cobertura.ser" />
+
+			<!--
+				Note the classpath order: instrumented classes are before the
+				original (uninstrumented) classes.  This is important.
+			-->
+			<classpath location="${instrumented.dir}"/>
+			<classpath refid="cobertura.classpath"/>
+			<classpath>
+				<pathelement location="${build.test}"/>
+				<pathelement location="${src.test}/.."/> <!-- to include the test files -->
+				<pathelement path="${libs}"/>
+			</classpath>
+			
+			<formatter type="xml"/>
+			
+			<batchtest fork="yes" todir="${reports.test}">
+				<fileset dir="${src.test}">
+					<include name="**/*Test*.java"/>
+					<exclude name="**/AllTests.java"/>
+				</fileset>
+			</batchtest>
+		</junit>
+
+		<junitreport todir="${reports.test}">
+		  <fileset dir="${reports.test}">
+		    <include name="TEST-*.xml"/>
+		  </fileset>
+		  <report format="frames" todir="${reports.test}/html"/>
+		</junitreport>
+		
+		<cobertura-report format="html" destdir="${coveragereport.dir}"
+			srcdir="${src.main}" datafile="${build.test}/cobertura.ser"/>
+	</target>
+
+	<target name="dist" depends="test,docs" description="Creates the distribution jar file." >
+		<mkdir dir="${dist}"/>
+		<jar jarfile="${dist}/xmlmath-${version}.jar" basedir="${build.main}">
+			<zipgroupfileset dir="." includes="lib/xbean.jar"/>
+			<zipgroupfileset dir="." includes="lib/jsr173_1.0_api.jar"/>
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Build-Date" value=""/>
+				<attribute name="Main-Class" value="cx.prutser.xmlmath.Evaluator"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="docs" depends="manual,javadoc,xmldoc"/>
+	
+	<target name="javadoc">
+		<javadoc packagenames="cx.prutser.xmlmath,cx.prutser.xmlmath.operands"
+			sourcepath="${src.main}" destdir="dist/javadoc" author="true"
+			version="true" windowtitle="XMLMath - Solving simple algebraic expressions in XML">
+		</javadoc>
+	</target>
+	
+	<target name="xmldoc" depends="init" description="Generates an html overview of all available tags.">
+		<java fork="true" jar="lib/saxon8.jar">
+			<arg value="-o"/>
+			<arg value="${dist}/xmlmath.html"/>
+			<arg value="src/main/resources/xmlmath.xsd"/>
+			<arg value="src/main/resources/xmlmath.xslt"/>
+		</java>
+	</target>
+	
+	<target name="manual" depends="init" description="Compiles the html and pdf manual.">
+		<java fork="true" classpath="lib/aptall.jar"
+			classname="fr.pixware.apt.convert.Driver" dir="doc/">
+			<arg value="-toc"/>
+			<arg value="-index"/>
+			<arg value="-pi"/>
+			<arg value="html"/>
+			<arg value="css"/>
+			<arg value="manual.css"/>
+			<arg value="../dist/doc/manual.html"/>
+			<arg value="manual.txt"/>
+		</java>
+		<java fork="true" classpath="lib/aptall.jar"
+			classname="fr.pixware.apt.convert.Driver" dir="doc/">
+			<arg value="-toc"/>
+			<arg value="-index"/>
+			<arg value="../dist/doc/manual.pdf"/>
+			<arg value="manual.txt"/>
+		</java>
+		<java fork="true" classpath="lib/aptall.jar"
+			classname="fr.pixware.apt.convert.Driver" dir="doc/">
+			<arg value="-toc"/>
+			<arg value="-index"/>
+			<arg value="../dist/doc/manual.ps"/>
+			<arg value="manual.txt"/>
+		</java>
+		<java fork="true" classpath="lib/aptall.jar"
+			classname="fr.pixware.apt.convert.Driver" dir="doc/">
+			<arg value="../dist/doc/manual.sgml"/>
+			<arg value="manual.txt"/>
+		</java>
+		<java fork="true" classpath="lib/aptall.jar"
+			classname="fr.pixware.apt.convert.Driver" dir="doc/">
+			<arg value="-toc"/>
+			<arg value="../dist/doc/manual.tex"/>
+			<arg value="manual.txt"/>
+		</java>
+	</target>
+	
+	<target name="clean" description="clean up" >
+		<delete dir="build/"/>
+		<delete dir="${dist}"/>
+	</target>
+
+</project>

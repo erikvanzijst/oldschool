@@ -1,0 +1,36 @@
+Processor 0: row 0 to 1999
+Processor 1: row 2000 to 3999
+Processor 1: 2000 rows
+Processor 0: 2000 rows
+Processor 0: ready to start ASP
+Processor 1: ready to start ASP
+Processor 0: ASP took 11015.667629 seconds
+Processor 1: ASP took 11015.672256 seconds
+Processor 1: ASP done
+Processor 0: ASP done
+Processor 1: done
+Processor 0: done
+Processor 0: row 0 to 1999
+Processor 1: row 2000 to 3999
+Processor 1: 2000 rows
+Processor 0: 2000 rows
+Processor 0: ready to start ASP
+Processor 1: ready to start ASP
+Processor 1: ASP took 11015.503830 seconds
+Processor 0: ASP took 11015.505376 seconds
+Processor 1: ASP done
+Processor 0: ASP done
+Processor 1: done
+Processor 0: done
+Processor 0: row 0 to 1999
+Processor 1: row 2000 to 3999
+Processor 1: 2000 rows
+Processor 0: 2000 rows
+Processor 0: ready to start ASP
+Processor 1: ready to start ASP
+Processor 0: ASP took 11015.627453 seconds
+Processor 1: ASP took 11015.625327 seconds
+Processor 1: ASP done
+Processor 0: ASP done
+Processor 1: done
+Processor 0: done

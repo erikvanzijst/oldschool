@@ -1,0 +1,31 @@
+Compiling:
+
+If your system meets the requirements, this is how to compile:
+
+	./install.sh
+
+
+After compilation, the executable is named dialer and sits in this
+directory. You'll have to copy it to a directory in your path yourself. (eg.
+/usr/local/bin).
+
+Or do it by hand and ditch the little script by typing:
+
+	gcc -lqt -o dialer dialer.cc
+
+
+I kept everything in one file and I was too lazy make a Makefile, but I'm
+sure you'll succeed in typing the above command. :)
+
+If the compile fails, check if you have Qt (at least 1.32) properly
+installed.
+If it still fails, you can rebuild the moc file by typing:
+
+	moc -o dialer.moc dialer.cc
+	gcc -lqt -o dialer dialer.cc
+
+
+Any questions?
+icehawk@xs4all.nl  (feel free!)
+
+Erik van Zijst, 05-20-1998

@@ -1,0 +1,60 @@
+
+New: I have added a 'kdemapping' to the distribution.
+
+You should generate Postscript documents form the sgml
+source with the following command:
+
+> sgml2latex -p letter --style=kde  --output=ps  kdefaq.sgml
+  
+a) don't use -p a4. Most of the world uses letter and a4 is not
+properly usable on letter installtions, while letter is very
+well usable on a4 installtions.
+
+b) --style=kde this will instruct Latex to use the PostScript
+Times fonts instead of hte ugly Computer Modern fonts. This
+will not only beautify the documents immensely but also
+shrink their size by a factor of 10 or more.
+
+c) --oupt=ps  this is selfexplanatory.
+
+Bernd
+Sat Feb 28 13:44:15 EST 1998          
+--------------
+   
+These add-ons to the SgmlTools 1.0 or higher
+let you create nice html output in the  distictive KDE
+look from your sgmltools sgml source. Please use these
+tools to create your online html documentation.
+
+Prerequisites: SgmlTools 1.0 or higher
+available at:
+
+	http://www.xs4all.nl/~cg/sgmltools/
+
+( Remeber the sgmltools let you create PostScript, rtf,
+  html, tex, text, man documents from one easy to write
+  source )
+
+INSTALLATION:
+	1. Extract the tarball.
+	2. ./configure
+	3. make
+	4. make install
+	
+
+USAGE:
+	
+	1) cd to the directory where you have your sgml code
+	2) run ksgml2html filename.sgml
+
+Bernd
+wuebben@kde.org
+
+
+You may find the User's Guide in ./doc
+
+Please know that kdesgmltools were originally named "niceSgml2Html",
+and some references to the old name still occur. I will fix that
+but it may take some time :-) 
+
+Panayotis Vryonis <vrypan@hol.gr>

@@ -1,0 +1,2 @@
+RUN "C:\BASIC\LOCK.BAS"
+

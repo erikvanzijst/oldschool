@@ -1,0 +1,40 @@
+<!DOCTYPE LINUXDOC SYSTEM>
+<article>
+
+<titlepag>
+<title>Using ksgml2html</title>
+<author>
+<name>Panayotis Vryonis <htmlurl url="mailto:vrypan@hol.gr" name="vrypan@hol.gr">
+</author>
+<date> Last updated 6 Jan 1998. 
+<abstract>
+A brief intro to ksgml2html.
+</abstract>
+</titlepag>
+
+<sect>General
+<p>ksgml2html is part of the kdesgmltools package. kdesgmltools allows the user
+to create good-looking HTML output from sgml (linuxdoc.dtd) files. There are many
+things you can do with kdesgmltools, but if you just want the HTML output
+to have the KDE look, just use ksgml2html.
+<sect>Use
+<p>Go to the directory where your SGML file is.
+Type <tt>ksgml2html filename</tt>
+<p>You will be asked for the <bf/Description/ and the <bf/keywords/.
+<p>Type in a short description for your document, and the related keywords.
+<p>These data will be included in the resulting HTML files as META tags. They
+are used by numerous search engines like AltaVista to classify and query HTML pages.
+<p>The description and the keywords will be saved with other neccessary data in a file
+named after your sgml document with the extention "nif". The next time you use
+ksgml2html for this document you will be informed that <tt>..existing nif file is used</tt>.
+If you want to change the description or the keywords, just remove this "nif" file and
+run ksgml2html again.
+
+<sect>More Info
+<p>For more info visit the <htmlurl url="http://users.hol.gr/~vrypan/cactus/kdesgmltools.html"
+name="jdesgmltools Home Page">. 
+<p>Feel free to contact me <htmlurl url="mailto:vrypan@hol.gr" name="vrypan@hol.gr"> for
+any questions or ideas you may have.
+
+</article>
+

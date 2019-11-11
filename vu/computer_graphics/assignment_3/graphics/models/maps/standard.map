@@ -1,0 +1,208 @@
+# This is the standard map file. It describes a world with a few
+# simple objects.
+#
+# The map file format rules can be found in the map-format.txt file.
+
+# First comes the trajectory of the monster. The first line specifies
+# the number of landmarks the dino visits, followed by the landmark
+# coordinates (in x y).
+
+48
+15 -7
+15 -4
+12 -2
+12 4
+18 11
+18 18
+-4 18
+-3 7
+4 9
+5 15
+11 15
+14 10
+2 9
+5 -10
+18 -11
+18 -8
+11 -7
+10 -11
+18 -13
+16 -18
+9 -19
+7 -18
+5 -19
+-4 -18
+-6 -12
+-17 -12
+-18 -6
+-17 -5
+-11 -5
+-12 -2
+-10 -2
+-10 -5
+-8 -5
+-11 2
+-12 15
+-13 16
+-14 16
+-15 14.5
+-18 14.5
+-19 14
+-18 -4
+-19 -11
+-18 -12
+2 -11
+3 -10
+4 -10
+9 -12
+12 -6
+
+
+# city walls
+../models/maps/wall.sgf
+20.0 0.0 0.0
+0.0 -90.0 0.0
+1.0 1.0 1.0
+
+../models/maps/appartment.sgf
+1.0 0.0 14.0
+0.0 45.0 0.0
+1.0 1.0 1.0
+
+../models/maps/ground.sgf
+0.0 0.0 0.0
+0.0 0.0 0.0
+1.0 1.0 1.0
+
+
+# city walls
+../models/maps/wall.sgf
+-20.0 0.0 0.0
+0.0 90.0 0.0
+1.0 1.0 1.0
+
+# city walls
+../models/maps/wall.sgf
+0.0 0.0 -20.0
+0.0 0.0 0.0
+1.0 1.0 1.0
+
+# city walls
+../models/maps/wall.sgf
+0.0 0.0 20.0
+0.0 180.0 0.0
+1.0 1.0 1.0
+
+
+../models/maps/appartment.sgf
+-8.0 0.0 -15.0
+0.0 0.0 0.0
+1.0 1.0 1.0
+
+../models/maps/long-tall-appartment.sgf
+-7.0 0.0 -8.0
+0.0 -10.0 0.0
+1.0 1.0 1.0
+
+../models/maps/long-appartment.sgf
+8.0 0.0 0.0
+0.0 90.0 0.0
+1.0 1.0 1.0
+
+../models/maps/long-appartment.sgf
+-15.0 0.0 5.0
+0.0 90.0 0.0
+1.0 1.0 1.0
+
+../models/maps/long-tall-appartment.sgf
+-8.0 0.0 11.0
+0.0 80.0 0.0
+1.0 1.0 1.0
+
+../models/maps/appartment.sgf
+8.0 0.0 12.0
+0.0 0.0 0.0
+1.0 1.0 1.0
+
+../models/maps/fence.sgf
+12.0 -1.0 -5
+0.0 0.0 0.0
+2.0 1.0 2.0
+
+../models/maps/fence.sgf
+18.0 -1.0 -5
+0.0 0.0 0.0
+2.0 1.0 2.0
+
+../models/maps/fence.sgf
+19.0 0.0 -17
+0.0 0.0 0.0
+1.0 1.0 1.0
+
+../models/maps/fence.sgf
+10.0 -1.0 16
+0.0 0.0 0.0
+7.0 1.0 7.0
+
+../models/maps/fence.sgf
+14.0 -1.0 -9
+0.0 0.0 0.0
+3.0 1.0 3.0
+
+../models/maps/fence.sgf
+-16.0 -1.0 17.0
+0.0 90.0 0.0
+2.0 1.0 2.0
+
+../models/maps/appartment.sgf
+15.0 0.0 1.0
+0.0 0.0 0.0
+1.0 1.0 1.0
+
+../models/maps/long-appartment.sgf
+6.0 0.0 -15.0
+0.0 0.0 0.0
+1.0 1.0 1.0
+
+../models/maps/appartment.sgf
+-15.0 0.0 -15.0
+0.0 0.0 0.0
+1.0 1.0 1.0
+
+../models/maps/parksign.sgf
+19.99 0.6 10.0
+0.0 -90.0 0.0
+1.0 1.0 1.0
+
+# A movie poster
+../models/maps/matrix.sgf
+19.99 0.6 13.0
+0.0 -90.0 0.0
+1.0 1.0 1.0
+
+# Another movie poster
+../models/maps/terminator.sgf
+0 0.6 19.99
+0.0 180.0 0.0
+1.0 1.0 1.0
+
+# Let's have a red wrong-way sign that textured on both sides
+../models/maps/wrongway.sgf
+17 1.05 -4.999
+0.0 0.0 0.0
+1.0 1.0 1.0
+../models/maps/wrongway.sgf
+17 1.05 -5.0
+0.0 180.0 0.0
+1.0 1.0 1.0
+
+# Here's a vending machine for cheap soda :-)
+../models/maps/sodamachine.sgf
+19.75 0 11
+0.0 90.0 0.0
+0.25 0.5 0.25
+
+../models/maps/speedsign.sgf
+-12.75 0.4 11.25
+0.0 180.0 0.0
+1.0 1.0 1.0

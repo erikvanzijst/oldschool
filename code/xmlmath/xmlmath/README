@@ -1,0 +1,35 @@
+	XMLMath 1.1
+
+
+GETTING STARTED
+~~~~~~~~~~~~~~~
+
+This program evaluates mathematical, logical or textual expressions, described
+in xml and prints the result. For example, to compute the result of 1 + 1, you
+would write:
+
+<add xmlns="http://prutser.cx/xmlmath/schemas">
+	<long value="1"/>
+	<long value="1"/>
+</add>
+
+To evaluate this expression, save it in a file and run it through xmlmath.
+Because xmlmath reads from standard input, you have to use a pipe. On unix or
+linux, type the following:
+
+	$ cat file.xml | java -jar dist/xmlmath-VERSION.jar
+
+or:
+
+	$ java -jar dist/xmlmath-VERSION.jar < file.xml
+
+There are some interesting example files in the samples/ directory. Reading
+and evaluating some of them to get familiar with xmlmath's "expression
+language" would be a good starting point.
+Once you have familiarized yourself with the basic concept, you can study
+dist/xmlmath.html to learn more about xmlmath's operations.
+
+
+	14.apr.2006
+	Erik van Zijst
+	xmlmath@erik.prutser.cx

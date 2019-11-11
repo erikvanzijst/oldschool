@@ -1,0 +1,2 @@
+STUNNEL_DIR=/usr/local/sbin
+STUNNEL_CONF=stunnel.conf

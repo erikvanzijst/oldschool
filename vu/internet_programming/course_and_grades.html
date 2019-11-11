@@ -1,0 +1,564 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>Internet Programming Course</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#551A8B">
+<h1 align=center>Internet Programming Course</h1>
+
+<p><br><blockquote><blockquote>The course discusses a number of
+programming facilities for the development of network
+applications. Attention is paid to designing and implementing
+applications with threads, sockets, RMI/RPC, CGI/BIN, servlets,
+PHP. In addition, attention is paid to security and modern enabling
+technologies like peer-to-peer systems.</blockquote></blockquote>
+
+
+
+<br><br> <blockquote><blockquote><font color=red><b>Information about
+the exam:</b><br>The exam will take place on 30 June 2003,
+13:30-14:30, room M129. <br>This will be a <u>closed-book exam</u>: no
+documentation will be allowed. </font> </blockquote></blockquote>
+
+<p><br><hr>
+<h2>The course in a nutshell</h2>
+
+<table border=0 width="90%" align=center>
+<tr>
+  <td valign=top><b>Lectures:</b></td>
+  <td valign=top>Tuesdays, 12:45-14:30, room S.111</td>
+</tr>
+<tr>
+  <td valign=top><b>Lecturer:</b></td>
+  <td valign=top><a href="/~gpierre/">dr. Guillaume Pierre</a> 
+                 (office R4.29)</td>
+</tr>
+<tr>
+  <td valign=top><b>Assistant:</b></td>
+  <td valign=top><a href="/~mszyman/">drs. Michal Szymaniak</a> 
+                 <font color=red>(you can 
+                 <a href="mailto:mszyman@cs.vu.nl">email him</a> 
+                 your <s>spam</s> questions about the assignments)</font> 
+  </td>
+</tr>
+<tr>
+  <td valign=top><b>Assignment work:</b></td>
+  <td valign=top>To be done at the department's machines (details to be
+      fixed)</td>
+</tr>
+<tr>
+  <td valign=top><b>Study points:</b></td>
+  <td valign=top>9 ECTS credits</td>
+</tr>
+<tr>
+  <td valign=top><b>Marking:</b></td>
+  <td valign=top>Programming assignments (2/3) + written exam (1/3). To 
+                 get the study points, your grades must have the following
+                 properties: 
+<ul>
+  <li> Assignments >= 4
+  <li> Exam >= 4
+  <li> 2*Assignments/3 + Exam/3 > 5
+</ul>
+  </td>
+</tr>
+<tr>
+  <td valign=top><b>Prerequisites:</b></td>
+  <td valign=top>Introduction to Computersystems, knowledge of C. 
+</tr>
+<tr>
+  <td valign=top><b>Exam dates:</b></td>
+  <td valign=top>First exam: 30 June 2003, 13:30-14:30, room M129
+                 <br>Second chance: 19 August 2003, 13:30-14:30, room S111</td>
+</tr>
+<tr>
+  <td valign=top><b>Lecture book:</b></td>
+  <td valign=top><a
+      href="http://vig.prenhall.com/catalog/academic/product/1,4096,0130320714,00.html">Internetworking
+      with TCP/IP, Vol. III: Client-Server Programming and Applications,
+      Linux/Posix Sockets Version</a>, by Douglas E. Comer and David
+      Stevens, Prentice Hall, 2001, ISBN 0-13-032071-4.
+  </td>
+</tr>
+</table>
+
+
+
+<p><br><hr>
+<h2>Scheduled Topics</h2>
+
+<em>Attention: slides can (and will!) be updated up to the last
+minute...</em>
+
+<ul>
+  <li> <b>0. Introduction</b>
+       <ul>
+         <li> <a href="0.slides.ps.gz">Slides</a>
+              <font size=-1>[Last modified: Tue, 15 Apr 2003 12:28:06]</font>        </ul><br>
+  <li> <b>1. Unix multiprocessing</b>
+       <ul>
+         <li> <a href="1.slides.ps.gz">Slides</a>
+              <font size=-1>[Last modified: Tue, 25 Feb 2003 14:56:45]</font> 	 <li> Reader:
+	      <ul>
+		<li> <a
+		     href="http://www.ecst.csuchico.edu/~beej/guide/ipc/">Beej's
+		     Guide to Unix Interprocess Communication</a>
+		<li> <a href="ousterhout.pdf">Why threads are a bad 
+		     idea (for most purposes)</a>, by John Ousterhout.
+	      </ul>
+         <li> <a href="1.assignment.ps.gz">Assignment 1</a>
+              <font size=-1>[Last modified: Thu, 13 Feb 2003 13:48:12]</font>  -
+              <font color=red>Deadline is past!</font>
+                </ul><br>
+
+  <li> <b>2. Distributed programming with sockets</b> 
+       <ul>
+         <li> <a href="2.slides.ps.gz">Slides</a>
+              <font size=-1>[Last modified: Tue, 25 Feb 2003 14:48:30]</font> 	 <li> Reader:
+	      <ul>
+		<li> <a href="http://vig.prenhall.com/catalog/academic/product/1,4096,0130320714,00.html">Internetworking with TCP/IP</a>, pages 47--80 and
+		     101--170.
+		<li> <a href="tij-15.ps.gz">Thinking in Java</a>, 2nd
+		     edition, pages 903--926.
+		<li> <img src="/~gpierre/icons/new.gif" width=31 height=12 alt="new!"><a
+		     href="http://www.ecst.csuchico.edu/~beej/guide/net/">Beej's Guide to Network Programming</a> 
+	      </ul>
+         <li> <a href="http://renard.cs.vu.nl/ip/goodwarriors.mpg">The 
+              movie</a> <font color=red>(148MB!)</font>
+         <li> <a href="2.assignment.ps.gz">Assignment 2</a>
+              <font size=-1>[Last modified: Wed, 12 Feb 2003 11:51:23]</font>  -
+              <font color=red>Deadline is past!</font>
+	      <br>Note: all programs in this assignment must be
+	      written in C!
+       </ul><br>
+
+  <li> <b>3. Client-server programming</b>
+       <ul>
+         <li> <a href="3.slides.ps.gz">Slides</a>
+              <font size=-1>[Last modified: Tue, 18 Mar 2003 09:22:20]</font> 	 <li> Readers:
+	      <ul>
+		<li> <a
+		     href="http://vig.prenhall.com/catalog/academic/product/1,4096,0130320714,00.html">Internetworking
+		     with TCP/IP</a>, pages 9--38 and 271--306.
+		<li> <a
+		     href="http://developer.java.sun.com/developer/onlineTraining/rmi/RMI.html">Fundamentals
+		     of RMI</a>
+	      </ul>
+	 <li> <a href="9.assignment.slides.ps.gz">General
+	      description</a> of assignments 3, 4 and 5
+              <font size=-1>[Last modified: Mon, 03 Mar 2003 14:12:26]</font>          <li> <a href="3.assignment.ps.gz">Assignment 3</a>
+              <font size=-1>[Last modified: Mon, 31 Mar 2003 15:16:38]</font>  -
+              <font color=red>Deadline is past!</font>
+                </ul><br>
+
+  <li> <b>4. Web programming</b>
+       <ul>
+         <li> <a href="4.slides.ps.gz">Slides</a>
+              <font size=-1>[Last modified: Tue, 15 Apr 2003 15:03:22]</font>          <li> Readers:
+              <ul>
+		<li> <a href="http://www.jmarshall.com/easy/cgi/">CGI
+		     Made Really Easy</a>
+                <li> <a href="http://hotwired.lycos.com/webmonkey/01/48/index2a.html?tw=programming">PHP from the Ground Up</a>
+		<li> The <a href="http://www.php.net/manual/en/">PHP
+		     Reference Manual</a>
+                <li> <a href="http://hotwired.lycos.com/webmonkey/00/05/index2a.html?tw=programming">Authenticate and Track Users with PHP</a>
+		<li> The <a href="http://httpd.apache.org/">Apache</a>
+		     Web server 
+	      </ul> 
+         <li> <a href="4.assignment.ps.gz">Assignment 4</a>
+              <font size=-1>[Last modified: Thu, 10 Apr 2003 10:12:58]</font>  -
+              <font color=red>Deadline is past!</font>
+       </ul><br>
+  <li> <b>5. Security</b><br>
+       <ul>
+         <li> <a href="5.slides.ps.gz">Slides</a>
+              <font size=-1>[Last modified: Wed, 07 May 2003 12:54:59]</font>          <li> Readers:
+              <ul>
+		<li> <a href="http://www.gnupg.org/">GPG</a> - the GNU
+		     Privacy Guard
+		<li> <a href="http://www.stunnel.org/">stunnel</a>
+		<li> <a
+		     href="http://www.emaze.net/~yad/openssl_stunnel_ServerClientAuth.txt">openssl
+		     certs and stunnel (client/server auth)</a>
+	      </ul> 
+         <li> <a href="5.assignment.ps.gz">Assignment 5</a>
+              <font size=-1>[Last modified: Tue, 13 May 2003 11:23:50]</font>  -
+              <font color=red>Deadline is past!</font>
+       </ul><br>
+  <li> <b>6. Emerging Technologies</b>
+       <ul>
+         <li> <a href="6.slides.ps.gz">Slides</a>
+              <font size=-1>[Last modified: Mon, 12 May 2003 15:15:38]</font>          <li> There will be no assignment on chapter 6!
+       </ul>
+</ul>
+
+<p><br><hr>
+<h2>Assignment grades</h2>
+
+<table border=1>
+<tr>
+  <td><b>Name</b></td>
+  <td><b>Student nb</b></td>
+  <td><b>Ass. 1</b></td>
+  <td><b>Ass. 2</b></td>
+  <td><b>Ass. 3</b></td>
+  <td><b>Ass. 4</b></td>
+  <td><b>Ass. 5</b></td>
+  <td><b>All Ass.</b></td>
+</tr>
+
+<tr>
+  <td>Hassane Bemmira</td>
+  <td>1101927</td>
+  <td>7</td>
+  <td>7</td>
+  <td>6</td>
+  <td>7</td>
+  <td>8</td>
+  <td><b>7.0</b></td>
+</tr>
+
+<tr>
+  <td>Zuzana Bizonova</td>
+  <td>?</td>
+  <td>7</td>
+  <td>7</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td><b>-</b></td>
+</tr>
+
+<tr>
+  <td>Guus Bosman</td>
+  <td>1042114</td>
+  <td>10</td>
+  <td>10</td>
+  <td>10</td>
+  <td>7</td>
+  <td>9</td>
+  <td><b>9.2</b></td>
+</tr>
+
+<tr>
+  <td>Stefan Botman</td>
+  <td>110514</td>
+  <td>7</td>
+  <td>6</td>
+  <td>7</td>
+  <td>7</td>
+  <td>6</td>
+  <td><b>6.6</b></td>
+</tr>
+
+<tr>
+  <td>Paul Braam</td>
+  <td>1123270</td>
+  <td>7</td>
+  <td>7</td>
+  <td>6</td>
+  <td>7</td>
+  <td>8</td>
+  <td><b>7.0</b></td>
+</tr>
+
+<tr>
+  <td>Pim van den Broek</td>
+  <td>?</td>
+  <td>5</td>
+  <td>6</td>
+  <td>6</td>
+  <td>10</td>
+  <td>6</td>
+  <td><b>6.6</b></td>
+</tr>
+
+<tr>
+  <td>Kin Hung Cheng</td>
+  <td>1224506</td>
+  <td>8</td>
+  <td>10</td>
+  <td>7</td>
+  <td>8</td>
+  <td>10</td>
+  <td><b>8.6</b></td>
+</tr>
+
+<tr>
+  <td>Zsofia Derzsi</td>
+  <td>?</td>
+  <td>4</td>
+  <td>0</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td><b>-</b></td>
+</tr>
+
+<tr>
+  <td>Stef van Dop</td>
+  <td>?</td>
+  <td>9</td>
+  <td>9</td>
+  <td>8</td>
+  <td>10</td>
+  <td>9</td>
+  <td><b>9.0</b></td>
+</tr>
+
+<tr>
+  <td>A.E. Feddy</td>
+  <td>1105337</td>
+  <td>7</td>
+  <td>9</td>
+  <td>6</td>
+  <td>6</td>
+  <td>8</td>
+  <td><b>7.2</b></td>
+</tr>
+
+<tr>
+  <td>Monika Feher</td>
+  <td>1352644</td>
+  <td>9</td>
+  <td>9</td>
+  <td>7</td>
+  <td>7</td>
+  <td>8</td>
+  <td><b>8.0</b></td>
+</tr>
+
+<tr>
+  <td>Jasper Flick</td>
+  <td>1111981</td>
+  <td>8</td>
+  <td>10</td>
+  <td>10</td>
+  <td>10</td>
+  <td>9</td>
+  <td><b>9.4</b></td>
+</tr>
+
+<tr>
+  <td>Ferenc Gal</td>
+  <td>?</td>
+  <td>7</td>
+  <td>7</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td><b>-</b></td>
+</tr>
+
+<tr>
+  <td>Christiaan Geertsma</td>
+  <td>1329278</td>
+  <td>9</td>
+  <td>10</td>
+  <td>7</td>
+  <td>10</td>
+  <td>9</td>
+  <td><b>9.0</b></td>
+</tr>
+
+<tr>
+  <td>Ben Gras</td>
+  <td>?</td>
+  <td>9</td>
+  <td>9</td>
+  <td>8</td>
+  <td>10</td>
+  <td>9</td>
+  <td><b>9.0</b></td>
+</tr>
+
+<tr>
+  <td>Michele Guidolin</td>
+  <td>1382519</td>
+  <td>8</td>
+  <td>10</td>
+  <td>6</td>
+  <td>8</td>
+  <td>9</td>
+  <td><b>8.2</b></td>
+</tr>
+
+<tr>
+  <td>Mark Hoogendoorn</td>
+  <td>1092960</td>
+  <td>7</td>
+  <td>6</td>
+  <td>7</td>
+  <td>7</td>
+  <td>6</td>
+  <td><b>6.6</b></td>
+</tr>
+
+<tr>
+  <td>Erhat Ilgar</td>
+  <td>?</td>
+  <td>4</td>
+  <td>3</td>
+  <td>2</td>
+  <td>2</td>
+  <td>-</td>
+  <td><b>-</b></td>
+</tr>
+
+<tr>
+  <td>Zana Jaf</td>
+  <td>?</td>
+  <td>6</td>
+  <td>7</td>
+  <td>8</td>
+  <td>8</td>
+  <td>5</td>
+  <td><b>6.8</b></td>
+</tr>
+
+<tr>
+  <td>Gabor Kazup</td>
+  <td>?</td>
+  <td>4</td>
+  <td>0</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td><b>-</b></td>
+</tr>
+
+<tr>
+  <td>Sander van Loo</td>
+  <td>?</td>
+  <td>10</td>
+  <td>10</td>
+  <td>10</td>
+  <td>10</td>
+  <td>10</td>
+  <td><b>10.0</b></td>
+</tr>
+
+<tr>
+  <td>Hawre Rahimi</td>
+  <td>?</td>
+  <td>6</td>
+  <td>7</td>
+  <td>8</td>
+  <td>8</td>
+  <td>5</td>
+  <td><b>6.8</b></td>
+</tr>
+
+<tr>
+  <td>U. Rehman</td>
+  <td>1105957</td>
+  <td>7</td>
+  <td>9</td>
+  <td>6</td>
+  <td>6</td>
+  <td>8</td>
+  <td><b>7.2</b></td>
+</tr>
+
+<tr>
+  <td>Ruud Schellekens</td>
+  <td>?</td>
+  <td>5</td>
+  <td>6</td>
+  <td>6</td>
+  <td>10</td>
+  <td>6</td>
+  <td><b>6.6</b></td>
+</tr>
+
+<tr>
+  <td>Zoltan Szamonek</td>
+  <td>1354744</td>
+  <td>9</td>
+  <td>9</td>
+  <td>7</td>
+  <td>7</td>
+  <td>8</td>
+  <td><b>8.0</b></td>
+</tr>
+
+<tr>
+  <td>Bert Thomas</td>
+  <td>1370774</td>
+  <td>10</td>
+  <td>10</td>
+  <td>7</td>
+  <td>10</td>
+  <td>8</td>
+  <td><b>9.0</b></td>
+</tr>
+
+<tr>
+  <td>Reinier Timmer</td>
+  <td>1143255</td>
+  <td>8</td>
+  <td>10</td>
+  <td>10</td>
+  <td>10</td>
+  <td>9</td>
+  <td><b>9.4</b></td>
+</tr>
+
+<tr>
+  <td>Gertjan Wijnalda</td>
+  <td>?</td>
+  <td>3</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td><b>-</b></td>
+</tr>
+
+<tr>
+  <td>SJJ Wijzelaar</td>
+  <td>1143271</td>
+  <td>7</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td><b>-</b></td>
+</tr>
+
+<tr>
+  <td>Ying Zhang</td>
+  <td>1104330</td>
+  <td>8</td>
+  <td>7</td>
+  <td>8</td>
+  <td>10</td>
+  <td>9</td>
+  <td><b>8.4</b></td>
+</tr>
+
+<tr>
+  <td>Erik van Zijst</td>
+  <td>?</td>
+  <td>10</td>
+  <td>10</td>
+  <td>10</td>
+  <td>10</td>
+  <td>10</td>
+  <td><b>10.0</b></td>
+</tr>
+
+
+</table>
+
+
+<br>
+<hr>
+<address>
+<a href="mailto:gpierre@cs.vu.nl">gpierre@cs.vu.nl</a>
+</address>
+<font size=-1>[Last modified: Tue, 17 Jun 2003 16:03:35]</font> </body>
+</html>

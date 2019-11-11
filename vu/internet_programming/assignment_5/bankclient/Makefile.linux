@@ -1,0 +1,38 @@
+# Homework assignment for the Internet Programming course at the Vrije
+# Universiteit of Amsterdam, The Netherlands.
+#
+# Erik van Zijst, erik@marketxs.com
+# Sander van Loo, sander@marketxs.com
+# April 28, 2003
+
+CC=cc
+BANK_CHECK=bankcheck
+BANK_PAY=bankpay
+
+BANK_CHECK_SRC=bankcheck.c bank_client.c 
+BANK_CHECK_OBJ=$(BANK_CHECK_SRC:.c=.o)
+BANK_PAY_SRC=bankpay.c bank_client.c 
+BANK_PAY_OBJ=$(BANK_PAY_SRC:.c=.o)
+
+BANK_SHARED=../bankserver/libbank.so
+INCLUDE=-I../bankserver
+LIBS=-L../bankserver -lbank
+
+.c.o:
+	$(CC) -Wall $(INCLUDE) -c $<
+
+all: $(BANK_CHECK) $(BANK_PAY) 
+
+
+$(BANK_SHARED):
+	cd ../bankserver && $(MAKE)
+
+$(BANK_CHECK): $(BANK_CHECK_OBJ) $(BANK_SHARED)
+	$(CC) -o $(BANK_CHECK) $(BANK_CHECK_OBJ) $(LIBS)
+
+$(BANK_PAY): $(BANK_PAY_OBJ) $(BANK_SHARED)
+	$(CC) -o $(BANK_PAY) $(BANK_PAY_OBJ) $(LIBS)
+
+clean:
+	@echo "Removing object files and targets:"
+	@rm -vf *.o $(BANK_CHECK) $(BANK_PAY) *~ core

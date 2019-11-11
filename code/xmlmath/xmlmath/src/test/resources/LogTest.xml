@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test xmlns="http://prutser.cx/xmlmath/schemas"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<testBoolean result="true">
+		<and>
+			<equals xmlns="http://prutser.cx/xmlmath/schemas">
+				<abs>
+					<log>
+						<double value="0"/>
+					</log>
+				</abs>
+				<infinity/>
+			</equals>
+			<equals>
+				<log>
+					<double value="1"/>
+				</log>
+				<double value="0"/>
+			</equals>
+		</and>
+	</testBoolean>
+</test>

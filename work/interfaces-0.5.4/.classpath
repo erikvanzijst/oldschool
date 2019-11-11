@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+    <classpathentry kind="src" path="src"/>
+    <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+    <classpathentry kind="lib" path="/usr/local/eclipse/plugins/org.junit_3.8.1/junit.jar"/>
+    <classpathentry kind="lib" path="/home/erik/workspace/interfaces/lib/management-1.3.jar"/>
+    <classpathentry kind="output" path="build"/>
+</classpath>

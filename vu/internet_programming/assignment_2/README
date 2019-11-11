@@ -1,0 +1,123 @@
+	Internet Programming
+
+	Programming Assignment 2: Distributed Programming with Sockets
+
+
+	1. A Content-Full Server
+
+1.1 Write an interative TCP server and the corresponding client.
+
+See serv1.c and client.c
+
+
+1.2 Modify your server to implement a one-process-per-request server.
+
+Answer:
+See serv2.c
+The one-process-per-request server stores the counter in shared memory and
+spawns a new process at every request. These child processes increment the
+shared memory counter and echo the value back to the client. Because access
+to the shared memory segment is not serialized and the operation to
+increment the counter is not atomic, the serv2 process would not behave
+correctly if two concurrent child processes increment the counter at the
+same time. In this case, the counter might be incremented only once and two
+clients might receive the same value.
+Note that we can fix this issue with a semaphore to make the increment
+operation atomic and serialize access to shared memory. We will take this
+approach in the next program, serv3.c.
+
+
+1.3 Modify your server to implement a preforked server.
+
+Answer:
+See serv3.c
+In addition to the pre-forked process pool that simultaneously block in
+accept(), this program also uses a semaphore to make the operation of
+incrementing the counter atomic. This eliminates the potential race
+condition of serv2.c. Note that we could easily add the semaphore to serv2.c
+but it was left out intentionally until serv3.c.
+By default, the process pool is 5 processes, with an accept-backlog of 5.
+
+
+
+	2. A Talk Program
+
+2.1 Start by addressing the issue of establishing connections between the two 
+parties.
+See talk1.c
+
+2.1.1 Which kind of server do you think is the most appropriate: 
+iterative, one-process-per-request or preforked? Why?
+
+Answer:
+This will typically be an iterative server. Typically the talk program 
+facilitates a connection between two parties only. The user will not 
+participate in multiple chats at the same time, therefore there is no need 
+for any parallel processing. High load is also unlikely due to the nature of 
+the application (humans typing characters).
+
+2.1.2 Can you have a client and a server executing simultaneously on the same 
+machine?
+
+Answer:
+Yes, this will not be a problem at all. Only the server needs to register a 
+predefined endpoint (port). The client can use any endpoint (port) it likes as 
+long as this does not conflict with ports already in use by other 
+applications or operating system policies. For the client this is handled 
+automatically by the operating system. The server explicitly tells the 
+operating system which endpoint it wants to use (bind).
+
+2.1.3 Can you have two servers (for example, started by two different users) 
+executing simultaneously on the same machine? How would you solve the 
+problems?
+
+Answer:
+In principle running two servers will result in both servers requiring the 
+same endpoint. There are multiple solutions. The first would be to let the 
+user not only specify a hostname but also a port to connect to. The problem 
+with this however is that the port to use needs to be known in advance by 
+both the client and the server (and may be different for each session). A 
+second possible option is to implement a server that acts as a mediator 
+between sessions. It forwards messages between pairs of clients (connected 
+not directly but all connected to the same server). In this case there would 
+probably be a dedicated server (for each host). All users act as clients to 
+this dedicated server and send their own username (and the username of the 
+party to connect to if they are started as a client) to the server. The 
+dedicated server then forks a process that handles further communication 
+between the two parties. It connects clients based on the usernames they 
+provide.
+
+2.2 You will soon discover that each talk program needs to wait for input 
+data coming either from the keyboard or from the remote party. How can you 
+solve this problem?
+
+Answer:
+We use select and pass it a file descriptor set containing both stdin and the 
+filedescriptor of the connection to the other party. We pass one such file 
+descriptor set as read file descriptor set and one as exception file descriptor 
+set. We do not provide a timeout. If select fires we check if one of the file 
+descriptors was set in the exception file descriptor set. If this was the 
+case we conclude an error occurred on the connection and we terminate the 
+program. If one of the file descriptors from the read file desriptor set was 
+set that file descriptor has data waiting for us to read.
+
+See talk2.c
+
+2.3 Optional: Update your program to separate the text written by the two 
+parties.
+
+Answer:
+We used ncurses. The lower part of the screen is the local user. We replaced 
+some of the perror and fprintf(stderr,..) statements by ncurses wprintw 
+statements and removed some others to prevent them from interfering with the 
+ncurses output. It is possible to write a variadic macro as a wrapper that 
+uses a variable to check whether ncurses output or non-ncurses output is 
+required (allowing the application to switch to non-ncurses mode if ncurses 
+initialization fails), but we did not implement this.
+
+See talk3.c
+
+
+Erik van Zijst, erik@marketxs.com
+Sander van Loo, sander@marketxs.com
+24.feb.2003

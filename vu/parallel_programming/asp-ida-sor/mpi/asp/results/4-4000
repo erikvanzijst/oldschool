@@ -1,0 +1,72 @@
+Processor 0: row 0 to 999
+Processor 3: row 3000 to 3999
+Processor 2: row 2000 to 2999
+Processor 1: row 1000 to 1999
+Processor 2: 1000 rows
+Processor 1: 1000 rows
+Processor 3: 1000 rows
+Processor 0: 1000 rows
+Processor 1: ready to start ASP
+Processor 2: ready to start ASP
+Processor 0: ready to start ASP
+Processor 3: ready to start ASP
+Processor 2: ASP took 5529.603889 seconds
+Processor 3: ASP took 5529.603967 seconds
+Processor 2: ASP done
+Processor 3: ASP done
+Processor 1: ASP took 5529.603924 seconds
+Processor 0: ASP took 5529.603844 seconds
+Processor 1: ASP done
+Processor 0: ASP done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 0: done
+Processor 0: row 0 to 999
+Processor 3: row 3000 to 3999
+Processor 1: row 1000 to 1999
+Processor 2: row 2000 to 2999
+Processor 1: 1000 rows
+Processor 0: 1000 rows
+Processor 3: 1000 rows
+Processor 2: 1000 rows
+Processor 1: ready to start ASP
+Processor 2: ready to start ASP
+Processor 0: ready to start ASP
+Processor 3: ready to start ASP
+Processor 2: ASP took 5524.818996 seconds
+Processor 1: ASP took 5524.819088 seconds
+Processor 0: ASP took 5524.819017 seconds
+Processor 3: ASP took 5524.819066 seconds
+Processor 1: ASP done
+Processor 0: ASP done
+Processor 2: ASP done
+Processor 3: ASP done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 0: done
+Processor 1: row 1000 to 1999
+Processor 0: row 0 to 999
+Processor 2: row 2000 to 2999
+Processor 3: row 3000 to 3999
+Processor 2: 1000 rows
+Processor 3: 1000 rows
+Processor 0: 1000 rows
+Processor 1: 1000 rows
+Processor 1: ready to start ASP
+Processor 2: ready to start ASP
+Processor 0: ready to start ASP
+Processor 3: ready to start ASP
+Processor 2: ASP took 5521.960279 seconds
+Processor 0: ASP took 5521.959264 seconds
+Processor 1: ASP took 5521.953741 seconds
+Processor 3: ASP took 5521.961100 seconds
+Processor 1: ASP done
+Processor 3: ASP done
+Processor 2: ASP done
+Processor 0: ASP done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 0: done

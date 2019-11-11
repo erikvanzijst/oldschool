@@ -1,0 +1,14 @@
+Begin3
+Title:          KDOC
+Version:        1.14
+Entered-date:   Dec 16 1997
+Description:    C++ Documentation extraction and generation tool.
+Keywords:       KDE C++ documentation HTML LaTeX
+Author:         Sirtaj S. Kang (ssk@physics.unimelb.edu.au)
+Maintained-by:	Sirtaj S. Kang (ssk@physics.unimelb.edu.au)
+Home-Page:	http://www.ph.unimelb.edu.au/~ssk/kde/kdoc/
+Primary-site:   ftp://ftp.ph.unimelb.edu.au/pub/users/taj/
+Alternate-site: ftp://ftp.kde.org/pub/kde/
+Platforms:      Unix, Perl 5 or later. LaTeX for processing LaTeX output
+Copying-policy: GNU Public License
+End

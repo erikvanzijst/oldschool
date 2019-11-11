@@ -1,0 +1,41 @@
+From crispo@few.vu.nl Mon Oct 20 15:41:18 2003
+Return-Path: <crispo@few.vu.nl>
+Received: from solo.cs.vu.nl (root@solo.cs.vu.nl [130.37.24.1])
+	by prutser.cx (8.11.6/8.11.6) with ESMTP id h9KBDPS02517
+	for <vu@prutser.cx>; Mon, 20 Oct 2003 13:13:25 +0200
+Received: from flits.cs.vu.nl (flits.cs.vu.nl [192.31.231.65])
+	by solo.cs.vu.nl with esmtp
+	(Smail #87) id m1ABXy0-0009GyC; Mon, 20 Oct 2003 13:12 +0200
+Received: from few.vu.nl (localhost [127.0.0.1])
+	by flits.cs.vu.nl with esmtp
+	(Smail #87) id m1ABXxz-001CENC; Mon, 20 Oct 2003 13:12 +0200
+Message-ID: <3F93C333.CABB986@few.vu.nl>
+Date: Mon, 20 Oct 2003 13:12:51 +0200
+From: Crispo CB <crispo@few.vu.nl>
+X-Mailer: Mozilla 4.8 [en] (X11; U; SunOS 5.8 sun4u)
+X-Accept-Language: en, nl
+MIME-Version: 1.0
+To: crispo <crispo@few.vu.nl>
+Subject: Literature Study exam
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Dear all,
+
+I would like to remember to all  Master students at their second year, that their 
+curriculm includes a Literature Study course during this term.
+More information about the course can be found at
+http://www.few.vu.nl/~crispo/teaching/literature_study.html
+
+Regards,
+
+Bruno Crispo
+-- 
+Assistant Professor
+Computer Systems Group
+Vrije Universiteit  
+De Boelelaan 1081A   
+1081 HV Amsterdam - The Netherlands   
+tel. +31 20 444-7829
+fax. +31 20 444-7653
+url. ww.cs.vu.nl/~crispo

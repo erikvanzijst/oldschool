@@ -1,0 +1,32 @@
+# KDE Config File
+[Translation]
+Fuzzy=false
+TranslPoFile=false
+NormalNull=true
+NoTransl=true
+NoTranslHere=true
+AutoSearch=true
+NormalSame=true
+NormalFuzzy=true
+[Header]
+HLine5=Last-Translator: %AUTHORNAME% <%AUTHOREMAIL%>\n
+HLine6=Language-Team: %LANGUAGE% <%LANGLIST%>\n
+HLine7=%ORIGINAL%
+HLine8=%ORIGINAL%
+HLine9=%ORIGINAL%
+NumLines=10
+HLine10=X-Generator: KTranslator v 0.3.0
+HLine11=
+HLine1=%ORIGINAL%
+HLine2=%ORIGINAL%
+HLine3=%ORIGINAL%
+HLine4=PO-Revision-Date: %DATE% %TIME%+0200\n
+[Files]
+Lang=en
+OutputDir=/usr/local/kdebase/po/en
+SourceDir=/usr/local/kdebase/po
+[Identity]
+Name=John Smith
+Language=English
+EMail=JSmith@idontknow.com
+MList=en@li.org

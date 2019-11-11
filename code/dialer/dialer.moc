@@ -1,0 +1,287 @@
+/****************************************************************************
+** EditWindow meta object code from reading C++ file 'dialer.cc'
+**
+** Created: Tue Jun 9 17:06:17 1998
+**      by: The Qt Meta Object Compiler ($Revision: 2.18 $)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#define Q_MOC_OUTPUT_REVISION 2
+#elif Q_MOC_OUTPUT_REVISION != 2
+#error Moc format conflict - please regenerate all moc files
+#endif
+
+#include <qmetaobj.h>
+
+
+const char *EditWindow::className() const
+{
+    return "EditWindow";
+}
+
+QMetaObject *EditWindow::metaObj = 0;
+
+void EditWindow::initMetaObject()
+{
+    if ( metaObj )
+	return;
+    if ( strcmp(QDialog::className(), "QDialog") != 0 )
+	badSuperclassWarning("EditWindow","QDialog");
+    if ( !QDialog::metaObject() )
+	QDialog::initMetaObject();
+    typedef void(EditWindow::*m1_t0)(const char*);
+    typedef void(EditWindow::*m1_t1)(const char*);
+    typedef void(EditWindow::*m1_t2)();
+    typedef void(EditWindow::*m1_t3)();
+    typedef void(EditWindow::*m1_t4)();
+    typedef void(EditWindow::*m1_t5)();
+    typedef void(EditWindow::*m1_t6)();
+    typedef void(EditWindow::*m1_t7)();
+    typedef void(EditWindow::*m1_t8)();
+    typedef void(EditWindow::*m1_t9)();
+    typedef void(EditWindow::*m1_t10)();
+    typedef void(EditWindow::*m1_t11)();
+    typedef void(EditWindow::*m1_t12)();
+    m1_t0 v1_0 = &EditWindow::namele_changed;
+    m1_t1 v1_1 = &EditWindow::numberle_changed;
+    m1_t2 v1_2 = &EditWindow::refresh_buttons;
+    m1_t3 v1_3 = &EditWindow::b1clicked;
+    m1_t4 v1_4 = &EditWindow::b2clicked;
+    m1_t5 v1_5 = &EditWindow::b3clicked;
+    m1_t6 v1_6 = &EditWindow::b4clicked;
+    m1_t7 v1_7 = &EditWindow::b5clicked;
+    m1_t8 v1_8 = &EditWindow::b6clicked;
+    m1_t9 v1_9 = &EditWindow::b7clicked;
+    m1_t10 v1_10 = &EditWindow::b8clicked;
+    m1_t11 v1_11 = &EditWindow::save_slot;
+    m1_t12 v1_12 = &EditWindow::cancel_slot;
+    QMetaData *slot_tbl = new QMetaData[13];
+    slot_tbl[0].name = "namele_changed(const char*)";
+    slot_tbl[1].name = "numberle_changed(const char*)";
+    slot_tbl[2].name = "refresh_buttons()";
+    slot_tbl[3].name = "b1clicked()";
+    slot_tbl[4].name = "b2clicked()";
+    slot_tbl[5].name = "b3clicked()";
+    slot_tbl[6].name = "b4clicked()";
+    slot_tbl[7].name = "b5clicked()";
+    slot_tbl[8].name = "b6clicked()";
+    slot_tbl[9].name = "b7clicked()";
+    slot_tbl[10].name = "b8clicked()";
+    slot_tbl[11].name = "save_slot()";
+    slot_tbl[12].name = "cancel_slot()";
+    slot_tbl[0].ptr = *((QMember*)&v1_0);
+    slot_tbl[1].ptr = *((QMember*)&v1_1);
+    slot_tbl[2].ptr = *((QMember*)&v1_2);
+    slot_tbl[3].ptr = *((QMember*)&v1_3);
+    slot_tbl[4].ptr = *((QMember*)&v1_4);
+    slot_tbl[5].ptr = *((QMember*)&v1_5);
+    slot_tbl[6].ptr = *((QMember*)&v1_6);
+    slot_tbl[7].ptr = *((QMember*)&v1_7);
+    slot_tbl[8].ptr = *((QMember*)&v1_8);
+    slot_tbl[9].ptr = *((QMember*)&v1_9);
+    slot_tbl[10].ptr = *((QMember*)&v1_10);
+    slot_tbl[11].ptr = *((QMember*)&v1_11);
+    slot_tbl[12].ptr = *((QMember*)&v1_12);
+    typedef void(EditWindow::*m2_t0)();
+    m2_t0 v2_0 = &EditWindow::buttons_changed;
+    QMetaData *signal_tbl = new QMetaData[1];
+    signal_tbl[0].name = "buttons_changed()";
+    signal_tbl[0].ptr = *((QMember*)&v2_0);
+    metaObj = new QMetaObject( "EditWindow", "QDialog",
+	slot_tbl, 13,
+	signal_tbl, 1 );
+}
+
+// SIGNAL buttons_changed
+void EditWindow::buttons_changed()
+{
+    activate_signal( "buttons_changed()" );
+}
+
+
+const char *OptionWindow::className() const
+{
+    return "OptionWindow";
+}
+
+QMetaObject *OptionWindow::metaObj = 0;
+
+void OptionWindow::initMetaObject()
+{
+    if ( metaObj )
+	return;
+    if ( strcmp(QDialog::className(), "QDialog") != 0 )
+	badSuperclassWarning("OptionWindow","QDialog");
+    if ( !QDialog::metaObject() )
+	QDialog::initMetaObject();
+    typedef void(OptionWindow::*m1_t0)();
+    typedef void(OptionWindow::*m1_t1)();
+    m1_t0 v1_0 = &OptionWindow::save_slot;
+    m1_t1 v1_1 = &OptionWindow::cancel_slot;
+    QMetaData *slot_tbl = new QMetaData[2];
+    slot_tbl[0].name = "save_slot()";
+    slot_tbl[1].name = "cancel_slot()";
+    slot_tbl[0].ptr = *((QMember*)&v1_0);
+    slot_tbl[1].ptr = *((QMember*)&v1_1);
+    metaObj = new QMetaObject( "OptionWindow", "QDialog",
+	slot_tbl, 2,
+	0, 0 );
+}
+
+
+const char *DialWindow::className() const
+{
+    return "DialWindow";
+}
+
+QMetaObject *DialWindow::metaObj = 0;
+
+void DialWindow::initMetaObject()
+{
+    if ( metaObj )
+	return;
+    if ( strcmp(QDialog::className(), "QDialog") != 0 )
+	badSuperclassWarning("DialWindow","QDialog");
+    if ( !QDialog::metaObject() )
+	QDialog::initMetaObject();
+    typedef void(DialWindow::*m1_t0)();
+    m1_t0 v1_0 = &DialWindow::hangup_slot;
+    QMetaData *slot_tbl = new QMetaData[1];
+    slot_tbl[0].name = "hangup_slot()";
+    slot_tbl[0].ptr = *((QMember*)&v1_0);
+    metaObj = new QMetaObject( "DialWindow", "QDialog",
+	slot_tbl, 1,
+	0, 0 );
+}
+
+
+const char *DialerWindow::className() const
+{
+    return "DialerWindow";
+}
+
+QMetaObject *DialerWindow::metaObj = 0;
+
+void DialerWindow::initMetaObject()
+{
+    if ( metaObj )
+	return;
+    if ( strcmp(QWidget::className(), "QWidget") != 0 )
+	badSuperclassWarning("DialerWindow","QWidget");
+    if ( !QWidget::metaObject() )
+	QWidget::initMetaObject();
+    typedef void(DialerWindow::*m1_t0)();
+    typedef void(DialerWindow::*m1_t1)();
+    typedef void(DialerWindow::*m1_t2)(const char*);
+    typedef void(DialerWindow::*m1_t3)();
+    typedef void(DialerWindow::*m1_t4)();
+    typedef void(DialerWindow::*m1_t5)();
+    typedef void(DialerWindow::*m1_t6)();
+    typedef void(DialerWindow::*m1_t7)();
+    typedef void(DialerWindow::*m1_t8)();
+    typedef void(DialerWindow::*m1_t9)();
+    typedef void(DialerWindow::*m1_t10)();
+    typedef void(DialerWindow::*m1_t11)();
+    typedef void(DialerWindow::*m1_t12)();
+    typedef void(DialerWindow::*m1_t13)();
+    typedef void(DialerWindow::*m1_t14)();
+    typedef void(DialerWindow::*m1_t15)();
+    typedef void(DialerWindow::*m1_t16)();
+    typedef void(DialerWindow::*m1_t17)();
+    typedef void(DialerWindow::*m1_t18)();
+    typedef void(DialerWindow::*m1_t19)();
+    typedef void(DialerWindow::*m1_t20)();
+    typedef void(DialerWindow::*m1_t21)();
+    typedef void(DialerWindow::*m1_t22)();
+    typedef void(DialerWindow::*m1_t23)();
+    typedef void(DialerWindow::*m1_t24)();
+    typedef void(DialerWindow::*m1_t25)();
+    typedef void(DialerWindow::*m1_t26)();
+    m1_t0 v1_0 = &DialerWindow::quit_slot;
+    m1_t1 v1_1 = &DialerWindow::dial_slot;
+    m1_t2 v1_2 = &DialerWindow::tb_changed;
+    m1_t3 v1_3 = &DialerWindow::b1clicked;
+    m1_t4 v1_4 = &DialerWindow::b2clicked;
+    m1_t5 v1_5 = &DialerWindow::b3clicked;
+    m1_t6 v1_6 = &DialerWindow::b4clicked;
+    m1_t7 v1_7 = &DialerWindow::b5clicked;
+    m1_t8 v1_8 = &DialerWindow::b6clicked;
+    m1_t9 v1_9 = &DialerWindow::b7clicked;
+    m1_t10 v1_10 = &DialerWindow::b8clicked;
+    m1_t11 v1_11 = &DialerWindow::b9clicked;
+    m1_t12 v1_12 = &DialerWindow::b0clicked;
+    m1_t13 v1_13 = &DialerWindow::s1clicked;
+    m1_t14 v1_14 = &DialerWindow::s2clicked;
+    m1_t15 v1_15 = &DialerWindow::s3clicked;
+    m1_t16 v1_16 = &DialerWindow::s4clicked;
+    m1_t17 v1_17 = &DialerWindow::s5clicked;
+    m1_t18 v1_18 = &DialerWindow::s6clicked;
+    m1_t19 v1_19 = &DialerWindow::s7clicked;
+    m1_t20 v1_20 = &DialerWindow::s8clicked;
+    m1_t21 v1_21 = &DialerWindow::starclicked;
+    m1_t22 v1_22 = &DialerWindow::hashclicked;
+    m1_t23 v1_23 = &DialerWindow::about;
+    m1_t24 v1_24 = &DialerWindow::aboutQt;
+    m1_t25 v1_25 = &DialerWindow::edit;
+    m1_t26 v1_26 = &DialerWindow::options;
+    QMetaData *slot_tbl = new QMetaData[27];
+    slot_tbl[0].name = "quit_slot()";
+    slot_tbl[1].name = "dial_slot()";
+    slot_tbl[2].name = "tb_changed(const char*)";
+    slot_tbl[3].name = "b1clicked()";
+    slot_tbl[4].name = "b2clicked()";
+    slot_tbl[5].name = "b3clicked()";
+    slot_tbl[6].name = "b4clicked()";
+    slot_tbl[7].name = "b5clicked()";
+    slot_tbl[8].name = "b6clicked()";
+    slot_tbl[9].name = "b7clicked()";
+    slot_tbl[10].name = "b8clicked()";
+    slot_tbl[11].name = "b9clicked()";
+    slot_tbl[12].name = "b0clicked()";
+    slot_tbl[13].name = "s1clicked()";
+    slot_tbl[14].name = "s2clicked()";
+    slot_tbl[15].name = "s3clicked()";
+    slot_tbl[16].name = "s4clicked()";
+    slot_tbl[17].name = "s5clicked()";
+    slot_tbl[18].name = "s6clicked()";
+    slot_tbl[19].name = "s7clicked()";
+    slot_tbl[20].name = "s8clicked()";
+    slot_tbl[21].name = "starclicked()";
+    slot_tbl[22].name = "hashclicked()";
+    slot_tbl[23].name = "about()";
+    slot_tbl[24].name = "aboutQt()";
+    slot_tbl[25].name = "edit()";
+    slot_tbl[26].name = "options()";
+    slot_tbl[0].ptr = *((QMember*)&v1_0);
+    slot_tbl[1].ptr = *((QMember*)&v1_1);
+    slot_tbl[2].ptr = *((QMember*)&v1_2);
+    slot_tbl[3].ptr = *((QMember*)&v1_3);
+    slot_tbl[4].ptr = *((QMember*)&v1_4);
+    slot_tbl[5].ptr = *((QMember*)&v1_5);
+    slot_tbl[6].ptr = *((QMember*)&v1_6);
+    slot_tbl[7].ptr = *((QMember*)&v1_7);
+    slot_tbl[8].ptr = *((QMember*)&v1_8);
+    slot_tbl[9].ptr = *((QMember*)&v1_9);
+    slot_tbl[10].ptr = *((QMember*)&v1_10);
+    slot_tbl[11].ptr = *((QMember*)&v1_11);
+    slot_tbl[12].ptr = *((QMember*)&v1_12);
+    slot_tbl[13].ptr = *((QMember*)&v1_13);
+    slot_tbl[14].ptr = *((QMember*)&v1_14);
+    slot_tbl[15].ptr = *((QMember*)&v1_15);
+    slot_tbl[16].ptr = *((QMember*)&v1_16);
+    slot_tbl[17].ptr = *((QMember*)&v1_17);
+    slot_tbl[18].ptr = *((QMember*)&v1_18);
+    slot_tbl[19].ptr = *((QMember*)&v1_19);
+    slot_tbl[20].ptr = *((QMember*)&v1_20);
+    slot_tbl[21].ptr = *((QMember*)&v1_21);
+    slot_tbl[22].ptr = *((QMember*)&v1_22);
+    slot_tbl[23].ptr = *((QMember*)&v1_23);
+    slot_tbl[24].ptr = *((QMember*)&v1_24);
+    slot_tbl[25].ptr = *((QMember*)&v1_25);
+    slot_tbl[26].ptr = *((QMember*)&v1_26);
+    metaObj = new QMetaObject( "DialerWindow", "QWidget",
+	slot_tbl, 27,
+	0, 0 );
+}

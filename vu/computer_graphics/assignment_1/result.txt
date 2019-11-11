@@ -1,0 +1,21 @@
+From graphics@few.vu.nl Tue Oct 19 15:23:27 2004
+Date: Tue, 19 Oct 2004 12:57:49 +0200 (CEST)
+From: via kielmann <graphics@few.vu.nl>
+To: Erik van Zijst <icehawk@erik.prutser.cx>
+Subject: Re: submission exercise 1
+
+I checked your exercise: it was perfect. You can continue with the next.
+
+	Tom
+
+On Thu, 14 Oct 2004, Erik van Zijst wrote:
+
+> Please find attached my submission for exercise 1 of the 2004 Computer
+> Graphics course.
+>
+> Erik van Zijst - 1351745
+> --
+> If I knew what brand [of whiskey] he drinks, I would send a barrel or
+> so to my other generals.
+> 		-- Abraham Lincoln, on General Grant
+>

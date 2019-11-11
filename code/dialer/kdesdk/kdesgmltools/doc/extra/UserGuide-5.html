@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>A User's Guide to kdesgmltools: Practice</TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="sgml html niceSgml2Html kde">
+<META NAME="description" CONTENT="niceSgml2Html User's Guide">
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+ 
+<P ALIGN="RIGHT">
+
+<A HREF="UserGuide-6.html">Next</A>
+<A HREF="UserGuide-4.html">Previous</A>
+<A HREF="UserGuide.html#toc5">Table of Contents</A>
+</P>
+<H3><A NAME="s5">5. Practice</A></H3>
+
+<P>If you have read the 
+<A HREF="UserGuide-4.html#theory">Theory Section</A> it
+will be easy to understand how to use kdesgmltools.
+<H3><A NAME="ss5.1">5.1 --nice option</A>
+</H3>
+
+<P>As stated above, when you type 
+<PRE>
+sgml2html --nice &lt;file&gt;.sgml
+</PRE>
+
+you can insert html tags at certain poionts of your document.
+Those tags are read from the file named <CODE>&lt;file&gt;.nif</CODE> which
+MUST be present at the directory where you issue the sgml2html
+command.
+<P>The structure of this file is simple. It is a text file containing
+the html tags for the above mentioned sections. Each section begins with
+a line like this:
+<PRE>
+&lt;--A-->
+</PRE>
+
+for SectionA. The lines 
+<PRE>
+&lt;--B-->
+&lt;--C-->
+&lt;--BarTags1-->
+&lt;--BarTags2-->
+</PRE>
+are used in the same way.
+<P>You must be careful since SectionB MUST contain a &lt;BODY&gt;
+tag.
+<P>A useful tip. If you use the word DOCNAME in any BarTags section
+it will be replaced by the title of the document.
+<P>
+<H3><A NAME="ss5.2">5.2 --style=nice</A>
+</H3>
+
+<P>In 
+<A HREF="UserGuide-4.html#theory">Theory</A> I mentioned the substitution of
+sgml tags by html tabs which is done by Html2Html.pm (and consequently
+by niceSgml2Html.pm). This substitution is described in a file
+called <CODE>mapping</CODE>. This file is found somewhere in your sgml-tools
+tree and looks like this:
+<PRE>
+&lt;name>          +       "&lt;H3>"                  +
+&lt;/name>         +       "&lt;/H3>"                 +     
+</PRE>
+<P>These two lines state that the &lt;name&gt; tag will be replaced
+by &lt;H3> tag and &lt;/name> tag by &lt;/H3>. The + signs indicate
+newline.
+<P>You may define alternative mappings. If you call sgml2html using
+the option <CODE>--style=my</CODE>, sgml-tools will look for a file named
+<CODE>mymapping</CODE> at the same directory where <CODE>mapping</CODE> resides.
+I have created a mapping called by <CODE>--style=nice</CODE>, which I find
+better. If you like it you may use it.
+<P>
+<H3><A NAME="ss5.3">5.3 Navigation Icons</A>
+</H3>
+
+<P>Just like the documents created by the original sgml2html,
+documents created with <CODE>--nice</CODE> in combination with <CODE>--imagebuttons</CODE>,
+will look for <CODE>next.gif</CODE>, <CODE>prev.gif</CODE>, <CODE>toc.gif</CODE> and an additional one, 
+<CODE>blank.gif</CODE>.
+<P><CODE>blank.gif</CODE> is only needed when using the <CODE>--nice</CODE> option and it is
+used when it does not make sence to put one of the other navigation buttons.
+For example, it is used where the <CODE>next.gif</CODE> would be used on the last page of
+our document, or in the place of <CODE>toc.gif</CODE> on the <I>Table of Contents</I> page.
+<P>What's more, nice looking icons are included in the kdesgmltools package and
+may be used instead of the original icons. These icons are created using 
+<A HREF="http://www.ginp.org">The Gimp</A> and are based on icons
+found at the 
+<A HREF="http://www.iconbazaar.com/">http://www.iconbazaar.com/</A>. 
+<P>
+<P>
+<P ALIGN="RIGHT">
+
+<A HREF="UserGuide-6.html">Next</A>
+<A HREF="UserGuide-4.html">Previous</A>
+<A HREF="UserGuide.html#toc5">Table of Contents</A>
+</P>
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+ 
+</BODY>
+</HTML>

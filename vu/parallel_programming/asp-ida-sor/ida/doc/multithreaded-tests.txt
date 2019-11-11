@@ -1,0 +1,144 @@
+Dual PPro 200:
+
+(java -classpath .:build/ nl.vu.pp.multithreaded.FifteenPuzzle -workers 1 -board board3.txt)
+
+6 solutions found after 225.454 seconds and 11729112 tested moves.
+6 solutions found after 236.812 seconds and 11729120 tested moves.
+
+(java -classpath .:build/ nl.vu.pp.multithreaded.FifteenPuzzle -workers 2 -board board3.txt)
+
+6 solutions found after 184.237 seconds and 11689970 tested moves.
+6 solutions found after 186.402 seconds and 11701039 tested moves.
+
+------------------------------------------------------------------------------
+Dual XEON 2GHz:
+
+1 Worker
+(java -classpath .:build/ nl.vu.pp.multithreaded.FifteenPuzzle -workers 1 -board board3.txt)
+
+6 solutions found after 14.98 seconds and 11729084 tested moves.
+6 solutions found after 14.835 seconds and 11729122 tested moves.
+
+1 Worker, prebranch = 0 (no parallellism between main and worker-0)
+(java -classpath .:build/ nl.vu.pp.multithreaded.FifteenPuzzle -workers 1 -prebranch 0 -board board3.txt)
+6 solutions found after 14.365 seconds and 11729129 tested moves.
+6 solutions found after 14.542 seconds and 11729129 tested moves.
+6 solutions found after 14.38 seconds and 11729129 tested moves.
+6 solutions found after 14.362 seconds and 11729129 tested moves.
+
+
+
+2 Workers
+(java -classpath .:build/ nl.vu.pp.multithreaded.FifteenPuzzle -workers 2 -board board3.txt)
+
+6 solutions found after 10.146 seconds and 11530648 tested moves.
+6 solutions found after 9.705 seconds and 11503380 tested moves.
+6 solutions found after 9.688 seconds and 11501242 tested moves.
+6 solutions found after 13.653 seconds and 11722345 tested moves.
+6 solutions found after 13.6 seconds and 11722447 tested moves.
+6 solutions found after 9.601 seconds and 11506995 tested moves.
+
+4 Workers
+(java -classpath .:build/ nl.vu.pp.multithreaded.FifteenPuzzle -workers 4 -board board3.txt)
+
+6 solutions found after 8.667 seconds and 10824900 tested moves.
+6 solutions found after 8.554 seconds and 10809106 tested moves.
+6 solutions found after 8.584 seconds and 10810844 tested moves.
+6 solutions found after 8.798 seconds and 10819845 tested moves.
+6 solutions found after 8.551 seconds and 10807303 tested moves.
+6 solutions found after 8.483 seconds and 10755510 tested moves.
+
+
+hejlsberg:~/src/ida$ for i in `seq 15`; do for j in `seq 4`; do java -classpath .:build/ nl.vu.pp.multithreaded.FifteenPuzzle -workers 4 -prebranch $i -board board3.txt |grep "solutions found" >> prebranch$i.txt; done; done
+hejlsberg:~/src/ida$
+
+
+prebranch 1
+6 solutions found after 10.667 seconds and 11226256 tested moves.
+6 solutions found after 9.634 seconds and 11164993 tested moves.
+6 solutions found after 10.516 seconds and 11227432 tested moves.
+6 solutions found after 10.118 seconds and 11164266 tested moves.
+
+prebranch 2
+6 solutions found after 9.227 seconds and 10997950 tested moves.
+6 solutions found after 9.665 seconds and 11006962 tested moves.
+6 solutions found after 9.27 seconds and 10991947 tested moves.
+6 solutions found after 9.199 seconds and 10973747 tested moves.
+
+prebranch 3
+6 solutions found after 8.738 seconds and 10808444 tested moves.
+6 solutions found after 8.688 seconds and 10803615 tested moves.
+6 solutions found after 8.554 seconds and 10801152 tested moves.
+6 solutions found after 8.563 seconds and 10775290 tested moves.
+
+prebranch 4
+6 solutions found after 8.383 seconds and 10809782 tested moves.
+6 solutions found after 8.681 seconds and 10800289 tested moves.
+6 solutions found after 8.758 seconds and 10788732 tested moves.
+6 solutions found after 8.484 seconds and 10839569 tested moves.
+
+prebranch 5
+6 solutions found after 8.896 seconds and 10891017 tested moves.
+6 solutions found after 8.922 seconds and 10889034 tested moves.
+6 solutions found after 9.236 seconds and 10913653 tested moves.
+6 solutions found after 8.876 seconds and 10870301 tested moves.
+
+prebranch 6
+6 solutions found after 8.548 seconds and 10788227 tested moves.
+6 solutions found after 8.693 seconds and 10843865 tested moves.
+6 solutions found after 8.62 seconds and 10807722 tested moves.
+6 solutions found after 8.643 seconds and 10809177 tested moves.
+
+prebranch 7
+6 solutions found after 8.538 seconds and 10770913 tested moves.
+6 solutions found after 8.425 seconds and 10771558 tested moves.
+6 solutions found after 8.473 seconds and 10759235 tested moves.
+6 solutions found after 8.594 seconds and 10763983 tested moves.
+
+prebranch 8
+6 solutions found after 8.61 seconds and 10803476 tested moves.
+6 solutions found after 8.41 seconds and 10763184 tested moves.
+6 solutions found after 8.256 seconds and 10768612 tested moves.
+6 solutions found after 8.252 seconds and 10775981 tested moves.
+
+prebranch 9
+6 solutions found after 8.498 seconds and 10766284 tested moves.
+6 solutions found after 8.365 seconds and 10749985 tested moves.
+6 solutions found after 8.389 seconds and 10761862 tested moves.
+6 solutions found after 8.574 seconds and 10759070 tested moves.
+
+prebranch 10
+6 solutions found after 8.729 seconds and 10781630 tested moves.
+6 solutions found after 8.536 seconds and 10747944 tested moves.
+6 solutions found after 8.466 seconds and 10737106 tested moves.
+6 solutions found after 8.517 seconds and 10735580 tested moves.
+
+prebranch 11
+6 solutions found after 8.657 seconds and 10778661 tested moves.
+6 solutions found after 8.656 seconds and 10766384 tested moves.
+6 solutions found after 8.716 seconds and 10776183 tested moves.
+6 solutions found after 8.606 seconds and 10751385 tested moves.
+
+prebranch 12
+6 solutions found after 8.931 seconds and 10779490 tested moves.
+6 solutions found after 8.773 seconds and 10802965 tested moves.
+6 solutions found after 8.826 seconds and 10766463 tested moves.
+6 solutions found after 8.918 seconds and 10806698 tested moves.
+
+prebranch 13
+6 solutions found after 9.1 seconds and 10855339 tested moves.
+6 solutions found after 9.305 seconds and 10848931 tested moves.
+6 solutions found after 9.408 seconds and 10897097 tested moves.
+6 solutions found after 9.388 seconds and 10874997 tested moves.
+
+prebranch 14
+6 solutions found after 9.88 seconds and 10906259 tested moves.
+6 solutions found after 9.802 seconds and 10882107 tested moves.
+6 solutions found after 9.836 seconds and 10891562 tested moves.
+6 solutions found after 9.481 seconds and 10890121 tested moves.
+
+prebranch 15
+6 solutions found after 10.303 seconds and 10932817 tested moves.
+6 solutions found after 10.239 seconds and 10920764 tested moves.
+6 solutions found after 10.31 seconds and 10947636 tested moves.
+6 solutions found after 10.377 seconds and 10940119 tested moves.

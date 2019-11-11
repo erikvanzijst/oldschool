@@ -1,0 +1,30 @@
+<HTML>
+<BODY>
+<H1>Notes on config.h and the tar-archives made by mnx_diff</H1>
+<p>
+</B>
+
+<p>
+If you change something in /usr/include/minix/config.h, this change will show up in the
+tarfile that you submit using mnx_diff and bs_submit. As your kernel will be
+rebuilt by us, the config.h that you submit must be similar to ours.
+Parameters such as NR_PROCS, NR_PTYS, and network-related ones are particularly 
+important.<p>
+A number of parameters that are used at the minix installations on the
+VU are different from the ones
+found in the config.h on the CDROM distributed with the book.
+Therefore, you should make sure that either the config.h file from the
+VU is included in the
+tar-file you submit to us (possibly with additions made by you, although this
+is not recommended or encouraged), 
+or preferably that no config.h is included in the tar-file at all, i.e., 
+there were no changes made to the config.h file.<p>
+As an aside, do not build your own tar-file. Only if you use the mnx_diff
+script, can you be reasonably sure our test routines will accept the archive.
+Before submitting your archive using bs_submit, you may want to check the content of
+the tar-file using 'gtar tvfz filename.tar.Z'.
+However, this still does not guarantee acceptance of the archive if you have
+built it yourself, since gtar recognizes several compression formats.<p>
+<I>Guido van't Noordende, 6 Februari, 2001</I>
+</body>
+</html>

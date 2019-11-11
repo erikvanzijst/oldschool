@@ -1,0 +1,20 @@
+# run like this for an automatic walking token: ./client nick | telnet
+echo "o localhost 2525"
+sleep 1
+
+# first, log in
+echo $1
+sleep 1
+echo
+sleep 1
+echo "/ready set 1"
+
+while true
+do
+#	echo "/dice roll"
+#	echo "/ready set 1"
+	sleep 1	# sleep, so we don't get a madman
+	echo "/nick set //a//ap//"
+	sleep 1
+	echo "/nick set aap"
+done

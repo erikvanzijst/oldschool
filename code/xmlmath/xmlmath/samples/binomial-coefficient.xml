@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Computes the number of ways of picking k unordered outcomes from n
+possibilities, also known as a combination or combinatorial number.
+
+reference:
+http://mathworld.wolfram.com/BinomialCoefficient.html
+-->
+<toLong xmlns="http://prutser.cx/xmlmath/schemas">
+	<quotient datatype="long">
+	
+		<declare name="n">
+			<long value="4"/>
+		</declare>
+		<declare name="k">
+			<long value="2"/>
+		</declare>
+		
+		<fact>
+			<linkLong name="n"/>
+		</fact>
+		
+		<product datatype="long">
+			<fact>
+				<toLong>
+					<subtract datatype="long">
+						<linkLong name="n"/>
+						<linkLong name="k"/>
+					</subtract>
+				</toLong>
+			</fact>
+			
+			<fact>
+				<linkLong name="k"/>
+			</fact>
+		</product>
+	</quotient>
+</toLong>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : loggingconfiguration.xml
+    Created on : 18 November 2003, 13:48
+    Author     : Laurence Crutcher
+    Description:
+        Purpose of the document follows.
+-->
+
+
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+<appender name="RollingFileAppender" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="C:/Temp/log.txt"/>
+<param name="MaxBackupIndex" value="10"/>
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%p %d [%C:%t] - %m%n"/>
+</layout>
+</appender>
+<root>
+<priority value ="debug" />
+<appender-ref ref="RollingFileAppender"/>
+</root>
+</log4j:configuration>
+

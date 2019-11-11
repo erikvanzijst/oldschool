@@ -1,0 +1,21 @@
+Running SOR with 2000 rows
+Processor 0: ready to start SOR
+Processor 0: SOR took 61.060218 seconds
+SOR 2000 x 2000 complete
+using 33 iterations, diff is 0.062079 (allowed diff 0.063826)
+Processor 0: SOR done
+Processor 0: done
+Running SOR with 2000 rows
+Processor 0: ready to start SOR
+Processor 0: SOR took 61.058679 seconds
+SOR 2000 x 2000 complete
+using 33 iterations, diff is 0.062079 (allowed diff 0.063826)
+Processor 0: SOR done
+Processor 0: done
+Running SOR with 2000 rows
+Processor 0: ready to start SOR
+Processor 0: SOR took 61.059373 seconds
+SOR 2000 x 2000 complete
+using 33 iterations, diff is 0.062079 (allowed diff 0.063826)
+Processor 0: SOR done
+Processor 0: done

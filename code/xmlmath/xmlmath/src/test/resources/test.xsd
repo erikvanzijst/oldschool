@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://prutser.cx/xmlmath/schemas"
+	xmlns="http://prutser.cx/xmlmath/schemas"
+	xmlns:tns="http://prutser.cx/xmlmath/schemas"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<xs:include schemaLocation="../../main/resources/xmlmath.xsd"/>
+
+	<xs:element name="test">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element ref="testBoolean"/>
+					<xs:element ref="testLong"/>
+					<xs:element ref="testDouble"/>
+					<xs:element ref="testException"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="testException">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="value"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="testBoolean">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="abstract-boolean"/>
+			</xs:sequence>
+			<xs:attribute name="result" type="xs:boolean" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="testLong">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="abstract-long"/>
+			</xs:sequence>
+			<xs:attribute name="result" type="xs:long" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="testDouble">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="abstract-double"/>
+			</xs:sequence>
+			<xs:attribute name="result" type="xs:double" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>

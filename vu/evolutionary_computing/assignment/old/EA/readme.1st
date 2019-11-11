@@ -1,0 +1,66 @@
+
+This archive contains the GradeTester software which can be used for
+the practicum Evolutionary Algorithms at the VU Amsterdam. With
+GradeTester you can test your MyEA class to check whether it conforms
+to the specs given to you in the assignment description on
+http://www.cs.vu.nl/~schut/EA2002/. Please be reminded here of the
+fact that we cannot accept class files that are not conform to these
+specs. In other words, your MyEA must work with GradeTester.
+
+The specs (from http://ww.cs.vu.nl/~schut/EA2002)
+-------------------------------------------------
+By Friday 1 November 2002 you are required to hand in your work. This
+means you have to send an archive. The archive must be in tar.gz or
+zip format, and it has to create a separate directory when
+decompressing as opposed to only a collection of files. The archive
+has to contain
+ * Your source files, i.e. MyEA.java and any additional classes that
+you have written and are used by MyEA. We do not need your class
+files, but if you used public libraries, please include the classes
+you used in a jar file.    
+ * The report of at most 6 pages, in which you describe the algorithm
+you are using and motivate the choices for the different
+components. Do not forget to include your name in the report. The
+document has to be in pdf, or postscript format.
+
+The grade for the performance of your algorithm will be calculated as
+follows. The algorithm will be run 10 times, until MyEA.run() exits
+but at most until 1000000 evaluations each time. The best function
+values found during the runs give ten real numbers. We throw away the
+smallest one, so nine numbers remain. These are truncated (not
+rounded!) to integer (thus 6.0001, 6.5 and 6.999 all give 6). The
+grade is the average of these numbers, this time rounded (not
+truncated) to integer. For example, 6.5 is already 7, but 6.49 is 6.
+
+About GradeTester 
+----------------- 
+First untar the tar archive in the dir where your MyEA (or
+SampleEA for the example) is.
+
+usage: java GradeTester <random> <class>
+       where 
+         <random> is the random seed, typically 123456789
+         <class> is your class, typically MyEA
+
+For example, to use GradeTester with the SampleEA, you type:
+
+UNIX:
+ bash-2.05$ javac -classpath ./EA2002.jar *.java 
+ bash-2.05$ java -cp .:./EA2002.jar GradeTester 123456789 SampleEA
+
+WINxx (make sure javac and java are in your PATH):
+ H:\> javac -classpath ./EA2002.jar *.java
+ H:\> java -cp .;./EA2002.jar GradeTester 123456789 SampleEA
+
+The GradeTester software was written by Mark Jelasity
+(mailto:jelasity@cs.vu.nl).
+
+-----------------------------------------------------------------
+
+Originally posted by Martijn Schut, October 2002, Amsterdam
+Mon Oct 21 13:14:25 CEST 2002
+
+Vrije Universiteit Amsterdam             http://www.cs.vu.nl/~schut/
+Dept. of Artificial Intelligence         email: schut@cs.vu.nl
+De Boelelaan 1081a, 1081 HV Amsterdam,   Phone: +31 (0)20 444 7668
+The Netherlands                          Fax:   +31 (0)20 444 7653 

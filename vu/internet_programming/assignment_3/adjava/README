@@ -1,0 +1,140 @@
+	Internet Programming
+
+	Programming Assignment 3.3: An Ad Server in Java RMI
+
+
+This directory contains the Java implementation of the Java Ad Server, together
+with the clients AdGet and AdSend.
+
+Although the programs and the generated documentation have already been
+compiled, one can recompile the package using make:
+
+
+	erik:~/src/ip/assignment_3/adjava$ make
+	mkdir -p build/
+	javac -d build `find src/ -type f -name "*.java"`
+	rmic -d build/ -classpath build/ nl.vu.ip.AdServer
+	Generating JavaDoc...
+	mkdir -p doc/javadoc
+	<snip>
+	erik:~/src/ip/assignment_3/adjava$
+
+
+To run the application, make sure to have a bankd server up and running. In
+this example we have a bankd running on localhost on its default port 3211.
+When there is a bankd process running, first start the AdServer:
+
+	
+	erik:~/src/ip/assignment_3/adjava$ java -classpath build/ \
+	nl.vu.ip.AdServer -prices ./prices.cfg -account 123
+
+	Read price for 1 ads: 1.0
+	Read price for 5 ads: 4.5
+	Read price for 10 ads: 7.5
+	Java AdServer started successfully, our account number is 123.
+
+
+This command launches the ad server and configures it with the ad space prices
+described in the file prices.cfg in the current directory. The server's bank
+account is 123. It needs the account number to verify that clients actually
+transferred their money to the correct bank account.
+
+Now that the ad server is running, use the AdSend program to purchase ad space
+and publish one or more ads:
+
+
+	erik:~/src/ip/assignment_3/adjava$ java -classpath build/ \
+	nl.vu.ip.AdSend -srcaccount 555 -destaccount 123 -budget 9.0 \
+	-files ads/*.gif
+
+	10 ads loaded from disk.
+	Requesting pricing information... succeeded.
+	With our budget of 9.0 we can purchase place for 12 ads, with a total
+	cost of 9.0.
+	Making the payment at the bank; transferring 9.0 from our account (555)
+	to the server's account (123)... succeeded.
+	Uploading the ads to the AdServer, along with the certificate of
+	payment... succeeded.
+	erik:~/src/ip/assignment_3/adjava$
+
+
+The AdSend program first loads all files from the ads/ directory in memory, as
+specified by the -files switch. It then requests the pricing information from
+the server and determines that it can purchase space for exactly 12 ads with
+its budget of 9.0. The program now contacts the bankd server at localhost and
+transfers the money from its own account (specified by -srcaccount 555) to the
+server's account (123).
+After the transfer succeeded, the AdSend program contacts the ad server to
+upload its 12 ads. Together with the ads, the AdSend program also supplies the
+money transfer information, and the transaction's certificate. The server uses
+this information to verify the payment.
+
+Note that when there is budget for more ads than the number specified at the
+command line (as in our test where the budget leaves room for 12 ads, while
+only 10 ads are available), the AdSend program will cycle over the supplied ads
+and publish them more than once to spend the whole budget. This way it is easy
+to spend a large budget on a single ad. By uploading the same ad more than
+once, its exposure to clients increases. In our example, the AdSend program
+will upload the first 2 ads twice, the other 8 ads only once, adding up to a
+total of 12 ads.
+
+At the same time, the console of the ad server shows the incoming requests from
+our client:
+
+
+	Price list requested.
+	Verifying the payment of 9.0 from account 555 to account 123 with
+	certificate 947075421
+	12 new ads received.
+
+
+The server now has 12 ads in memory, ready to service the AdGet client program.
+We start the AdGet program to retrieve a single advertisement and display it on
+X:
+
+
+	erik:~/src/ip/assignment_3/adjava$ java -classpath build/ \
+	nl.vu.ip.AdGet
+
+	Ad received.
+	Ad written to local file /tmp/ad10.gif
+	Launching the viewer...
+
+
+If everything is configured correctly (correct X display settings and
+permissions), the ad now pops up on the desktop, displayed by the standard xv
+program. When xv is closed, the AdGet program automatically deletes the
+temporarily stored image file.
+
+We don't need to pass any special parameters to the our programs, as our test
+uses all the default settings. If the ad server runs at a remote host however,
+or when a different external viewer program should be used, one can use the
+appropriate command line switches. To obtain a list of all possible switches
+for a program, use "--help":
+
+
+	erik:~/src/ip/assignment_3/adjava$ java -classpath build/ \
+	nl.vu.ip.AdGet --help
+
+	usage: java nl.vu.ip.AdGet [OPTION]...
+
+	Options:
+
+	        --help (print this usage text and exit)
+	        -adserveraddress localhost
+	        -adserverport 1099
+	        -viewer xv
+	        -d /tmp
+
+	Where the above values are the defaults when omitted.
+	erik:~/src/ip/assignment_3/adjava$
+
+
+All classes have been extensively documented using both standardized javadoc
+tags as well as inline comments. The javadoc can be found in the doc/javadoc
+directory, the source tree is located in the src/ directory.
+
+
+Erik van Zijst, erik@marketxs.com
+Sander van Loo, sander@marketxs.com
+07.apr.2003

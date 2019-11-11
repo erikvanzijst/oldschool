@@ -1,0 +1,144 @@
+Processor 2: row 250 to 374
+Processor 1: row 125 to 249
+Processor 0: row 0 to 124
+Processor 3: row 375 to 499
+Processor 5: row 625 to 749
+Processor 6: row 750 to 874
+Processor 7: row 875 to 999
+Processor 4: row 500 to 624
+Processor 0: 125 rows
+Processor 1: 125 rows
+Processor 6: 125 rows
+Processor 7: 125 rows
+Processor 4: 125 rows
+Processor 5: 125 rows
+Processor 2: 125 rows
+Processor 3: 125 rows
+Processor 1: ready to start ASP
+Processor 2: ready to start ASP
+Processor 3: ready to start ASP
+Processor 4: ready to start ASP
+Processor 5: ready to start ASP
+Processor 6: ready to start ASP
+Processor 0: ready to start ASP
+Processor 7: ready to start ASP
+Processor 3: ASP took 45.760149 seconds
+Processor 7: ASP took 45.760166 seconds
+Processor 1: ASP took 45.760186 seconds
+Processor 0: ASP took 45.760302 seconds
+Processor 4: ASP took 45.760157 seconds
+Processor 2: ASP took 45.760295 seconds
+Processor 5: ASP took 45.760202 seconds
+Processor 6: ASP took 45.760345 seconds
+Processor 4: ASP done
+Processor 4: done
+Processor 2: ASP done
+Processor 2: done
+Processor 1: ASP done
+Processor 1: done
+Processor 0: ASP done
+Processor 0: done
+Processor 7: ASP done
+Processor 7: done
+Processor 3: ASP done
+Processor 3: done
+Processor 5: ASP done
+Processor 5: done
+Processor 6: ASP done
+Processor 6: done
+Processor 3: row 375 to 499
+Processor 1: row 125 to 249
+Processor 0: row 0 to 124
+Processor 4: row 500 to 624
+Processor 7: row 875 to 999
+Processor 6: row 750 to 874
+Processor 5: row 625 to 749
+Processor 2: row 250 to 374
+Processor 0: 125 rows
+Processor 1: 125 rows
+Processor 3: 125 rows
+Processor 7: 125 rows
+Processor 6: 125 rows
+Processor 4: 125 rows
+Processor 2: 125 rows
+Processor 5: 125 rows
+Processor 1: ready to start ASP
+Processor 2: ready to start ASP
+Processor 3: ready to start ASP
+Processor 4: ready to start ASP
+Processor 5: ready to start ASP
+Processor 6: ready to start ASP
+Processor 0: ready to start ASP
+Processor 7: ready to start ASP
+Processor 3: ASP took 45.743546 seconds
+Processor 1: ASP took 45.743549 seconds
+Processor 0: ASP took 45.743689 seconds
+Processor 6: ASP took 45.743764 seconds
+Processor 7: ASP took 45.743611 seconds
+Processor 4: ASP took 45.743575 seconds
+Processor 2: ASP took 45.743685 seconds
+Processor 5: ASP took 45.743580 seconds
+Processor 7: ASP done
+Processor 7: done
+Processor 0: ASP done
+Processor 0: done
+Processor 3: ASP done
+Processor 3: done
+Processor 1: ASP done
+Processor 1: done
+Processor 5: ASP done
+Processor 5: done
+Processor 4: ASP done
+Processor 4: done
+Processor 2: ASP done
+Processor 2: done
+Processor 6: ASP done
+Processor 6: done
+Processor 2: row 250 to 374
+Processor 3: row 375 to 499
+Processor 4: row 500 to 624
+Processor 0: row 0 to 124
+Processor 1: row 125 to 249
+Processor 6: row 750 to 874
+Processor 7: row 875 to 999
+Processor 5: row 625 to 749
+Processor 7: 125 rows
+Processor 6: 125 rows
+Processor 3: 125 rows
+Processor 1: 125 rows
+Processor 2: 125 rows
+Processor 4: 125 rows
+Processor 5: 125 rows
+Processor 0: 125 rows
+Processor 1: ready to start ASP
+Processor 2: ready to start ASP
+Processor 3: ready to start ASP
+Processor 4: ready to start ASP
+Processor 5: ready to start ASP
+Processor 6: ready to start ASP
+Processor 0: ready to start ASP
+Processor 7: ready to start ASP
+Processor 2: ASP took 45.729102 seconds
+Processor 0: ASP took 45.729098 seconds
+Processor 3: ASP took 45.729007 seconds
+Processor 1: ASP took 45.728919 seconds
+Processor 6: ASP took 45.729193 seconds
+Processor 4: ASP took 45.729004 seconds
+Processor 7: ASP took 45.729043 seconds
+Processor 5: ASP took 45.728977 seconds
+Processor 4: ASP done
+Processor 4: done
+Processor 6: ASP done
+Processor 6: done
+Processor 1: ASP done
+Processor 1: done
+Processor 0: ASP done
+Processor 0: done
+Processor 5: ASP done
+Processor 5: done
+Processor 3: ASP done
+Processor 3: done
+Processor 2: ASP done
+Processor 2: done
+Processor 7: ASP done
+Processor 7: done

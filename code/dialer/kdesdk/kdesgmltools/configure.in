@@ -1,0 +1,21 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(nicemapping)
+AM_INIT_AUTOMAKE(kdesgmltools, 0.5) 
+
+dnl Checks for programs.
+AC_PATH_PROG(SGMLTOOL, sgml2html, /usr/bin/sgml2html, $PATH:/usr/bin:/usr/local/bin)
+dnl define the prefix of the SGML-Tools
+sgml_prefix=`echo $SGMLTOOL | sed -e "s#/bin/sgml2html#/lib/sgml-tools#"`
+AC_SUBST(sgml_prefix)
+
+# looking for kwm is saver than relying on $KDEDIR alone
+AC_PATH_PROG(KWM, kwm, /opt/kde/bin/kwm, $PATH:/usr/bin:/usr/local/bin:$KDEDIR/bin)
+dnl define the prefix of KDE
+kde_prefix=`echo $KWM | sed -e "s#/bin/kwm##"`
+AC_SUBST(kde_prefix)
+
+AC_OUTPUT(Makefile \
+	img/Makefile \
+	bin/Makefile \
+	doc/Makefile \
+	doc/en/Makefile)

@@ -1,0 +1,69 @@
+	Question 1
+
+Which information must you store in the db.php database file? How will you
+structure your database?
+
+We need to store at least 4 properties per product, namely name,
+description, price and some picture. We chose to store both a large image
+and a small thumbnail image of each product. To store this information in an
+easy to use datastructure, we use a two-dimensional, associative array.
+
+
+	Question 2
+
+Which operations must you support on the stocks database? How can you store
+such a database on disk? How will you implement the required operations?
+
+The database must at least keep track of the number of items in stock for
+each product, as well as provide functions to manipulate the stocks. As
+described in the README file, we provide 2 funtions for manipulating the
+stocks, namely stockDecrement() and stockIncrement(). In addition there are
+also methods that return the number of items in stock for a single product
+(getAmount()),as well as method that returns how many items we sold per
+product (setSold()). These 2 funtions are read-only.
+The last function, setAmount() is used by the admin.php page and is used to
+set the stocks for a particular product to a specified value.
+
+We store the information in a text file on disk. The format used is that of
+php's build-in serialization functionality. Instead of implementing our own,
+limited and error-prone parser, we chose to let php use its general-purpose
+object serialization routines. It does make the file more difficult to read
+manually this way, but the file wasn't meant to be edited by hand.
+
+The stockmanip.php file uses advisory file locks to avoid race conditions as
+a result of concurrent users. See the README file for more details.
+
+
+	Question 3
+
+Which mechanisms can be employed to restrict access? Which one dod you
+choose? For which reason?
+
+To protect a web page from being accessed anonymously, one can use standard
+protocol-level mechanisms such as the one we used, or application-level
+mechanisms. The second case is probably more flexible as the application is
+more aware of its users and access levels, but also includes more work. Most
+real-life, commercial sites use this. Logging in is done using normal HTML
+pages, combined to cookies or special session identifiers, attached to
+subsequent requests.
+The more primitive way is to define access levels at the protocol level and
+let the webserver enforce it. This HTTP authentication supports a few
+different machanisms of which the most simple and primitive is "Basic"
+authentication that uses a special HTTP header that contains the username
+and password in a base-64 encoded representation. It offers relatively weak
+security as the credentials are sent over the network with each request and
+are almost plain-text. We use it because it is simple and robust. Security
+could be improved by encrypting all client/server communication.
+
+
+	Question 4
+
+How can buy.php contact the bank server? Would it have been possible if the
+bank server had been written using RPC or RMI?
+
+buy.php uses standard TCP sockets to communicate with the bank server and
+implements the same protocol as the C and Java clients from assignment 3.
+Using RMI or RPC from php directly is impossible. If language bindings with
+C and Java were available, indirect use of these protocols might eventually
+perhaps be possible.
+

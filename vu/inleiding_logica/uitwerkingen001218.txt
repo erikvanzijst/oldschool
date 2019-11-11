@@ -1,0 +1,127 @@
+Uitwerking tentamen Inleiding Logica 18 december 2000
+
+1(a)
+
+
+1   p & -(q v r)        prem
+2   p                   &e1, 1
+   ----------
+3  | r                  ass
+4  | q V r              vi2, 3
+5  | -(q v r)           &e2, 1
+6  | false              -e, 4,5
+   ---------- 
+7   -r                  -i, 3-6
+8   p & -r              &i, 2,7
+
+
+ (b)
+
+
+1  p V q                prem
+2  -p -> -q             prem
+   ------
+3  | p                  ass
+   ------
+   ------------
+4  | q                  ass
+   | --------
+5  | | -p               ass
+6  | | -q               ->e, 2,3
+7  | | false            -e, 4,6
+   | ---------          
+8  | p                  RAA, 5-7
+   -------------
+9    p                  ve, 1,3-3,4-8
+
+
+=========================================
+2.  Er zijn verschillende methoden. 
+    Bijvoorbeeld met een waarheidstafel.
+    Hier onder met transformaties: pijlen
+    elimineren, negaties naar binnen brengen,
+    dubbele negaties wegwerken, distributie.
+
+
+-(p -> q) v -(q -> p)
+
+-(-p v q) v -(-q v p)			
+
+(--p & -q) v (--q & -p)
+
+(p & -q) v (q & -p)
+
+(q v (p & -q)) & (-p v (p & -q))
+
+(p v q) & (-q v q) & (p v -p) & (-q V q)
+
+De laatste formule is de CNV. Het is geen tautologie, 
+want de 2e en 3e conjunct bevatten geen tegengesteld paar.
+
+==================================================
+4.  
+
+1  \A\x \A\y (Rxy & Ryx)			prem
+   -------------------------------------
+2  |  \E\z -Rzz 				ass
+   |  -----------------------
+3  |  | z_0  -R(z0,z0)				ass
+4  |  |      \A\y (R(z0,y) & R(y,z0))		\A\e, 1
+5  |  |      R(z0,z0) & R(z0,z0)		\A\e, 4     
+6  |  |      R(z0,z0)				&e1, 5
+7  |  |      false				-e, 3,6
+   |  -----------------------
+8  |  false					\E\e, 2,3-7
+   ------------------------------------
+9  -\E\z -Rzz					-i, 2-8
+
+
+==========================================================
+5(a)
+
+Niet geldig. Er meerdere tegenmodellen mogelijk.
+Ik geef twee mogelijkheden.
+
+M:  domein: A = {0,1}
+    Interpreties: P^M = {0}, R^M = leeg
+
+N:  domein: A = {0,1}
+    Interpreties: P^M = {0}, R^M = {<0,0>,<1,0>}
+
+ (b)
+
+Wel geldig. Afleiding:
+
+1  \A\y (Py -> \A\x Rxy)			prem
+   --------------------------
+2  |  \A\y Py					ass
+   |  -------------------
+3  |  | z0  Pz0					\A\e, 2
+4  |  |     Pz0 -> \A\x R{x,z0)			\A\e, 1
+5  |  |     \A\x R{x,z0)			->e, 3,4
+   |  --------------------
+6  |  \A\z \A\x R{x,z)				\A\i, 3-5
+   ----------------------------
+7  \A\y Py -> \A\z \A\x R(x,z)			->i, 2-6
+
+=============================================================
+6(a)  \A\x (\A\y(Ly -> Kxy) -> -Kxx)
+ (b)  \A\x ((Lx & -(x=b)) -> Kxa) & -Kba  of alternatief:
+      \A\x ((Lx -> (Kxa <-> -x=b))
+ (c)  \A\x \A\y \A\z ((Lx & Ly & Lz & Kax & Kay & Kaz) -> (x=y v x=z v y=z))
+
+============================================================
+7(a) In a2 en a3.
+ (b) L'(a1) = L'(a2) = L'(a3) = L'(a4) = {p}.
+ (c) Met de eigenschap 'serieel' (voortzettend).
+     \A\x \E\y Rxy
+ (b) Ja, want F is serieel.
+
+===============================================================
+8(a) Oplossing: (2,1,3)
+     Je krijgt dan het rijtje 1101000
+ (b) Je kunt er mee aantonen dat de predikatenlogica onbeslisbaar is.
+     Er is geen algoritme dat voor elke formule fi bepaalt of fi
+     geldig is.
+     Dit blijkt doordat PCP onbeslisbaar is en PCP gerepresenteerd
+     kan worden binnnen de predikatenlogica.

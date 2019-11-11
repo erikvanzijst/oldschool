@@ -1,0 +1,28 @@
+From graphics@few.vu.nl Mon Dec  6 11:53:36 2004
+Date: Mon, 6 Dec 2004 11:33:08 +0100 (CET)
+From: via kielmann <graphics@few.vu.nl>
+To: Erik van Zijst <icehawk@erik.prutser.cx>
+Subject: Re: Submission for exercise 2
+
+I checked your exercise: it was very good. You can continue with the
+next one. I only have some minor comment:
+
+- Your program does not work stand alone. It runs only from Visual
+Studio. Usually this is caused by using incorrect directory paths when
+loading image or model files. Being stand alone is one of the
+requirements of the final project.
+
+	Tom
+
+On Fri, 26 Nov 2004, Erik van Zijst wrote:
+
+> Please find attached my submission for exercise 2 of the 2004 Computer
+> Graphics practical assignment. There is a README.txt document in the
+> exercise2/ directory that discusses the implementation and some design
+> decisions.
+>
+> Erik van Zijst
+> 1351745
+> --
+> An engineer is someone who does list processing in FORTRAN.
+>

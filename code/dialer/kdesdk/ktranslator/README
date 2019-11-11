@@ -1,0 +1,34 @@
+
+HI!!
+
+
+KTranslator is a very very very very very very very powerful utlity for KDE
+translators.
+
+You can read a .pot file and,using old translated files, you can easly translate
+it.
+
+
+To make ktranslator:
+
+If you have autoconf & automake
+ make -f Makefile.dist
+ configure
+ make
+ make install
+ 
+else
+
+configure
+make
+make install
+
+
+
+
+
+
+
+17 Jan 1997
+Andrea Rizzi
+Bilibao@ouverture.it

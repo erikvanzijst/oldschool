@@ -1,0 +1,3 @@
+STUNNEL_DIR=/usr/local/sbin
+STUNNEL_CONF=stunnel.conf
+LIBBANK_DIR=`pwd`/../bankserver

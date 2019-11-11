@@ -1,0 +1,42 @@
+# Homework assignment for the Internet Programming course at the Vrije
+# Universiteit of Amsterdam, The Netherlands.
+#
+# Erik van Zijst, erik@marketxs.com
+# Sander van Loo, sander@marketxs.com
+# 21.feb.2003
+
+CC=cc
+BANK_SHARED=libbank.so
+BANK=bankd
+PASSWD=passwd
+
+BANK_SRC=bankd.c bank.c bank_account.c 
+BANK_OBJ=$(BANK_SRC:.c=.o)
+
+PASSWD_SRC=bankd.c bank.c bank_account.c 
+PASSWD_OBJ=$(BANK_SRC:.c=.o)
+
+BANK_SHARED_SRC=network.c protocol.c strlcpy.c
+BANK_SHARED_OBJ=$(BANK_SHARED_SRC:.c=.o)
+
+LIBS=-L. -lbank -lpthread -lcrypt
+
+.c.o:
+	$(CC) -Wall -c $<
+
+all: $(BANK) $(PASSWD)
+
+
+$(BANK_SHARED): $(BANK_SHARED_OBJ)
+	$(CC) -shared -o $(BANK_SHARED) $(BANK_SHARED_OBJ) 
+
+
+$(BANK): $(BANK_OBJ) $(BANK_SHARED)
+	$(CC) -o $(BANK) $(BANK_OBJ) $(LIBS) 
+
+$(PASSWD): $(PASSWD_OBJ) $(BANK_SHARED)
+	$(CC) -o $(PASSWD) $(PASSWD_OBJ) $(LIBS) 
+
+clean:
+	@echo "Removing object files and targets:"
+	@rm -vf *.o $(BANK) $(BANK_SHARED) $(PASSWD) *~ core

@@ -1,0 +1,33 @@
+DATUM: 09-08-2005     TIJD: 07:10
+Tentamenuitslagen bij de instelling vanaf 01-09-2002
+Student 1351745  Zijst, E van
+                                                                                  
+Vakcode   Vaknaam                         Datum       Resultaat  Studielast/ECTS
+-------------------------------------------------------------------------------- 
+                                                                                 
+Uitslagen bij onderwijsadministratie: FEW Wiskunde en Informatica
+400216    Afstudeerscriptie               03-08-2005  9          23        
+4001062   Computer Graphics Practicum     22-03-2005  10         0         
+400106    Computer Graphics               22-03-2005  9          6         
+4001061   Computer Graphics tent.         26-01-2005  6.5        0         
+400196    Operating Systems Practical     31-08-2004  9.5        9         
+400105    Compiler Construction           09-06-2004  8.0        5         
+400039    Kansrekening I voor BWI         06-04-2004  8.0        4         
+400119    Inleiding logica                12-02-2004  7          5         
+400211    Distributed Algorithms          21-01-2004  7          6         
+400119    Inleiding logica                15-12-2003  5                    
+400277    Literatuurstudie                11-12-2003  9.0        6         
+400111    Evolutionary Computing          26-11-2003  7,2        6         
+4001190   Inleiding Logica (vt)           24-10-2003  7,6        0         
+400052    Network Programming             30-06-2003  9,0        9         
+400127    Network Security                27-05-2003  8          6         
+400120    Inleiding Theoretische Inform.  22-05-2003  6,0        5         
+400162    Parallel Programming Practical  18-03-2003  9          6         
+400137    Object-Oriented Softw.Dev. ess  31-01-2003  6.0        4         
+400130    Distributed Systems             27-01-2003  9          6         
+400107    Computers in de samenleving     23-01-2003  8          4         
+400161    Parallel programmeren           08-01-2003  7,9        6         
+4001301   Distributed Systems D1          21-10-2002  8          0         
+                                                                                 
+Aan dit overzicht kunnen geen rechten ontleend worden.
+Een officieel document kan bij de studentenadministratie opgevraagd worden.

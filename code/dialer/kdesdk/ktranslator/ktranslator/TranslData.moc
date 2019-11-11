@@ -1,0 +1,186 @@
+/****************************************************************************
+** KTranslator meta object code from reading C++ file 'TranslData.h'
+**
+** Created: Tue Jun 16 15:16:25 1998
+**      by: The Qt Meta Object Compiler ($Revision: 2.18 $)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#define Q_MOC_OUTPUT_REVISION 2
+#elif Q_MOC_OUTPUT_REVISION != 2
+#error Moc format conflict - please regenerate all moc files
+#endif
+
+#include "TranslData.h"
+#include <qmetaobj.h>
+
+
+const char *KTranslator::className() const
+{
+    return "KTranslator";
+}
+
+QMetaObject *KTranslator::metaObj = 0;
+
+void KTranslator::initMetaObject()
+{
+    if ( metaObj )
+	return;
+    if ( strcmp(KTopLevelWidget::className(), "KTopLevelWidget") != 0 )
+	badSuperclassWarning("KTranslator","KTopLevelWidget");
+    if ( !KTopLevelWidget::metaObject() )
+	KTopLevelWidget::initMetaObject();
+    typedef void(KTranslator::*m1_t0)();
+    typedef void(KTranslator::*m1_t1)(int);
+    typedef void(KTranslator::*m1_t2)(int);
+    typedef void(KTranslator::*m1_t3)(int);
+    typedef void(KTranslator::*m1_t4)();
+    typedef void(KTranslator::*m1_t5)();
+    m1_t0 v1_0 = &KTranslator::updateToolbar;
+    m1_t1 v1_1 = &KTranslator::updateTot;
+    m1_t2 v1_2 = &KTranslator::updateCur;
+    m1_t3 v1_3 = &KTranslator::updateTran;
+    m1_t4 v1_4 = &KTranslator::about;
+    m1_t5 v1_5 = &KTranslator::HtmlHelp;
+    QMetaData *slot_tbl = new QMetaData[6];
+    slot_tbl[0].name = "updateToolbar()";
+    slot_tbl[1].name = "updateTot(int)";
+    slot_tbl[2].name = "updateCur(int)";
+    slot_tbl[3].name = "updateTran(int)";
+    slot_tbl[4].name = "about()";
+    slot_tbl[5].name = "HtmlHelp()";
+    slot_tbl[0].ptr = *((QMember*)&v1_0);
+    slot_tbl[1].ptr = *((QMember*)&v1_1);
+    slot_tbl[2].ptr = *((QMember*)&v1_2);
+    slot_tbl[3].ptr = *((QMember*)&v1_3);
+    slot_tbl[4].ptr = *((QMember*)&v1_4);
+    slot_tbl[5].ptr = *((QMember*)&v1_5);
+    metaObj = new QMetaObject( "KTranslator", "KTopLevelWidget",
+	slot_tbl, 6,
+	0, 0 );
+}
+
+
+const char *TranslData::className() const
+{
+    return "TranslData";
+}
+
+QMetaObject *TranslData::metaObj = 0;
+
+void TranslData::initMetaObject()
+{
+    if ( metaObj )
+	return;
+    if ( strcmp(QDialog::className(), "QDialog") != 0 )
+	badSuperclassWarning("TranslData","QDialog");
+    if ( !QDialog::metaObject() )
+	QDialog::initMetaObject();
+    typedef void(TranslData::*m1_t0)();
+    typedef void(TranslData::*m1_t1)();
+    typedef void(TranslData::*m1_t2)();
+    typedef void(TranslData::*m1_t3)();
+    typedef void(TranslData::*m1_t4)();
+    typedef void(TranslData::*m1_t5)();
+    typedef void(TranslData::*m1_t6)();
+    typedef void(TranslData::*m1_t7)(int);
+    typedef void(TranslData::*m1_t8)(int);
+    typedef void(TranslData::*m1_t9)();
+    typedef void(TranslData::*m1_t10)();
+    typedef void(TranslData::*m1_t11)();
+    typedef void(TranslData::*m1_t12)();
+    typedef void(TranslData::*m1_t13)();
+    typedef void(TranslData::*m1_t14)();
+    m1_t0 v1_0 = &TranslData::removeFuzzy;
+    m1_t1 v1_1 = &TranslData::header;
+    m1_t2 v1_2 = &TranslData::scrollOn;
+    m1_t3 v1_3 = &TranslData::setup;
+    m1_t4 v1_4 = &TranslData::saveopt;
+    m1_t5 v1_5 = &TranslData::nextID;
+    m1_t6 v1_6 = &TranslData::prevID;
+    m1_t7 v1_7 = &TranslData::selectedCat;
+    m1_t8 v1_8 = &TranslData::selectedLang;
+    m1_t9 v1_9 = &TranslData::storeSTR;
+    m1_t10 v1_10 = &TranslData::searchInCats;
+    m1_t11 v1_11 = &TranslData::storeAndNext;
+    m1_t12 v1_12 = &TranslData::storeAndPrev;
+    m1_t13 v1_13 = &TranslData::openPot;
+    m1_t14 v1_14 = &TranslData::makeFile;
+    QMetaData *slot_tbl = new QMetaData[15];
+    slot_tbl[0].name = "removeFuzzy()";
+    slot_tbl[1].name = "header()";
+    slot_tbl[2].name = "scrollOn()";
+    slot_tbl[3].name = "setup()";
+    slot_tbl[4].name = "saveopt()";
+    slot_tbl[5].name = "nextID()";
+    slot_tbl[6].name = "prevID()";
+    slot_tbl[7].name = "selectedCat(int)";
+    slot_tbl[8].name = "selectedLang(int)";
+    slot_tbl[9].name = "storeSTR()";
+    slot_tbl[10].name = "searchInCats()";
+    slot_tbl[11].name = "storeAndNext()";
+    slot_tbl[12].name = "storeAndPrev()";
+    slot_tbl[13].name = "openPot()";
+    slot_tbl[14].name = "makeFile()";
+    slot_tbl[0].ptr = *((QMember*)&v1_0);
+    slot_tbl[1].ptr = *((QMember*)&v1_1);
+    slot_tbl[2].ptr = *((QMember*)&v1_2);
+    slot_tbl[3].ptr = *((QMember*)&v1_3);
+    slot_tbl[4].ptr = *((QMember*)&v1_4);
+    slot_tbl[5].ptr = *((QMember*)&v1_5);
+    slot_tbl[6].ptr = *((QMember*)&v1_6);
+    slot_tbl[7].ptr = *((QMember*)&v1_7);
+    slot_tbl[8].ptr = *((QMember*)&v1_8);
+    slot_tbl[9].ptr = *((QMember*)&v1_9);
+    slot_tbl[10].ptr = *((QMember*)&v1_10);
+    slot_tbl[11].ptr = *((QMember*)&v1_11);
+    slot_tbl[12].ptr = *((QMember*)&v1_12);
+    slot_tbl[13].ptr = *((QMember*)&v1_13);
+    slot_tbl[14].ptr = *((QMember*)&v1_14);
+    typedef void(TranslData::*m2_t0)();
+    typedef void(TranslData::*m2_t1)(int);
+    typedef void(TranslData::*m2_t2)(int);
+    typedef void(TranslData::*m2_t3)(int);
+    m2_t0 v2_0 = &TranslData::fileOpened;
+    m2_t1 v2_1 = &TranslData::total;
+    m2_t2 v2_2 = &TranslData::current;
+    m2_t3 v2_3 = &TranslData::tran;
+    QMetaData *signal_tbl = new QMetaData[4];
+    signal_tbl[0].name = "fileOpened()";
+    signal_tbl[1].name = "total(int)";
+    signal_tbl[2].name = "current(int)";
+    signal_tbl[3].name = "tran(int)";
+    signal_tbl[0].ptr = *((QMember*)&v2_0);
+    signal_tbl[1].ptr = *((QMember*)&v2_1);
+    signal_tbl[2].ptr = *((QMember*)&v2_2);
+    signal_tbl[3].ptr = *((QMember*)&v2_3);
+    metaObj = new QMetaObject( "TranslData", "QDialog",
+	slot_tbl, 15,
+	signal_tbl, 4 );
+}
+
+// SIGNAL fileOpened
+void TranslData::fileOpened()
+{
+    activate_signal( "fileOpened()" );
+}
+
+// SIGNAL total
+void TranslData::total( int t0 )
+{
+    activate_signal( "total(int)", t0 );
+}
+
+// SIGNAL current
+void TranslData::current( int t0 )
+{
+    activate_signal( "current(int)", t0 );
+}
+
+// SIGNAL tran
+void TranslData::tran( int t0 )
+{
+    activate_signal( "tran(int)", t0 );
+}

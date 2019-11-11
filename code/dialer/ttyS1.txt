@@ -1,0 +1,148 @@
+Subject: 
+              Re: /dev/cua1 became obsolete in 2.1.XX? Now what?
+        Date: 
+              17 May 1998 19:34:16 GMT
+        From: 
+              hpa@transmeta.com (H. Peter Anvin)
+ Organization: 
+              Transmeta Corporation, Santa Clara CA
+  Newsgroups: 
+              comp.os.linux.hardware, comp.unix.programmer, comp.os.linux.development.apps,
+              comp.os.unix.admin, comp.os.linux.development.system
+   References: 
+              1
+
+
+
+
+Followup to:  <355F2909.E06B98F6@xs4all.nl>
+By author:    Erik van Zijst <icehawk@xs4all.nl>
+In newsgroup: comp.os.linux.development.system
+> 
+> Does this mean that 2.1 can't handle my /dev/cua1 calls? My dialer uses
+> /dev/cua1 too.
+> On my system, I linked /dev/modem to /dev/cua1 and in my dialer I call:
+> 
+>   int modem;
+>   char *number = "ATDT1234567890\r\n";
+>   if (modem = open("/dev/modem", O_WRONLY) == -1) exit(0);
+>   write(modem, number, strlen(number));
+>   sleep(4);   // modem dials
+>   close(modem);
+> 
+> However, while this works on 2.0.33, it doesn't on 2.1.98
+> What's wrong? In the kernel documentation I can't find anything on the
+> new /dev/ttyS1 device that seems to be replacing the /dev/cua1.
+> 
+
+It's not "new"; it is in fact older than the /dev/cu* device hack.
+
+The correct way to do this, which should work on either device, is:
+
+#include <errno.h>
+#include <termios.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+
+/* write() which retries on partial writes */
+ssize_t
+xwrite(int fd, void *buf, size_t count)
+{
+        char *p = buf;
+        size_t left = count;
+        ssize_t rv;
+
+        while ( left ) {
+                if ( (rv = write(fd, p, left)) < 0 ) {
+                        if ( errno != EINTR )
+                                return left ? (count - left) : -1;
+                } else {
+                        p += rv;
+                        left -= rv;
+                }
+        }
+
+        return count;
+}
+
+int 
+dial(char *number, char *modem_device)
+{
+        int modem, flags;
+        struct termios t;
+        char ch;
+        ssize_t rv;     
+        
+        /* Create a lock file /var/lock/LCK..XXXX if modem_device is /dev/XXXX etc. */
+
+        /* The O_NONBLOCK avoids block on no carrier */
+        if ((modem = open(modem_device, O_WRONLY|O_NONBLOCK|O_NOCTTY)) == -1) return -1;
+        if (tcgetattr(modem, &tc)) { close(modem); return -1; }
+        
+        /* Set local mode, so we can talk to the modem even when it's not online */
+        t.c_cc[VMIN]  = 1;
+        t.c_cc[VTIME] = 0;
+        t.c_iflag &= ~(BRKINT|IGNPAR|PARMRK|INPCK|ISTRIP|INLCR|IGNCR|ICRNL|IXON);
+        t.c_oflag &= ~(OPOST);
+        t.c_lflag &= ~(ECHO|ECHOE|ECHOK|ECHONL|ICANON|ISIG|NOFLSH|TOSTOP);
+        t.c_cflag &= ~(CSIZE|CSTOPB|PARENB);
+        /* 8-bit chars, local mode, receiver enabled, hangup on close */
+        t.c_cflag |= CLOCAL | CREAD | CS8 | HUPCL;
+
+        /* Set speed to 1200 bps (supporting most modems) */
+        if ( (cfsetispeed(&t, B1200) == -1) || (cfsetospeed(&t, B1200) == -1) ) {
+                close(modem);  return -1;
+        }
+
+        /* Throw away pending input */
+        if (tcflush(modem, TCIFLUSH) == -1) {
+                close(modem);
+                return -1;
+        }
+
+        /* Set serial port attributes */
+        if (tcsetattr(modem,TCSANOW,&t) == -1) {
+                close(modem);
+                return -1;
+        }
+
+        /* Turn off O_NONBLOCK now when CLOCAL is set */
+        if (fcntl(modem,F_SETFL,0) == -1) {
+                close(modem);  return -1;
+        }
+
+        /* Write the command string; the ; at the end causes return to command mode
+           after the number has been dialled */
+        xwrite(modem, "ATDT", 4);
+        xwrite(modem, number, strlen(number));
+        xwrite(modem, ";\r\n", 3);
+
+        /* Wait for OK */
+        while ( 1 ) {
+                rv = read(modem, &ch, 1);
+                if ( rv == 1 && ch == 'O' )
+                        break;
+                else if ( rv == 0 || rv == -1 && errno != EINTR ) {
+                        close(modem);
+                        return -1;
+                }
+        }
+
+        /* Hang up modem; do it both ways just in case */
+        xwrite(modem, "ATH0\r\n", 6);
+        close(modem);
+
+        /* Delete lock file */
+
+        return 0;
+}
+
+
+
+-- 
+    PGP: 2047/2A960705 BA 03 D3 2C 14 A8 A8 BD  1E DF FE 69 EE 35 BD 74
+    See http://www.zytor.com/~hpa/ for web page and full PGP public key
+        I am Bahá'í -- ask me about it or see http://www.bahai.org/
+   "To love another person is to see the face of God." -- Les Misérables

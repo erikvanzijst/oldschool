@@ -1,0 +1,12 @@
+#!/bin/bash
+. config
+PIDFILE=`grep "pid" $STUNNEL_CONF | cut -f2 -d'='`
+export LD_LIBRARY_PATH=`pwd`:$LD_LIBRARY_PATH
+if [ ! -r $PIDFILE ]; then
+	echo "Starting SSL tunnel software..."
+	$STUNNEL_DIR/stunnel $STUNNEL_CONF
+else
+	echo "SSL tunnel software still running..."
+fi
+echo "Starting bankd..."
+`pwd`/bankd accounts.cfg

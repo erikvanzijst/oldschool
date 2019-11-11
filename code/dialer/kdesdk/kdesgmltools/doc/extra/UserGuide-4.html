@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>A User's Guide to kdesgmltools: Theory </TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="sgml html niceSgml2Html kde">
+<META NAME="description" CONTENT="niceSgml2Html User's Guide">
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+ 
+<P ALIGN="RIGHT">
+
+<A HREF="UserGuide-5.html">Next</A>
+<A HREF="UserGuide-3.html">Previous</A>
+<A HREF="UserGuide.html#toc4">Table of Contents</A>
+</P>
+<H3><A NAME="theory"></A> <A NAME="s4">4. Theory </A></H3>
+
+<P>Part of the sgml-tools system is a perl module called Html2Html.pm.
+<P>When you activate the option --nice (or -N), instead of 
+Html2Html.pm, a new module called niceHtml2Html.pm is used.
+<P>
+<H3><A NAME="ss4.1">4.1 Html2Html.pm</A>
+</H3>
+
+<P>In order to understand how to use effeciently the --nice option you have
+to know exactly what Html2Html.pm is doing.
+<P>When you format an sgml document with sgml2html, it is filtered
+using some programs, in such way that the sgml tags defined in the 
+appropriate dtd (Document Type Description) are replaced by html tags.
+<P>This could be straight-forward but the problem is that the output of
+sgml2html is not one file; the document is split to several files,
+as many as the sections it contains. This makes sense; you wouldn't
+want to download a whole book from your browser, just to read the
+"credits" section!
+<P>This is what causes the main trouble; the internal links are destroyed
+and they must be redefined so that they point to the right file. This is a job for
+Html2Html.pm. This is why if you take a look at html/mapping you
+will see that some sgml tags are not replaced by html tags but by strange
+&lt;@@abcd> tags. Those tags are important for Html2Html.pm.
+<P>Html2Html.pm adds more value to your documents by creating a Table of Contents
+and taking care of some other little thing like the navigation icons or words
+that appear at the top and bottom of each page and point to the next and previous
+section as well as to the Table of Contents.
+<P>
+<H3><A NAME="ss4.2">4.2 niceHtml2Html.pm</A>
+</H3>
+
+<P>What Html2Html.pm creates is a fully functional set of html documents.
+<P>The body of each document starts with the buttons mentioned above (either
+as text or iconic) and goes on with the text of your document.
+<P>niceHtml2Html.pm is a hacked version of Html2Html.pm. It does all what
+the original Html2Html does plus, it inserts user-defined html tags at certain
+critical sections of the document. Those are:
+<H4>SectionA</H4>
+
+<P>We will call SectionA the section between the &lt;/TITLE&gt; tag and the
+&lt;/HEAD&gt; tag. Here is where we may insert &lt;META&gt; tags or any
+other tag that could go in the HEAD of an html document.
+<H4>SectionB</H4>
+
+<P>SectionB is between &lt;/HEAD&gt; tag and the first line of our document.
+Note that the &lt;BODY&gt; tag belongs to SectionB.
+<H4>SectionC</H4>
+
+<P>SectionC is just before the &lt;/BODY&gt; tag.
+<H4>BarTags1i and BarTags2</H4>
+
+<P>BarTags1 are the tags inserted just before the navigation buttons
+and BarTags2 are inserted just after them.
+<P>
+<P>So, your resulting document will look like this:
+<PRE>
+&lt;HTML>
+&lt;HEAD>
+&lt;TITLE>The test document&lt;/TITLE>
+---------------->PartA
+&lt;/HEAD>
+---------------->PartB
+                containing &lt;BODY>
+---------------->BarTags1
+(The buttons)
+---------------->BarTags2
+
+(The text of the document)
+
+---------------->BarTags1
+(The buttons)
+---------------->BarTags2
+---------------->PartC
+&lt;/BODY>
+&lt;/HTML>
+</PRE>
+<P>
+<P>The advantages are obvious! You can define in an important degree
+the look of your document.
+<P>
+<P ALIGN="RIGHT">
+
+<A HREF="UserGuide-5.html">Next</A>
+<A HREF="UserGuide-3.html">Previous</A>
+<A HREF="UserGuide.html#toc4">Table of Contents</A>
+</P>
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+ 
+</BODY>
+</HTML>

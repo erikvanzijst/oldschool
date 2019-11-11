@@ -1,0 +1,18 @@
+
+
+
+
+
+    Dit programma biedt de mogelijkheid om met de toetsen 1 t/m 8 een
+    octaaf op een orgeltje na te bootsen.
+    De relatie tussen toetsen en tonen is de volgende.
+
+          1  2  3  4  5  6  7  8
+          c  d  e  f  g  a  b  c
+
+    De aangeslagen toetsen produceren een toon die ongeveer 250 ms aan-
+    houdt. Desgewenst kunt u die tijdsduur wijzigen door in het program-
+    ma de constante duur te veranderen.
+    Het spelen be‰indigt u door 0 in te toetsen.
+
+    U kunt nu beginnen met spelen ...

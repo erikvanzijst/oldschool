@@ -1,0 +1,43 @@
+#!/bin/sh
+
+file=`basename $1 .sgml`
+
+echo -n Enter Description :
+read descr
+
+echo $descr
+
+echo -n Enter Keywords :
+read kw
+
+echo $kw
+
+echo "Creating $file.nif (nice include file). Please wait ..."
+echo
+
+echo >$file.nif "<--A-->"
+echo >>$file.nif "<META HTTP-EQUIV=\"content-type\" CONTENT=\"text/html; charset=iso-8859-1\">"
+echo >>$file.nif "<META NAME=\"keywords\" CONTENT=\"$kw\">"
+echo >>$file.nif "<META NAME=\"description\" CONTENT=\"$descr\">"
+
+cat >>$file.nif <<EOF
+<--B-->
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+<--C-->
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+<--BarTags1-->
+<P ALIGN="RIGHT">
+
+<--BarTags2-->
+</P>
+EOF
+
+echo Done.

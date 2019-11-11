@@ -1,0 +1,51 @@
+OVERVIEW
+~~~~~~~~
+
+Xmlmath is a combination of both an xml-based expression language and an interpreter for these xml files. The expressions xmlmath evaluates are mathematical, logical, textual, or a combination.
+
+An example of a mathematical expression that xmlmath would evaluate is:
+
+<add>
+	<long value="1"/>
+	<long value="1"/>
+</add>
+
+When run through the shell-based evaluator, it prints "2".
+
+Xmlmath comes with an extensive set of mathematical operations, including, but not limited to: <product>, <quotient>, <pow>, <sqrt>, <fact>, <lessThan>, <log>, <mod>, as well as constants such as <infinity>, <pi>, <nil> and <e>.
+Together these building blocks should offer enough functionality to solve relatively complex problems such as, for example, computing integrals.
+
+All available operations, as well as the expression's grammer is described in xmlmath's xml-schema. This schema also contains annotations for each available operation (or tag) that describe the operation's functionality, arguments and return-type. To make things more readible, the package comes with a stylesheet that generates an html-based overview of all tags.
+
+
+UNDER THE HOOD
+~~~~~~~~~~~~~~
+
+Internally, xmlmath's interpreter works in two stages:
+
+First it parses the xml, validates it against the schema and builds an in-memory tree of objects that reflect the expression's tree structure. For the (1+1) example above that yields an instance of the "Add" class, linked to two instances of the "Long" class.
+
+Second, the interpreter evaluates the expression. This is done simply by invoking "getValue()" on the class instance that represents the root tag. In turn, this object calls "getValue()" on its child nodes, adds their values and returns the result.
+
+
+INTERESTING FEATURES
+~~~~~~~~~~~~~~~~~~~~
+
+Xmlmath comes with a few interesting features:
+
+- Aside from providing basic operations to manipulate numbers, strings or booleans, xmlmath comes with a set of language constructs to make it easier to compute complex expressions:
+
+1. <declare> can be used at any place in the expression tree to tag a subtree with a name. Its value can then be used further down the expression tree using <link>.
+
+2. <stanza> can be used at any position in the expression tree to decribe a certain sub-expression. In contrast to declarations, stanzas are not evaluated at the same place as they were declared. Instead, stanzas are inlined when they are referred to using <inline>. This allows them to operation on variables that weren't yet declared when the stanza was included.
+
+3. Although not currently present, a future version of xmlmath will come with an <import file="foo.xml"> tag that is used to literally include an xml file at any given position in the expression tree. Using <import> in combination with <stanza> should then give enough flexibility to describe complex (mathematical) operations that are not already built-into xmlmath, and publish them as libraries of xml files that can be imported in expressions when needed. These libraries could for example contain statistical operations, algebra or calculus.
+
+4. Instead of using xmlmath as a standalone program that evaluates xml files, it is also possible to use xmlmath as a library inside any other existing application that needs to evaluate complex expressions.
+
+
+CURRENT STATUS
+~~~~~~~~~~~~~~
+
+Xmlmath is already being developed for almost three months and has already reached version 1.0. Although this version does not yet include some of the features that were described above, it does come with a working expression evaluator, xmlschemas, documenatation and examples of expressions. Scheduled for the upcoming release is also a servlet for web-based expression evaluations.
+

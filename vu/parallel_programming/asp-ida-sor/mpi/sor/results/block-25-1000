@@ -1,0 +1,384 @@
+Processor 2: done
+Processor 4: done
+Processor 15: done
+Processor 0: done
+Processor 1: done
+Processor 14: done
+Processor 16: done
+Processor 17: done
+Processor 11: done
+Processor 10: done
+Processor 13: done
+Processor 9: done
+Processor 12: done
+Processor 8: done
+Processor 6: done
+Processor 5: done
+Processor 7: done
+Processor 3: done
+Processor 22: done
+Processor 18: done
+Processor 24: done
+Processor 19: done
+Processor 21: done
+Processor 20: done
+Processor 23: done
+Processor 3: done
+Processor 5: done
+Processor 11: done
+Processor 9: done
+Processor 0: done
+Processor 6: done
+Processor 8: done
+Processor 1: done
+Processor 13: done
+Processor 14: done
+Processor 7: done
+Processor 15: done
+Processor 10: done
+Processor 21: done
+Processor 12: done
+Processor 19: done
+Processor 2: done
+Processor 16: done
+Processor 4: done
+Processor 18: done
+Processor 20: done
+Processor 24: done
+Processor 17: done
+Processor 22: done
+Processor 23: done
+Processor 4: done
+Processor 10: done
+Processor 0: done
+Processor 7: done
+Processor 3: done
+Processor 9: done
+Processor 5: done
+Processor 8: done
+Processor 2: done
+Processor 1: done
+Processor 14: done
+Processor 16: done
+Processor 6: done
+Processor 12: done
+Processor 19: done
+Processor 15: done
+Processor 18: done
+Processor 11: done
+Processor 23: done
+Processor 13: done
+Processor 24: done
+Processor 17: done
+Processor 21: done
+Processor 20: done
+Processor 22: done
+Running SOR with 1003 rows
+Processor 1: ready to start SOR
+Processor 2: ready to start SOR
+Processor 3: ready to start SOR
+Processor 4: ready to start SOR
+Processor 5: ready to start SOR
+Processor 6: ready to start SOR
+Processor 7: ready to start SOR
+Processor 8: ready to start SOR
+Processor 9: ready to start SOR
+Processor 10: ready to start SOR
+Processor 11: ready to start SOR
+Processor 12: ready to start SOR
+Processor 13: ready to start SOR
+Processor 14: ready to start SOR
+Processor 15: ready to start SOR
+Processor 16: ready to start SOR
+Processor 17: ready to start SOR
+Processor 18: ready to start SOR
+Processor 19: ready to start SOR
+Processor 20: ready to start SOR
+Processor 21: ready to start SOR
+Processor 22: ready to start SOR
+Processor 23: ready to start SOR
+Processor 0: ready to start SOR
+Processor 24: ready to start SOR
+Processor 6: SOR took 1.321086 seconds
+Processor 5: SOR took 1.321145 seconds
+Processor 3: SOR took 1.321217 seconds
+Processor 1: SOR took 1.321194 seconds
+Processor 2: SOR took 1.321173 seconds
+Processor 4: SOR took 1.321077 seconds
+Processor 7: SOR took 1.321127 seconds
+Processor 10: SOR took 1.321124 seconds
+Processor 11: SOR took 1.321180 seconds
+Processor 8: SOR took 1.321117 seconds
+Processor 0: SOR took 1.321157 seconds
+Processor 13: SOR took 1.321200 seconds
+Processor 9: SOR took 1.321186 seconds
+Processor 17: SOR took 1.321318 seconds
+Processor 15: SOR took 1.321181 seconds
+Processor 23: SOR took 1.321174 seconds
+Processor 14: SOR took 1.321130 seconds
+Processor 22: SOR took 1.321071 seconds
+Processor 12: SOR took 1.321129 seconds
+Processor 19: SOR took 1.321273 seconds
+Processor 16: SOR took 1.321153 seconds
+Processor 18: SOR took 1.321236 seconds
+Processor 21: SOR took 1.321174 seconds
+Processor 20: SOR took 1.321074 seconds
+Processor 24: SOR took 1.321159 seconds
+Processor 3: SOR done
+Processor 5: SOR done
+Processor 12: SOR done
+Processor 6: SOR done
+Processor 1: SOR done
+Processor 2: SOR done
+Processor 4: SOR done
+SOR 1003 x 1003 complete
+using 63 iterations, diff is 0.031773 (allowed diff 0.032090)
+Processor 0: SOR done
+Processor 9: SOR done
+Processor 11: SOR done
+Processor 7: SOR done
+Processor 8: SOR done
+Processor 10: SOR done
+Processor 13: SOR done
+Processor 15: SOR done
+Processor 14: SOR done
+Processor 16: SOR done
+Processor 17: SOR done
+Processor 19: SOR done
+Processor 20: SOR done
+Processor 21: SOR done
+Processor 18: SOR done
+Processor 22: SOR done
+Processor 23: SOR done
+Processor 24: SOR done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 4: done
+Processor 5: done
+Processor 6: done
+Processor 7: done
+Processor 8: done
+Processor 9: done
+Processor 10: done
+Processor 11: done
+Processor 12: done
+Processor 13: done
+Processor 14: done
+Processor 15: done
+Processor 16: done
+Processor 17: done
+Processor 18: done
+Processor 19: done
+Processor 20: done
+Processor 21: done
+Processor 22: done
+Processor 23: done
+Processor 24: done
+Processor 0: done
+Running SOR with 1003 rows
+Processor 1: ready to start SOR
+Processor 2: ready to start SOR
+Processor 3: ready to start SOR
+Processor 4: ready to start SOR
+Processor 5: ready to start SOR
+Processor 6: ready to start SOR
+Processor 7: ready to start SOR
+Processor 8: ready to start SOR
+Processor 9: ready to start SOR
+Processor 10: ready to start SOR
+Processor 11: ready to start SOR
+Processor 12: ready to start SOR
+Processor 13: ready to start SOR
+Processor 14: ready to start SOR
+Processor 15: ready to start SOR
+Processor 16: ready to start SOR
+Processor 17: ready to start SOR
+Processor 18: ready to start SOR
+Processor 19: ready to start SOR
+Processor 20: ready to start SOR
+Processor 21: ready to start SOR
+Processor 22: ready to start SOR
+Processor 23: ready to start SOR
+Processor 0: ready to start SOR
+Processor 24: ready to start SOR
+Processor 3: SOR took 1.320941 seconds
+Processor 0: SOR took 1.320914 seconds
+Processor 2: SOR took 1.320909 seconds
+Processor 1: SOR took 1.320978 seconds
+Processor 15: SOR took 1.321030 seconds
+Processor 17: SOR took 1.321098 seconds
+Processor 23: SOR took 1.321016 seconds
+Processor 21: SOR took 1.321010 seconds
+Processor 19: SOR took 1.320984 seconds
+Processor 18: SOR took 1.320980 seconds
+Processor 7: SOR took 1.320981 seconds
+Processor 9: SOR took 1.321024 seconds
+Processor 8: SOR took 1.320958 seconds
+Processor 11: SOR took 1.321015 seconds
+Processor 13: SOR took 1.321020 seconds
+Processor 24: SOR took 1.320994 seconds
+Processor 16: SOR took 1.320911 seconds
+Processor 10: SOR took 1.320956 seconds
+Processor 4: SOR took 1.320921 seconds
+Processor 12: SOR took 1.320965 seconds
+Processor 20: SOR took 1.320906 seconds
+Processor 22: SOR took 1.320896 seconds
+Processor 14: SOR took 1.320969 seconds
+Processor 6: SOR took 1.320922 seconds
+Processor 5: SOR took 1.320961 seconds
+Processor 2: SOR done
+Processor 9: SOR done
+Processor 1: SOR done
+SOR 1003 x 1003 complete
+using 63 iterations, diff is 0.031773 (allowed diff 0.032090)
+Processor 0: SOR done
+Processor 20: SOR done
+Processor 3: SOR done
+Processor 4: SOR done
+Processor 22: SOR done
+Processor 12: SOR done
+Processor 16: SOR done
+Processor 10: SOR done
+Processor 13: SOR done
+Processor 24: SOR done
+Processor 8: SOR done
+Processor 11: SOR done
+Processor 18: SOR done
+Processor 7: SOR done
+Processor 21: SOR done
+Processor 19: SOR done
+Processor 23: SOR done
+Processor 15: SOR done
+Processor 17: SOR done
+Processor 14: SOR done
+Processor 5: SOR done
+Processor 6: SOR done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 4: done
+Processor 5: done
+Processor 6: done
+Processor 7: done
+Processor 8: done
+Processor 9: done
+Processor 10: done
+Processor 11: done
+Processor 12: done
+Processor 13: done
+Processor 14: done
+Processor 15: done
+Processor 16: done
+Processor 17: done
+Processor 18: done
+Processor 19: done
+Processor 20: done
+Processor 21: done
+Processor 22: done
+Processor 23: done
+Processor 24: done
+Processor 0: done
+Running SOR with 1003 rows
+Processor 1: ready to start SOR
+Processor 2: ready to start SOR
+Processor 3: ready to start SOR
+Processor 4: ready to start SOR
+Processor 5: ready to start SOR
+Processor 6: ready to start SOR
+Processor 7: ready to start SOR
+Processor 8: ready to start SOR
+Processor 9: ready to start SOR
+Processor 10: ready to start SOR
+Processor 11: ready to start SOR
+Processor 12: ready to start SOR
+Processor 13: ready to start SOR
+Processor 14: ready to start SOR
+Processor 15: ready to start SOR
+Processor 16: ready to start SOR
+Processor 17: ready to start SOR
+Processor 18: ready to start SOR
+Processor 19: ready to start SOR
+Processor 20: ready to start SOR
+Processor 21: ready to start SOR
+Processor 22: ready to start SOR
+Processor 23: ready to start SOR
+Processor 0: ready to start SOR
+Processor 24: ready to start SOR
+Processor 4: SOR took 1.316913 seconds
+Processor 2: SOR took 1.316903 seconds
+Processor 1: SOR took 1.316968 seconds
+Processor 0: SOR took 1.316908 seconds
+Processor 23: SOR took 1.317060 seconds
+Processor 15: SOR took 1.317010 seconds
+Processor 3: SOR took 1.316941 seconds
+Processor 21: SOR took 1.317027 seconds
+Processor 18: SOR took 1.316975 seconds
+Processor 19: SOR took 1.316973 seconds
+Processor 22: SOR took 1.316897 seconds
+Processor 24: SOR took 1.316997 seconds
+Processor 10: SOR took 1.316963 seconds
+Processor 11: SOR took 1.317004 seconds
+Processor 12: SOR took 1.316959 seconds
+Processor 5: SOR took 1.316967 seconds
+Processor 8: SOR took 1.316951 seconds
+Processor 9: SOR took 1.317010 seconds
+Processor 14: SOR took 1.316962 seconds
+Processor 17: SOR took 1.317073 seconds
+Processor 13: SOR took 1.317013 seconds
+Processor 6: SOR took 1.316919 seconds
+Processor 16: SOR took 1.316902 seconds
+Processor 20: SOR took 1.316880 seconds
+Processor 7: SOR took 1.316941 seconds
+Processor 5: SOR done
+Processor 9: SOR done
+Processor 2: SOR done
+SOR 1003 x 1003 complete
+using 63 iterations, diff is 0.031773 (allowed diff 0.032090)
+Processor 0: SOR done
+Processor 20: SOR done
+Processor 1: SOR done
+Processor 11: SOR done
+Processor 22: SOR done
+Processor 10: SOR done
+Processor 16: SOR done
+Processor 6: SOR done
+Processor 24: SOR done
+Processor 17: SOR done
+Processor 18: SOR done
+Processor 19: SOR done
+Processor 21: SOR done
+Processor 4: SOR done
+Processor 14: SOR done
+Processor 8: SOR done
+Processor 12: SOR done
+Processor 3: SOR done
+Processor 15: SOR done
+Processor 23: SOR done
+Processor 13: SOR done
+Processor 7: SOR done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 4: done
+Processor 5: done
+Processor 6: done
+Processor 7: done
+Processor 8: done
+Processor 9: done
+Processor 10: done
+Processor 11: done
+Processor 12: done
+Processor 13: done
+Processor 14: done
+Processor 15: done
+Processor 16: done
+Processor 17: done
+Processor 18: done
+Processor 19: done
+Processor 20: done
+Processor 21: done
+Processor 22: done
+Processor 23: done
+Processor 24: done
+Processor 0: done

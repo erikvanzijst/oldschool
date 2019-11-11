@@ -1,0 +1,240 @@
+<html>
+<head>
+   <title>CS 4953 -- Cryptography, Final Exam</title>
+<base href=
+ "http://www.cs.utsa.edu/~wagner/CS4953/final.html">
+</head>
+<body bgcolor="#FFFFEB">
+
+<center><font color="#FF0000" face="arial, helvetica">
+<h2>
+CS 4953 -- Cryptography<br>
+<i>Final Exam<br>
+Wednesday, 8 May 2002, 8 am - 10:15 am</i></h2>
+</font></center>
+
+
+Please try to give your answers on the lines provided below.
+In each case you should show your work for full credit.
+(An incorrect answer with proper work might get full credit.)<p>
+
+<b><font size=+1 color="#FF0000">Part I: Preliminaries</font></b><p>
+<ol type=1>
+
+<li>In the field consisting of the integers mod 37, what is
+the definition of the <i>multiplicative inverse of 14</i>?
+<p><hr><p>
+
+<li>In the integers mod 37, state how you would use the
+ <i>Extended Euclidean Algorithm</i> to find the multiplicative
+inverse of 14.  (Don't actually find the inverse, just say how you
+would do the calculations.  There is no credit for just writing
+down the inverse.)
+
+<p><hr><p>
+
+<li>State <i>Fermat's Theorem</i> and verify that it is true
+  for <i>a</i> = 3 and <i>p</i> = 7.  (Show your work.)
+
+<p><hr><p>
+
+<li>By any method, find 2<sup>1024</sup> mod 7?
+ (But you must show your method, and not just write down an answer.)
+
+<p><hr><p>
+
+
+</ol>
+
+<b><font size=+1 color="#FF0000">Part II: Coding and Information 
+  Theory</font></b><p>
+<ol type=1>
+
+<li>Contrast the two kinds of coding: source coding (compression)
+and channel coding (coding for errors). 
+
+<p><hr><p>
+
+<li>What does the <i>entropy</i> of a message say about compression?
+(In the absense of noise.)
+
+<p><hr><p>
+
+<li>What special property does <i>Verhoeff's Decimal Error Detection</i>
+  scheme have that the other simple decimal error detection schemes
+ do not have (those using a single decimal check digit)?
+<p><hr><p>
+</ol>
+
+<p>&nbsp;<p>
+
+<b><font size=+1 color="#FF0000">Part III: Introduction to
+  Cryptography</font></b><p>
+<ol type=1>
+
+<li>A question about the <i>One-time Pad:</i>
+ <ol type=a>
+  <li>What is the major disadvantage of the one-time pad?<p><hr><p>
+  <li>Why might one want to use the one-time pad anyway?<p><hr><p>
+ </ol>
+
+
+</ol>
+
+<b><font size=+1 color="#FF0000">Part IV: Public Key 
+    Cryptography</font></b><p>
+<ol type=1>
+
+<li>(This question is somewhat similar to Rabin's public key
+  cryptosystem.)  Bob wants to flip a coin with Alice, where
+there should be only two possible outcomes: Bob "wins the toss"
+or Bob "loses the toss", each with probability 0.5.
+Unfortunately, Alice and Bob are connected only by a communications
+line, they have no friend to flip for them, and they don't trust each other.
+Use the following protocol:
+ <ol type=i>
+  <li>Alice selects large primes <i>p</i> and <i>q</i>, each
+  with remainder 3 when divided by 4.  Alice calculates
+  <i>n = p*q</i> and sends <i>n</i> to Bob.
+  <li>Bob picks a random number <i>a</i> (between 1 and <i>n</i>),
+   and sends <i>x = a<sup>2</sup></i> mod <i>n</i> to Alice.
+  <li>Alice uses Rabin's formulas to find the 4 square roots
+  of <i>x</i>, and picks one of them at random (call it <i>y</i>), and sends
+  <i>y</i> to Bob.
+  <li>If <i>y</i> is either the original <i>a</i> or is <i>n - a</i>,
+   then Bob knows he has lost the toss.  He asks Alice to send him the two 
+   factors of <i>n</i>, and
+   Alice wins once Bob can verify that they are indeed the factors
+   and that she has not cheated.
+   <li>Otherwise, Bob calculates 
+   gcd(<i>x</i> + </i>y</i>, <i>n</i>).  This will be a factor
+   of <i>n</i>, and so Bob can determine both <i>p</i> and <i>q</i>,
+   and he sends the factors of <i>n</i> to Alice, winning the toss.<p>
+  </ol>
+
+   Consider the "toy" specific case of <i>p</i> = 7, and <i>q</i> = 11.
+
+  <ol type=a>
+
+   <li>Do these values meet the criteria above?
+    What does Alice send to Bob in this case?<p><hr><p>
+
+   <li>Suppose Bob chooses <i>a</i> = 31.  
+    What value <i>x</i> does Bob send to Alice?<p><hr><p>
+
+    <li>It turns out that the four square roots of <i>x</i> are
+   24, 31, 46, and 53.  What might Alice send back to Bob?<p><hr><p>
+
+   <li>Which two cases are the ones listed above in which
+    Bob loses the toss?<p><hr><p>
+
+   <li>Show that in the two remaining cases, Bob can calculate
+    a factor of <i>n</i> using the method above, and so in these
+    cases he will win the toss.<p><hr><p>
+   
+   
+
+ </ol>
+<p>
+
+</ol>
+
+<b><font size=+1 color="#FF0000">Part V: Random Number
+   Generation</font></b><p>
+<ol type=1>
+  <li>What is the general form of a linear congruence generator?
+   (Just show what it looks like, without specific numbers.)<p><hr><p>
+</ol>
+
+<b><font size=+1 color="#FF0000">Part VI: The Advanced Encryption
+  Standard</font></b><p>
+<ol type=1>
+  <li>This question concerns the AES key.
+  <ol type=a>
+   <li>Explain briefly how the <i>key</i> is used during AES encryption.
+   (You should include the terms <i>key expansion</i> and
+    <i>round</i> in your explanation.)
+ <p><hr><p>
+   <li>How is the action in part a. reversed during decryption?
+ <p><hr><p>
+  </ol>
+</ol>
+
+
+<b><font size=+1 color="#FF0000">Part IX: Identification and Key
+  Distribution</font></b><p>
+<ol type=1>
+
+  <li>Suppose that <i>H</i> is a one-way function, and that
+  <i>P<sub>i</sub></i> is a collection of passwords for
+   1 <= <i>i</i> <= <i>n</i>.  
+  <ol type=a>
+   <li>In a typical Unix setting,
+   explain what is stored in the password file.
+ <p><hr><p>
+   <li>Explain how to search efficiently for passwords that match entries
+    in an online dictionary.
+ <p><hr><p>
+   <li>Explain what a <i>salt</i> is and how to use it to make
+   the search for passwords much harder.
+ <p><hr><p>
+  </ol>
+
+  <li>Your company has its own new proprietary block cipher SLAM
+ with characteristics similar to the AES: 128-bit blocks and keys.
+You say you're worried about SLAM's security, but they say they have
+to use SLAM to justify the expense of developing it (the developer of
+SLAM is the nephew of the CEO).  They propose the following:
+they will use ECB mode and encrypt the first block of a message
+with SLAM, the second with AES, and so on alternating, using the
+same key for both ciphers.<p>&nbsp;<p>
+
+  <ol type=a>
+   <li>There are at least three major things wrong with this idea.
+    Give as many as you can, and explain why each aspect is bad. 
+   <p><hr><p>
+   <p><hr><p>
+
+   <li>What should they do instead, assuming they have to use SLAM
+    (to keep the CEO happy)? 
+    <p><hr><p>
+    <p><hr><p>
+  </ol>
+ 
+  <li>Suppose <i>A</i> ("Alice") has registered her public RSA key with
+   a public trusted server <i>T</i>.  <i>A</i> then wants to prove to
+   <i>B</i> ("Bob") that she really is <i>A</i>.  
+  <ol type=a>
+   <li>Exactly what will <i>A</i> be leaving with <i>T</i> ?
+ <p><hr><p>
+   <li>What is the simplest thing <i>A</i> could do to prove to
+    <i>B</i> that she is really <i>A</i>?
+ <p><hr><p>
+   <li>What is a <i>replay attack</i> in this setting?
+ <p><hr><p>
+   <li>What can <i>A</i> and <i>B</i> do to protect against replay attacks?
+ <p><hr><p>
+  </ol>
+
+  <li>This question is concerned with <i>threshold schemes</i>.
+  <ol type=a>
+   <li>Explain in <i>complete detail</i> how a user <i>A</i> can use a
+    threshold scheme to maintain
+    two shares of a secret password "aragorn" on two separate
+    systems, where both shares are needed to recover the password. 
+   <p><hr><p>
+   <p><hr><p>
+
+   <li>Assuming an opponent cannot obtain both shares, how secure
+    is the password? 
+    <p><hr><p>
+    <p><hr><p>
+  </ol>
+
+
+</ol>
+
+ 
+</body>
+</html>
+

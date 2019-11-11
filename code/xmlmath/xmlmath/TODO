@@ -1,0 +1,6 @@
+- <import url="statistical-stanzas.xml"/>
+- Passing arguments to expressions.
+- Conditional evaluation: choose-if-then-else.
+- Multithreading support based on dynamic loop evaluation measurements.
+- Modify <product> so it can take any number of arguments.
+- Make <string> of type xs:string and remove value-attribute.

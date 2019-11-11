@@ -1,0 +1,35 @@
+
+	Autumn 2003 Compiler Construction Exam Subject Material
+
+For exam dates see
+	http://www.few.vu.nl/onderwijs/roosters/tentamen0304-nl.html
+
+The course and the exams are based on chapters from the book
+"Modern Compiler Design", by Dick Grune, Henri Bal, Ceriel Jacobs and
+Koen Langendoen.
+
+The exam material comprises:
+
+	Chapter 1 all
+	Chapter 2 all
+	Chapter 3 except 3.1.2.1 to 3.1.7 (Attribute evaluation)
+	Chapter 4 except 4.2.5 (Code generation for basic blocks)
+	Chapter 5 all
+	Chapter 6 pointers and routines only:
+		6.2.3 (Pointers), 6.3 (Routines and their invocations)
+	Chapter 8 up to but not including 8.3 (Unification),
+		then 8.4 (The general implementation model, compiled)
+		up to but not including 8.4.3 (Optimized clause selection)
+
+Chapters 7 (Functional programs) and 9 (Parallel and distributed programs) are
+not part of this year's course.
+
+There are no other handouts.
+
+
+Dick Grune					| email: dick@cs.vu.nl
+Vrije Universiteit				| ftp://ftp.cs.vu.nl/pub/dick
+de Boelelaan 1081				| http://www.cs.vu.nl/~dick
+1081 HV  Amsterdam, the Netherlands		| tel: +31 20 444 7744
+-----------------------------------------------------------------------------
+The Vrije Universiteit was *not* founded by Dr. Vrije ...

@@ -1,0 +1,385 @@
+  ---------------------
+  XMLMath 1.1 Manual
+  ---------------------
+  Erik van Zijst
+  erik@prutser.cx
+  ---------------------
+  15 May 2006
+  ---------------------
+
+
+Basic Expression Structure
+
+  An xmlmath expression consists of a tree of nested xml tags. Each tag reads
+  the value of its child nodes, applies an operation to it and returns the
+  result to its parent tag. This is illustrated below with the expression that
+  calculates 1 + 1.
+  
++-------------------------------------------------+
+  <add xmlns="http://prutser.cx/xmlmath/schemas">
+  	<long value="1"/>
+  	<long value="1"/>
+  </add>
++-------------------------------------------------+
+
+  [Note:] <Because the xmlmath expression parser validates the input files
+  against the xmlschema, it is necessary to always include the proper xml
+  namespace directive in the expression's root tag.>
+  
+Datatypes
+ 
+  Each tag (or operator) returns an instance of a particular datatype. By
+  default, xmlmath understands the following, hierarchical types:
+    
+    * value
+    
+      * boolean
+    
+      * number
+      
+        * long
+    
+        * double
+    
+      * string
+    
+      * list
+  
+  The operator's datatype defines whether or not it can understand the value
+  returned by another operator. For example, the \<add\> operator from the
+  previous example only understands numerical child elements of type number.
+  Because datatypes are hierarchical, the \<add\> operator also understands
+  child elements of type double and long. An operator's return value can
+  differ from the type of its child elements (also known as arguments or
+  operands).
+  The remainder of this section describes the various datatypes.
+
+* Boolean
+
+  Boolean logic is supported by xmlmath through a range of boolean operators
+  including: \<and\>, \<or\>, \<not\>, \<xor\>, \<true\> and \<false\>. The
+  example below shows a boolean expression that evaluates to true.
+  
++------------------------------------------------------------+
+  <and xmlns="http://prutser.cx/xmlmath/schemas">
+  	<true/>
+	
+  	<not>
+  		<equals>
+  			<false/>
+  			<true/>
+  		</equals>
+  	</not>
+  	
+  	<xor>
+  		<false/>
+  		<true/>
+  	</xor>
+  </and>
++------------------------------------------------------------+
+  
+  
+* String
+  
+  The string type simply represents one or more lines of text. Using string
+  operators, these can be manipulated. The example below creates a new string
+  by concatenating a number of smaller strings:
+    
++------------------------------------------------------------+
+  <strcat xmlns="http://prutser.cx/xmlmath/schemas">
+  	<string value="Hello"/>
+  	<string value=" "/>
+  	<string value="world."/>
+  </strcat>
++------------------------------------------------------------+
+  
+  Below is another example that uses \<substr\> and \<strlen\> to transform
+  the string "unhappy" into "happy". The operator \<substr\> takes three
+  arguments: first a string and then two numerical (long) indices. The first
+  marks the beginning index (inclusive), while the second marks the ending
+  index (exclusive).
+  Note that it is also legal to omit the second index. When omitted, the
+  operator lets the selected substring extend to the end of the input
+  string.
+    
++------------------------------------------------------------+
+  <substr xmlns="http://prutser.cx/xmlmath/schemas">
+  	<string value="unhappy"/>
+  	<long value="2"/>
+  	<strlen>
+  		<string value="unhappy"/>
+  	</strlen>
+  </substr>
++------------------------------------------------------------+
+  
+  [Note:] The \<toString\> operator is used to turn any value into a string.
+  
+* Long
+  
+  The long type represents a 64-bit, signed integer number, using two's
+  complement arithmetic. A long in xmlmath behaves identical to a long in
+  Java.
+
+* Double
+
+  The double type represents a 64-bit, IEEE 754 signed floating point number.
+  A double in xmlmath behaves identical to a double in Java.
+
+  Many xmlmath operators work with type number, rather than long or double.
+  This allows them to handle any numerical value. Almost all these operators
+  default to floating point arithmetic, even when integer values are provided
+  as arguments. The reason for this is that an operator does not dynamically
+  inspect the data type of its arguments.
+  In some cases it is necessary to retain the exact precision of integer
+  numbers to avoid rounding errors. Use the attribute "datatype" to explicitly
+  instruct an operator to use either floating point, or integer arithmetic.
+  The example below shows the effect on a simple division.
+  
++------------------------------------------------------------+
+  $ java -jar xmlmath-1.1-SNAPSHOT.jar << EOF
+  > <quotient xmlns="http://prutser.cx/xmlmath/schemas">
+  > 	<long value="4"/>
+  > 	<long value="2"/>
+  > </quotient>
+  > EOF
+  2.0
+
+  $ java -jar xmlmath-1.1-SNAPSHOT.jar << EOF
+  > <quotient datatype="long" xmlns="http://prutser.cx/xmlmath/schemas">
+  > 	<long value="4"/>
+  > 	<long value="2"/>
+  > </quotient>
+  > EOF
+  2
++------------------------------------------------------------+
+  
+  Regardless of the type of the arguments to \<quotient\>, when the datatype
+  is explicitly set to "long", the result of the computation is an exact
+  number. When using integer arithmetic it is important to realize that
+  floating point arguments are first truncated (not rounded) to integer
+  values.
+  
+* List
+
+  The list datatype is used to hold an array of items. These lists can be
+  manipulated with the list operators. Lists can contain any number of
+  elements and are not necessarily homogeneous, meaning that a list can
+  contain elements of different types. Lists maintain the original order of
+  the elements.
+  By default, xmlmath comes with a number of list operators, including:
+  \<sort\>, \<unique\>, \<for\>, \<listSum\> and \<listProduct\>. The latter
+  two of these compute the combined sum and product of all list items
+  respectively.
+  To create a list of elements, use the \<list\> operator. This is illustrated
+  below:
+  
++------------------------------------------------------------+
+  <list xmlns="http://prutser.cx/xmlmath/schemas">
+  	<long value="1"/>
+  	<string value="foo"/>
+  	<double value="2.55"/>
+  	<true/>
+  	<pi/>
+  	<e/>
+  	<infinity/>
+  </list>
++------------------------------------------------------------+
+  
+  When this expression is evaluated, xmlmath prints the individual elements as
+  a comma-separated, ordered list:
+  
++------------------------------------------------------------+
+  $ java -jar xmlmath-1.1-SNAPSHOT.jar < samples/list.xml
+  [1, foo, 2.55, true, 3.141592653589793, 2.718281828459045, Infinity]
++------------------------------------------------------------+
+  
+  The operator \<sort\> is used to sort the elements in a list ascending or
+  descending. However, sorting is only possible if all elements are of the
+  same type. Trying to sort a heterogeneous list will result in an
+  <<<EvaluationException>>> being thrown by xmlmath:
+  
++------------------------------------------------------------+
+  $ java -jar xmlmath-1.1-SNAPSHOT.jar << EOF
+  > <sort xmlns="http://prutser.cx/xmlmath/schemas">
+  >   <list>
+  >     <long value="1"/>
+  >     <string value="foo"/>
+  >     <double value="2.55"/>
+  >   </list>
+  > </sort>
+  > EOF
+  Cannot sort a heterogeneous list. Make sure all elements are of the same type.
++------------------------------------------------------------+
+
+  By default the xmlmath evaluator suppresses the detailed stacktrace of the
+  exception. Use the <<<-e>>> flag to let xmlmath dump the complete exception
+  to stderr. This may sometimes help to locate the problem in a long
+  expression.
+  
++------------------------------------------------------------+
+  $ java -jar xmlmath-1.1-SNAPSHOT.jar -e << EOF
+  > <sort xmlns="http://prutser.cx/xmlmath/schemas">
+  >   <list>
+  >     <long value="1"/>
+  >     <string value="foo"/>
+  >     <double value="2.55"/>
+  >   </list>
+  > </sort>
+  > EOF
+  cx.prutser.xmlmath.operands.EvaluationException: Cannot sort a heterogeneous list. Make sure all elements are of the same type.
+          at cx.prutser.xmlmath.operands.Sort.getList(Sort.java:46)
+          at cx.prutser.xmlmath.operands.AbstractListValue.getValue(AbstractListValue.java:10)
+          at cx.prutser.xmlmath.Evaluator.main(Evaluator.java:42)
++------------------------------------------------------------+
+  
+* Value
+  
+  The value-type is the base type of all datatypes. Operators whose arguments
+  are of type "value" can therefore accept all types. An example of an operator
+  that works with type "value" is \<equals\>, which can compare any two
+  elements and returns true if they are of the same type and represent the
+  same value. This means that <<<\<long value="2"/\>>>> can be compared to
+  <<<\<double value="2"/\>>>>, but will evaluate to false.
+  
+* Typecasting
+
+
+  
+Declarations & Scopes
+  
+  Xmlmath allows values to be labeled with a name, so they can be referred to
+  further down the expression tree. This is a bit like a variable in a
+  programming language. The example below declares a variable x and then
+  computes x + x + x:
+  
++------------------------------------------------------------+
+  <add datatype="long" xmlns="http://prutser.cx/xmlmath/schemas">
+
+  	<declare name="x">
+  		<long value="5"/>
+  	</declare>
+	
+  	<linkLong name="x"/>
+  	<linkLong name="x"/>
+  	<linkLong name="x"/>
+  </add>
++------------------------------------------------------------+
+  
+  The \<declare\> operator's counterpart is \<link\>. The first is used to
+  define a variable, the latter is used to refer to its value from a
+  different, deeper location in the expression. Note that there are separate
+  link tags for each datatype. For example, when the declaration's body
+  returns a double, \<linkDouble\> can be used to refer to it. When a
+  declaration's datatype is unknown or unimportant, \<link\> can be used. When
+  a link tag is used to refer to an incompatible declaration, a
+  <<<TypeCastException>>> is thrown.
+  
+  Variables can be declared in any operator, as long as they precede the
+  operator's arguments. When a variable is declared, it is accessible to all
+  operators further down the expression tree, as well as to the operator in
+  which the declaration was made (which was the case in the previous example).
+  
+  In contrast to most variables in programming languages, declared values in
+  xmlmath cannot be assigned a value other than the value represented by the
+  declaration's child element. Xmlmath does not have an assignment operator.
+  
+  Declarations at different levels in the expression tree can have the same
+  name. In such case, a \<link\> operator always refers to the most recently
+  declared instance. This is illustrated in the example below which prints
+  "bar" instead of "foo":
+  
++------------------------------------------------------------+
+  <toString xmlns="http://prutser.cx/xmlmath/schemas">
+  	<declare name="x">
+  		<string value="foo"/>
+  	</declare>
+  	<toString>
+  		<declare name="x">
+  			<string value="bar"/>
+  		</declare>
+  		<linkString name="x"/>
+  	</toString>	
+  </toString>
++------------------------------------------------------------+
+  
+  The visibility of a declaration is defined by its scope. Each time the
+  expression parser parses a new operator, it creates a new scope. As the
+  parser traverses the expression tree, these scopes form a stack.
+  Declarations are attached to the scope of the tag in which they are created.
+  When a \<link\> tag further down the expression refers to a declaration, it
+  is resolved through that tag's local scope. If the declaration is not found
+  in that scope, the search continues in the parent scope. This hierarchical
+  search continues until either the declaration is found in a scope deeper in
+  the stack, or the root scope is reached. In the latter case a
+  <<<ParseException>>> is thrown and the following message is printed to
+  stderr: <<<Reference attempted to undeclared variable x>>>.
+  
+Stanza's
+
+  Declarations provide a valuable feature to xmlmath expressions, as they
+  allow the result of sub-expression to be labeled with a name and then
+  re-used at one or more other locations in the expression. However, xmlmath
+  comes with another important declarative operator: \<stanza\>.
+  
+  A stanza also offers a way to describe and label a sub-expression, but
+  unlike declarations, stanza's are not evaluated in the scope where they are
+  created. Instead, stanza's are used through the \<inline\> tag, which is
+  substituted for the stanza's body during the parsing phase. By the time the
+  parsing phase is completed and evaluation begins, all \<stanza\> and
+  \<inline\> tags have been removed. Each \<inline\> tag has then been
+  replaced by a copy of its stanza.
+  
+  The effect of inlining a stanza is illustrated below. The illustration shows
+  an expression prior to the parsing phase and the same expression after
+  parsing.
+  
++------------------------------------------------------------+
+  <toString xmlns="http://prutser.cx/xmlmath/schemas">
+  	<stanza name="foo">
+  		<string value="bar"/>
+  	</stanza>
+  	<inline name="foo"/>
+  </toString>
+
+
+  <toString xmlns="http://prutser.cx/xmlmath/schemas">
+  	<string value="bar"/>
+  </toString>
++------------------------------------------------------------+
+  
+  Stanza's and declarations are independent entities and can therefore use the
+  same names unambiguously.
+  
+  Because stanza's are never evaluated in the scope where they were created,
+  it is possible to refer to declarations and other stanza's that may not yet
+  be declared. This is illustrated below by an expression that contains a
+  stanza which refers to an integer value "x" to calculate its squared value.
+  Variable "x" is only declared further down the expression tree, just before
+  the stanza is inlined:
+  
++------------------------------------------------------------+
+  <toString xmlns="http://prutser.cx/xmlmath/schemas">
+
+  	<stanza name="squared">
+  		<product datatype="long">
+  			<linkLong name="x"/>
+  			<linkLong name="x"/>
+  		</product>
+  	</stanza>
+	
+  	<strcat>
+  		<string value="4 squared = "/>
+  		<toString>
+  			<declare name="x">
+  				<long value="4"/>
+  			</declare>
+  			<inline name="squared"/>
+  		</toString>
+  	</strcat>
+  </toString>
++------------------------------------------------------------+
+  
+  As with declarations, stanza's are resolved through the parser scope and
+  when multiple stanza's exist with the same name, the most recently parsed
+  stanza is inlined.
+  

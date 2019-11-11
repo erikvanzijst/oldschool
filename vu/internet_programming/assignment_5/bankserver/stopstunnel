@@ -1,0 +1,12 @@
+#!/bin/bash
+. config
+PIDFILE=`grep "pid" $STUNNEL_CONF | cut -f2 -d'='`
+if [ -r $PIDFILE ]; then
+	echo "Reading pid from $PIDFILE..."
+	PID=`cat $PIDFILE`
+	if [ ! -z "$PID" ]; then
+		echo "Sending the KILL signal to process $PID..."
+		kill $PID
+	fi
+	rm $PIDFILE 2>/dev/null
+fi

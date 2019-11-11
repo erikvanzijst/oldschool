@@ -1,0 +1,234 @@
+Running SOR with 1000 rows
+Processor 1: ready to start SOR
+Processor 2: ready to start SOR
+Processor 3: ready to start SOR
+Processor 4: ready to start SOR
+Processor 5: ready to start SOR
+Processor 6: ready to start SOR
+Processor 7: ready to start SOR
+Processor 0: ready to start SOR
+Processor 8: ready to start SOR
+Processor 0: SOR took 7.797875 seconds
+Processor 1: SOR took 7.797973 seconds
+Processor 3: SOR took 7.798056 seconds
+Processor 2: SOR took 7.797935 seconds
+Processor 7: SOR took 7.798008 seconds
+Processor 5: SOR took 7.798117 seconds
+Processor 8: SOR took 7.797973 seconds
+Processor 6: SOR took 7.797992 seconds
+Processor 4: SOR took 7.797956 seconds
+Processor 6: SOR done
+Processor 1: SOR done
+SOR 1000 x 1000 complete
+using 63 iterations, diff is 0.031763 (allowed diff 0.031995)
+Processor 0: SOR done
+Processor 8: SOR done
+Processor 2: SOR done
+Processor 7: SOR done
+Processor 5: SOR done
+Processor 3: SOR done
+Processor 4: SOR done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 4: done
+Processor 5: done
+Processor 6: done
+Processor 7: done
+Processor 8: done
+Processor 0: done
+Running SOR with 1000 rows
+Processor 1: ready to start SOR
+Processor 2: ready to start SOR
+Processor 3: ready to start SOR
+Processor 4: ready to start SOR
+Processor 5: ready to start SOR
+Processor 6: ready to start SOR
+Processor 7: ready to start SOR
+Processor 0: ready to start SOR
+Processor 8: ready to start SOR
+Processor 0: SOR took 7.796566 seconds
+Processor 1: SOR took 7.796674 seconds
+Processor 3: SOR took 7.796769 seconds
+Processor 2: SOR took 7.796664 seconds
+Processor 7: SOR took 7.796722 seconds
+Processor 8: SOR took 7.796691 seconds
+Processor 6: SOR took 7.796684 seconds
+Processor 5: SOR took 7.796762 seconds
+Processor 4: SOR took 7.796650 seconds
+SOR 1000 x 1000 complete
+using 63 iterations, diff is 0.031763 (allowed diff 0.031995)
+Processor 0: SOR done
+Processor 7: SOR done
+Processor 2: SOR done
+Processor 1: SOR done
+Processor 4: SOR done
+Processor 6: SOR done
+Processor 8: SOR done
+Processor 5: SOR done
+Processor 3: SOR done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 4: done
+Processor 5: done
+Processor 6: done
+Processor 7: done
+Processor 8: done
+Processor 0: done
+Running SOR with 1000 rows
+Processor 1: ready to start SOR
+Processor 2: ready to start SOR
+Processor 3: ready to start SOR
+Processor 4: ready to start SOR
+Processor 5: ready to start SOR
+Processor 6: ready to start SOR
+Processor 7: ready to start SOR
+Processor 0: ready to start SOR
+Processor 8: ready to start SOR
+Processor 2: SOR took 7.799541 seconds
+Processor 0: SOR took 7.799506 seconds
+Processor 7: SOR took 7.799734 seconds
+Processor 1: SOR took 7.799650 seconds
+Processor 3: SOR took 7.799673 seconds
+Processor 8: SOR took 7.799680 seconds
+Processor 5: SOR took 7.799705 seconds
+Processor 6: SOR took 7.799618 seconds
+Processor 4: SOR took 7.799594 seconds
+Processor 3: SOR done
+Processor 7: SOR done
+Processor 1: SOR done
+SOR 1000 x 1000 complete
+using 63 iterations, diff is 0.031763 (allowed diff 0.031995)
+Processor 0: SOR done
+Processor 4: SOR done
+Processor 8: SOR done
+Processor 2: SOR done
+Processor 6: SOR done
+Processor 5: SOR done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 4: done
+Processor 5: done
+Processor 6: done
+Processor 7: done
+Processor 8: done
+Processor 0: done
+Running SOR with 1000 rows
+Processor 1: ready to start SOR
+Processor 2: ready to start SOR
+Processor 3: ready to start SOR
+Processor 4: ready to start SOR
+Processor 5: ready to start SOR
+Processor 6: ready to start SOR
+Processor 7: ready to start SOR
+Processor 0: ready to start SOR
+Processor 8: ready to start SOR
+Processor 2: SOR took 2.813293 seconds
+Processor 0: SOR took 2.813278 seconds
+Processor 3: SOR took 2.813354 seconds
+Processor 6: SOR took 2.813301 seconds
+Processor 1: SOR took 2.813354 seconds
+Processor 4: SOR took 2.813288 seconds
+Processor 7: SOR took 2.813349 seconds
+Processor 5: SOR took 2.813360 seconds
+Processor 8: SOR took 2.813336 seconds
+Processor 4: SOR done
+Processor 1: SOR done
+SOR 1000 x 1000 complete
+using 63 iterations, diff is 0.031763 (allowed diff 0.031995)
+Processor 0: SOR done
+Processor 3: SOR done
+Processor 2: SOR done
+Processor 8: SOR done
+Processor 6: SOR done
+Processor 5: SOR done
+Processor 7: SOR done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 4: done
+Processor 5: done
+Processor 6: done
+Processor 7: done
+Processor 8: done
+Processor 0: done
+Running SOR with 1000 rows
+Processor 1: ready to start SOR
+Processor 2: ready to start SOR
+Processor 3: ready to start SOR
+Processor 4: ready to start SOR
+Processor 5: ready to start SOR
+Processor 6: ready to start SOR
+Processor 7: ready to start SOR
+Processor 0: ready to start SOR
+Processor 8: ready to start SOR
+Processor 0: SOR took 2.811170 seconds
+Processor 1: SOR took 2.811239 seconds
+Processor 3: SOR took 2.811239 seconds
+Processor 2: SOR took 2.811184 seconds
+Processor 7: SOR took 2.811245 seconds
+Processor 5: SOR took 2.811252 seconds
+Processor 8: SOR took 2.811240 seconds
+Processor 6: SOR took 2.811204 seconds
+Processor 4: SOR took 2.811188 seconds
+Processor 1: SOR done
+Processor 3: SOR done
+Processor 6: SOR done
+Processor 5: SOR done
+Processor 7: SOR done
+Processor 8: SOR done
+Processor 2: SOR done
+SOR 1000 x 1000 complete
+using 63 iterations, diff is 0.031763 (allowed diff 0.031995)
+Processor 0: SOR done
+Processor 4: SOR done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 4: done
+Processor 5: done
+Processor 6: done
+Processor 7: done
+Processor 8: done
+Processor 0: done
+Running SOR with 1000 rows
+Processor 1: ready to start SOR
+Processor 2: ready to start SOR
+Processor 3: ready to start SOR
+Processor 4: ready to start SOR
+Processor 5: ready to start SOR
+Processor 6: ready to start SOR
+Processor 7: ready to start SOR
+Processor 0: ready to start SOR
+Processor 8: ready to start SOR
+Processor 5: SOR took 2.813258 seconds
+Processor 0: SOR took 2.813174 seconds
+Processor 3: SOR took 2.813257 seconds
+Processor 1: SOR took 2.813251 seconds
+Processor 7: SOR took 2.813258 seconds
+Processor 2: SOR took 2.813190 seconds
+Processor 8: SOR took 2.813226 seconds
+Processor 6: SOR took 2.813204 seconds
+Processor 4: SOR took 2.813192 seconds
+Processor 3: SOR done
+Processor 1: SOR done
+Processor 4: SOR done
+SOR 1000 x 1000 complete
+using 63 iterations, diff is 0.031763 (allowed diff 0.031995)
+Processor 0: SOR done
+Processor 2: SOR done
+Processor 8: SOR done
+Processor 5: SOR done
+Processor 6: SOR done
+Processor 7: SOR done
+Processor 1: done
+Processor 2: done
+Processor 3: done
+Processor 4: done
+Processor 5: done
+Processor 6: done
+Processor 7: done
+Processor 8: done
+Processor 0: done

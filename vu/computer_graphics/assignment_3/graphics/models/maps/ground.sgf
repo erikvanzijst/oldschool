@@ -1,0 +1,11 @@
+# This file describes the ground floor of the default scenery map.
+#
+# Erik van Zijst - erik@marketxs.com - 28.dec.2004
+#
+POLYGON 4
+#0.9 0.9 0.9 0.0 ..\textures\grnd01M.jpg.rgb
+1.0 0.8 0.8 0.4 ..\textures\asphalt1.jpg.rgb
+20.0 0.0 20.0 0.0 1.0 0.0 0.0 0.0
+20.0 0.0 -20.0 0.0 1.0 0.0 10.0 0.0
+-20.0 0.0 -20.0 0.0 1.0 0.0 10.0 10.0
+-20.0 0.0 20.0 0.0 1.0 0.0 0.0 10.0

@@ -1,0 +1,10 @@
+# KDE Config File 
+[KDE Desktop Entry]
+Name=Kmonop
+Exec=kmonop
+Icon=kmonop.xpm
+Type=Application
+DocPath=kmonop/kmonop.html
+Comment=
+Terminal=0
+MiniIcon=kmonop.xpm

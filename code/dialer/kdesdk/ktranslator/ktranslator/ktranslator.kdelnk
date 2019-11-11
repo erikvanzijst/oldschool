@@ -1,0 +1,14 @@
+# KDE Config File 
+[KDE Desktop Entry]
+Name=KTranslator
+Name[it]=Traduttore KDE
+Name[sk]=Prekladaè
+Exec=ktranslator
+Icon=
+Type=Application
+DocPath=ktranslator/index.html
+Comment=A powerful utility for kde translator
+Comment[it]=Applicazione per i traduttori KDE
+Comment[sk]=Pomôcka pre prekladateµov KDE
+Terminal=0
+MiniIcon=

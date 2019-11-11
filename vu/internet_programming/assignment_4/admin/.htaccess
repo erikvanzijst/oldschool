@@ -1,0 +1,7 @@
+AuthUserFile /home/erik/public_html/assignment_4/admin/htpasswd
+AuthName "Stocks administration of Ted's Teddy Toko"
+AuthType Basic
+
+<Limit GET POST PUT>
+require user administrator
+</Limit>

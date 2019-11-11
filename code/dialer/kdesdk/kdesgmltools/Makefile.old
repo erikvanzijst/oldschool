@@ -1,0 +1,38 @@
+# Edit SGMLTOOLSPATH to point to the directory where 
+# sgml-tools are installed.
+SGMLTOOLSPATH= /usr/lib/sgml-tools
+
+# Do not edit anything between this line.
+
+install:
+	if ! test -d $(SGMLTOOLSPATH); then echo $(SGMLTOOLSPATH) not found!; false ; else true; fi
+	if ! test -d $(SGMLTOOLSPATH)/SGMLTools ; then echo $(SGMLTOOLSPATH)/SGMLTools not found!; false ; else true; fi
+	if ! test -d $(SGMLTOOLSPATH)/dist; then echo $(SGMLTOOLSPATH)/dist not found!; false ; else true; fi
+	if ! test -d $(SGMLTOOLSPATH)/dist/linuxdoc; then echo $(SGMLTOOLSPATH)/dist/linuxdoc not found!; false ; else true; fi
+	if ! test -d $(SGMLTOOLSPATH)/dist/linuxdoc/html; then echo $(SGMLTOOLSPATH)/dist/linuxdoc/html not found!; false ; else true; fi
+	# Coping niceHtml2Html.pm ...
+	cp niceHtml2Html.pm $(SGMLTOOLSPATH)/SGMLTools
+	# Done.
+	# 
+	# Coping fmt_html.pl
+	mv $(SGMLTOOLSPATH)/dist/fmt_html.pl $(SGMLTOOLSPATH)/dist/fmt_html.pl.original
+	cp fmt_html.pl $(SGMLTOOLSPATH)/dist
+	# Done.
+	#
+	# Coping nicemapping
+	cp nicemapping $(SGMLTOOLSPATH)/dist/linuxdoc/html
+	# Done.
+	#
+	# Creating nice directory
+	if ! test -d $(SGMLTOOLSPATH)/nice ; then mkdir $(SGMLTOOLSPATH)/nice; else true ; fi;
+	if ! test -d $(SGMLTOOLSPATH)/nice/img ; then mkdir $(SGMLTOOLSPATH)/nice/img; else true ; fi;
+	cp img/*.gif $(SGMLTOOLSPATH)/nice/img
+	# Done.
+	# 
+	# Installing kniceinc
+	if test -d $(KDEDIR)/bin; then cp bin/kniceinc bin/ksgml2html $(KDEDIR)/bin; else echo KDE executables will not be installed; fi;
+	if [ ! -d $(KDEDIR)/share/apps/niceSgml2Html ] ; then mkdir $(KDEDIR)/share/apps/niceSgml2Html ; else true; fi
+	if [ ! -d $(KDEDIR)/share/apps/niceSgml2Html/img ] ; then mkdir $(KDEDIR)/share/apps/niceSgml2Html/img ; else true; fi
+	cp img/*.gif  $(KDEDIR)/share/apps/niceSgml2Html/img 
+	# Done.
+	# Installation successfully terminated.

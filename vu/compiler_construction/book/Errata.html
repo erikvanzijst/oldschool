@@ -1,0 +1,242 @@
+<VAR></VAR><HTML>
+<!-- $Id: Errata.html,v 1.6 2004/01/15 10:32:32 dick Exp $ -->
+<HEAD>
+<TITLE>Errata to Modern Compiler Design</TITLE>
+</HEAD>
+
+<BODY>
+<H1>Errata to Modern Compiler Design</H1>
+
+<H2>
+<A HREF="http://www.cs.vu.nl/~dick/">Dick Grune</A>,
+<A HREF="http://www.cs.vu.nl/~bal/">Henri E. Bal</A>,
+<A HREF="http://www.cs.vu.nl/~ceriel/">Ceriel J.H. Jacobs</A>,
+and
+<A HREF="http://www.pds.twi.tudelft.nl/~koen/">Koen G. Langendoen</A>
+</H2>
+
+<P>
+<A HREF="http://www.wiley.co.uk/wileychi/grune/">Modern Compiler Design</A>,
+<A HREF="http://www.wiley.co.uk/">John Wiley &amp; Sons, Ltd.</A>,
+pp. 736 + xviii, 2000.
+</P>
+
+<H3>
+The following errors and corrections are known to us.
+</H3>
+
+<P>
+In the 1st printing:
+</P>
+
+<UL>
+
+<LI>
+(20000914) pg. 62, top:
+<BR>
+Figures 2.5 through 2.10 contain ==&gt; Figures 2.5 through 2.12 contain
+</LI>
+
+<LI>
+(20001027) pg. 160, top: Figure 2.90:
+<BR>
+State 0 should have a transition to state 7 on '(' (as shown correctly
+in Figure 2.89).
+(Reported by Sara Kalvala.)
+</LI>
+
+<LI>
+(20001019) pg. 177, Figures 2.105, 2.106 and 2.107:
+<BR>
+There should be no indices 1 and 2 to the &beta;s in the boxes.
+<BR>
+Click
+<A HREF="Figure2.105.corr.ps">here</A>
+for the corrected Figure 2.105,
+<A HREF="Figure2.106.corr.ps">here</A>
+for the corrected Figure 2.106, and
+<A HREF="Figure2.107.corr.ps">here</A>
+for the corrected Figure 2.107.
+</LI>
+
+<LI>
+(20001102) pg. 240, Figure 3.36:
+<BR>
+The arrow marked "initially" is wrong, and the figure is confusing.
+Replaced by a double figure.
+<BR>
+Click
+<A HREF="Figure3.36.corr.ps">here</A>
+for the corrected Figure 3.36.
+</LI>
+
+<LI>
+(20001116) pg. 291, Figure 4.9:
+<BR>
+Intermediate Code generation ==&gt;
+Intermediate Code generation and Register Allocation
+<BR>
+Click
+<A HREF="Figure4.9.corr.ps">here</A>
+for the corrected Figure 4.9.
+</LI>
+
+<LI>
+(20001214) pg. 600, top + 15:
+<BR>
+and combine them in the notion ==&gt;
+and combine them in the notion `clause'.
+</LI>
+
+</UL>
+
+<P>
+In the 2nd printing:
+</P>
+
+<UL>
+
+<LI>
+(20020123) pg. 10, Figure 1.5:
+<BR>
+The node label 'identifier' above the node labelled '4' should read 'constant'.
+</LI>
+
+<LI>
+(20020513) pg. 95, Figure 2.41:
+<BR>
+The caption should read "Lex input for the token set used in Section 2.1.5".
+The same error occurs on pg 94 + 12.
+</LI>
+
+<LI>
+(20020513) pg. 131 + 19:
+<BR>
+"adds ... to" ==&gt; "subtracts ... from"
+</LI>
+
+<LI>
+(20020513) pg. 133, Figure 2.65:
+<BR>
+In the row for "input", expression must be followed by "EoF" in both cases.
+</LI>
+
+<LI>
+(20020705) pgs 164 and 165, top: Figures 2.93 and 2.94:
+<BR>
+State 0 in Figure 2.93 should have the action "shift" on '('.
+State 0 in Figure 2.94 should have the action/goto s7 on '('.
+(See also erratum dd. 20001027, pg. 160, Figure 2.90.)
+(Reported by Laurent Birtz.)
+</LI>
+
+<LI>
+(20020513) pg. 168, Figure 2.97:
+<BR>
+state 2 should have second ring, since it is a reduce state for lookahead '$'.
+</LI>
+
+<LI>
+(20011009) pg. 224, Section 3.1.5.3:
+<BR>
+The I[1], I[2], I[3], S[1], and S[2] in the partitionings should be lower case:
+i[1], i[2], i[3], s[1], and s[2].
+</LI>
+
+<LI>
+(20040324) pg. 315, Figure 4.37:
+<BR>
+The tests in Maximal non_large tree (Node) should be against Size of Available register set rather than against Size of Auxiliary register set.
+(Reported by Marco Rossi.)
+</LI>
+
+<LI>
+(20020513) pg. 323, top + 12, 13, Figure 4.43:
+<BR>
+the previous assignment to V, if present. ==&gt;
+all previous uses of V, if present.
+<BR>
+The original dependencies allowed coding sequences like
+PUSH a; PUSH 1; ADD; STORE n; PUSH n; PUSH 1; ADD; STORE n (third assignment);
+LOAD n (wrong value).
+<BR>
+Click
+<A HREF="Figure4.43.corr.ps">here</A>
+for the corrected Figure 4.43.
+Also click
+<A HREF="Figure4.43a.ps">here</A>
+and
+<A HREF="Figure4.43b.ps">here</A>
+for two figures showing the stages between Figure 4.43 and Figure 4.44.
+There are also replacements for
+<A HREF="Figure4.44.corr.ps">Figure4.44</A>,
+<A HREF="Figure4.57.corr.ps">Figure4.57</A>
+and
+<A HREF="Figure4.58.corr.ps">Figure4.58</A>.
+
+Code for the basic blocks algorithms can be found in the directory
+code/fg4/BasicBlocks in
+<A HREF="code.zip">code.zip</A>
+or
+<A HREF="code.tar.gz">code.tar.gz</A>.
+</LI>
+
+<LI>
+(20020624) pg. 400, Figure 5.1:
+<BR>
+The arrow marked "size" should be extended left to the left end of "chunk".
+</LI>
+
+<LI>
+(20020624) pg. 418, Figure 5.10:
+<BR>
+"Pointer .reference count" should be decremented in two places.
+Click
+<A HREF="Figure5.10.corr.ps">here</A>
+for the corrected Figure 5.10.
+</LI>
+
+<LI>
+(20020515) pg. 436, Exercise 5.9:
+<BR>
+For "chunk under p" read "chunk under q" and vice versa.
+</LI>
+
+<LI>
+(20031231) pg. 504, Figure 6.38, last line:
+<BR>
+(Node, False label, True label); ==&gt; (Node .left, False label, True label);
+</LI>
+
+<LI>
+(20020624) pg. 541 -2:
+<BR>
+["r", "e", "d"] should be ['r', 'e', 'd'] .
+</LI>
+
+<LI>
+(20020515) pg. 577, paragraph starting "When a global function ..."
+<BR>
+This paragraph applies only when n &gt;= m.
+</LI>
+
+</UL>
+
+<H5>
+<HR>
+[<A HREF="http://www.cs.vu.nl/~dick/">Dick Grune</A>]
+[<A HREF="http://www.cs.vu.nl/~bal/">Henri Bal</A>]
+[<A HREF="http://www.cs.vu.nl/~ceriel/">Ceriel Jacobs</A>]
+[<A HREF="http://www.pds.twi.tudelft.nl/~koen/">Koen Langendoen</A>]
+[<A HREF="http://www.wiley.co.uk/">John Wiley &amp; Sons, Ltd.</A>]
+[<A HREF="http://www.cs.vu.nl/">Faculty of Mathematics and Computer Science</A>]
+[<A HREF="http://www.vu.nl/">Vrije Universiteit</A>]
+<HR>
+</H5>
+
+<ADDRESS>
+Errata to Modern Compiler Design / Dick Grune / dick@cs.vu.nl
+</ADDRESS>
+
+</BODY>
+</HTML>

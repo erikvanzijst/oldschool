@@ -1,0 +1,274 @@
+%!PS-Adobe-2.0
+%%Creator: dvips 5.55 Copyright 1986, 1994 Radical Eye Software
+%%Title: tt9506.dvi
+%%CreationDate: Wed May  8 10:58:56 1996
+%%Pages: 2
+%%PageOrder: Ascend
+%%BoundingBox: 0 0 596 842
+%%DocumentFonts: Times-Roman Times-Bold Times-Italic
+%%EndComments
+%DVIPSCommandLine: /usr/local/bin/dvips -Poce-e tt9506
+%DVIPSParameters: dpi=600, compressed, comments removed
+%DVIPSSource:  TeX output 1996.05.08:1058
+%%BeginProcSet: /usr/local/lib/tex/dvips/psfig.pro
+% Psfig/TeX Release 1.2
+% dvips version
+%
+% All software, documentation, and related files in this distribution of
+% psfig/tex are Copyright 1987, 1988 Trevor J. Darrell
+%
+% Permission is granted for use and non-profit distribution of psfig/tex 
+% providing that this notice be clearly maintained, but the right to
+% distribute any portion of psfig/tex for profit or as part of any commercial
+% product is specifically reserved for the author.
+%
+%
+% $Header: figtex.pro,v 1.5 87/07/24 20:14:50 trevor Exp $
+% $Source: $
+%
+/TeXscale { 65536 div } def
+
+/DocumentInitState [ matrix currentmatrix currentlinewidth currentlinecap
+currentlinejoin currentdash currentgray currentmiterlimit ] cvx def
+
+/startTexFig {
+% usage :  x y bb-llx bb-lly bb-urx bb-ury startFig
+	/SavedState save def
+	userdict maxlength dict begin
+	currentpoint transform
+
+	DocumentInitState setmiterlimit setgray setdash setlinejoin setlinecap
+		setlinewidth setmatrix
+
+	itransform moveto
+
+	/ury exch TeXscale def
+	/urx exch TeXscale def
+	/lly exch TeXscale def
+	/llx exch TeXscale def
+	/y exch TeXscale def
+	/x exch TeXscale def
+	
+	currentpoint /cy exch def /cx exch def
+
+	/sx x urx llx sub div def 	% scaling for x
+	/sy y ury lly sub div def	% scaling for y
+
+	sx sy scale			% scale by (sx,sy)
+
+	cx sx div llx sub
+	cy sy div ury sub translate
+	
+	/DefFigCTM matrix currentmatrix def
+
+	/initmatrix {
+		DefFigCTM setmatrix
+	} def
+	/defaultmatrix {
+		DefFigCTM exch copy
+	} def
+
+	/initgraphics {
+		DocumentInitState setmiterlimit setgray setdash 
+			setlinejoin setlinecap setlinewidth setmatrix
+		DefFigCTM setmatrix
+	} def
+
+	/showpage {
+		initgraphics
+	} def
+% /erasepage and /copypage added for MatLab support (tli)
+ 	/erasepage {
+ 		initgraphics
+ 	} def
+ 	/copypage {} def
+
+} def
+% Args are llx lly urx ury (in figure coordinates)
+/clipFig {
+	currentpoint 6 2 roll
+	newpath 4 copy
+	4 2 roll moveto
+	6 -1 roll exch lineto
+	exch lineto
+	exch lineto
+	closepath clip
+	newpath
+	moveto
+} def
+% doclip, if called, will always be just after a `startfig'
+/doclip { llx lly urx ury clipFig } def
+/endTexFig {
+	end SavedState restore
+} def
+%%EndProcSet
+%%BeginProcSet: texc.pro
+/TeXDict 250 dict def TeXDict begin /N{def}def /B{bind def}N /S{exch}N
+/X{S N}B /TR{translate}N /isls false N /vsize 11 72 mul N /hsize 8.5 72
+mul N /landplus90{false}def /@rigin{isls{[0 landplus90{1 -1}{-1 1}
+ifelse 0 0 0]concat}if 72 Resolution div 72 VResolution div neg scale
+isls{landplus90{VResolution 72 div vsize mul 0 exch}{Resolution -72 div
+hsize mul 0}ifelse TR}if Resolution VResolution vsize -72 div 1 add mul
+TR matrix currentmatrix dup dup 4 get round 4 exch put dup dup 5 get
+round 5 exch put setmatrix}N /@landscape{/isls true N}B /@manualfeed{
+statusdict /manualfeed true put}B /@copies{/#copies X}B /FMat[1 0 0 -1 0
+0]N /FBB[0 0 0 0]N /nn 0 N /IE 0 N /ctr 0 N /df-tail{/nn 8 dict N nn
+begin /FontType 3 N /FontMatrix fntrx N /FontBBox FBB N string /base X
+array /BitMaps X /BuildChar{CharBuilder}N /Encoding IE N end dup{/foo
+setfont}2 array copy cvx N load 0 nn put /ctr 0 N[}B /df{/sf 1 N /fntrx
+FMat N df-tail}B /dfs{div /sf X /fntrx[sf 0 0 sf neg 0 0]N df-tail}B /E{
+pop nn dup definefont setfont}B /ch-width{ch-data dup length 5 sub get}
+B /ch-height{ch-data dup length 4 sub get}B /ch-xoff{128 ch-data dup
+length 3 sub get sub}B /ch-yoff{ch-data dup length 2 sub get 127 sub}B
+/ch-dx{ch-data dup length 1 sub get}B /ch-image{ch-data dup type
+/stringtype ne{ctr get /ctr ctr 1 add N}if}B /id 0 N /rw 0 N /rc 0 N /gp
+0 N /cp 0 N /G 0 N /sf 0 N /CharBuilder{save 3 1 roll S dup /base get 2
+index get S /BitMaps get S get /ch-data X pop /ctr 0 N ch-dx 0 ch-xoff
+ch-yoff ch-height sub ch-xoff ch-width add ch-yoff setcachedevice
+ch-width ch-height true[1 0 0 -1 -.1 ch-xoff sub ch-yoff .1 add]/id
+ch-image N /rw ch-width 7 add 8 idiv string N /rc 0 N /gp 0 N /cp 0 N{
+rc 0 ne{rc 1 sub /rc X rw}{G}ifelse}imagemask restore}B /G{{id gp get
+/gp gp 1 add N dup 18 mod S 18 idiv pl S get exec}loop}B /adv{cp add /cp
+X}B /chg{rw cp id gp 4 index getinterval putinterval dup gp add /gp X
+adv}B /nd{/cp 0 N rw exit}B /lsh{rw cp 2 copy get dup 0 eq{pop 1}{dup
+255 eq{pop 254}{dup dup add 255 and S 1 and or}ifelse}ifelse put 1 adv}
+B /rsh{rw cp 2 copy get dup 0 eq{pop 128}{dup 255 eq{pop 127}{dup 2 idiv
+S 128 and or}ifelse}ifelse put 1 adv}B /clr{rw cp 2 index string
+putinterval adv}B /set{rw cp fillstr 0 4 index getinterval putinterval
+adv}B /fillstr 18 string 0 1 17{2 copy 255 put pop}for N /pl[{adv 1 chg}
+{adv 1 chg nd}{1 add chg}{1 add chg nd}{adv lsh}{adv lsh nd}{adv rsh}{
+adv rsh nd}{1 add adv}{/rc X nd}{1 add set}{1 add clr}{adv 2 chg}{adv 2
+chg nd}{pop nd}]dup{bind pop}forall N /D{/cc X dup type /stringtype ne{]
+}if nn /base get cc ctr put nn /BitMaps get S ctr S sf 1 ne{dup dup
+length 1 sub dup 2 index S get sf div put}if put /ctr ctr 1 add N}B /I{
+cc 1 add D}B /bop{userdict /bop-hook known{bop-hook}if /SI save N @rigin
+0 0 moveto /V matrix currentmatrix dup 1 get dup mul exch 0 get dup mul
+add .99 lt{/QV}{/RV}ifelse load def pop pop}N /eop{SI restore showpage
+userdict /eop-hook known{eop-hook}if}N /@start{userdict /start-hook
+known{start-hook}if pop /VResolution X /Resolution X 1000 div /DVImag X
+/IE 256 array N 0 1 255{IE S 1 string dup 0 3 index put cvn put}for
+65781.76 div /vsize X 65781.76 div /hsize X}N /p{show}N /RMat[1 0 0 -1 0
+0]N /BDot 260 string N /rulex 0 N /ruley 0 N /v{/ruley X /rulex X V}B /V
+{}B /RV statusdict begin /product where{pop product dup length 7 ge{0 7
+getinterval dup(Display)eq exch 0 4 getinterval(NeXT)eq or}{pop false}
+ifelse}{false}ifelse end{{gsave TR -.1 -.1 TR 1 1 scale rulex ruley
+false RMat{BDot}imagemask grestore}}{{gsave TR -.1 -.1 TR rulex ruley
+scale 1 1 false RMat{BDot}imagemask grestore}}ifelse B /QV{gsave
+transform round exch round exch itransform moveto rulex 0 rlineto 0
+ruley neg rlineto rulex neg 0 rlineto fill grestore}B /a{moveto}B /delta
+0 N /tail{dup /delta X 0 rmoveto}B /M{S p delta add tail}B /b{S p tail}
+B /c{-4 M}B /d{-3 M}B /e{-2 M}B /f{-1 M}B /g{0 M}B /h{1 M}B /i{2 M}B /j{
+3 M}B /k{4 M}B /w{0 rmoveto}B /l{p -4 w}B /m{p -3 w}B /n{p -2 w}B /o{p
+-1 w}B /q{p 1 w}B /r{p 2 w}B /s{p 3 w}B /t{p 4 w}B /x{0 S rmoveto}B /y{
+3 2 roll p a}B /bos{/SS save N}B /eos{SS restore}B end
+%%EndProcSet
+%%BeginProcSet: texps.pro
+TeXDict begin /rf{findfont dup length 1 add dict begin{1 index /FID ne 2
+index /UniqueID ne and{def}{pop pop}ifelse}forall[1 index 0 6 -1 roll
+exec 0 exch 5 -1 roll VResolution Resolution div mul neg 0 0]/Metrics
+exch def dict begin Encoding{exch dup type /integertype ne{pop pop 1 sub
+dup 0 le{pop}{[}ifelse}{FontMatrix 0 get div Metrics 0 get div def}
+ifelse}forall Metrics /Metrics currentdict end def[2 index currentdict
+end definefont 3 -1 roll makefont /setfont load]cvx def}def
+/ObliqueSlant{dup sin S cos div neg}B /SlantFont{4 index mul add}def
+/ExtendFont{3 -1 roll mul exch}def /ReEncodeFont{/Encoding exch def}def
+end
+%%EndProcSet
+TeXDict begin 39158280 55380996 1000 600 600
+(/home/steen/edu/dos/var/tt9506.dvi) @start /Fa 134[44
+3[50 28 39 39 1[50 50 50 72 28 2[28 50 50 28 44 50 44
+50 50 11[72 55 50 3[72 4[44 33 2[61 1[72 66 1[61 6[33
+12[33 45[{}31 100.000000 /Times-Italic rf /Fb 139[25
+3[45 55[45 1[45 45 3[45 45 6[30 30 40[{}9 91.249977 /Times-Italic
+rf /Fc 10[28 44[33 13[44 11[55 3[44 47[44 50 1[72 50
+50 28 39 33 50 50 50 50 78 28 50 28 28 50 50 33 44 50
+44 50 44 9[94 2[61 55 66 1[55 72 1[89 61 1[39 2[72 55
+1[72 66 66 2[44 10[50 1[50 50 2[25 33 25 2[33 33 33 39[{}54
+100.000000 /Times-Roman rf /Fd 155[55 44 55 50 43[50
+50 50 50 50 49[{}9 100.000000 /Times-Bold rf /Fe 138[60
+6[60 3[33 33 47[60 3[60 3[60 49[{}7 119.999947 /Times-Roman
+rf /Ff 134[86 4[48 67 57 1[86 1[86 134 3[48 3[76 86 2[76
+12[105 96 11[124 71[{}14 172.833374 /Times-Roman rf end
+%%EndProlog
+%%BeginSetup
+%%Feature: *Resolution 600dpi
+TeXDict begin
+%%PaperSize: A4
+
+%%EndSetup
+%%Page: 1 1
+1 0 bop 765 814 a Ff(T)-12 b(entamen)44 b(Gespreide)i(Systemen)1558
+1333 y Fe(9)29 b(juni)h(1995)215 1710 y Fd(1a)49 b Fc(Parallelle)31
+b(en)f(gedistribueerde)g(computersystemen)e(kunnen)i(onderverdeeld)g
+(worden)364 1831 y(in)24 b(4)h(categori)868 1830 y(\310)862
+1831 y(en)g(volgens)f(T)-7 b(anenbaum.)33 b(Geef)25 b(aan)h(welke)f
+(dat)f(zijn,)h(en)g(voor)f(elke)h(cate-)364 1951 y(gorie)g(de)f(mate)h
+(waarin)g(de)g(hardware)g(\(1\))h(schaalbaar)f(en)g(\(2\))g
+(programmeerbaar)g(is.)210 b Fb(\(5pt\))210 2154 y Fd(1b)49
+b Fc(Beschrijf)33 b(vijf)g(verschillende)f(vormen)h(van)g
+(\252transparency\272)h(dat)f(een)g(gedistribueerd)364
+2275 y(operating)24 b(system)g(probeert)h(te)f(realiseren.)1691
+b Fb(\(5pt\))215 2760 y Fd(2a)49 b Fc(Beschrijf)20 b(de)g(principi)1180
+2759 y(\310)1174 2760 y(ele)f(werking)h(van)f(het)h(RPC)h(mechanisme,)f
+(en)g(leg)g(uit)f(waarom)h(dit)364 2881 y(mechanisme)k(slecht)g
+(schaalt)h(naar)g(wijd)f(gedistribueerde)g(systemen.)743
+b Fb(\(10pt\))210 3084 y Fd(2b)49 b Fc(Bij)23 b(het)g(RPC)h(mechanisme)
+f(kan)g(een)g(onderscheid)g(gemaakt)g(worden)f(tussen)h(function-)364
+3205 y(aliteit)f(met)h(betrekking)g(tot)g(enerzijds)g(data-transport,)g
+(en)g(anderzijds)g(besturing.)32 b(Licht)364 3325 y(dit)24
+b(toe.)2982 b Fb(\(5pt\))221 3528 y Fd(2c)49 b Fc(Geef)17
+b(aan)g(hoe)f(het)h(RPC)h(model)e(ge)1590 3527 y(\310)1593
+3528 y(\365mplementeerd)f(kan)h(worden)h(op)f(Thekkath')-5
+b(s)15 b(\252remote-)364 3649 y(memory\272)25 b(model,)f(zoals)h
+(beschreven)h(in)f(zijn)g(artikel)g(\252)p Fa(Separating)f(Data)h(and)g
+(Contr)l(ol)364 3769 y(T)-5 b(ransfer)24 b(in)g(Distributed)f
+(Operating)g(Systems)p Fc(\272.)1496 b Fb(\(8pt\))215
+4255 y Fd(3a)49 b Fc(Cristian)27 b(onderscheidt)f(in)h(zijn)g(artikel)f
+(\252)p Fa(Understanding)g(Fault-T)-9 b(olerant)25 b(Distributed)364
+4375 y(Systems)p Fc(\272)f(een)i(aantal)e(klasses)h(van)f(fouten.)33
+b(W)-8 b(elke)25 b(zijn)f(dat?)1043 b Fb(\(6pt\))210
+4579 y Fd(3b)49 b Fc(Om)16 b(fouttolerantie)f(te)i(verhogen)f(kun)g(je)
+h(gebruik)f(maken)g(van)h(zogeheten)f(\252server)h(groups\272.)364
+4699 y(W)-8 b(aarom)21 b(is)g(het)h(nodig)e(dat)h(de)h(orde)f(van)g
+(afhandeling)g(van)h(verzoeken)f(van)h(clients)e(voor)364
+4819 y(elke)c(server)i(hetzelfde)e(is?)30 b(W)-8 b(at)17
+b(impliceert)f(dit)f(voor)i(de)f(communicatie)g(tussen)f(de)i(servers?)
+-17 b Fb(\(8pt\))1805 5712 y Fc(1)p eop
+%%Page: 2 2
+2 1 bop 215 407 a Fd(4a)49 b Fc(Bij)29 b(de)f(implementatie)f(van)i
+(gedistribueerde)f(\256lesystemen)g(speelt)g(de)h(semantiek)f(van)364
+527 y(\252\256le)d(sharing\272)g(een)g(belangrijke)f(rol.)33
+b(Licht)24 b(dit)g(toe.)1383 b Fb(\(5pt\))210 731 y Fd(4b)49
+b Fc(Filecaches)22 b(moeten)e(van)h(tijd)g(tot)f(tijd)g(ge)1811
+730 y(\310)1814 731 y(\365nvaldideerd)h(worden.)32 b(Beschrijf)21
+b(wanneer)h(dit)364 851 y(moet)i(gebeuren,)h(en)g(hoe)g(invalidatie)e
+(kan)i(plaatsvinden.)1188 b Fb(\(5pt\))221 1054 y Fd(4c)49
+b Fc(Jade)28 b(\(beschreven)h(in)f(\252)p Fa(Accessing)g(Files)g(in)g
+(an)g(Internet:)40 b(The)29 b(Jade)g(File)f(System)p
+Fc(\272\))h(is)364 1175 y(gebaseerd)e(op)g(het)g(gebruik)f(van)h(een)h
+(enkele,)f(logische)g(\252name)g(space\272)g(per)h(gebruiker)-5
+b(.)364 1295 y(Leg)16 b(uit)g(hoe)h(hiermee)f(een)h(wereld-omvattend)f
+(gedistribueerd)f(\256lesysteem)h(opgebouwd)364 1416
+y(wordt.)3001 b Fb(\(5pt\))210 1619 y Fd(4d)49 b Fc(Ondanks)27
+b(dat)h(Jade)h(een)f(aparte)h(\252name)f(space\272)h(per)g(gebruiker)f
+(heeft,)h(is)f(het)g(mogelijk)364 1739 y(dat)21 b(twee)h(verschillende)
+e(gebruikers)h(toch)g(toegang)g(hebben)g(tot)g(dezelfde)g(\256les.)32
+b(Leg)22 b(uit)364 1860 y(wat)j(hier)f(het)h(fundamentele)f(probleem)g
+(is,)h(en)g(hoe)f(dat)h(in)g(Jade)f(opgelost)g(wordt.)320
+b Fb(\(8pt\))215 2345 y Fd(5a)49 b Fc(Leg)25 b(uit)g(wat)h(\(1\))g
+(\252sequential)f(consistency\272)f(en)i(\(2\))g(\252weak)g
+(consistency\272)f(betekent)g(bij)364 2466 y(Distributed)f(Shared)j
+(Memory)f(\(DSM\).)g(Maak)g(ook)g(duidelijk)e(waarom)j(het)f(de)g
+(moeite)364 2586 y(waard)f(is)g(om)884 2585 y(\310)876
+2586 y(uberhaupt)f(naar)h(consistentiemodellen)e(te)h(kijken)g(bij)g
+(DSM)h(systemen.)123 b Fb(\(10pt\))210 2790 y Fd(5b)49
+b Fc(Geef)30 b(ar)n(gumenten)f(tegen)g(het)g(ontwikkelen)g(van)g(een)h
+(wereldwijd)e(DSM)i(systeem)e(dat)364 2910 y(gebaseerd)17
+b(is)f(op)g(geheugenpagina')-5 b(s.)29 b(Ga)17 b(hierbij)f(vanuit)g
+(dat)g(problemen)g(met)g(betrekking)364 3030 y(tot)24
+b(het)h(gebruik)f(van)h(heterogene)g(computers)f(opgelost)f(zijn.)1045
+b Fb(\(10pt\))1805 5712 y Fc(2)p eop
+%%Trailer
+end
+userdict /end-hook known{end-hook}if
+%%EOF

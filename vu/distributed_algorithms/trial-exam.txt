@@ -1,0 +1,99 @@
+Trial Exam: DISTRIBUTED ALGORITHMS
+
+Note: At the exam, you are allowed to use the book by Tel, and copies of the slides
+(without handwritten comments).
+
+
+QUESTION 1:
+===========
+
+Apply Toueg's algorithm to the graph below, to compute the shortest path between
+each pair of nodes.
+
+   (w)-1-(x)
+    |   / |
+    1  3  1
+    | /   |
+   (v)-4-(y)
+    |   / |
+    6  1  1
+    | /   |
+   (u)-3-(z)
+
+The subsequent pivots are: u,v,w,x,y,z
+
+
+QUESTION 2:
+===========
+
+Suppose in the Merlin-Segall algorithm that a node u updates Nb_u[v_0] every time
+it updates D_u[v_0]. Show with the help of an example that the resulting algorithm
+is incorrect (meaning that it does not always compute shortest paths).
+
+
+QUESTION 3:
+===========
+
+Give an acyclic orientation cover of the following graph.
+
+   O--O--O
+   |  |  |
+   O--O--O
+
+Describe in detail the corresponding acyclic orientation cover controller.
+
+
+QUESTION 4:
+===========
+
+Explain why the worst-case message complexity of the echo algorithm is O(|E|).
+
+Explain why the worst-case message complexity of the echo algorithm with extinction
+is O(|V||E|).
+
+[Note: E is the set of edges, and V the set of nodes.]
+
+
+QUESTION 5:
+===========
+
+Apply Gallager-Humblet-Spira algorithm for computing a minimal spanning tree
+to the following graph:
+
+  (u)--8--(v)
+   | \   / |
+   | 13 /  |
+   1   X   3
+   |  9 \  |
+   | /   \ |
+  (w)--5--(x)
+
+
+QUESTION 6:
+===========
+
+Give a Monte Carlo algorithm for electing a leader in an anonymous network.
+(Explain why your algorithm is a Monte Carlo algorithm.)
+
+
+QUESTION 7:
+===========
+
+Consider a complete network (meaning that there is a channel between each pair
+of different processes), consisting of four processes. One process is Byzantine;
+of the other three correct processes, one has value 0, and two have value 1.
+
+Apply the Bracha-Toueg II algorithm for 1-Byzantine consensus to this network.
+Describe in detail two different scenarios: one scenario where the correct processes
+decide 1, and one scenario where the correct processes decide 0.
+
+
+QUESTION 8:
+===========
+
+Assume a (connected, unweighted, undirected) graph, in which one node is the leader.
+Give a distributed algorithm that either computes a Hamiltonian cycle in the graph,
+or reports that such a cycle does not exist. [Note: A Hamiltonian cycle visits each
+node exactly once.]
+
+Estimate the worst-case message complexity of your algorithm.

@@ -1,0 +1,2 @@
+moc -o dialer.moc dialer.cc
+gcc -lqt -o dialer dialer.cc

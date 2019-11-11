@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SAX-bindings PUBLIC "-//XML Module//DTD SAX Bindings 1.0//EN" "">
+<SAX-bindings version='1'>
+	<bind element='distance' method='distance' type='DATA' parslet='distanceConvertor' ></bind>
+	<bind element='messagingDomain' method='messagingDomain' type='DATA' parslet='messagingDomainConvertor' ></bind>
+	<bind element='destination' method='destination' type='CONTAINER' parslet='destinationConvertor' ></bind>
+	<bind element='router' method='router' type='CONTAINER' parslet='routerConvertor' ></bind>
+	<bind element='listenerPort' method='listenerPort' type='DATA' parslet='listenerPortConvertor' ></bind>
+	<bind element='addressElement' method='addressElement' type='DATA' parslet='addressElementConvertor' ></bind>
+	<bind element='managementPort' method='managementPort' type='DATA' parslet='managementPortConvertor' ></bind>
+	<bind element='httpPassword' method='httpPassword' type='DATA' parslet='httpPasswordConvertor' ></bind>
+	<bind element='managementKey' method='managementKey' type='CONTAINER' parslet='managementKeyConvertor' ></bind>
+	<bind element='connection' method='connection' type='CONTAINER' parslet='connectionConvertor' ></bind>
+	<bind element='address' method='address' type='CONTAINER' parslet='addressConvertor' ></bind>
+	<bind element='administration' method='administration' type='CONTAINER' parslet='administrationConvertor' ></bind>
+	<bind element='httpPort' method='httpPort' type='DATA' parslet='httpPortConvertor' ></bind>
+	<bind element='metric' method='metric' type='DATA' parslet='metricConvertor' ></bind>
+	<bind element='messagingAgent' method='messagingAgent' type='DATA' parslet='messagingAgentConvertor' ></bind>
+	<bind element='routerId' method='routerId' type='DATA' parslet='routerIdConvertor' ></bind>
+	<bind element='managementDomain' method='managementDomain' type='DATA' parslet='managementDomainConvertor' ></bind>
+	<bind element='host' method='host' type='DATA' parslet='hostConvertor' ></bind>
+	<bind element='httpUser' method='httpUser' type='DATA' parslet='httpUserConvertor' ></bind>
+	<bind element='interface' method='interface' type='CONTAINER' parslet='interfaceConvertor' ></bind>
+	<bind element='managementAgent' method='managementAgent' type='DATA' parslet='managementAgentConvertor' ></bind>
+	<bind element='source' method='source' type='CONTAINER' parslet='sourceConvertor' ></bind>
+	<bind element='network' method='network' type='CONTAINER' parslet='networkConvertor' ></bind>
+	<parslet parslet='managementAgentConvertor' return='java.lang.String' />
+	<parslet parslet='routerIdConvertor' return='int' />
+	<parslet parslet='managementDomainConvertor' return='java.lang.String' />
+	<parslet parslet='managementPortConvertor' return='int' />
+	<parslet parslet='hostConvertor' return='java.lang.String' />
+	<parslet parslet='networkConvertor' return='boolean' />
+	<parslet parslet='httpPasswordConvertor' return='java.lang.String' />
+	<parslet parslet='httpPortConvertor' return='int' />
+	<parslet parslet='metricConvertor' return='int' />
+	<parslet parslet='messagingAgentConvertor' return='java.lang.String' />
+	<parslet parslet='routerConvertor' return='boolean' />
+	<parslet parslet='addressElementConvertor' return='java.lang.String' />
+	<parslet parslet='listenerPortConvertor' return='int' />
+	<parslet parslet='addressConvertor' return='boolean' />
+	<parslet parslet='managementKeyConvertor' return='boolean' />
+	<parslet parslet='destinationConvertor' return='boolean' />
+	<parslet parslet='distanceConvertor' return='int' />
+	<parslet parslet='connectionConvertor' return='boolean' />
+	<parslet parslet='interfaceConvertor' return='boolean' />
+	<parslet parslet='messagingDomainConvertor' return='java.lang.String' />
+	<parslet parslet='administrationConvertor' return='boolean' />
+	<parslet parslet='sourceConvertor' return='boolean' />
+	<parslet parslet='httpUserConvertor' return='java.lang.String' />
+</SAX-bindings>

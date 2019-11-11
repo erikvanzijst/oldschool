@@ -1,0 +1,249 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.8 [en] (X11; U; SunOS 5.8 sun4u) [Netscape]">
+   <title>Assignment 2: File system compaction</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<h1>
+Operating Systems Practicum</h1>
+Assignment 2&nbsp;
+<hr>
+<h2>
+File System Compaction</h2>
+
+<h3>
+Introduction</h3>
+After deletion of old files and generation of new files, the blocks of
+many files in a filesystem will often be noncontiguous, that is, the blocks
+will no longer be adjacent to each other. In Minix, filesystem fragmentation
+can occur easily because of its mechanism for allocating new blocks.
+<p>Fragmentation can cause performance problems, since reading in a (set
+of) block(s) of a file means that the disk head has to move to different,
+possibly non adjacent, locations on the disk. In this project, you have
+to write a simple defragmentation program.
+<h3>
+Program description</h3>
+The command you need to implement is:
+<center><b>defrag&nbsp;&nbsp; &lt;oldfs>&nbsp;&nbsp; &lt;newfs></b></center>
+Oldfs is the filesystem that needs to be defragmented. Newfs is the device
+that the defragmented filesystem has to be written to. Newfs may have a
+different size than oldfs, as long as oldfs fits on the newfs. The new
+fs should contain a clean minix V2 filesystem, generated using mkfs (see
+<b>mkfs (1)</b>). Defrag should exit with an error if the old filesystem
+does not fit on the new filesystem or when the new filesystem is not a
+V2 filesystem. In that case, newfs is not written. Files or directories
+that use triple indirect blocks are not supported.
+<h3>
+Output</h3>
+On successful execution, defrag puts one line on standard output, which
+has the format:
+<pre>Defragmented filesystem written to /dev/hd3a</pre>
+where /dev/hd3a should be replaced by the actual output device that the
+program wrote the output fs to. In case of an error, at most one line of
+output on standard output is permitted which describes the error that occurred
+in user-understandable text. Do not place a newline character before your
+output message. Messages should be written to stdout, not stderr.
+<h3>
+Error codes</h3>
+For any error, return a value > 0. Successful execution results in a 0
+being returned. Below is a list of return values that your program should
+return in case of an error.
+<ul>
+<li>
+1 - invalid arguments</li>
+
+<li>
+2 - File not found or file cannot be opened.</li>
+
+<li>
+3 - Input / output filesystem is not a Minix V2 filesystem</li>
+
+<li>
+4 - Target filesystem is not empty</li>
+
+<li>
+5 - Target filesystyem is too small to copy all files of the source FS.</li>
+
+<li>
+6 - Input-filesystem inconsistency (run fsck)</li>
+
+<li>
+7 - Other errors (e.g., read / write error, should normally not occur).</li>
+</ul>
+
+<h3>
+Requirements</h3>
+
+<ul>
+<li>
+The files in the new file system have to have the same time information
+and attributes as the files in the old fs.</li>
+
+<li>
+Inodes are to keep their inode-number and location exactly as they were
+on the input-filesystem. No changes to content of the directory or data
+blocks are allowed.</li>
+
+<li>
+The files and directories in the new filesystem should consist of a contiguous
+sequence of blocks and indirect blocks.</li>
+
+<li>
+Assume zone size = block size = 1 KB. This means that you can read block
+whenever zone is used in this document and vice versa.</li>
+
+<li>
+Check that the input and output-filesystems contain a valid Minix V2 filesystem
+with native byte-ordering. V1 filesystems or V2 filesystems with reverse
+byte ordering are not supported.</li>
+
+<li>
+The target-filesystem must be empty (except for the root directory generated
+by mkfs) and should have enough space to contain the files of the old filesystem
+after defragmentation.</li>
+</ul>
+
+<ul><b>Order of the indirect blocks:</b>
+<br>Blocks in the target-fs are to be ordered the following way:
+<ul>
+<li>
+The first blocks are the direct blocks.</li>
+
+<li>
+After the direct blocks comes the first single indirect block (if applicable),
+followed by the blocks pointed to by the single indirect block.</li>
+
+<li>
+After the single indirect blocks, follows (if applicable) the intermediate
+block of the second indirect, followed by, for each second indirect, the
+second indirect block, and then the blocks pointed to by the second indirect
+block.</li>
+
+<li>
+This means that, given a second indirect intermediate block that has block
+pointers to two second indirect blocks, we first find the intermediate
+block (directly after the last block of the single indirect), and then
+the first second indirect block pointed to by the intermediate block, followed
+by the datablocks that the second indirect block points to, after which
+the next second indirect block that the intermediate block points to, followed
+in turn by the datablock(s) that this double indirect block points to.
+<b>The ordering requirement has to be followed exactly. Other orderings
+of the blocks will not be accepted. Our automated test programs check for
+this ordering.</b></li>
+</ul>
+</ul>
+
+<h3>
+Additional Hints</h3>
+
+<ul>
+<li>
+You should generate a empty file system with <b>mkfs(1)</b> in advance
+and use <b>fsck</b> to check filesystem integrity.</li>
+
+<li>
+Holes in an input-file need to be maintained and copied to the output-file
+as is. A hole in a file is noted as a NO_ZONE block-pointer in an inode
+or indirect block. The filesystem interprets a hole as a block containing
+'\0' chars; no block is allocated for the hole. Holes normally do not exist
+in minix files, but some applications (e.g., dbm) may create holes. Under
+minix, holes can be created using dd with the seek argument (see man <b>dd(1)</b>).</li>
+
+<li>
+Directories and regular files contain block pointers that refer to a datablock
+on the disk. Other inode types (e.g., character devices) may store other
+information in the block pointers. This information should be maintained
+in (copied to) the output file system.</li>
+
+<li>
+Please use the data structures and constants from the minix file system.
+You can include the filesystem header files directly, in addition to the
+regular header files from /usr/include[/minix]. An example header file
+is provided that should be useable in most cases (<a href="defrag.h">defrag.h</a>),
+though it is not mandatory to use this file.</li>
+</ul>
+
+<h3>
+Testing</h3>
+You should generate an fragmented filesystem yourself. An example way to
+do that is to copy (using cp or dd) the minix root-fs to an empty fs of
+equal size, and to make some changes to it to make sure that it contains
+inconsistent files (if it does not contain them already). Use sync prior
+to copying, and possibly run 'fsck -a' on the copied filesystem afterward
+to make sure that it does not contain inconsistencies. Do not use defrag
+on used (mounted) filesystems directly.
+<p>You should test all requirements that are listed in this description
+carefully. fsck (-s) is a useful tool to inspect your output-fs. Of course,
+you can also mount the target-fs to see whether it still functions and
+looks the same as the original fs. You should probably use debugging code
+in your program to see what goes on while defragmenting (e.g., display
+the input and output inode and zone bitmaps), but make sure that this code
+is turned off in your submitted assignment (your code may not be accepted
+for basic testing if it outputs debugging information).
+<p>There exist some test partitions on the minix machines in S4.11 at the
+VU. They are:
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /dev/hd3a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1440k
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /dev/hd3b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1440k
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /dev/hd3c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 70M
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /dev/hd3d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 70M</pre>
+You can verify whether the partitions exist using the command:
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df /dev/hd3?</pre>
+<b>de</b>, the minix disk editor (see <b>de(9)</b>) can be a very convenient
+tool to inspect the content of your input / output disk. Type <b>?</b>
+after starting <i>de</i> to see a list of options.
+<h3>
+Hints for implementation</h3>
+
+<ul>
+<li>
+Leave the data structures that are generated by mkfs (except for the root-directory's
+inode and block) on the target-fs untouched.</li>
+
+<li>
+Use in-memory buffers for the inode /zone bitmaps. Manipulation of these
+bitmaps is much easier than on-disk. You can write these bitmaps to disk
+when you finished defragmentation.</li>
+
+<li>
+The indexing of the inode bitmap and the inode placement in the inode-list
+do not map one-to-one. Contrary to what may be understood from some places
+in the code, inode 0 is *not* present on the disk. This also applies to
+the zone bitmap. Section 5.6.2 in the book explains this correctly. <i>However,
+the explanation in /usr/src/fs/super.h may be misleading in this respect.</i></li>
+
+<li>
+The zone bitmap only concerns the <b>data</b> zones!.</li>
+
+<li>
+It may convenient to write a couple of macros for convering inode, resp.
+zone numbers to numbers which are usable for bitmap manipulation.</li>
+
+<li>
+Defrag is a userspace program. It is not allowed to change existing system
+calls or add new system calls to Minix.</li>
+</ul>
+
+<h3>
+Recommended reading</h3>
+Most important reading for this assignment is section 5.6 (at least up
+to 5.6.6). For understanding of the filesystem code, read on in section
+5.7. However, as you will not use or change the filesystem code directly,
+you may skip this section.
+<p>For inspiration on how to do things, you may look in /usr/src/fs, and
+maybe some code in /usr/src/commands/simple/. Inspecting the header files
+that are included in our example header file <a href="defrag.h">defrag.h</a>,
+and keeping a printout of the header-files containing the relevant data
+structures beside you can be very handy.
+<p>We advise you to write your program completely from scratch. It is forbidden
+(and also inadviseable) to copy code directly. Most existing code will
+not do exactly what you want. Furthermore, obvious reuse of existing code
+will be noticed by us since we know where to look.
+<br>
+<hr>
+<br>Swaminathan Sivasubramanian (swami@cs.vu.nl)
+<br>Last Update: Feb. 27, 2004.
+</body>
+</html>

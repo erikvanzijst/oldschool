@@ -1,0 +1,47 @@
+KNOWN ISSUES
+
+
+Corrupted Messages
+
+Occasionally corrupted messages are received. These are always PingData
+messages as far as we know and seems to be caused by either the
+MessageInputStream or MessageOutputStream.
+
+<Sun Jan 11 20:56:14 CET 2004> <Warning> <com.marketxs.messaging.SocketReader> <Corrupted message received on interface if1: com.marketxs.messaging.DeserializeException: java.lang.ArrayIndexOutOfBoundsException: 20
+        at com.marketxs.messaging.PingData.deserialize(PingData.java:72)
+        at com.marketxs.messaging.PingData.<init>(PingData.java:47)
+        at com.marketxs.messaging.PingData.deserialize(PingData.java:52)
+        at com.marketxs.messaging.ControlData.deserialize(ControlData.java:63)
+        at com.marketxs.messaging.Message.deserialize(Message.java:61)
+        at com.marketxs.messaging.SocketReader.run(SocketReader.java:174)
+        at java.lang.Thread.run(Thread.java:534)
+>
+<Sun Jan 11 20:56:14 CET 2004> <Warning> <com.marketxs.messaging.SocketReader> <Corrupted message:
+         0                   1                   2                   3
+         0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |0 1 0 0 0 0 1 0|0 0 0 0 0 0 0 0|0 0 0 0 0 0 0 0|0 0 0 1 0 1 0 1|
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |0 0 0 0 0 1 0 0|0 0 0 0 0 0 0 0|0 0 0 0 0 0 0 0|0 0 0 0 0 0 0 0|
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |0 0 0 0 0 1 0 0|0 1 1 1 0 0 1 1|0 0 1 1 0 0 0 1|0 0 1 0 1 1 1 0|
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |0 1 1 0 0 0 1 0|0 0 0 0 0 0 0 0|0 0 0 0 0 0 0 0|0 0 0 0 0 0 0 0|
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |1 1 1 1 1 0 1 0|0 0 0 0 0 1 1 0|1 0 0 0 0 0 1 0|1 0 0 1 1 1 0 0|
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+>
+
+
+Occasionally there appears to be a short message storm of routing updates. The
+result is a bunch of these messages:
+
+<Thu Jan 15 17:22:58 CET 2004> <Warning> <com.marketxs.messaging.SocketReader> <Receive buffer for interface if1 full, dropping oldest pending message.>
+<Thu Jan 15 17:22:58 CET 2004> <Warning> <com.marketxs.messaging.SocketReader> <Receive buffer for interface if1 full, dropping oldest pending message.>
+<Thu Jan 15 17:22:58 CET 2004> <Warning> <com.marketxs.messaging.SocketReader> <Receive buffer for interface if1 full, dropping oldest pending message.>
+<Thu Jan 15 17:22:58 CET 2004> <Warning> <com.marketxs.messaging.SocketReader> <Receive buffer for interface if1 full, dropping oldest pending message.>
+<Thu Jan 15 17:22:58 CET 2004> <Warning> <com.marketxs.messaging.SocketReader> <Receive buffer for interface if1 full, dropping oldest pending message.>
+<Thu Jan 15 17:22:58 CET 2004> <Warning> <com.marketxs.messaging.SocketReader> <Receive buffer for interface if1 full, dropping oldest pending message.>
+
+where all messages are discarded at the same time. This is still under
+investigation.

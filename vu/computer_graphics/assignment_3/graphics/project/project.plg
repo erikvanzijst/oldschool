@@ -1,0 +1,56 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: project - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\erik\LOCALS~1\Temp\RSP11D.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I ".." /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/project.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\vu\graphics\graphics\project\collision.c"
+"D:\vu\graphics\graphics\project\glm.c"
+"D:\vu\graphics\graphics\util\glutil.c"
+"D:\vu\graphics\graphics\project\input.c"
+"D:\vu\graphics\graphics\project\loader.c"
+"D:\vu\graphics\graphics\project\main.c"
+"D:\vu\graphics\graphics\project\maps.c"
+"D:\vu\graphics\graphics\project\models.c"
+"D:\vu\graphics\graphics\project\util.c"
+]
+Creating command line "cl.exe @D:\DOCUME~1\erik\LOCALS~1\Temp\RSP11D.tmp" 
+Creating temporary file "D:\DOCUME~1\erik\LOCALS~1\Temp\RSP11E.tmp" with contents
+[
+user32.lib glut32.lib glu32.lib opengl32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/project.pdb" /debug /machine:I386 /out:"../bin/project.exe" /pdbtype:sept /libpath:".." 
+.\Debug\collision.obj
+.\Debug\glm.obj
+.\Debug\glutil.obj
+.\Debug\input.obj
+.\Debug\loader.obj
+.\Debug\main.obj
+.\Debug\maps.obj
+.\Debug\models.obj
+.\Debug\util.obj
+]
+Creating command line "link.exe @D:\DOCUME~1\erik\LOCALS~1\Temp\RSP11E.tmp"
+<h3>Output Window</h3>
+Compiling...
+collision.c
+glm.c
+glutil.c
+input.c
+loader.c
+main.c
+maps.c
+models.c
+util.c
+Linking...
+
+
+
+<h3>Results</h3>
+project.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

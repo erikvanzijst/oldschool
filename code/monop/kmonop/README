@@ -1,0 +1,29 @@
+-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
+
+Leon van Zantvoort 11-07-1999
+
+Rob thinks I'm lazy,....well, I am, but within seven weeks there will be a playable kmonop-version.
+
+You'll won't see any changes for the next three weeks, because I'm going to Calella.
+
+-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
+
+Leon van Zantvoort 09-07-1999
+
+This will be the KDE client (kmonop). It is being developed by Leon van
+Zantvoort (cybor@prutser.cx).
+
+Type 'make' to compile.
+
+Note that the current Makefile is known not to work with preinstalled KDE
+and Qt (such as Red Hat 6.0), as they don't use the KDEDIR and QTDIR
+variables.
+Fix it or wait for us to fix it. Don't wine.
+
+First start the monop server, than kmonop. Press the arrow icon to connect.
+You will have to start the server on localhost because I hardcoded the
+hostname in the client
+
+you can change it in kmonop.cc : line 105
+
+-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-

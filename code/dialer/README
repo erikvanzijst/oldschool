@@ -1,0 +1,41 @@
+This program is not yet finished due to problems regarding the modem
+control.
+My original post on usenet (comp.unix.programmer) has grown to a big thread,
+discussing the (dis)advantages of cuaX and ttySX, rather than giving usefull
+tips on fixing my problem.
+
+For those who did not (completely) read the thread, I'll give a short
+summery of the problem:
+
+Origionally, the dialer used /dev/cua1 to make the modem dial a number. More
+or less this came down to this:
+
+  int modem;
+  char *number = "ATDT1234567890\r\n";
+  if (modem = open("/dev/modem", O_WRONLY) == -1) exit(0);
+  write(modem, number, strlen(number));
+  sleep(4);     // modem dials
+  close(modem);
+
+It worked on kernel 2.0.33 but after I switched to 2.1.98 all dialing
+attempts fail.
+
+Currently the dialer uses some more sophisticated routines (thanks to H.
+Peter Anvin), but even that doesn't fix it.
+For more info, read the thread (/dev/cua1 became obsolete in 2.1.XX? Now
+what?) on comp.unix.programmer / comp.os.linux.development.apps /
+comp.os.linux.development.system / comp.os.unix.admin or
+comp.os.linux.hardware
+
+If you manage to fix it, *please* contact me, rather than fixing and
+distributing it yourself.
+The modem is being opened in line 726 (in function void
+DialerWindow::dial_slot()) The phonenumber is being sent to the modem in
+function DialWindow::DialWindow(QWidget *parent, const char
+*name):QDialog(parent, name, TRUE) on line 499.
+
+
+I'll be looking forward to your replies.
+Contact me on icehawk@xs4all.nl
+
+Erik van Zijst, 05/21/98, the Netherlands
